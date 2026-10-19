@@ -1,4 +1,4 @@
-# Mickey-Mouse-AI-BIT2026 — Computer Software Architecture Module
+# Mickey-Mouse-AI-BIT2026 — Computer Software 
 
 ## 1. Team & Module Information
 * **Team Name:** Mickey Mouse
