@@ -9,7 +9,6 @@
 ## A. Team Information and Responsibilities
 
 ### 1. Team Roster, Strengths, & Skills to Develop
-*(Note: Roles describe primary coordination responsibilities, not exclusive areas of work. All members will study the entire module, contribute substantively to Markdown development, and be prepared to explain the core content.)*
 
 | Member Name (as on Class Roster) | GitHub Username | Relevant Strengths & Experience | Skills to Develop in This Project | Assigned Primary Responsibilities |
 | :--- | :--- | :--- | :--- | :--- |
