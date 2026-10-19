@@ -5,10 +5,12 @@
 * **Course:** Foundations of CS & AI (2026)
 * **Selected Module:** Computer Software Architecture (Operating Systems, System Software, and Application Software)
 * **Team Members:**
-  * Goh Ye Han (`@LewisYeHan`) — Repository Lead & Section 1.1 Operating Systems
-  * [Member 2 Full Name] (`@ysjie03`) — Section 1.2 System Software
-  * [Member 3 Full Name] (`@Ti4nCi`) — Section 1.3 Application Software
-  * [Member 4 Full Name] (`@[username4]`) — Section 1.4 Summary & Assessment
+  * Yeo Shih Jie (`@ysjie03`) — Repository Lead & Section 1.1 Operating Systems
+  * Lu My Ky (`@jojolu11`) — Section 1.2 System Software
+  * Cao Minh Tuan (`@mnhtnc`) — Section 1.3 Application Software
+  * Frederick Samuel Lesmana (`@Ti4nCi`) — Section 1.4 Summary & Assessment
+  * Wong Hiu Chung Samuel (`@Samuel940398`)
+  * Goh Ye Han (`@LewisYeHan`) 
 
 ## 2. Project Purpose & Intended Learners
 * **Purpose:** This learning module introduces beginners to how computer software is structured from low-level hardware firmware up to everyday user applications.
