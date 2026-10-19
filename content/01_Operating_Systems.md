@@ -39,18 +39,6 @@ Different computing devices have different priorities (e.g., high-power desktop 
 
 **Supporting Architecture Visual:**  
 
+![OS Resource Allocation Diagram](../assets/os_resource_allocation.png)
+
 ```text
-+-------------------------------------------------------------------+
-|                   USER APPLICATIONS (User Space)                  |
-|   [ Web Browser ]        [ Music Player ]        [ PDF Reader ]   |
-+----------|----------------------|----------------------|----------+
-           | System Calls         | System Calls         |
-+----------v----------------------v----------------------v----------+
-|                  OPERATING SYSTEM KERNEL (Kernel Space)           |
-|  • CPU Scheduler   • RAM / Virtual Memory Manager  • I/O Manager  |
-+----------|----------------------|----------------------|----------+
-           |                      |                      |
-+----------v----------------------v----------------------v----------+
-|                        PHYSICAL HARDWARE                          |
-|       [ CPU Cores ]        [ Physical RAM ]      [ SSD & I/O ]    |
-+-------------------------------------------------------------------+
