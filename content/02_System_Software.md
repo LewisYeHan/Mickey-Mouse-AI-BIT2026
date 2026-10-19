@@ -20,19 +20,31 @@ While the Operating System is the most visible type of system software, the OS c
 
 ## 2. Visual Sequence: From Power Button to Operating System
 
-![Boot Sequence Flowchart](../assets/boot_sequence.png)
-
 ```text
-[ 1. User Presses Power Button ]
-               |
-               v
-[ 2. Motherboard BIOS / UEFI Firmware Wakes Up (Stored in ROM Chip) ]
-               |
-               v
-[ 3. Runs POST (Power-On Self-Test: Checks CPU, RAM, Display, Keyboard) ]
-               |
-               v
-[ 4. Locates Bootloader on SSD/HDD & Loads OS Kernel into RAM ]
-               |
-               v
-[ 5. OS Loads Device Drivers (GPU, Wi-Fi, Audio, USB) & Shows Login Screen ]
++---------------------------------------------------------------+
+|               [ 1. User Presses Power Button ]                |
++-------------------------------+-------------------------------+
+                                |
+                                v
++---------------------------------------------------------------+
+|      [ 2. Motherboard BIOS / UEFI Firmware Wakes Up ]         |
+|             (Stored in Motherboard ROM / Flash Chip)          |
++-------------------------------+-------------------------------+
+                                |
+                                v
++---------------------------------------------------------------+
+|           [ 3. Runs POST (Power-On Self-Test) ]               |
+|      (Verifies CPU, RAM, Display, and Keyboard Health)        |
++-------------------------------+-------------------------------+
+                                |
+                                v
++---------------------------------------------------------------+
+|       [ 4. Locates Bootloader on SSD/HDD & Loads OS ]         |
+|               (Transfers OS Kernel into RAM)                  |
++-------------------------------+-------------------------------+
+                                |
+                                v
++---------------------------------------------------------------+
+|      [ 5. OS Loads Device Drivers & Shows Login Screen ]      |
+|          (Initializes GPU, Wi-Fi, Audio, and Peripherals)     |
++---------------------------------------------------------------+
