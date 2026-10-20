@@ -1,44 +1,44 @@
-# 1.3 Application Software & Execution Lifecycle
+# 1.3 Application Software — Project Guide
 
-**Development Status:** `drafted` (Substantive V1.0 Draft)  
-**Author:** Cao Minh Tuan (`@mnhtnc`)  
-
----
-
-## 1. Concept Explanations & Terminology
-
-If System Software and the Operating System are the foundation, plumbing, and electricity of a building, **Application Software (Apps)** are the rooms and tools where humans actually get work done—such as writing essays, editing photos, browsing the web, or playing games.
-
-### Key Terminology
-* **Application Software:** End-user programs designed to perform specific, user-focused tasks (e.g., Microsoft Word, Spotify, Google Chrome, SOLIDWORKS), running on top of the Operating System.
-* **User Space vs. Kernel Space:** To keep the computer safe, the OS divides memory into two zones: **User Space** (a restricted sandbox where applications run) and **Kernel Space** (a protected zone where the OS Kernel and drivers run with full hardware access).
-* **System Call (Syscall) & API:** A controlled doorway through which an application in User Space politely asks the OS Kernel to perform a hardware action on its behalf (such as saving a file to the SSD or sending data over Wi-Fi).
+**Development Status:** `checked` (Consolidated Teammate V1.0 Draft)  
+**Author:** Lu My Ly (`@jojolu11`)  
 
 ---
 
-## 2. Visual Sequence: How an Application Runs
+## 1. What is application software?
+* **Application software** = end-user programs for specific tasks (Word, Excel, Figma, Chrome) that run **on top of the OS**
 
+### 8 Categories
+* Word processing
+* Spreadsheet
+* Presentation
+* Multimedia
+* Web browsers
+* Educational
+* Graphics
+* Simulation
+
+### Key Ideas
+* **User space** — where apps run · restricted sandbox · no direct hardware access
+* **Kernel space** — where the OS kernel runs · full hardware access
+* **System call (syscall)** — the controlled doorway an app uses to ask the kernel for hardware actions (save a file, send data)
+
+---
+
+## 2. The execution lifecycle
+
+### Execution Lifecycle Flowchart
 ```text
-+---------------------------------------------------------------+
-|               [ 1. Executable File Stored on SSD ]            |
-+-------------------------------+-------------------------------+
-                                |
-                                v
-+---------------------------------------------------------------+
-|          [ 2. OS Loader Creates a Process in RAM ]            |
-+-------------------------------+-------------------------------+
-                                |
-                                v
-+---------------------------------------------------------------+
-|           [ 3. CPU Executes App Instructions (Threads) ]      |
-+-------------------------------+-------------------------------+
-                                |
-                                v
-+---------------------------------------------------------------+
-|       [ 4. App Requests Hardware via System Call (Syscall) ]  |
-+-------------------------------+-------------------------------+
-                                |
-                                v
-+---------------------------------------------------------------+
-|      [ 5. OS Kernel Safely Performs Hardware Action ]         |
-+---------------------------------------------------------------+
+[ 1. Executable on SSD ]
+          |
+          v
+[ 2. OS loader creates a process in RAM ]
+          |
+          v
+[ 3. CPU executes instructions (threads) ] <--+ (result back)
+          |                                  |
+          v                                  |
+[ 4. App requests hardware via syscall ] ----+
+          |
+          v
+[ 5. Kernel performs the action safely and returns the result ]
