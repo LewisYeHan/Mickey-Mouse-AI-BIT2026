@@ -1,44 +1,113 @@
-# 1.1 Operating Systems (Core V1.0 Developed Topic)
+# 1.1 Operating Systems — Project Guide
 
-**Development Status:** `checked` (Fully Developed V1.0 — Peer Reviewed)  
-**Author:** Yeo Shih Jie (`@ysjie03`)  
-
----
-
-## 1. Concept Explanations & Core Terminology
-
-When you press the power button on your laptop or smartphone and open a web browser, music player, and document editor at the same time, those applications do not directly control the physical CPU chips or memory sticks. Instead, they rely on a master coordinator called the **Operating System (OS)**.
-
-### Key Terminology (Defined on First Appearance)
-* **Operating System (OS):** The primary system software that manages computer hardware and software resources, providing a stable environment and common services for application programs to run.
-* **Kernel:** The central, privileged core of the operating system that stays in memory at all times, having complete control over everything in the system (connecting software requests to physical hardware).
-* **Resource Allocation:** The process by which the OS distributes limited hardware resources (such as CPU processing time, RAM capacity, and storage bandwidth) fairly and safely among competing programs.
-* **Process:** An active instance of a computer program that is currently being executed in RAM.
-* **Virtual Memory (Paging/Swapping):** A memory management technique where the OS uses a portion of slower storage (SSD/HDD) to temporarily hold inactive data from RAM when physical RAM becomes full.
-
-### The Three Core Management Functions of an OS
-1. **Resource Allocation (CPU & RAM):** 
-   A computer has a finite amount of RAM and a fixed number of CPU cores. If three applications demand CPU calculation time simultaneously, the OS uses **CPU Scheduling (Time-Slicing)**—rapidly switching the CPU's attention between processes thousands of times per second so all apps appear to run smoothly at once. For memory, the OS assigns each process its own isolated **Memory Address Space** in RAM so that if one app crashes, it cannot corrupt the memory of another app or the OS itself.
-2. **Performance Monitoring:**
-   The OS continuously tracks hardware utilization—measuring what percentage of the CPU is busy, how many gigabytes of RAM are occupied, and how fast data is being read from or written to the disk. Built-in OS tools like **Windows Task Manager** and **macOS Activity Monitor** display these metrics so users and the system can detect bottlenecks or terminate frozen ("Not Responding") processes.
-3. **Device Management:**
-   Your computer connects to multiple Input/Output (I/O) peripherals (keyboards, mice, Wi-Fi cards, printers, displays). The OS coordinates access to these devices through **I/O Queues and Buffers**. For example, if two documents are sent to a printer at the same time, the OS queues them in order rather than mixing lines from both documents onto the same page.
+**Development Status:** `checked` (Consolidated Teammate V1.0 Draft)  
+**Author:** Frederick Samuel Lesmana (`@Ti4nCi`)  
 
 ---
 
-## 2. Visual Comparison: Major Operating Systems
+## 1. What is an operating system?
+* **Main software** that runs the computer
+* Sits between **users/apps** and **hardware** (CPU, RAM, I/O)
+* Shares CPU, memory, and storage between all programs
+* Lets you use a computer without machine language
+* **Layers:** Users $\rightarrow$ Apps $\rightarrow$ System software $\rightarrow$ OS $\rightarrow$ Hardware
+* **Kernel:** core, controls hardware
+* **Shell:** what you use (GUI or CLI)
 
-Different computing devices have different priorities (e.g., high-power desktop multitasking vs. smartphone battery conservation). Below is a structured comparison of the major OS platforms:
+### 3 Basic Functions
+* Manage resources
+* Provide a user interface
+* Run applications (multitasking)
 
-| Feature / Dimension | Microsoft Windows | Apple macOS | Google Android | Linux (e.g., Ubuntu) |
-| :--- | :--- | :--- | :--- | :--- |
-| **Target Hardware** | Wide range of x86/ARM PCs and laptops from many manufacturers | Exclusively Apple Mac hardware (Apple Silicon M-series / Intel) | Smartphones, tablets, and embedded smart devices | Servers, cloud infrastructure, embedded systems, and developer PCs |
-| **Kernel Architecture** | Windows NT Hybrid Kernel | XNU Hybrid Kernel (Unix-based Darwin core) | Modified Linux Kernel (optimized for mobile power/RAM) | Monolithic Linux Kernel (open-source and modular) |
-| **Resource Allocation Priority** | Broad hardware/software compatibility and desktop multitasking | Tight hardware-software integration and media/power efficiency | Aggressive background battery saving and strict app sandboxing | High stability, low memory overhead, and multi-user server performance |
-| **Performance Monitoring Tool** | Task Manager & Resource Monitor | Activity Monitor | Android System Profiler / Developer Memory Settings | `top`, `htop`, and System Monitor |
+### CLI vs GUI
+* **CLI** — type exact commands · must memorize · e.g., DOS, Linux terminal
+* **GUI** — click icons on a desktop · user-friendly · e.g., Windows, macOS
 
-**Supporting Architecture Visual:**  
+---
 
-![OS Resource Allocation Diagram](../assets/os_resource_allocation.png)
+## 2. How the OS evolved
+* **Before 1940s** — no OS, machine code by hand
+* **1940s–50s** — Batch: punch-card jobs run in groups
+* **1950s–60s** — Multiprogramming: many programs in RAM, CPU switches when one waits
+* **1960s–70s** — Time-sharing: each program gets a short CPU turn
+* **1970s–80s** — GUI: icons, windows, mouse
+* **1980s–90s** — Network OS: file/printer sharing (NetWare, Windows NT)
+* **Late 1990s–2000s** — Mobile: iOS, Android
+* **2010s–now** — AI: Siri, Google Assistant
+* **Also:** personal systems (PCs), parallel systems (many CPUs in one computer)
 
+---
+
+## 3. Types of OS
+* **Batch** — similar jobs in a row, no user input · payroll
+* **Time-sharing** — short CPU turns, feels simultaneous · Windows, Linux
+* **Real-time** — must respond in strict time · airbags, pacemakers
+* **Distributed** — many computers act as one, no shared memory/clock · cloud
+* **Network** — shares files, printers, users · Windows Server
+* **Mobile** — touch, battery, wireless · Android, iOS
+* **Embedded** — tiny OS for one job · smart TV, router
+* **Also:** single- vs multi-user, single- vs multitasking
+
+---
+
+## 4. Windows vs macOS vs Linux vs Android vs iOS
+
+| Feature | Windows | macOS | Linux | Android | iOS |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Maker** | Microsoft | Apple | Community | Google | Apple |
+| **Cost** | Paid | Free with Mac | Free | Free | Free with iPhone |
+| **Source** | Closed | Closed | Open | Open base | Closed |
+| **Kernel** | NT | XNU (Unix) | Linux | Linux | XNU |
+| **Runs on** | Most PCs | Macs only | Almost anything | Many phones | Apple only |
+| **Security** | Most targeted | Strong | Very strong | Good | Very strong |
+| **File system**| NTFS | APFS | ext4 | ext4/F2FS | APFS |
+| **Best for** | Games, office | Design, video | Servers, coding | Most phones | Apple users |
+
+* **Open source** = anyone can read and change the code
+* **Linux comes in distros** (Ubuntu, Fedora)
+* **Android is built on Linux**
+* **Older OSes:** DOS (MS-DOS / PC-DOS, command line), OS/2 (IBM), Unix (servers)
+
+---
+
+## 5. The 8 OS components
+* **Process** — create/delete, suspend/resume, sync, communication
+* **Main memory** — track used/free RAM, allocate, free
+* **File** — create/delete, edit, map to storage, backup
+* **I/O device** — drivers, buffering, caching
+* **Secondary storage** — allocate space, free-space, disk scheduling
+* **Security** — only authorized users/programs get access
+* **Network** — share resources, speed, reliability
+* **Command interpreter** — reads and runs commands
+  * *Also called:* control card interpreter, command-line interpreter, shell
+
+---
+
+## 6. Processes and states
+* **Process** = running program (Chrome: one per tab)
+* **Program** = on disk · **Job** = picked to run · **Process** = running in memory
+* **PCB** stores: PID, state, program counter, registers, memory, open files, priority
+* **States:** New -> Ready -> Running -> Terminated
+  * Running -> Waiting/Blocked — needs I/O
+  * Waiting -> Ready — I/O done
+  * Running -> Ready — time slot ends
+  * Suspended — moved to disk
+* **Hold** — job waiting to enter memory
+* **Context switch** — save one process, load the next
+* **Queues:**
+  * Job queue — waiting to enter RAM
+  * Ready queue — waiting for CPU
+  * I/O queue — waiting for a device
+
+### Process State Transition Diagram
 ```text
+[ New ] --(admitted)---> [ Hold ] --(into RAM)---> [ Ready ] <---(I/O done)---+
+                                                      |                       |
+                                                   (gets CPU)               (waiting I/O)
+                                                      |                       |
+                                                      v                       |
+                                                  [ Running ] --------+-------+
+                                                      |
+                                                    (done)
+                                                      v
+                                               [ Terminated ]
