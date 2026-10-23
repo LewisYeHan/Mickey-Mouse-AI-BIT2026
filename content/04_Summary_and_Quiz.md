@@ -19,70 +19,53 @@
 
 ---
 
-## 1. Visual Summary: The Software Architecture Hierarchy
+# 1.4 Module Synthesis & Self-Check Quiz
 
-```mermaid
-classDiagram
-    class Root["COMPUTER SOFTWARE ARCHITECTURE"] {
-        + 1.1 Kernel Layer(Hardware Control)
-        + 1.2 System Layer(OS & Drivers)
-        + 1.3 Application Layer(User Tasks)
-    }
+**Development Status:** `checked` (Peer-Reviewed & Finalized V1.0)
+**Author:** Cao Minh Tuan (@mnhtnc)
 
-    class App_1_3["1.3 APPLICATION SOFTWARE"] {
-        +Types: Word, Web, Graphics
-        +Architecture: Native vs Electron
-        +Lifecycle: SSD -> RAM -> Syscall
-        +License: Open Source vs Proprietary
-    }
+---
 
-    class Sys_1_2["1.2 SYSTEM SOFTWARE"] {
-        +Firmware: BIOS/UEFI -> Bootloader
-        +Kernel: Monolithic, Micro, Hybrid
-        +Translators: Compiler vs Interpreter
-        +Utilities and Drivers
-    }
+## 1. Visual Sequence: Computer Software Architecture
 
-    class OS_1_1["1.1 OPERATING SYSTEM"] {
-        +OS Types
-        +Process Management
-        +Memory Management
-        +Interface & IO
-    }
-
-    class OS_Types["1.1.1 OS_Types"] {
-        +Batch
-        +Time-sharing
-        +Real-time
-        +Embedded
-    }
-
-    class Process_Mgmt["1.1.2 Process_Management"] {
-        +States: New->Ready->Running
-        +Scheduling: FCFS, SJF, RR
-        +Issues: Deadlock, Aging
-    }
-
-    class Memory_Mgmt["1.1.3 Memory_Management"] {
-        +RAM vs Storage
-        +Paging / Virtual Memory
-        +Thrashing (Swap)
-    }
-
-    class Interface_IO["1.1.4 Interface_IO"] {
-        +CLI vs GUI
-        +Syscall (User/Kernel)
-        +DMA / Spooling
-    }
-
-    Root *-- App_1_3
-    Root *-- Sys_1_2
-    Root *-- OS_1_1
-
-    OS_1_1 *-- OS_Types
-    OS_1_1 *-- Process_Mgmt
-    OS_1_1 *-- Memory_Mgmt
-    OS_1_1 *-- Interface_IO
+```text
++-----------------------------------------------------------------------------------+
+|                    [ 1. THE USER / APPLICATION LAYER ]                            |
+|  (Apps run in User Space / Sandbox - e.g., Chrome, Word, VS Code)                 |
+|  - Types: Word, Web, Graphics, Simulation                                         |
+|  - Architecture: Native (Fast) vs Cross-platform (Electron - Heavy RAM)           |
+|  - License: Open Source vs Proprietary                                            |
++-----------------------------------------------------------------------------------+
+                                         |
+                                         | (Requests hardware access via System Call)
+                                         v
++-----------------------------------------------------------------------------------+
+|                        [ 2. SYSTEM SOFTWARE LAYER ]                               |
+|  (Bridges the gap between Apps and the Kernel)                                    |
+|  - Firmware: BIOS/UEFI -> POST -> Bootloader                                      |
+|  - Translators: Compiler (Whole file) vs Interpreter (Line-by-line)               |
+|  - Drivers & Utilities: Translate OS commands to hardware                         |
++-----------------------------------------------------------------------------------+
+                                         |
+                                         | (Kernel manages and allocates resources)
+                                         v
++-----------------------------------------------------------------------------------+
+|                        [ 3. OPERATING SYSTEM CORE ]                               |
+|  (The central manager of hardware and software resources)                         |
+|  - OS Types: Batch, Time-sharing, Real-time, Distributed                          |
+|  - Process Mgmt: States (New -> Ready -> Running -> Waiting -> Terminated)        |
+|  - Scheduling: FCFS, SJF, Round Robin, Aging                                      |
+|  - Memory Mgmt: Paging, Virtual Memory, Thrashing                                 |
+|  - I/O Mgmt: DMA, Buffering, Spooling (Print queue)                               |
++-----------------------------------------------------------------------------------+
+                                         |
+                                         | (Direct Hardware Access)
+                                         v
++-----------------------------------------------------------------------------------+
+|                            [ 4. HARDWARE LAYER ]                                  |
+|  (The physical foundation)                                                        |
+|  - CPU, RAM, SSD/HDD, and I/O Devices                                             |
++-----------------------------------------------------------------------------------+
 ## 2. Comprehensive Self-Check Quiz
 
 Test your understanding of the core concepts covered in Sections 1.1 through 1.3 by answering the questions below.
