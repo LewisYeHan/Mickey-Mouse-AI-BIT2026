@@ -12,29 +12,77 @@
 
 ---
 
-## 1. Visual Summary: The Software Architecture Hierarchy
-*(Read from top to bottom: User to Hardware)*
+# 1.4 Module Synthesis & Self-Check Quiz
 
-- **USER**
-  - **APPLICATION SOFTWARE** (Runs in User Space / Sandbox)
-    - *Types:* Word Processor, Spreadsheet, Presentation, Multimedia, Web Browser, Graphics, Simulation.
-    - *Built:* Native (Fast/Light), Web (Portable), Cross-platform (Electron - Heavy/RAM).
-    - *License:* Open Source (Linux) vs. Proprietary (Windows).
-    - *Lifecycle:* SSD ➔ OS Loader (Creates Process/PCB) ➔ CPU (Threads) ➔ System Call ➔ Kernel.
-  - **SYSTEM SOFTWARE**
-    - *Firmware / BIOS / UEFI:* Runs first ➔ POST ➔ Bootloader.
-    - *Utilities & Translators:* Cleanup tools; Compiler (Whole file) vs. Interpreter (Line-by-line).
-    - *Drivers:* Translate OS commands into hardware language.
-    - **KERNEL** (OS Core)
-      - *OS Types:* Batch, Time-sharing, Real-time, Distributed, Embedded.
-      - *Process Mgmt:* New ➔ Ready ➔ Running ➔ Waiting ➔ Terminated.
-      - *Memory Mgmt:* Paging, Virtual Memory, Thrashing.
-      - *I/O Mgmt:* Buffering, Spooling, DMA.
-  - **HARDWARE**
-    - CPU, RAM, SSD, Devices.
+**Development Status:** `checked` (Peer-Reviewed & Finalized V1.0)
+**Author:** Cao Minh Tuan (@mnhtnc)
 
 ---
 
+## 1. Visual Summary: The Software Architecture Hierarchy
+
+```mermaid
+classDiagram
+    class Root["COMPUTER SOFTWARE ARCHITECTURE"] {
+        + 1.1 Kernel Layer(Hardware Control)
+        + 1.2 System Layer(OS & Drivers)
+        + 1.3 Application Layer(User Tasks)
+    }
+
+    class App_1_3["1.3 APPLICATION SOFTWARE"] {
+        +Types: Word, Web, Graphics
+        +Architecture: Native vs Electron
+        +Lifecycle: SSD -> RAM -> Syscall
+        +License: Open Source vs Proprietary
+    }
+
+    class Sys_1_2["1.2 SYSTEM SOFTWARE"] {
+        +Firmware: BIOS/UEFI -> Bootloader
+        +Kernel: Monolithic, Micro, Hybrid
+        +Translators: Compiler vs Interpreter
+        +Utilities and Drivers
+    }
+
+    class OS_1_1["1.1 OPERATING SYSTEM"] {
+        +OS Types
+        +Process Management
+        +Memory Management
+        +Interface & IO
+    }
+
+    class OS_Types["1.1.1 OS_Types"] {
+        +Batch
+        +Time-sharing
+        +Real-time
+        +Embedded
+    }
+
+    class Process_Mgmt["1.1.2 Process_Management"] {
+        +States: New->Ready->Running
+        +Scheduling: FCFS, SJF, RR
+        +Issues: Deadlock, Aging
+    }
+
+    class Memory_Mgmt["1.1.3 Memory_Management"] {
+        +RAM vs Storage
+        +Paging / Virtual Memory
+        +Thrashing (Swap)
+    }
+
+    class Interface_IO["1.1.4 Interface_IO"] {
+        +CLI vs GUI
+        +Syscall (User/Kernel)
+        +DMA / Spooling
+    }
+
+    Root *-- App_1_3
+    Root *-- Sys_1_2
+    Root *-- OS_1_1
+
+    OS_1_1 *-- OS_Types
+    OS_1_1 *-- Process_Mgmt
+    OS_1_1 *-- Memory_Mgmt
+    OS_1_1 *-- Interface_IO
 ## 2. Comprehensive Self-Check Quiz
 
 Test your understanding of the core concepts covered in Sections 1.1 through 1.3 by answering the questions below.
