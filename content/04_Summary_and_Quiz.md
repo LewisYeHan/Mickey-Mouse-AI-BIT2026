@@ -1,7 +1,7 @@
 # 1.4 Module Synthesis & Self-Check Quiz
 
 **Development Status:** `checked` (Peer-Reviewed & Finalized V1.0)  
-**Author:** Frederick Samuel Lesmana (`@Ti4nCi`)  
+**Author:** Cao Minh Tuan (`@mnhtnc`)  
 
 ---
 
