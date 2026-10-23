@@ -6,16 +6,18 @@
 
 ---
 
+
+| **Yeo Shih Jie** | `@ysjie03` |
 ## A. Team Information and Responsibilities
 
 ### 1. Team Roster, Strengths, & Skills to Develop
 
 | Member Name (as on Class Roster) | GitHub Username | Relevant Strengths & Experience | Skills to Develop in This Project | Assigned Primary Responsibilities |
 | :--- | :--- | :--- | :--- | :--- |
-| **Yeo Shih Jie** | `@ysjie03` | Repository management and Markdown formatting. | Git version control workflows and system-level resource tracking. | **Repository Lead & Section 1.1 Lead:** Manage repository structure and lead development of **1.1 Operating Systems**. |
-| **Lu My Ky** | `@jojolu11` | Research and technical documentation structure. | Deepening technical understanding of low-level firmware and boot execution. | **Section 1.2 Lead:** Lead research and drafting for **1.2 System Software (BIOS, Firmware, Drivers)**. |
-| **Cao Minh Tuan** | `@mnhtnc` | Analytical breakdown of software processes and interactions. | Explaining OS system calls and user/kernel space memory boundaries. | **Section 1.3 Lead:** Lead research and drafting for **1.3 Application Software & Execution**. |
-| **Frederick Samuel Lesmana** | `@Ti4nCi` | Structured synthesis and assessment design. | Designing interactive test banks and comprehensive review summaries. | **Section 1.4 Lead:** Lead **1.4 Summary, Concept Map & Test Bank**. |
+| **Frederick Samuel Lesmana** |`@Ti4nCi` | Repository management and Markdown formatting. | Git version control workflows and system-level resource tracking. | **Repository Lead & Section 1.1 Lead:** Manage repository structure and lead development of **1.1 Operating Systems**. |
+| **Soulisack Cassinis** | `@DiegoSmiley` | Research and technical documentation structure. | Deepening technical understanding of low-level firmware and boot execution. | **Section 1.2 Lead:** Lead research and drafting for **1.2 System Software (BIOS, Firmware, Drivers)**. |
+| **Lu My Ky** | `@jojolu11` | Analytical breakdown of software processes and interactions. | Explaining OS system calls and user/kernel space memory boundaries. | **Section 1.3 Lead:** Lead research and drafting for **1.3 Application Software & Execution**. |
+| **Cao Minh Tuan** |`@mnhtnc` | Structured synthesis and assessment design. | Designing interactive test banks and comprehensive review summaries. | **Section 1.4 Lead:** Lead **1.4 Summary, Concept Map & Test Bank**. |
 | **Wong Hiu Chung Samuel** | `@Samuel1940398` | Content checking and verification. | Technical peer review and testing beginner comprehension. | **Support & Review:** Assist with peer review verification and checking activity calculations. |
 | **Goh Ye Han** | `@LewisYeHan` | Systems troubleshooting and project organization. | Coordinating documentation and self-contained submission packaging. | **Coordination & Documentation:** Assist with project plan management, logs, and final report assembly. |
 
@@ -67,7 +69,7 @@ After studying our module materials, beginners will be able to:
 | :--- | :--- |
 | **1. Shared Markdown Content** | All explanations, terminology definitions, worked examples, custom diagrams (`assets/`), practice activities, explained answers, and verified references will be written and peer-reviewed in our GitHub repository (`content/` folder) first. |
 | **2. Study Guide and Test Bank** | Exported and refined from our Markdown foundation into a structured, self-paced PDF guide following a consistent pedagogical pattern: Concept Explanation -> Terminology -> Diagram -> Worked Example -> Activity -> Solution. |
-| **3. PPT Slides** | Designed to visually explain abstract software layers including hardware-to-software stack diagrams, RAM/CPU allocation diagrams, and boot sequence flowcharts. |
+| **3. PPT Slides** | Designed to visually explain abstract software layers, including hardware-to-software stack diagrams, RAM/CPU allocation diagrams, and boot sequence flowcharts. |
 | **4. Video Tutorials** | Short, focused screen-recorded tutorials with clear voice narration demonstrating real-time task manager resource monitoring and application process execution. |
 | **5. Live Mini Lecture** | • **Proposed Manageable Question:** *"What actually happens inside your computer in the 2 seconds after you double-click an app—and why doesn't one frozen app crash your whole laptop?"*<br>• **Planned Demo / Audience Activity:** A 60-second live interactive poll diagnosing a frozen laptop Task Manager screenshot, followed by a visual demo of OS memory isolation. |
 
