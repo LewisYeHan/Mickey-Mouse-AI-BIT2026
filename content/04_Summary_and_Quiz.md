@@ -3,28 +3,7 @@
 **Development Status:** `checked` (Peer-Reviewed & Finalized V1.0)  
 **Author:** Cao Minh Tuan (`@mnhtnc`)  
 
----
 
-# 1.4 Module Synthesis & Self-Check Quiz
-
-**Development Status:** `checked` (Peer-Reviewed & Finalized V1.0)
-**Author:** Cao Minh Tuan (@mnhtnc)
-
----
-
-# 1.4 Module Synthesis & Self-Check Quiz
-
-**Development Status:** `checked` (Peer-Reviewed & Finalized V1.0)
-**Author:** Cao Minh Tuan (@mnhtnc)
-
----
-
-# 1.4 Module Synthesis & Self-Check Quiz
-
-**Development Status:** `checked` (Peer-Reviewed & Finalized V1.0)
-**Author:** Cao Minh Tuan (@mnhtnc)
-
----
 
 ## 1. Visual Sequence: Computer Software Architecture
 
