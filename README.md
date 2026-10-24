@@ -1,6 +1,6 @@
 # Mickey-Mouse-AI-BIT2026 - Stage One Submission
 
-**Repository URL:** `[https://github.com/LewisYeHan/Mickey-Mouse-AI-BIT2026](https://github.com/LewisYeHan/Mickey-Mouse-AI-BIT2026)`  
+**Repository URL:** `(https://github.com/LewisYeHan/Mickey-Mouse-AI-BIT2026](https://github.com/LewisYeHan/Mickey-Mouse-AI-BIT2026)`  
 **Snapshot Date:** October 2026  
 **Module:** Software and Symbolic AI (Stage 1: Software)  
 
