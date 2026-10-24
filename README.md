@@ -12,13 +12,11 @@
 | :--- | :--- | :--- | :--- | :--- |
 | Yeo Shih Jie | 1820262289 | `@ysjie03` | CEO | Project plan, task tracker, and team coordination |
 | Cassinis Soulisack | 1820262224 | `@cassinis` | CIO | Repository setup, file organization, and submission checks |
-| Tyson | 1820262251 | `@tyson` | Content Lead | Researching and writing markdown content |
-| Cao Minh Tuan | - | `@mnhtnc` | Content Analyst | Core architecture and application lifecycle research |
-| Samuel Liang | 1820262240 | `@samuel` | Content Lead | Researching sources and drafting content sections |
-| Frederick Samuel Lesmana | - | `@Ti4nCi` | QA & Synthesis | Module summaries and self-check quiz design |
+| Cao Minh Tuan (Tyson) | 1820262251 | `@mnhtnc` | Content Lead | Researching and writing markdown content |
+| Frederick Samuel Lesmana (Samuel Liang) | 1820262240 | `@Ti4nCi` | Content & QA Lead | Researching sources, drafting content sections, and quiz design |
 | Samuel Wong | 1820262001 | `@Samuel1940398` | Visual Lead | Designing slide templates and architecture diagrams |
 | Lu My Ky | 1820262269 | `@jojolu11` | Video Lead | Planning and recording status report and tutorial videos |
-| Goh Ye Han | 1820262002 | `@LewisYeHan` | Quality Lead | Checking requirements, proofreading, and GitHub setup |
+| Goh Ye Han (Lewis) | 1820262002 | `@LewisYeHan` | Quality Lead | Checking requirements, proofreading, and GitHub setup |
 
 ---
 
