@@ -41,7 +41,3 @@ This module covered the core layers of computing systems:
 | **Q4** | **False** | Device drivers are system software that control hardware peripherals. |
 
 ---
-
-## 4. References
-1. Tanenbaum, A. S. (2022). *Modern Operating Systems* (5th ed.). Pearson.
-2. Course Lecture Slides.
