@@ -1,6 +1,3 @@
-### File 4: `content/02_System_Software.md`
-
-```markdown
 # 1.2 Low-Level System Software (BIOS, Firmware, and Drivers)
 
 **Status:** Completed  
