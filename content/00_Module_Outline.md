@@ -5,11 +5,11 @@
 
 ---
 
-## Part 1: Software (Stage One - Completed)
-* **1.1 Operating Systems** (`Completed`) — What an OS is, 3 basic functions, CLI vs GUI, evolution, types, comparison table, 8 components, processes & states, system calls, scheduling & memory.
-* **1.2 System Software** (`Completed`) — BIOS/UEFI firmware, POST routines, and device driver mechanics.
-* **1.3 Application Software** (`Completed`) — Definition, 8 categories, 5-step execution lifecycle, and native vs. web vs. Electron apps.
-* **1.4 Summary and Quiz** (`Completed`) — Executive summary, self-check quiz (MCQs & True/False), and answer key.
+## Part 1: Software (Stage One - On going)
+* **1.1 Operating Systems** (`Drafted`) — What an OS is, 3 basic functions, CLI vs GUI, evolution, types, comparison table, 8 components, processes & states, system calls, scheduling & memory.
+* **1.2 System Software** (`Drafted`) — BIOS/UEFI firmware, POST routines, and device driver mechanics.
+* **1.3 Application Software** (`In progress`) — Definition, 8 categories, 5-step execution lifecycle, and native vs. web vs. Electron apps.
+* **1.4 Summary and Quiz** (`Drafted`) — Executive summary, self-check quiz (MCQs & True/False), and answer key.
 
 ---
 
