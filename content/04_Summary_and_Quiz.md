@@ -1,7 +1,7 @@
 # 1.4 Module Synthesis & Self-Check Quiz
 
 **Status:** Completed  
-**Team Members:** Samuel Wong (`@Samuel1940398`) & Lewis Goh (`@LewisYeHan`)  
+**Team Members:** Wong Hiu Chung Samuel (`@Samuel940398`) & Goh Ye Han (`@LewisYeHan`)  
 
 ---
 
