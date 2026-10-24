@@ -1,7 +1,7 @@
 # 1.1 Operating Systems
 
 **Status:** Completed  
-**Team Member:** Tyson (`@tyson`) & Samuel Liang (`@samuel`)  
+**Team Members:** Cao Minh Tuan (`@mnhtnc`) & Frederick Samuel Lesmana (`@Ti4nCi`)  
 
 ---
 
