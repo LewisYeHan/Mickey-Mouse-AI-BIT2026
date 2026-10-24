@@ -1,6 +1,6 @@
 # Mickey-Mouse-AI-BIT2026 - Stage One Submission
 
-**Repository URL:** `https://github.com/LewisYeHan/Mickey-Mouse-AI-BIT2026`  
+**Repository URL:** `[https://github.com/LewisYeHan/Mickey-Mouse-AI-BIT2026](https://github.com/LewisYeHan/Mickey-Mouse-AI-BIT2026)`  
 **Snapshot Date:** October 2026  
 **Module:** Software and Symbolic AI (Stage 1: Software)  
 
@@ -10,13 +10,13 @@
 
 | Name | Student ID | GitHub Username | Role | Core Responsibility |
 | :--- | :--- | :--- | :--- | :--- |
-| Yeo Shih Jie | 1820262289 | `@ysjie03` | CEO | Project plan, task tracker, and team coordination |
-| Cassinis Soulisack | 1820262224 | `@cassinis` | CIO | Repository setup, file organization, and submission checks |
-| Cao Minh Tuan (Tyson) | 1820262251 | `@mnhtnc` | Content Lead | Researching and writing markdown content |
-| Frederick Samuel Lesmana (Samuel Liang) | 1820262240 | `@Ti4nCi` | Content & QA Lead | Researching sources, drafting content sections, and quiz design |
-| Samuel Wong | 1820262001 | `@Samuel1940398` | Visual Lead | Designing slide templates and architecture diagrams |
-| Lu My Ky | 1820262269 | `@jojolu11` | Video Lead | Planning and recording status report and tutorial videos |
-| Goh Ye Han (Lewis) | 1820262002 | `@LewisYeHan` | Quality Lead | Checking requirements, proofreading, and GitHub setup |
+| Yeo Shih Jie (杨世杰) | 1820262289 | `@ysjie03` | CEO | Project plan, task tracker, and team coordination |
+| Cassinis Soulisack (苏浩然) | 1820262224 | `@DiegoSmiley` | CIO | Repository setup, file organization, and submission checks |
+| Cao Minh Tuan (高明俊) | 1820262251 | `@mnhtnc` | Content Lead | Researching and writing operating systems content |
+| Frederick Samuel Lesmana (梁天赐) | 1820262240 | `@Ti4nCi` | Content Lead | Researching sources and drafting content sections |
+| Lu My Ky (吕美琪) | 1820262269 | `@jojolu11` | Video Lead | Planning and recording status report and tutorial videos |
+| Wong Hiu Chung Samuel (王晓聪) | 1820262001 | `@Samuel940398` | Visual Lead | Designing slide templates and architecture diagrams |
+| Goh Ye Han (吴宇航) | 1820262002 | `@LewisYeHan` | Quality Lead | Checking requirements, proofreading, and GitHub setup |
 
 ---
 
