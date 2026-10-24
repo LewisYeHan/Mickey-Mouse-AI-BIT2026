@@ -1,27 +1,47 @@
-# Mickey-Mouse-AI-BIT2026 — Computer Software 
+# Mickey-Mouse-AI-BIT2026 - Stage One Submission
 
-## 1. Team & Module Information
-* **Team Name:** Mickey Mouse
-* **Course:** Foundations of CS & AI (2026)
-* **Selected Module:** Computer Software Architecture (Operating Systems, System Software, and Application Software)
-* **Team Members:**
-  * Yeo Shih Jie (`@ysjie03`) — Repository Lead & Section 1.1 Operating Systems
-  * Lu My Ky (`@jojolu11`) — Section 1.2 System Software
-  * Cao Minh Tuan (`@mnhtnc`) — Section 1.3 Application Software
-  * Frederick Samuel Lesmana (`@Ti4nCi`) — Section 1.4 Summary & Assessment
-  * Wong Hiu Chung Samuel (`@Samuel940398`)
-  * Goh Ye Han (`@LewisYeHan`) 
+**Repository URL:** `https://github.com/LewisYeHan/Mickey-Mouse-AI-BIT2026`  
+**Snapshot Date:** October 2026  
+**Module:** Software and Symbolic AI (Stage 1: Software)  
 
-## 2. Project Purpose & Intended Learners
-* **Purpose:** This learning module introduces beginners to how computer software is structured from low-level hardware firmware up to everyday user applications.
-* **Intended Learners:** First-year undergraduate students and beginners in Computer Science.
+---
 
-## 3. Repository Folder Structure
-* `README.md` — Team overview and navigation.
-* `content/00_Project_Plan_and_Task_List.md` — Master project plan and task list.
-* `content/00_Module_Outline.md` — Complete module outline and learning sequence.
-* `content/01_Operating_Systems.md` — Section 1.1 developed learning content.
-* `content/02_System_Software.md` — Section 1.2 system software draft.
-* `content/03_Application_Software.md` — Section 1.3 application software draft.
-* `content/04_Summary_and_Quiz.md` — Section 1.4 synthesis and test bank.
-* `assets/` — Supporting diagrams and images.
+## 1. Team Members & Responsibilities
+
+| Name | Student ID | GitHub Username | Role | Core Responsibility |
+| :--- | :--- | :--- | :--- | :--- |
+| Yeo Shih Jie | 1820262289 | `@ysjie03` | CEO | Project plan, task tracker, and team coordination |
+| Cassinis Soulisack | 1820262224 | `@cassinis` | CIO | Repository setup, file organization, and submission checks |
+| Tyson | 1820262251 | `@tyson` | Content Lead | Researching and writing markdown content |
+| Cao Minh Tuan | - | `@mnhtnc` | Content Analyst | Core architecture and application lifecycle research |
+| Samuel Liang | 1820262240 | `@samuel` | Content Lead | Researching sources and drafting content sections |
+| Frederick Samuel Lesmana | - | `@Ti4nCi` | QA & Synthesis | Module summaries and self-check quiz design |
+| Samuel Wong | 1820262001 | `@Samuel1940398` | Visual Lead | Designing slide templates and architecture diagrams |
+| Lu My Ky | 1820262269 | `@jojolu11` | Video Lead | Planning and recording status report and tutorial videos |
+| Goh Ye Han (Lewis) | 1820262002 | `@LewisYeHan` | Quality Lead | Checking requirements, proofreading, and GitHub setup |
+
+---
+
+## 2. Module Outline & Content Status
+
+Our Stage One work is organized into four clean Markdown files inside the `content/` folder:
+
+* **`01_Operating_Systems.md`** (`Completed`) — Covers OS definitions, evolution, types, components, processes, and scheduling.
+* **`02_System_Software.md`** (`Completed`) — Covers BIOS, UEFI firmware, POST routines, and device drivers.
+* **`03_Application_Software.md`** (`Completed`) — Covers application categories, the 5-step execution lifecycle, user/kernel space, and native vs. web apps.
+* **`04_Summary_and_Quiz.md`** (`Completed`) — Covers the module summary, self-check quiz (MCQs & True/False), and answer key.
+
+---
+
+## 3. Review Outcomes & Quality Checks
+
+* **What was checked:** All Markdown files, folder structures, file names, and references were cross-referenced against past-year samples and project requirements.
+* **What was found:** Minor formatting inconsistencies and naming mismatches were discovered during our internal review meetings.
+* **What was corrected:** Standardized file names, fixed markdown heading syntax, and ensured uniform bullet points across all files.
+
+---
+
+## 4. Next Steps for Stage Two
+* Begin research and drafting for **Symbolic AI** subtopics.
+* Set up individual personal logs and project logs for the upcoming submission.
+* Finalize presentation slide decks and video tutorials.
