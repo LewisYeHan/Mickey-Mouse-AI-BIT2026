@@ -16,6 +16,6 @@
 | **GitHub Markdown Content** | Markdown files written and committed to repository | Goh Ye Han (lead), Cao Minh Tuan, Frederick Samuel Lesmana, Lu My Ky | 24 Oct | In Progress | Research Topics |
 | **Project Log** | Running record of meetings, decisions, and progress | Yeo Shih Jie | Ongoing | In Progress | Design Templates |
 | **Personal Logs** | Individual logs of each member's contributions | All Members | Ongoing | In Progress | Design Templates |
-| **Github Markdown** | Completed study guide summarizing researched topics | Frederick Samuel Lesmana | 7 Nov | Not Started | GitHub Markdown Content |
-| **Github Markdown** | Finished slide deck matching content and study guide | Wong Hiu Chung Samuel, Lu My Ky | 7 Nov | Not Started | Study Guide |
-| **Video Tutorial 1.0** | Recorded and edited tutorial video | Lu My Ky | TBD | Not Started | PPT 1.0 |
+| **Study Guide 1.0** | Completed study guide summarizing researched topics | Frederick Samuel Lesmana | 7 Nov | Not Started | GitHub Markdown Content |
+| **PPT 1.0** | Finished slide deck matching content and study guide | Wong Hiu Chung Samuel, Lu My Ky | 7 Nov | Not Started | Github Markdown |
+| **Video Tutorial 1.0** | Recorded and edited tutorial video | Lu My Ky | TBD | Not Started | Github Markdown |
