@@ -18,7 +18,7 @@
 | Frederick Samuel Lesmana | - | `@Ti4nCi` | QA & Synthesis | Module summaries and self-check quiz design |
 | Samuel Wong | 1820262001 | `@Samuel1940398` | Visual Lead | Designing slide templates and architecture diagrams |
 | Lu My Ky | 1820262269 | `@jojolu11` | Video Lead | Planning and recording status report and tutorial videos |
-| Goh Ye Han (Lewis) | 1820262002 | `@LewisYeHan` | Quality Lead | Checking requirements, proofreading, and GitHub setup |
+| Goh Ye Han | 1820262002 | `@LewisYeHan` | Quality Lead | Checking requirements, proofreading, and GitHub setup |
 
 ---
 
