@@ -1,50 +1,35 @@
 # 1.2 Low-Level System Software (BIOS, Firmware, and Drivers)
 
-**Development Status:** `drafted` (Substantive V1.0 Draft)  
-**Author:** Lu My Ky (`@jojolu11`)  
+**Status:** Completed  
+**Team Member:** Cassinis Soulisack (`@cassinis`)  
 
 ---
 
-## 1. Concept Explanations & Terminology
-
-While the Operating System is the most visible type of system software, the OS cannot wake up a powered-off computer by itself, nor does it inherently know the secret electrical commands for millions of different graphics cards, printers, and game controllers on the market. That gap is bridged by **Low-Level System Software**.
+## 1. What is System Software?
+* Software that sits between computer hardware and application software.
+* Includes the BIOS/UEFI, firmware, and device drivers.
+* Prepares the computer so that the Operating System can load and run properly.
 
 ### Key Terminology
-* **System Software:** Software designed to operate and control the computer hardware and to provide a platform for running application software (includes the OS, BIOS/UEFI, firmware, and device drivers).
-* **Firmware:** Permanent or semi-permanent low-level software programmed directly into a hardware device's non-volatile memory chip (ROM/Flash) to control that specific piece of hardware.
-* **BIOS (Basic Input/Output System) / UEFI (Unified Extensible Firmware Interface):** The essential motherboard firmware that initializes and tests hardware components the moment you press the power button, and then loads the Operating System from storage into RAM.
-* **POST (Power-On Self-Test):** A diagnostic testing sequence run by the BIOS/UEFI at startup to verify that essential hardware (CPU, RAM, keyboard, display) is functioning properly before booting the OS.
-* **Device Driver:** A specialized software translator that tells the Operating System exactly how to communicate with and control a specific piece of hardware (e.g., an NVIDIA GPU driver or a Logitech mouse driver).
+* **Firmware:** Semi-permanent software built directly into a hardware memory chip (ROM/Flash) to control that specific device.
+* **BIOS / UEFI:** Essential motherboard firmware that runs immediately when you turn on the PC to test hardware and load the OS.
+* **POST (Power-On Self-Test):** A quick health check of the CPU, RAM, and keyboard done by the BIOS before booting.
+* **Device Driver:** A translator program that tells the OS how to talk to a specific piece of hardware (like a printer or graphics card).
 
 ---
 
-## 2. Visual Sequence: From Power Button to Operating System
-
+## 2. Boot Sequence Flowchart
 ```text
-+---------------------------------------------------------------+
-|               [ 1. User Presses Power Button ]                |
-+-------------------------------+-------------------------------+
-                                |
-                                v
-+---------------------------------------------------------------+
-|      [ 2. Motherboard BIOS / UEFI Firmware Wakes Up ]         |
-|             (Stored in Motherboard ROM / Flash Chip)          |
-+-------------------------------+-------------------------------+
-                                |
-                                v
-+---------------------------------------------------------------+
-|           [ 3. Runs POST (Power-On Self-Test) ]               |
-|      (Verifies CPU, RAM, Display, and Keyboard Health)        |
-+-------------------------------+-------------------------------+
-                                |
-                                v
-+---------------------------------------------------------------+
-|       [ 4. Locates Bootloader on SSD/HDD & Loads OS ]         |
-|               (Transfers OS Kernel into RAM)                  |
-+-------------------------------+-------------------------------+
-                                |
-                                v
-+---------------------------------------------------------------+
-|      [ 5. OS Loads Device Drivers & Shows Login Screen ]      |
-|          (Initializes GPU, Wi-Fi, Audio, and Peripherals)     |
-+---------------------------------------------------------------+
+[ 1. Power Button Pressed ]
+            |
+            v
+[ 2. BIOS / UEFI Firmware Wakes Up ]
+            |
+            v
+[ 3. Runs POST (Checks CPU, RAM, Display) ]
+            |
+            v
+[ 4. Loads Bootloader from SSD into RAM ]
+            |
+            v
+[ 5. OS Starts, Loads Drivers, Shows Login ]
