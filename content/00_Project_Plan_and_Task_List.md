@@ -19,5 +19,5 @@
 | **Stage 1 Submission Package** | Finalized Submission Report PDF, Markdown ZIP snapshot, and rendered Readable Content PDF | Goh Ye Han, Yeo Shih Jie, Cassinis Soulisack | 26 Oct 2026 | Completed | GitHub Markdown Content |
 | **Project & Personal Logs** | Running record of team meetings, decisions, and individual member logs | Yeo Shih Jie & All Members | 26 Oct 2026 (Stage 1) | Completed for Stage 1 | Design Templates |
 | **Study Guide 1.0 (Stage 2)** | Completed study guide combining Software and Symbolic AI chapters | Frederick Samuel Lesmana, Cao Minh Tuan | 7 Nov 2026 | Scheduled (Stage 2) | Stage 1 Submission Package |
-| **PPT 1.0 (Stage 2)** | Finished presentation slide deck matching the complete study guide | Wong Hiu Chung Samuel, Lu My Ky | 7 Nov 2026 | Scheduled (Stage 2) | Study Guide 1.0 |
-| **Video Tutorial 1.0 (Stage 2)** | Recorded and edited walkthrough tutorial video covering the module | Lu My Ky | 10 Nov 2026 | Scheduled (Stage 2) | PPT 1.0 |
+| **PPT 1.0 (Stage 2)** | Finished presentation slide deck matching the complete study guide | Wong Hiu Chung Samuel, Lu My Ky | 7 Nov 2026 | Scheduled (Stage 2) | Github Markdown |
+| **Video Tutorial 1.0 (Stage 2)** | Recorded and edited walkthrough tutorial video covering the module | Lu My Ky | 10 Nov 2026 | Scheduled (Stage 2) | Github Markdown |
