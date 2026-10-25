@@ -72,7 +72,4 @@ Firmware is software stored on a hardware chip (flash memory/ROM). It gives a de
 ## 5. The boot process (step by step)
 **Booting** = starting the computer until you see the login screen.
 
-```text
-[ 1. Power On ] -> [ 2. BIOS/UEFI Runs ] -> [ 3. POST Check ] -> [ 4. Hardware Set Up ]
-                                                                           |
-[ 8. Login Screen ] <- [ 7. Drivers/Services ] <- [ 6. Kernel Loads ] <- [ 5. Bootloader Runs ]
+![Booting Process Flowchart](boot_sequence.png)
