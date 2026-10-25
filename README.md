@@ -1,6 +1,6 @@
 # Mickey-Mouse-AI-BIT2026 — Stage One Submission
 
-**Repository URL:** [https://github.com/LewisYeHan/Mickey-Mouse-AI-BIT2026](https://github.com/LewisYeHan/Mickey-Mouse-AI-BIT2026)  
+**Repository URL:** `https://github.com/LewisYeHan/Mickey-Mouse-AI-BIT2026`  
 **Snapshot Date:** 26 October 2026  
 **Module:** Software and Symbolic AI (Stage 1: Software)  
 
@@ -30,7 +30,7 @@ All Stage One learning materials and visual diagrams are completed and located i
   * **`00_Module_Outline.md`** (`Completed`) — Complete syllabus covering Part 1 (Software) and Part 2 (Symbolic AI).
   * **`00_Project_Plan_and_Task_List.md`** (`Completed`) — Master project schedule, milestones, and deliverables tracker.
   * **`01_Operating_Systems.md`** (`Completed`) — Full guide on OS architecture, evolution, types, kernel components, process states, system calls, CPU scheduling, memory management, and I/O.
-  * **`02_System_Software.md`** (`Completed`) — Detailed study guide on system software layers, firmware, BIOS vs. UEFI, the Linux/PC boot sequence (`MBR` -> `GRUB` -> `Kernel Init` -> `INIT`), device drivers, utilities, and language translators.
+  * **`02_System_Software.md`** (`Completed`) — Detailed study guide on system software layers, firmware, BIOS vs. UEFI, the boot sequence (`MBR` -> `GRUB` -> `Kernel Init` -> `INIT`), device drivers, utilities, and language translators.
   * **`03_Application_Software.md`** (`Completed`) — Complete breakdown of application software categories, user space vs. kernel space, the 5-step execution lifecycle, and native vs. web vs. cross-platform apps.
   * **`04_Summary_and_Quiz.md`** (`Completed`) — Executive module synthesis, 10 self-check assessment questions (MCQs and True/False), and a complete answer key with explanations.
 * **Visual Diagram Assets (`content/`)**
