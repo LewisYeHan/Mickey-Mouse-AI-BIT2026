@@ -20,7 +20,7 @@
 ## 2. The Execution Lifecycle
 What actually happens when you open an app, in 5 steps:
 
-![Application execution lifecycle](execution_lifecycle.png)
+![Application execution lifecycle](images/execution_lifecycle.png)
 *Figure 1.6: The 5 steps of running an app, from a file on the SSD to the kernel sending back a result. Made with help from Claude (AI).*
 
 #### 1. Program file on the SSD
