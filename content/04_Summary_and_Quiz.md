@@ -7,9 +7,7 @@
 
 ## 1. Executive Module Synthesis
 Stage One of our module examined how computer software is structured into three cooperative layers above the physical hardware:
-
-![Uploading Concept map.png…]()
-
+<img width="7295" height="3260" alt="Concept map" src="https://github.com/user-attachments/assets/8ad71dbf-4ee0-4e35-818c-f65d4c5b745c" />
 
 ---
 
