@@ -113,7 +113,7 @@ A **Device Driver** is a small program that lets the OS talk to one specific har
 5. The driver translates it into commands your specific printer understands.
 6. The printer prints and reports back (e.g., *"Done"* or *"Out of paper"*).
 
-![Printing with a device driver](printing_driver.jpeg)
+![Printing with a device driver](images/printing_driver.jpeg)
 *Figure 1.5: How a print job travels from Word to the printer. Drawn by Team Mickey Mouse in Canva.*
 
 ### Key Points About Drivers
