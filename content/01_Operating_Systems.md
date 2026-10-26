@@ -1,14 +1,18 @@
 # 1.1 Operating Systems
 
-**Status:** Completed  
-**Team Members:** Cao Minh Tuan (`@mnhtnc`) & Frederick Samuel Lesmana (`@Ti4nCi`)  
+**Status:** ✅  
+**Team Members:** Cao Minh Tuan (`@mnhtnc`) & Frederick Samuel Lesmana (`@Ti4nCi`)
+
+**In this section:** What is an OS · History · Types · Platforms · Components · Processes · System Calls · Scheduling · Memory · I/O · Performance · Security · Threads
 
 ---
 
 ## 1. What is an Operating System?
 An **Operating System (OS)** is the primary software that runs the computer. It sits directly between end-users/applications and the physical hardware (CPU, RAM, storage, and I/O devices), sharing CPU time, memory, and storage fairly across all open programs. Without an operating system, users would have to write raw machine code by hand to interact with the computer.
 
-* **Computer System Layers:** `Users` → `Apps` → `System Software` → `Operating System` → `Hardware`
+![Computer system layers](system_layers.png)
+*Figure 1.1: Where the OS sits between users and hardware. Made with help from Claude (AI).*
+
 * **Kernel:** The central core of the operating system that stays in memory and directly controls the hardware.
 * **Shell:** The outer interface layer that the user interacts with (can be a GUI or CLI).
 
@@ -90,13 +94,14 @@ An **Operating System (OS)** is the primary software that runs the computer. It 
 
 ### Process State Transition Diagram
 ![Process State Transition Diagram](process_states.png)
+*Figure 1.2: How a process moves between states. Drawn by Team Mickey Mouse in draw.io.*
 
 * **New → Hold → Ready:** A newly created job is admitted to the **Hold** state and loaded into RAM to join the **Ready** queue.
 * **Ready → Running:** The CPU scheduler selects the ready process and gives it CPU time.
 * **Running → Waiting (Blocked):** The running process requests an I/O operation (such as reading a file) and waits until the device finishes.
 * **Waiting → Ready:** Once the I/O operation is done, the process returns to the **Ready** queue to wait for the CPU.
 * **Running → Ready:** The process's allocated CPU time slice expires ("time up"), so it returns to the **Ready** queue.
-* **Suspended:** A process temporarily moved from RAM back to disk to free up memory.
+* **Ready ↔ Suspended:** When RAM is full, the OS can move a process out to disk to free up memory, then bring it back to **Ready** later.
 * **Running → Terminated:** The process finishes executing ("done") and the OS reclaims its memory and PCB.
 
 ---
@@ -125,6 +130,9 @@ The OS decides which process gets the CPU, RAM, storage, and devices, and for ho
 3. **Priority Scheduling:** Runs the most important process first. Low-priority processes may starve unless fixed with **aging** (gradually raising a waiting process's priority over time).
 4. **Round Robin:** Gives every process an equal, short **time slice**. Fair for multitasking, though setting the time slice too small causes excessive context-switch overhead.
 
+![Round Robin timeline](round_robin.png)
+*Figure 1.3: Round Robin. Each process gets a short turn on the CPU, then goes to the back of the line. Made with help from Claude (AI).*
+
 ### Deadlock and Starvation
 * **Deadlock:** Two or more processes are permanently stuck waiting on resources held by each other. A deadlock requires all **4 conditions** at once:
   1. **Mutual Exclusion** (resources cannot be shared simultaneously)
@@ -138,7 +146,10 @@ The OS decides which process gets the CPU, RAM, storage, and devices, and for ho
 
 ## 9. Memory Management
 Programs must be loaded into **RAM** to run.
-* **Memory Speed Hierarchy:** `Registers` → `Cache` → `RAM` → `SSD / HDD`.
+
+![Memory hierarchy](memory_hierarchy.png)
+*Figure 1.4: Memory hierarchy. Faster and smaller at the top, slower and bigger at the bottom. Made with help from Claude (AI).*
+
 * **MMU (Memory Management Unit):** Hardware unit that translates **logical addresses** into **physical RAM addresses**.
 * **Monoprogramming vs. Multiprogramming:** Monoprogramming keeps only one program in RAM; multiprogramming keeps many programs in RAM simultaneously while the CPU switches between them.
 * **Swapping:** Moving an inactive process between RAM and disk.
@@ -201,33 +212,21 @@ Programs must be loaded into **RAM** to run.
 
 ---
 
-## 14. Exercise Answers
+## 14. Threads
+* A **Thread** is a small worker task running inside a process.
+* Threads share the parent process's memory and are much faster to create and switch than full processes (e.g., Chrome loads a page on one thread while playing a video on another).
+
+*Booting and kernel types are covered in [1.2 System Software](02_System_Software.md).*
+
+---
+
+## 15. Exercise Answers
 1. **Process Management:** The PCB holds the PID, state, program counter, registers, memory limits, and open files. Processes are managed by the scheduler and context switching; `fork()` creates a new process, while `kill()` stops a process and frees its resources.
 2. **File Management:** Stores, organizes, finds, and protects files using system calls like `open()`, `read()`, `write()`, `close()`, and `unlink()` arranged in a directory tree (`root` → `folders` → `files`, such as `/home/tom/notes.txt`).
 3. **Command Interpreter:** Acts as the direct link between the user and the OS (`bash`, PowerShell, CMD, Terminal). It follows the cycle: read command → parse arguments → find program → run process → display result.
 4. **System Calls:** Provide a safe doorway for user apps to request kernel tasks, such as memory allocation (`mmap()`, `brk()`) and I/O (`read()`, `write()`).
 5. **Network Management:** Handles network drivers, TCP/IP protocols, sockets, firewalls, load balancing, fault handling, and backups.
 6. **I/O Management:** Coordinates drivers, interrupts, DMA, and device queues using buffering, caching, and spooling.
-
----
-
-## 15. Booting, Threads, and Kernels
-
-### Booting Sequence Overview
-1. **BIOS / UEFI** checks hardware health.
-2. **Bootloader** finds the operating system on disk.
-3. **Kernel** loads into RAM and starts device drivers.
-4. **System services** start in the background.
-5. **Login screen** appears for the user.
-
-### Threads
-* A **Thread** is a small worker task running inside a process.
-* Threads share the parent process's memory and are much faster to create and switch than full processes (e.g., Chrome loads a page on one thread while playing a video on another).
-
-### Kernel Types
-* **Monolithic Kernel:** One large kernel containing all core services and drivers. Very fast, but one driver bug can crash the whole OS (e.g., **Linux**).
-* **Microkernel:** Keeps only the bare basics inside the kernel and runs drivers in user space. Very stable, but slower due to message passing (e.g., **QNX**, **MINIX**).
-* **Hybrid Kernel:** Combines both designs for speed and modular stability (e.g., **Windows**, **macOS**).
 
 ---
 
@@ -256,6 +255,7 @@ Programs must be loaded into **RAM** to run.
 * **Shell:** Interface program that runs user commands.
 * **Spooling:** Job queue stored on disk for a slow device like a printer.
 * **Starvation:** When a process waits forever for resources.
+* **Suspended:** A process moved out of RAM to disk to free up memory.
 * **System Call:** Request from an app to the OS kernel.
 * **Thrashing:** Severe slowdown caused by excessive swapping between RAM and disk.
 * **Thread:** A lightweight task inside a process.
