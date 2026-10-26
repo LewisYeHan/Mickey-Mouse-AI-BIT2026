@@ -10,7 +10,7 @@
 ## 1. What is an Operating System?
 An **Operating System (OS)** is the primary software that runs the computer. It sits directly between end-users/applications and the physical hardware (CPU, RAM, storage, and I/O devices), sharing CPU time, memory, and storage fairly across all open programs. Without an operating system, users would have to write raw machine code by hand to interact with the computer.
 
-![Computer system layers](system_layers.png)
+![Computer system layers](system_layers.jpeg)
 *Figure 1.1: Where the OS sits between users and hardware. Made with help from Claude (AI).*
 
 * **Kernel:** The central core of the operating system that stays in memory and directly controls the hardware.
@@ -130,7 +130,7 @@ The OS decides which process gets the CPU, RAM, storage, and devices, and for ho
 3. **Priority Scheduling:** Runs the most important process first. Low-priority processes may starve unless fixed with **aging** (gradually raising a waiting process's priority over time).
 4. **Round Robin:** Gives every process an equal, short **time slice**. Fair for multitasking, though setting the time slice too small causes excessive context-switch overhead.
 
-![Round Robin timeline](round_robin.png)
+![Round Robin timeline](round_robin.jpeg)
 *Figure 1.3: Round Robin. Each process gets a short turn on the CPU, then goes to the back of the line. Made with help from Claude (AI).*
 
 ### Deadlock and Starvation
@@ -147,7 +147,7 @@ The OS decides which process gets the CPU, RAM, storage, and devices, and for ho
 ## 9. Memory Management
 Programs must be loaded into **RAM** to run.
 
-![Memory hierarchy](memory_hierarchy.png)
+![Memory hierarchy](memory_hierarchy.jpeg)
 *Figure 1.4: Memory hierarchy. Faster and smaller at the top, slower and bigger at the bottom. Made with help from Claude (AI).*
 
 * **MMU (Memory Management Unit):** Hardware unit that translates **logical addresses** into **physical RAM addresses**.
