@@ -1,53 +1,57 @@
-# Mickey-Mouse-AI-BIT2026 — Stage One Submission
+# Mickey Mouse — Software & Symbolic AI
 
-**Repository URL:** `https://github.com/LewisYeHan/Mickey-Mouse-AI-BIT2026`  
-**Snapshot Date:** 26 October 2026  
-**Module:** Software and Symbolic AI (Stage 1: Software)  
+## About this project
 
----
+| | |
+|---|---|
+| Course | Foundations of CS & AI (2026) |
+| Team | Mickey Mouse |
+| Module | Part 1: Software · Part 2: Symbolic AI |
+| Intended learners | First-year students with no CS background |
+| Deliverables | Study guide · PPT slides · Video tutorial |
 
-## 1. Team Members & Responsibilities
+**Purpose.** This repo holds all the learning material for our module. We write everything in Markdown here first, review it, and then build the study guide, slides and video from it.
 
-| Name | Student ID | GitHub Username | Role | Core Responsibility |
-| :--- | :--- | :--- | :--- | :--- |
-| Yeo Shih Jie (杨世杰) | 1820262289 | `@ysjie03` | CEO | Project plan, task tracker, and overall team coordination |
-| Cassinis Soulisack (苏浩然) | 1820262224 | `@DiegoSmiley` | CIO | Repository setup, Section 1.2 authoring, and submission checks |
-| Cao Minh Tuan (高明俊) | 1820262251 | `@mnhtnc` | Content Lead | Researching and writing Section 1.1 (Operating Systems) |
-| Frederick Samuel Lesmana (梁天赐) | 1820262240 | `@Ti4nCi` | Content Lead | Co-authoring Section 1.1 and compiling the study guide |
-| Lu My Ky (吕美琪) | 1820262269 | `@jojolu11` | Video & Content Lead | Writing Section 1.3 (Application Software) and video production |
-| Wong Hiu Chung Samuel (王晓聪) | 1820262001 | `@Samuel940398` | Visual Lead | Designing diagrams, slide templates, and Section 1.4 synthesis |
-| Goh Ye Han (吴宇航) | 1820262002 | `@LewisYeHan` | Quality Lead | Proofreading, Section 1.4 quiz design, and GitHub integration |
+## Team
 
----
+| Member | Student ID | Role | Main job | GitHub |
+|---|---|---|---|---|
+| Yeo Shih Jie (杨世杰) | 1820262289 | CEO | Plan, task tracker, coordination | @ysjie03 |
+| Cassinis Soulisack (苏浩然) | 1820262224 | CIO | Repo setup, Section 1.2, submission checks | @DiegoSmiley |
+| Cao Minh Tuan (高明俊) | 1820262251 | Content lead | Section 1.1 | @mnhtnc |
+| Frederick Samuel Lesmana (梁天赐) | 1820262240 | Content lead | Section 1.1, study guide | @Ti4nCi |
+| Lu My Ky (吕美琪) | 1820262269 | Video & content lead | Section 1.3, video | @jojolu11 |
+| Wong Hiu Chung Samuel (王晓聪) | 1820262001 | Visual lead | Diagrams, slide template, Section 1.4 | @Samuel940398 |
+| Goh Ye Han (吴宇航) | 1820262002 | Quality lead | Proofreading, quiz, GitHub | @LewisYeHan |
 
-## 2. Repository Structure & Content Status
+## Folder structure
 
-All Stage One learning materials and visual diagrams are completed and located inside the `content/` directory:
+    .
+    ├── README.md                           ← you are here
+    └── content/
+        ├── 00_Module_Outline.md            ← start here
+        ├── 00_Project_Plan_and_Task_List.md
+        ├── 01_Operating_Systems.md         ← 1.1
+        ├── 02_System_Software.md           ← 1.2
+        ├── 03_Application_Software.md      ← 1.3
+        ├── 04_Summary_and_Quiz.md          ← 1.4, 10 questions + answers
+        ├── process_states.png
+        ├── boot_sequence.png
+        └── execution_lifecycle.png
 
-* **Root Directory (`/`)**
-  * **`README.md`** (`Completed`) — Team roster, module overview, content status, and quality review summary.
-* **Content Directory (`content/`)**
-  * **`00_Module_Outline.md`** (`Completed`) — Complete syllabus covering Part 1 (Software) and Part 2 (Symbolic AI).
-  * **`00_Project_Plan_and_Task_List.md`** (`Completed`) — Master project schedule, milestones, and deliverables tracker.
-  * **`01_Operating_Systems.md`** (`Completed`) — Full guide on OS architecture, evolution, types, kernel components, process states, system calls, CPU scheduling, memory management, and I/O.
-  * **`02_System_Software.md`** (`Completed`) — Detailed study guide on system software layers, firmware, BIOS vs. UEFI, the boot sequence (`MBR` -> `GRUB` -> `Kernel Init` -> `INIT`), device drivers, utilities, and language translators.
-  * **`03_Application_Software.md`** (`Completed`) — Complete breakdown of application software categories, user space vs. kernel space, the 5-step execution lifecycle, and native vs. web vs. cross-platform apps.
-  * **`04_Summary_and_Quiz.md`** (`Completed`) — Executive module synthesis, 10 self-check assessment questions (MCQs and True/False), and a complete answer key with explanations.
-* **Visual Diagram Assets (`content/`)**
-  * **`process_states.png`** (`Completed`) — Process state transition diagram for Section 1.1.
-  * **`boot_sequence.png`** (`Completed`) — System startup and boot sequence diagram for Section 1.2.
-  * **`execution_lifecycle.png`** (`Completed`) — Application 5-step execution lifecycle diagram for Section 1.3.
+## Current progress
 
----
+Status labels: ✅ checked by a reviewer · 📝 drafted · 🔲 not started
 
-## 3. Review Outcomes & Quality Checks
+| Part | Status |
+|---|---|
+| README and repo setup | ✅ |
+| Module outline and project plan | ✅ |
+| Part 1: Software (1.1 to 1.4) | ✅ all four sections + diagrams |
+| Part 2: Symbolic AI (2.1 to 2.5) | 🔲 starts 27 Oct 2026 |
+| Slides (PPT 1.0) | 📝 in progress |
+| Video tutorial 1.0 | 🔲 not started |
 
-* **What was checked:** All Markdown files, embedded PNG diagrams, comparison tables, practice questions, and academic references were audited against the Stage One grading rubric and instructor feedback.
-* **What was found:** Earlier drafts contained text-based ASCII diagrams, brief bullet-only notes in Sections 1.1 and 1.2, status placeholders in the submission report, and unrendered Markdown syntax in the PDF export.
-* **What was corrected:** Removed all ASCII diagrams and embedded three real PNG figures (`process_states.png`, `boot_sequence.png`, and `execution_lifecycle.png`), expanded all chapter notes into full explanatory paragraphs, resolved all placeholders in the submission report, and exported a properly rendered PDF document.
+**Review notes.** Before submitting, we went through every file again. Early drafts used ASCII diagrams and short bullet notes, so we replaced them with real PNG diagrams and wrote the notes out properly. We also fixed the PDF export, which wasn't rendering the Markdown.
 
----
-
-## 4. Next Steps for Stage Two
-* Transition into **Part 2: Symbolic AI** (Sections 2.1 to 2.5) starting 27 October 2026.
-* Finalize the presentation slide deck (`PPT 1.0`) and record the walkthrough tutorial video (`Video Tutorial 1.0`) by 7 November 2026.
+**Next:** slides and video due 7 Nov 2026, then Part 2.
