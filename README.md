@@ -1,6 +1,7 @@
 <p align="center">
   <img src="content/banner.svg" alt="Team Mickey Mouse: Software & Symbolic AI" width="100%">
 </p>
+
 # Mickey Mouse — Software & Symbolic AI
 
 ## About this project
@@ -38,9 +39,13 @@
         ├── 02_System_Software.md           ← 1.2
         ├── 03_Application_Software.md      ← 1.3
         ├── 04_Summary_and_Quiz.md          ← 1.4, 10 questions + answers
-        ├── process_states.png
-        ├── boot_sequence.png
-        └── execution_lifecycle.png
+        ├── banner.svg                      ← README banner
+        ├── system_layers.jpeg              ← Figure 1.1
+        ├── round_robin.jpeg                ← Figure 1.2
+        ├── memory_hierarchy.jpeg           ← Figure 1.3
+        ├── printing_driver.jpeg            ← Figure 1.5
+        ├── execution_lifecycle.png         ← Figure 1.6
+        └── concept_map.png                 ← Figure 1.7
 
 ## Current progress
 
@@ -55,6 +60,6 @@ Status labels: ✅ checked by a reviewer · 📝 drafted · 🔲 not started
 | Slides (PPT 1.0) | 📝 in progress |
 | Video tutorial 1.0 | 🔲 not started |
 
-**Review notes.** Before submitting, we went through every file again. Early drafts used ASCII diagrams and short bullet notes, so we replaced them with real PNG diagrams and wrote the notes out properly. We also fixed the PDF export, which wasn't rendering the Markdown.
+**Review notes.** Our instructor's Stage One feedback pointed out placeholders in the report, incomplete content, ASCII diagrams, and a PDF that showed raw Markdown. We fixed all four: filled the placeholders, wrote the notes out in full, replaced the ASCII diagrams with real images, and re-exported the PDF properly.
 
 **Next:** slides and video due 7 Nov 2026, then Part 2.
