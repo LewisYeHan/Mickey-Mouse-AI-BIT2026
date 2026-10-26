@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="content/banner.svg" alt="Team Mickey Mouse: Software & Symbolic AI" width="100%">
+  <img src="content/images/banner.svg" alt="Team Mickey Mouse: Software & Symbolic AI" width="100%">
 </p>
 
 # Mickey Mouse — Software & Symbolic AI
@@ -39,13 +39,14 @@
         ├── 02_System_Software.md           ← 1.2
         ├── 03_Application_Software.md      ← 1.3
         ├── 04_Summary_and_Quiz.md          ← 1.4, 10 questions + answers
-        ├── banner.svg                      ← README banner
-        ├── system_layers.jpeg              ← Figure 1.1
-        ├── round_robin.jpeg                ← Figure 1.2
-        ├── memory_hierarchy.jpeg           ← Figure 1.3
-        ├── printing_driver.jpeg            ← Figure 1.5
-        ├── execution_lifecycle.png         ← Figure 1.6
-        └── concept_map.png                 ← Figure 1.7
+        └── images/
+            ├── banner.svg                  ← README banner
+            ├── system_layers.jpeg          ← Figure 1.1
+            ├── round_robin.jpeg            ← Figure 1.2
+            ├── memory_hierarchy.jpeg       ← Figure 1.3
+            ├── printing_driver.jpeg        ← Figure 1.4
+            ├── execution_lifecycle.png     ← Figure 1.5
+            └── concept_map.png             ← Figure 1.6
 
 ## Current progress
 
