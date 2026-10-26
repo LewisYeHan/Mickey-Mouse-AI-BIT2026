@@ -8,9 +8,8 @@
 ## 1. Executive Module Synthesis
 Stage One of our module examined how computer software is structured into three cooperative layers above the physical hardware:
 
-1. **Operating Systems (Section 1.1):** Acts as the central resource manager. The OS kernel schedules CPU execution across processes (`New` → `Hold` → `Ready` → `Running` → `Waiting` → `Terminated`), allocates physical RAM and SSD virtual memory via paging, handles hardware I/O interrupts, and provides CLI and GUI shells.
-2. **Low-Level System Software (Section 1.2):** Wakes up, connects, and maintains the hardware. Non-volatile **BIOS/UEFI** firmware runs the **POST** diagnostic check at startup and hands control to the **Bootloader (`MBR` / `GRUB`)**, which loads the **OS Kernel (`Kernel Init` → `INIT` → `Run Level`)** into RAM. Once running, **Device Drivers** translate OS requests into hardware commands, **Utilities** maintain the system, and **Language Translators** (compilers, assemblers, interpreters) convert human code into machine binary.
-3. **Application Software (Section 1.3):** Delivers end-user tools across 8 major categories (Word Processing, Spreadsheets, Presentations, Multimedia, Web Browsers, Educational, Graphics, and Simulation). Applications run inside a restricted **User Space** sandbox and use **System Calls (syscalls)** to request safe hardware operations from the kernel.
+![Uploading Concept map.png…]()
+
 
 ---
 
