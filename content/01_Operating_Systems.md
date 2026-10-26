@@ -92,10 +92,7 @@ An **Operating System (OS)** is the primary software that runs the computer. It 
   * **Ready Queue:** Processes already in RAM waiting for their turn on the CPU.
   * **I/O Queue:** Processes waiting for a hardware device (such as a disk or printer) to finish an operation.
 
-### Process State Transition Diagram
-![Process State Transition Diagram](process_states.png)
-*Figure 1.2: How a process moves between states. Drawn by Team Mickey Mouse in draw.io.*
-
+### How a Process Moves Between States
 * **New → Hold → Ready:** A newly created job is admitted to the **Hold** state and loaded into RAM to join the **Ready** queue.
 * **Ready → Running:** The CPU scheduler selects the ready process and gives it CPU time.
 * **Running → Waiting (Blocked):** The running process requests an I/O operation (such as reading a file) and waits until the device finishes.
@@ -131,7 +128,7 @@ The OS decides which process gets the CPU, RAM, storage, and devices, and for ho
 4. **Round Robin:** Gives every process an equal, short **time slice**. Fair for multitasking, though setting the time slice too small causes excessive context-switch overhead.
 
 ![Round Robin timeline](round_robin.jpeg)
-*Figure 1.3: Round Robin. Each process gets a short turn on the CPU, then goes to the back of the line. Made with help from Claude (AI).*
+*Figure 1.2: Round Robin. Each process gets a short turn on the CPU, then goes to the back of the line. Made with help from Claude (AI).*
 
 ### Deadlock and Starvation
 * **Deadlock:** Two or more processes are permanently stuck waiting on resources held by each other. A deadlock requires all **4 conditions** at once:
@@ -148,7 +145,7 @@ The OS decides which process gets the CPU, RAM, storage, and devices, and for ho
 Programs must be loaded into **RAM** to run.
 
 ![Memory hierarchy](memory_hierarchy.jpeg)
-*Figure 1.4: Memory hierarchy. Faster and smaller at the top, slower and bigger at the bottom. Made with help from Claude (AI).*
+*Figure 1.3: Memory hierarchy. Faster and smaller at the top, slower and bigger at the bottom. Made with help from Claude (AI).*
 
 * **MMU (Memory Management Unit):** Hardware unit that translates **logical addresses** into **physical RAM addresses**.
 * **Monoprogramming vs. Multiprogramming:** Monoprogramming keeps only one program in RAM; multiprogramming keeps many programs in RAM simultaneously while the CPU switches between them.
