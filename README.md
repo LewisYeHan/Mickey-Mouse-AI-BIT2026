@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="banner.svg" alt="Team Mickey Mouse: Software & Symbolic AI" width="100%">
+</p>
 # Mickey Mouse — Software & Symbolic AI
 
 ## About this project
