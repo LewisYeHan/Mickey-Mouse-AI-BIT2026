@@ -1,23 +1,64 @@
-# Project Plan and Master To-Do List
+# Project Plan and Task List
 
-**Team:** Mickey-Mouse-AI-BIT2026  
-**Coordinator:** Yeo Shih Jie (`@ysjie03`)  
-**Last Updated:** 26 October 2026  
+**Team:** Mickey Mouse · **Coordinator:** Yeo Shih Jie (@ysjie03) · **Last updated:** 26 Oct 2026
 
----
+**Status:** ✅ done & reviewed · 📝 in progress · 🔲 not started
 
-## Stage One & Stage Two Master Task Schedule
+## Team Roles
 
-| Task | Expected Result | Responsible Member(s) | Target Deadline | Status | Dependencies |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Project Plan Design** | Agreed list of scope, deliverables, and timeline | Yeo Shih Jie, Cassinis Soulisack, Wong Hiu Chung Samuel | 18 Oct 2026 | Completed | None |
-| **Assign Roles** | Confirmed team member roles with designated leads | Yeo Shih Jie | 18 Oct 2026 | Completed | Project Plan |
-| **Design Templates** | Visually appealing layouts for all documents, diagrams, and slides | Wong Hiu Chung Samuel, Cassinis Soulisack | 22 Oct 2026 | Completed | Project Plan |
-| **Research Stage 1 Topics** | Confirmed topic list with full academic notes and textbook sources | Cao Minh Tuan, Frederick Samuel Lesmana, Lu My Ky, Cassinis Soulisack | 22 Oct 2026 | Completed | Assign Roles |
-| **Create Visual Diagrams** | High-resolution PNG diagrams (`process_states.png`, `boot_sequence.png`, `execution_lifecycle.png`) | Wong Hiu Chung Samuel, Lu My Ky, Cao Minh Tuan | 25 Oct 2026 | Completed | Research Stage 1 Topics |
-| **GitHub Markdown Content** | All Stage 1 `.md` files (`00` to `04`) written, reviewed, and committed to GitHub | Goh Ye Han (Lead), Cao Minh Tuan, Frederick Samuel Lesmana, Lu My Ky, Cassinis Soulisack | 26 Oct 2026 | Completed | Create Visual Diagrams |
-| **Stage 1 Submission Package** | Finalized Submission Report PDF, Markdown ZIP snapshot, and rendered Readable Content PDF | Goh Ye Han, Yeo Shih Jie, Cassinis Soulisack | 26 Oct 2026 | Completed | GitHub Markdown Content |
-| **Project & Personal Logs** | Running record of team meetings, decisions, and individual member logs | Yeo Shih Jie & All Members | 26 Oct 2026 (Stage 1) | Completed for Stage 1 | Design Templates |
-| **Study Guide 1.0 (Stage 2)** | Completed study guide combining Software and Symbolic AI chapters | Frederick Samuel Lesmana, Cao Minh Tuan | 7 Nov 2026 | Scheduled (Stage 2) | Stage 1 Submission Package |
-| **PPT 1.0 (Stage 2)** | Finished presentation slide deck matching the complete study guide | Wong Hiu Chung Samuel, Lu My Ky | 7 Nov 2026 | Scheduled (Stage 2) | Github Markdown |
-| **Video Tutorial 1.0 (Stage 2)** | Recorded and edited walkthrough tutorial video covering the module | Lu My Ky | 10 Nov 2026 | Scheduled (Stage 2) | Github Markdown |
+| Member | Role | Main tasks |
+|---|---|---|
+| Yeo Shih Jie | CEO / coordination | Plan, roles, check-ins, logs, submissions |
+| Cassinis Soulisack | CIO | Repo, submission checks, wrote 1.2 |
+| Cao Minh Tuan | Content | Wrote 1.1 |
+| Frederick Samuel Lesmana | Content | Wrote 1.1, study guide |
+| Lu My Ky | Content + video | Wrote 1.3, video |
+| Wong Hiu Chung Samuel | Visual lead | Diagrams, slide template, 1.4 summary |
+| Goh Ye Han | Quality lead | Proofreading, 1.4 quiz, GitHub |
+
+## Stage One Feedback and What We Changed
+
+| Instructor feedback | What we did |
+|---|---|
+| Placeholders still in the submission report | Filled in every placeholder before resubmitting |
+| Content is incomplete | Rewrote the short bullet notes in 1.1 and 1.2 as full explanations |
+| Real images instead of AI-made ASCII diagrams | Replaced all ASCII diagrams with three PNG diagrams |
+| PDF should look like a PDF, not raw Markdown | Re-exported the PDF so headings, tables and images display properly |
+
+## Stage One (done)
+
+| Task | Owner(s) | Date | Result | Status |
+|---|---|---|---|---|
+| Project plan | Yeo Shih Jie, Cassinis Soulisack, Wong Hiu Chung Samuel | 18 Oct | `00_Project_Plan_and_Task_List.md` | ✅ |
+| Assign roles | Yeo Shih Jie | 18 Oct | Team Roles table | ✅ |
+| Templates | Wong Hiu Chung Samuel, Cassinis Soulisack | 22 Oct | Templates for docs, diagrams and slides | ✅ |
+| Research Part 1 | Cao Minh Tuan, Frederick Samuel Lesmana, Lu My Ky, Cassinis Soulisack | 22 Oct | Notes with sources for each Part 1 topic | ✅ |
+| Part 1 diagrams | Wong Hiu Chung Samuel, Lu My Ky, Cao Minh Tuan | 25 Oct | `process_states.png`, `boot_sequence.png`, `execution_lifecycle.png` | ✅ |
+| Part 1 Markdown | Content writers; review: Goh Ye Han | 26 Oct | Files `00` to `04` committed and reviewed | ✅ |
+| Fix instructor feedback | Goh Ye Han, Wong Hiu Chung Samuel, Cassinis Soulisack | 26 Oct | All four feedback points fixed (see table above) | ✅ |
+| Stage One submission | Goh Ye Han, Yeo Shih Jie, Cassinis Soulisack | 26 Oct | Submission Report PDF, Markdown ZIP, content PDF | ✅ |
+| Stage One logs | Yeo Shih Jie + all | 26 Oct | Meeting log + one personal log per member | ✅ |
+
+## Stage Two
+
+| Task | Owner(s) | Due | Depends on | Expected result | Status |
+|---|---|---|---|---|---|
+| 2.1 What is Symbolic AI? | Wong Hiu Chung Samuel | 28 Oct | — | `05_What_is_Symbolic_AI.md` committed | 🔲 |
+| 2.2 Knowledge Representation | Cao Minh Tuan | 30 Oct | — | `06_Knowledge_Representation.md` committed | 🔲 |
+| 2.3 How Symbolic AI Reasons | Frederick Samuel Lesmana | 1 Nov | — | `07_How_Symbolic_AI_Reasons.md` committed | 🔲 |
+| 2.4 Expert Systems | Lu My Ky | 3 Nov | — | `08_Expert_Systems.md` committed | 🔲 |
+| 2.5 Strengths and Limits | Cassinis Soulisack | 5 Nov | — | `09_Strengths_and_Limits.md` committed | 🔲 |
+| Review Part 2 sections | Goh Ye Han | 1 day after each draft | Sections 2.1 to 2.5 | Each section covers every outline topic in full paragraphs, not just bullets | 🔲 |
+| Part 2 diagrams | Wong Hiu Chung Samuel | 4 Nov | — | Real PNG diagrams committed, no ASCII diagrams | 🔲 |
+| Part 2 quiz | Goh Ye Han | 6 Nov | 2.5 Strengths and Limits | Part 2 quiz committed | 🔲 |
+| Study guide 1.0 | Frederick Samuel Lesmana, Cao Minh Tuan | 6 Nov | Review Part 2 sections | One study guide covering Parts 1 and 2 | 🔲 |
+| Slides PPT 1.0 | Wong Hiu Chung Samuel, Lu My Ky | 7 Nov | Study guide 1.0 | Slide deck using the team template | 🔲 |
+| Video tutorial 1.0 | Lu My Ky | 7 Nov | Slides PPT 1.0 | Video based on the slides | 🔲 |
+| PDF check | Cassinis Soulisack | 7 Nov | Study guide 1.0 | PDFs show formatted headings, tables and images, no raw Markdown | 🔲 |
+| Placeholder check | Goh Ye Han | 7 Nov | PDF check | Submission report and all files checked, no placeholders or empty sections left | 🔲 |
+| Stage Two submission | Yeo Shih Jie, Cassinis Soulisack, Goh Ye Han | 7 Nov | Placeholder check, Slides PPT 1.0, Video tutorial 1.0 | All Stage Two files submitted | 🔲 |
+| Stage Two logs | Yeo Shih Jie + all | 7 Nov | — | Meeting log + one personal log per member | 🔲 |
+
+*Part 2 owners are tentative and will be confirmed at the 29 Oct check-in.*
+
+**Check-ins:** Yeo Shih Jie runs short team check-ins on 29 Oct, 2 Nov and 5 Nov.
