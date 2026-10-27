@@ -38,7 +38,7 @@
         ├── 01_Operating_Systems.md         ← 1.1
         ├── 02_System_Software.md           ← 1.2
         ├── 03_Application_Software.md      ← 1.3
-        ├── 04_Summary_and_Quiz.md          ← 1.4, 10 questions + answers
+        ├── 04_Summary_and_Quiz.md          ← 1.4, 13 questions + answers
         └── images/
             ├── banner.svg                  ← README banner
             ├── system_layers.jpeg          ← Figure 1.1
