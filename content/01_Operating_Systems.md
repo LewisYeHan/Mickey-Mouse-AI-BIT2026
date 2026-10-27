@@ -296,7 +296,7 @@ Try answering each question yourself first, then read the answer.
 ---
 
 
-## 16. References
+## 15. References
 1. Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). *Operating System Concepts* (10th ed.). Wiley.
 2. Tanenbaum, A. S., & Bos, H. (2022). *Modern Operating Systems* (5th ed.). Pearson.
 3. BIT2026 Course Lecture Slides (Operating Systems Module).
