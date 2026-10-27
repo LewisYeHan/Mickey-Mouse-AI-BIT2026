@@ -44,7 +44,7 @@
             ├── system_layers.jpeg          ← Figure 1.1
             ├── round_robin.jpeg            ← Figure 1.2
             ├── memory_hierarchy.jpeg       ← Figure 1.3
-            ├── printing_driver.jpeg        ← Figure 1.4
+            ├── boot_process.jpeg        ← Figure 1.4
             ├── execution_lifecycle.png     ← Figure 1.5
             └── concept_map.png             ← Figure 1.6
 
