@@ -106,7 +106,7 @@ Try all 13 questions first, then check your answers in Section 4. Part A checks 
 
 **Q10. A small team wants to release an installable desktop app for Windows, macOS, and Linux from one codebase as soon as possible. Using extra memory is acceptable. Which approach fits best?**  
 * A) Three separate native apps
-* B) A Flutter / React Native app
+* B) One native app written only for Windows
 * C) An Electron app
 * D) A web app
 
@@ -136,7 +136,7 @@ Try all 13 questions first, then check your answers in Section 4. Part A checks 
 | **Q7** | **A** | P1 runs 0–2, P2 runs 2–3 and finishes, P3 runs 3–5 and finishes, then P1 runs 5–6 and finishes last. *(1.1)* |
 | **Q8** | **B** | Beep codes come from POST, which runs before the bootloader and before the screen is set up. *(1.2)* |
 | **Q9** | **D** | RAM is far too full, so the OS spends most of its time moving pages between RAM and disk. That is thrashing. *(1.1)* |
-| **Q10** | **C** | Electron lets one codebase become an installable app on all three desktop systems. Three native apps would take much longer, Flutter / React Native is mainly for phones, and a web app is not installed. *(1.3)* |
+| **Q10** | **C** | Electron lets one codebase become an installable app on all three desktop systems. Three native apps would take much longer, a Windows-only native app misses macOS and Linux, and a web app is not installed. *(1.3)* |
 | **Q11** | **False** | Firmware is stored on a chip *inside the device* itself. Drivers are the part that lives inside the OS. *(1.2)* |
 | **Q12** | **False** | That describes **starvation**. In a deadlock, the stuck processes cannot move at all, because each is waiting for something another one holds. *(1.1)* |
 | **Q13** | **True** | With virtual memory, each process has its own address space, and the MMU keeps processes from reaching each other's memory. *(1.1, 1.3)* |
