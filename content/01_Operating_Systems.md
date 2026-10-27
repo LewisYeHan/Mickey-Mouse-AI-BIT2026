@@ -13,7 +13,9 @@ Imagine a busy restaurant kitchen with one stove, one fridge, and ten cooks who 
 The **Operating System (OS)** is the head chef. It is the main software that runs the computer and sits between your apps and the physical hardware (CPU, RAM, storage, and input/output devices). It decides which program gets the CPU, how much memory each one may use, and who can touch which file (Silberschatz et al., 2018). Without an OS, every app would have to control the hardware itself, and two apps could easily break each other.
 
 ![Layers of a computer system, from users and applications down through the operating system to the hardware](images/system_layers.jpeg)
-*Figure 1.1 shows where the OS sits: users and their apps are at the top, the hardware is at the bottom, and the OS is in between, passing requests down and results back up.*
+*Figure 1.1: Where the OS sits between users and hardware.*
+
+Figure 1.1 shows where the OS sits: users and their apps are at the top, the hardware is at the bottom, and the OS is in between, passing requests down and results back up.
 
 An OS has two main parts:
 * The **kernel** is the core of the OS. It stays in memory the whole time the computer is on and directly controls the hardware.
