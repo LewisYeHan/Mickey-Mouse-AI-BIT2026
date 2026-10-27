@@ -77,7 +77,7 @@ Most people use one of five operating systems. The table compares them.
 A few terms from the table:
 * **Open source** means anyone can read, change, and share the source code. Linux is open source, which is why it is free and runs on so many kinds of devices.
 * Linux is packaged into different versions called **distributions (distros)**, such as Ubuntu and Fedora. Android is also built on the Linux kernel.
-* Older systems worth knowing are **DOS** (command-line only), **OS/2** (made by IBM), and **Unix**, which inspired both Linux and macOS.
+* Older systems worth knowing are **DOS** (command-line only), **OS/2** (made by IBM), and **Unix**. Linux was inspired by Unix, and macOS is itself a certified version of Unix.
 
 ---
 
@@ -106,7 +106,7 @@ For every process, the OS keeps a record called the **Process Control Block (PCB
 The CPU can only run one process at a time per core, so the OS switches between them. When it switches, it saves the current process's progress into its PCB and loads the next process's PCB. This is called a **context switch**. It works like a bookmark: you can stop reading one book, read another, and come back to exactly the same page.
 
 ### Process States
-A process does not run all the time. It moves between states, and the OS keeps a queue for each one:
+A process does not run all the time. It moves between these states, and the OS keeps queues for the processes that are waiting (the Ready and Waiting states):
 
 * **New:** The process has just been created. (Some textbooks call the stage just before it is loaded into memory **Hold**.)
 * **Ready:** The process is in memory and waiting in the **ready queue** for its turn on the CPU.
@@ -158,9 +158,9 @@ Four common scheduling methods, using the example of a supermarket checkout:
 1. **First Come, First Served (FCFS):** Customers are served in the order they arrive. It is simple, but one customer with a full cart makes everyone with one item wait.
 2. **Shortest Job First (SJF):** Customers with the fewest items go first. Average waiting time is low, but the person with a full cart might **starve**, meaning they never get served if short jobs keep arriving.
 3. **Priority scheduling:** The most important process goes first. To stop low-priority processes from starving, the OS can slowly raise the priority of anyone who has waited a long time. This is called **aging**.
-4. **Round Robin:** Everyone gets a short, equal turn (a **time slice**), then goes to the back of the line. This is fair and is how most desktop systems feel smooth. If the time slice is too small, though, the CPU wastes time on context switches.
+4. **Round Robin:** Everyone gets a short, equal turn (a **time slice**), then goes to the back of the line. This is fair, and the same time-slice idea is part of why desktop systems feel smooth even with many apps open. If the time slice is too small, though, the CPU wastes time on context switches.
 
-![Round Robin timeline](images/round_robin.jpeg)
+![Round Robin timeline with a time slice of 2: P1, P2 and P3 take turns on the CPU until P3, P2 and then P1 finish](images/round_robin.jpeg)
 *Figure 1.2: Round Robin. Each process gets a short turn on the CPU, then goes to the back of the line.*
 
 In Figure 1.2, the time slice is 2 units. P1 needs 5 units, P2 needs 3, and P3 needs 2. P3 finishes first at time 6 because it only needed one turn. P2 finishes at 9, and P1, the longest job, finishes last at 10.
@@ -186,8 +186,9 @@ The OS can deal with deadlock in three ways:
 ## 9. Memory Management
 A program has to be in **RAM** to run, but RAM is limited and shared by every running program. Memory management decides who gets which part of RAM and keeps programs from touching each other's memory.
 
-![Memory hierarchy](images/memory_hierarchy.jpeg)
+![Memory hierarchy pyramid: registers at the top, then cache, RAM, and SSD or HDD at the bottom](images/memory_hierarchy.jpeg)
 *Figure 1.3: Memory hierarchy. Faster and smaller at the top, slower and bigger at the bottom.*
+
 Figure 1.3 shows the trade-off. The fastest memory (CPU registers and cache) is tiny and expensive, while the biggest storage (SSD and HDD) is cheap but much slower. RAM sits in the middle.
 
 | Memory type | Keeps data without power? | Speed | Typical size | Cost |
