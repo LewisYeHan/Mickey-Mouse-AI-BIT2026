@@ -78,7 +78,7 @@ Read from top (the user) to bottom (the physical hardware). Each layer relies on
 **Booting** means starting the computer from power-on until the login screen appears. A **cold boot** starts from power off; a **warm boot** is a restart.
 
 ![The boot process](images/boot_process.jpeg)
-*Figure 1.4: The 6 steps of booting, from pressing the power button to the login screen. Drawn by Team Mickey Mouse in Canva.*
+*Figure 1.4: The 6 steps of booting, from pressing the power button to the login screen.*
 
 1. **Power On → BIOS / UEFI:** The CPU wakes up and runs the firmware, which performs **POST** and initializes RAM and devices.
 2. **Boot Drive (MBR / GPT):** The firmware follows the boot order and reads the boot information on the main drive (the first 512 bytes, called the **MBR**, on Legacy BIOS; the **EFI System Partition** on UEFI).
