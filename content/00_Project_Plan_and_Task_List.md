@@ -22,7 +22,7 @@
 |---|---|
 | Placeholders still in the submission report | Filled in every placeholder before resubmitting |
 | Content is incomplete | Rewrote short bullet notes as full explanations and added a written summary in 1.4 |
-| Real images instead of AI-made ASCII diagrams | Replaced all ASCII diagrams with real images, each credited in its caption (drawn by our team, or made with AI help) |
+| Real images instead of AI-made ASCII diagrams | Replaced all ASCII diagrams with real images, each with a caption explaining what it shows |
 | PDF should look like a PDF, not raw Markdown | Re-exported the PDF so headings, tables and images display properly |
 
 ## Stage One (done)
@@ -49,7 +49,7 @@
 | 2.4 Expert Systems | Lu My Ky | 3 Nov | — | `08_Expert_Systems.md` committed | 🔲 |
 | 2.5 Strengths and Limits | Cassinis Soulisack | 5 Nov | — | `09_Strengths_and_Limits.md` committed | 🔲 |
 | Review Part 2 sections | Goh Ye Han | 1 day after each draft | Sections 2.1 to 2.5 | Each section covers every outline topic in full paragraphs, not just bullets | 🔲 |
-| Part 2 diagrams | Wong Hiu Chung Samuel | 4 Nov | — | Real images committed, no ASCII diagrams, each credited in its caption | 🔲 |
+| Part 2 diagrams | Wong Hiu Chung Samuel | 4 Nov | — | Real images committed, no ASCII diagrams, each with a clear caption | 🔲 |
 | Part 2 quiz | Goh Ye Han | 6 Nov | 2.5 Strengths and Limits | Part 2 quiz committed | 🔲 |
 | Study guide 1.0 | Frederick Samuel Lesmana, Cao Minh Tuan | 6 Nov | Review Part 2 sections | One study guide covering Parts 1 and 2 | 🔲 |
 | Slides PPT 1.0 | Wong Hiu Chung Samuel, Lu My Ky | 7 Nov | Study guide 1.0 | Slide deck using the team template | 📝 |
