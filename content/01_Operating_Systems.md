@@ -14,6 +14,7 @@ The **Operating System (OS)** is the head chef. It is the main software that run
 
 ![Computer system layers](images/system_layers.jpeg)
 *Figure 1.1 shows where the OS sits: users and their apps are at the top, the hardware is at the bottom, and the OS is in between, passing requests down and results back up.*
+
 An OS has two main parts:
 * The **kernel** is the core of the OS. It stays in memory the whole time the computer is on and directly controls the hardware.
 * The **shell** is the outer part that you interact with. It takes your commands or clicks and passes them to the kernel.
