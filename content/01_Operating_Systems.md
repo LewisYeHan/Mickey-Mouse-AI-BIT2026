@@ -11,7 +11,7 @@
 An **Operating System (OS)** is the primary software that runs the computer. It sits directly between end-users/applications and the physical hardware (CPU, RAM, storage, and I/O devices), sharing CPU time, memory, and storage fairly across all open programs. Without an operating system, users would have to write raw machine code by hand to interact with the computer.
 
 ![Computer system layers](images/system_layers.jpeg)
-*Figure 1.1: Where the OS sits between users and hardware. Made with help from Claude (AI).*
+*Figure 1.1: Where the OS sits between users and hardware.*
 
 * **Kernel:** The central core of the operating system that stays in memory and directly controls the hardware.
 * **Shell:** The outer interface layer that the user interacts with (can be a GUI or CLI).
@@ -128,7 +128,7 @@ The OS decides which process gets the CPU, RAM, storage, and devices, and for ho
 4. **Round Robin:** Gives every process an equal, short **time slice**. Fair for multitasking, though setting the time slice too small causes excessive context-switch overhead.
 
 ![Round Robin timeline](images/round_robin.jpeg)
-*Figure 1.2: Round Robin. Each process gets a short turn on the CPU, then goes to the back of the line. Made with help from Claude (AI).*
+*Figure 1.2: Round Robin. Each process gets a short turn on the CPU, then goes to the back of the line.*
 
 ### Deadlock and Starvation
 * **Deadlock:** Two or more processes are permanently stuck waiting on resources held by each other. A deadlock requires all **4 conditions** at once:
@@ -145,7 +145,7 @@ The OS decides which process gets the CPU, RAM, storage, and devices, and for ho
 Programs must be loaded into **RAM** to run.
 
 ![Memory hierarchy](images/memory_hierarchy.jpeg)
-*Figure 1.3: Memory hierarchy. Faster and smaller at the top, slower and bigger at the bottom. Made with help from Claude (AI).*
+*Figure 1.3: Memory hierarchy. Faster and smaller at the top, slower and bigger at the bottom.*
 
 * **MMU (Memory Management Unit):** Hardware unit that translates **logical addresses** into **physical RAM addresses**.
 * **Monoprogramming vs. Multiprogramming:** Monoprogramming keeps only one program in RAM; multiprogramming keeps many programs in RAM simultaneously while the CPU switches between them.
