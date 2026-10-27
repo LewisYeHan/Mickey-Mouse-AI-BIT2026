@@ -10,16 +10,16 @@ Status: ✅ reviewed · 📝 drafted · 🔲 not started
 ## Part 1: Software ✅
 
 ### [1.1 Operating Systems](01_Operating_Systems.md) ✅
-What an OS is, kernel vs. shell, CLI vs. GUI. OS history and types, and a comparison of Windows, macOS, Linux, Android and iOS. How an OS works: processes and process states, system calls, scheduling, deadlocks, memory, I/O and security.
+What an OS is, kernel vs. shell, CLI vs. GUI. OS history and types, and a comparison of Windows, macOS, Linux, Android and iOS. How an OS works: processes and process states, system calls, scheduling, deadlocks, memory, I/O and security. Practice questions with answers.
 
 ### [1.2 System Software](02_System_Software.md) ✅
-System vs. application software, firmware, BIOS vs. UEFI, and the boot process from power button to login screen. Kernel types, device drivers (with a printing example), utilities, and translators (assembler, compiler, interpreter).
+System vs. application software, firmware, BIOS vs. UEFI, and the boot process from power button to login screen. Kernel types, device drivers (with a printing example), utilities, and translators (assembler, compiler, interpreter). Practice questions with answers.
 
 ### [1.3 Application Software](03_Application_Software.md) ✅
 User space vs. kernel space, the 5-step execution lifecycle, and system calls. The 8 types of applications, and native vs. web vs. cross-platform apps. Practice questions with answers.
 
 ### [1.4 Summary and Quiz](04_Summary_and_Quiz.md) ✅
-How 1.1 to 1.3 connect, key ideas from each section, and a 10-question quiz with answers.
+How 1.1 to 1.3 connect, key ideas from each section, and a 13-question quiz (recall and apply-it questions) with answers.
 
 ---
 
