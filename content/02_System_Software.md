@@ -80,8 +80,7 @@ The most important difference is **Secure Boot**. It only lets bootloaders and o
 **Booting** means starting the computer, from pressing the power button until the login screen appears. A **cold boot** starts from fully off. A **warm boot** is a restart. The name comes from the phrase "pulling yourself up by your bootstraps": the computer starts a tiny program, which starts a bigger one, which starts the whole OS.
 
 ![Six boot steps in a loop of circles: power on, BIOS/UEFI, boot drive, bootloader, kernel loads, login screen](images/boot_process.jpeg)
-*Figure 1.4: The 6 steps of booting, from pressing the power button to the login screen. Drawn by Team Mickey Mouse in Canva.*
-
+*Figure 1.4: The 6 steps of booting, from pressing the power button to the login screen.*
 Figure 1.4 shows the six steps in order, following the arrows from "Power on" to "Login screen". Each step is explained below.
 
 1. **Power on → BIOS / UEFI:** The CPU wakes up and runs the firmware, which does the **POST** check and prepares RAM and devices.
