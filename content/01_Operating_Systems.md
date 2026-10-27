@@ -295,35 +295,6 @@ Try answering each question yourself first, then read the answer.
 
 ---
 
-## 15. Glossary
-* **Buffer:** A temporary holding area for data in memory.
-* **Cache:** Fast memory that stores copies of often-used data.
-* **Context switch:** Saving one process's progress and loading another's onto the CPU.
-* **Deadlock:** Processes stuck forever, each waiting for something another one holds.
-* **Demand paging:** Loading a page into RAM only when it is needed.
-* **DMA:** Direct Memory Access; a device copies data straight into RAM without the CPU.
-* **Driver:** Software that lets the OS control one specific hardware device.
-* **Interrupt:** A signal from a device telling the CPU it needs attention.
-* **Kernel:** The core of the OS, with full control of the hardware.
-* **MMU:** Memory Management Unit; hardware that turns virtual addresses into real RAM addresses.
-* **Open source:** Software whose code anyone can read, change, and share.
-* **Page fault:** When a needed page is not in RAM and must be loaded from disk.
-* **Paging:** Splitting memory into equal-sized blocks (pages and frames).
-* **PCB:** Process Control Block; the OS's record of one process.
-* **Process:** A program that is currently running.
-* **RAM:** Fast main memory that loses its data when the power is off.
-* **Scheduler:** The part of the OS that decides which process runs next.
-* **Segmentation:** Splitting memory into meaningful parts such as code, data, and stack.
-* **Shell:** The part of the OS that takes your commands.
-* **Spooling:** Lining up jobs on disk for a slow device, such as a print queue.
-* **Starvation:** When a process keeps getting skipped and never runs.
-* **System call:** A request from an app to the kernel.
-* **Thrashing:** Extreme slowdown caused by too much moving of pages between RAM and disk.
-* **Thread:** A small worker inside a process that shares the process's memory.
-* **Time slice:** The short turn each process gets on the CPU in Round Robin.
-* **Virtual memory:** Giving each program its own memory space, so the OS can keep rarely used parts on disk.
-
----
 
 ## 16. References
 1. Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). *Operating System Concepts* (10th ed.). Wiley.
