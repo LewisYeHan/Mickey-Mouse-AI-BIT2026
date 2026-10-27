@@ -10,7 +10,7 @@
 ## 1. How It All Connects
 
 ![How sections 1.1 to 1.3 connect](images/concept_map.png)
-*Figure 1.7: How system software, the OS, and applications work together on top of the hardware. Made with help from Claude (AI).*
+*Figure 1.7: How system software, the OS, and applications work together on top of the hardware.*
 
 Sections 1.1 to 1.3 describe three layers of software that work together every time you use a computer. The easiest way to see how they connect is to follow what happens from the moment you press the power button to the moment an app saves a file.
 
