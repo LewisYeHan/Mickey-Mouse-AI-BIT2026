@@ -16,7 +16,7 @@ What an OS is, kernel vs. shell, CLI vs. GUI. OS history and types, and a compar
 System vs. application software, firmware, BIOS vs. UEFI, and the boot process from power button to login screen. Kernel types, device drivers (with a printing example), utilities, and translators (assembler, compiler, interpreter).
 
 ### [1.3 Application Software](03_Application_Software.md) ✅
-User space vs. kernel space, the 5-step execution lifecycle, and system calls. The 8 types of applications, and native vs. web vs. cross-platform (Electron) apps. 10 review questions.
+User space vs. kernel space, the 5-step execution lifecycle, and system calls. The 8 types of applications, and native vs. web vs. cross-platform apps. Practice questions with answers.
 
 ### [1.4 Summary and Quiz](04_Summary_and_Quiz.md) ✅
 How 1.1 to 1.3 connect, key ideas from each section, and a 10-question quiz with answers.
