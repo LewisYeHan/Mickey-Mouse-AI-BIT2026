@@ -13,7 +13,7 @@ Imagine a busy restaurant kitchen with one stove, one fridge, and ten cooks who 
 The **Operating System (OS)** is the head chef. It is the main software that runs the computer and sits between your apps and the physical hardware (CPU, RAM, storage, and input/output devices). It decides which program gets the CPU, how much memory each one may use, and who can touch which file (Silberschatz et al., 2018). Without an OS, every app would have to control the hardware itself, and two apps could easily break each other.
 
 ![Computer system layers](images/system_layers.jpeg)
-*Figure 1.1: Where the OS sits between users and hardware. Made with help from Claude (AI).*
+*Figure 1.1: Where the OS sits between users and hardware.*
 
 An OS has two main parts:
 * The **kernel** is the core of the OS. It stays in memory the whole time the computer is on and directly controls the hardware.
@@ -161,7 +161,7 @@ Four common scheduling methods, using the example of a supermarket checkout:
 4. **Round Robin:** Everyone gets a short, equal turn (a **time slice**), then goes to the back of the line. This is fair and is how most desktop systems feel smooth. If the time slice is too small, though, the CPU wastes time on context switches.
 
 ![Round Robin timeline](images/round_robin.jpeg)
-*Figure 1.2: Round Robin. Each process gets a short turn on the CPU, then goes to the back of the line. Made with help from Claude (AI).*
+*Figure 1.2: Round Robin. Each process gets a short turn on the CPU, then goes to the back of the line.*
 
 In Figure 1.2, the time slice is 2 units. P1 needs 5 units, P2 needs 3, and P3 needs 2. P3 finishes first at time 6 because it only needed one turn. P2 finishes at 9, and P1, the longest job, finishes last at 10.
 
@@ -187,8 +187,7 @@ The OS can deal with deadlock in three ways:
 A program has to be in **RAM** to run, but RAM is limited and shared by every running program. Memory management decides who gets which part of RAM and keeps programs from touching each other's memory.
 
 ![Memory hierarchy](images/memory_hierarchy.jpeg)
-*Figure 1.3: Memory hierarchy. Faster and smaller at the top, slower and bigger at the bottom. Made with help from Claude (AI).*
-
+*Figure 1.3: Memory hierarchy. Faster and smaller at the top, slower and bigger at the bottom.*
 Figure 1.3 shows the trade-off. The fastest memory (CPU registers and cache) is tiny and expensive, while the biggest storage (SSD and HDD) is cheap but much slower. RAM sits in the middle.
 
 | Memory type | Keeps data without power? | Speed | Typical size | Cost |
