@@ -21,7 +21,7 @@ User space vs. kernel space, the 5-step execution lifecycle, and system calls. T
 ### [1.4 Summary and Quiz](04_Summary_and_Quiz.md) ✅
 How 1.1 to 1.3 connect, key ideas from each section, and a 13-question quiz (recall and apply-it questions) with answers.
 
-### [Glossary](05_Glossary.md) ✅
+### [1.5 Glossary](05_Glossary.md) ✅
 A glossary of the entire project.
 
 ---
