@@ -35,6 +35,8 @@ Read from top (the user) to bottom (the physical hardware). Each layer relies on
 | **Firmware (BIOS / UEFI)** | Motherboard ROM chip | **System Software** |
 | **Hardware** | CPU, RAM, SSD | Physical Hardware |
 
+*Note:* Device drivers run inside the OS, together with the kernel. The motherboard firmware (BIOS / UEFI) does its main job **at startup**: once the OS is running, drivers talk to the hardware directly, not through the BIOS.
+
 ---
 
 ## 3. Firmware
@@ -64,8 +66,8 @@ Read from top (the user) to bottom (the physical hardware). Each layer relies on
 | **Mode** | 16-bit | 32-bit / 64-bit |
 | **Disk Format** | MBR (Master Boot Record) | GPT (GUID Partition Table) |
 | **Max Boot Disk Size** | ~2 TB | Practically unlimited |
-| **Interface** | Plain text, keyboard only | Graphical menu, mouse support |
-| **Security** | None | **Secure Boot** |
+| **Interface** | Plain text, keyboard only | Usually a graphical menu with mouse support |
+| **Security** | Basic (e.g., a BIOS password), no Secure Boot | **Secure Boot** |
 | **Startup Speed** | Slower | Faster |
 
 * **Secure Boot:** Only lets digitally signed (trusted) bootloaders and operating systems start. This blocks malware that tries to load before the OS.
@@ -74,6 +76,9 @@ Read from top (the user) to bottom (the physical hardware). Each layer relies on
 
 ## 5. The Boot Process
 **Booting** means starting the computer from power-on until the login screen appears. A **cold boot** starts from power off; a **warm boot** is a restart.
+
+![The boot process](images/boot_process.jpeg)
+*Figure 1.4: The 6 steps of booting, from pressing the power button to the login screen. Drawn by Team Mickey Mouse in Canva.*
 
 1. **Power On → BIOS / UEFI:** The CPU wakes up and runs the firmware, which performs **POST** and initializes RAM and devices.
 2. **Boot Drive (MBR / GPT):** The firmware follows the boot order and reads the boot information on the main drive (the first 512 bytes, called the **MBR**, on Legacy BIOS; the **EFI System Partition** on UEFI).
@@ -113,9 +118,6 @@ A **Device Driver** is a small program that lets the OS talk to one specific har
 5. The driver translates it into commands your specific printer understands.
 6. The printer prints and reports back (e.g., *"Done"* or *"Out of paper"*).
 
-![Printing with a device driver](images/printing_driver.jpeg)
-*Figure 1.5: How a print job travels from Word to the printer. Drawn by Team Mickey Mouse in Canva.*
-
 ### Key Points About Drivers
 * Most drivers run in **kernel mode**, so a buggy driver can crash the whole PC.
 * **Plug and Play:** The OS detects new hardware automatically and loads the right driver.
@@ -139,14 +141,16 @@ A **Device Driver** is a small program that lets the OS talk to one specific har
 | Translator | Input | How It Works | Example |
 | :--- | :--- | :--- | :--- |
 | **Assembler** | Assembly code | Converts assembly instructions directly into machine code | `NASM` |
-| **Compiler** | C, C++ | Translates the whole program at once into an executable before running | `gcc` |
-| **Interpreter** | Python | Translates and runs the code line by line | `python` |
+| **Compiler** | C, C++ | Translates the whole program before it runs; together with the assembler and linker, this produces an executable file | `gcc` |
+| **Interpreter** | Python | Translates and runs the code step by step while the program is running | `python` |
+
+*Note:* Python actually turns the code into a simpler form called **bytecode** first, then runs it one instruction at a time. "Line by line" is a useful way to picture it.
 
 ### From C Source Code to a Running Program
 1. **Preprocessor:** Handles `#include` and `#define`.
 2. **Compiler:** Turns C code into **assembly code**.
-3. **Assembler:** Turns assembly into a binary **object file (`.o`)**.
-4. **Linker:** Joins object files and libraries into one **executable (`.exe`)**.
+3. **Assembler:** Turns assembly into a binary **object file** (`.o` on Linux, `.obj` on Windows).
+4. **Linker:** Joins object files and libraries into one **executable** (`.exe` on Windows).
 5. **Loader (part of the OS):** Copies the executable into RAM and starts it.
 
 ---
@@ -160,7 +164,7 @@ A **Device Driver** is a small program that lets the OS talk to one specific har
 | **BIOS vs. UEFI** | Older 16-bit, MBR vs. modern 64-bit, GPT, Secure Boot |
 | **OS vs. Kernel** | The kernel is the core part of the whole OS |
 | **Kernel Mode vs. User Mode** | Full hardware access vs. limited access |
-| **Compiler vs. Interpreter** | Whole program at once vs. line by line |
+| **Compiler vs. Interpreter** | Whole program before running vs. step by step while running |
 
 ### Key Points to Remember
 1. **System software** sits between the hardware and user applications.
