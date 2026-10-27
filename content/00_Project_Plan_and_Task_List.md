@@ -1,6 +1,6 @@
 # Project Plan and Task List
 
-**Team:** Mickey Mouse · **Coordinator:** Yeo Shih Jie (@ysjie03) · **Last updated:** 26 Oct 2026
+**Team:** Mickey Mouse · **Coordinator:** Yeo Shih Jie (@ysjie03) · **Last updated:** 27 Oct 2026
 
 **Status:** ✅ done & reviewed · 📝 in progress · 🔲 not started
 
@@ -35,7 +35,7 @@
 | Research Part 1 | Cao Minh Tuan, Frederick Samuel Lesmana, Lu My Ky, Cassinis Soulisack | 22 Oct | Notes with sources for each Part 1 topic | ✅ |
 | Part 1 Markdown | Content writers; review: Goh Ye Han | 26 Oct | Files `00` to `04` committed and reviewed | ✅ |
 | Fix instructor feedback | Goh Ye Han, Wong Hiu Chung Samuel, Cassinis Soulisack | 26 Oct | All four feedback points fixed (see table above) | ✅ |
-| Part 1 images | Wong Hiu Chung Samuel, Frederick Samuel Lesmana | 26 Oct | `system_layers.jpeg`, `round_robin.jpeg`, `memory_hierarchy.jpeg`, `printing_driver.jpeg`, `execution_lifecycle.png`, `concept_map.png` | ✅ |
+| Part 1 images | Wong Hiu Chung Samuel, Frederick Samuel Lesmana | 26 Oct | `system_layers.jpeg`, `round_robin.jpeg`, `memory_hierarchy.jpeg`, `boot_process.jpeg`, `execution_lifecycle.png`, `concept_map.png` | ✅ |
 | Stage One submission | Goh Ye Han, Yeo Shih Jie, Cassinis Soulisack | 26 Oct | Submission Report PDF, Markdown ZIP, content PDF | ✅ |
 | Stage One logs | Yeo Shih Jie + all | 26 Oct | Meeting log + one personal log per member | ✅ |
 
@@ -52,7 +52,7 @@
 | Part 2 diagrams | Wong Hiu Chung Samuel | 4 Nov | — | Real images committed, no ASCII diagrams, each credited in its caption | 🔲 |
 | Part 2 quiz | Goh Ye Han | 6 Nov | 2.5 Strengths and Limits | Part 2 quiz committed | 🔲 |
 | Study guide 1.0 | Frederick Samuel Lesmana, Cao Minh Tuan | 6 Nov | Review Part 2 sections | One study guide covering Parts 1 and 2 | 🔲 |
-| Slides PPT 1.0 | Wong Hiu Chung Samuel, Lu My Ky | 7 Nov | Study guide 1.0 | Slide deck using the team template | 🔲 |
+| Slides PPT 1.0 | Wong Hiu Chung Samuel, Lu My Ky | 7 Nov | Study guide 1.0 | Slide deck using the team template | 📝 |
 | Video tutorial 1.0 | Lu My Ky | 7 Nov | Slides PPT 1.0 | Video based on the slides | 🔲 |
 | PDF check | Cassinis Soulisack | 7 Nov | Study guide 1.0 | PDFs show formatted headings, tables and images, no raw Markdown | 🔲 |
 | Placeholder check | Goh Ye Han | 7 Nov | PDF check | Submission report and all files checked, no placeholders or empty sections left | 🔲 |
