@@ -44,7 +44,7 @@
             ├── system_layers.jpeg          ← Figure 1.1
             ├── round_robin.jpeg            ← Figure 1.2
             ├── memory_hierarchy.jpeg       ← Figure 1.3
-            ├── boot_process.jpeg        ← Figure 1.4
+            ├── boot_process.jpeg           ← Figure 1.4
             ├── execution_lifecycle.png     ← Figure 1.5
             └── concept_map.png             ← Figure 1.6
 
@@ -63,4 +63,4 @@ Status labels: ✅ checked by a reviewer · 📝 drafted · 🔲 not started
 
 **Review notes.** Our instructor's Stage One feedback pointed out placeholders in the report, incomplete content, ASCII diagrams, and a PDF that showed raw Markdown. We fixed all four: filled the placeholders, wrote the notes out in full, replaced the ASCII diagrams with real images, and re-exported the PDF properly.
 
-**Next:** slides and video due 7 Nov 2026, then Part 2.
+**Next:** Part 2 sections (28 Oct to 5 Nov 2026), then the study guide, slides and video, all due 7 Nov 2026.
