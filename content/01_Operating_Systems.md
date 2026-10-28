@@ -141,7 +141,7 @@ Some common system calls on Linux and macOS:
 * **Processes:** `fork()` to create a new process, `exit()` to end one
 * **Files:** `open()`, `read()`, `write()`, `close()`
 * **Memory:** `mmap()` to ask for more memory
-* **Communication:** `socket()` to send data over the network
+* **Communication:** `socket()` to open a connection, `send()`/`recv()` to send and receive data over the network
 
 On Windows, apps usually call API functions such as `CreateProcess()` and `ReadFile()`, which make the real system calls for them.
 
