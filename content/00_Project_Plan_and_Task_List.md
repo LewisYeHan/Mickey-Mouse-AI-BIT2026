@@ -46,8 +46,8 @@
 | 2.1 What is Symbolic AI? | Wong Hiu Chung Samuel | 28 Oct | — | `05_What_is_Symbolic_AI.md` committed | 🔲 |
 | 2.2 Knowledge Representation | Cao Minh Tuan | 30 Oct | — | `06_Knowledge_Representation.md` committed | 🔲 |
 | 2.3 How Symbolic AI Reasons | Frederick Samuel Lesmana | 1 Nov | — | `07_How_Symbolic_AI_Reasons.md` committed | 🔲 |
-| 2.4 Expert Systems | Lu My Ky | 3 Nov | — | `08_Expert_Systems.md` committed | 🔲 |
-| 2.5 Strengths and Limits | Cassinis Soulisack | 5 Nov | — | `09_Strengths_and_Limits.md` committed | 🔲 |
+| 2.4 Expert Systems | Lu My Ky | 2 Nov | — | `08_Expert_Systems.md` committed | 🔲 |
+| 2.5 Strengths and Limits | Cassinis Soulisack | 3 Nov | — | `09_Strengths_and_Limits.md` committed | 🔲 |
 | Review Part 2 sections | Goh Ye Han | 1 day after each draft | Sections 2.1 to 2.5 | Each section covers every outline topic in full paragraphs, not just bullets | 🔲 |
 | Part 2 diagrams | Wong Hiu Chung Samuel | 4 Nov | — | Real images committed, no ASCII diagrams, each with a clear caption | 🔲 |
 | Part 2 quiz | Goh Ye Han | 6 Nov | 2.5 Strengths and Limits | Part 2 quiz committed | 🔲 |
