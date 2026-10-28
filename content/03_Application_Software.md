@@ -50,7 +50,7 @@ The OS scheduler gives the process a turn on the CPU. The CPU then repeats the s
 Inside the process, **threads** do the actual work. Chrome, for example, can use one thread to draw the page and another to download an image at the same time.
 
 ### Step 4: The app asks for hardware with a system call
-Sooner or later the app needs the hardware. It might need to save a file, show a picture, or load a web page. Because it runs in user space, it cannot do this itself. Instead, it makes a **system call**, such as `read()` to open a file, `write()` to save one, or `socket()` to use the network. At this moment the CPU switches from **user mode** into **kernel mode**.
+Sooner or later the app needs the hardware. It might need to save a file, show a picture, or load a web page. Because it runs in user space, it cannot do this itself. Instead, it makes a **system call**, such as `open()` to open a file, `write()` to save one, or `socket()` to use the network. At this moment the CPU switches from **user mode** into **kernel mode**.
 
 ### Step 5: The kernel does the work safely and returns the result
 The kernel first checks that the app is allowed to make the request. For example, is this app allowed to write to this folder? It then uses the right **device driver** to do the hardware work, sends the result back to the app, and switches the CPU back to user mode. The app continues from Step 3, and the loop repeats until you close it.
