@@ -33,5 +33,5 @@ Every key term from 1.1 to 1.3 in A–Z order, with the section that explains ea
 | 2.1 What is Symbolic AI? | GOFAI, rule-based decisions | 28 Oct |
 | 2.2 Knowledge Representation | Symbols, semantic networks, knowledge graphs | 30 Oct |
 | 2.3 How Symbolic AI Reasons | IF-THEN rules, forward and backward chaining | 1 Nov |
-| 2.4 Expert Systems | How they're built; medical and engineering examples | 3 Nov |
-| 2.5 Strengths and Limits | Symbolic AI vs. machine learning, neuro-symbolic AI | 5 Nov |
+| 2.4 Expert Systems | How they're built; medical and engineering examples | 2 Nov |
+| 2.5 Strengths and Limits | Symbolic AI vs. machine learning, neuro-symbolic AI | 3 Nov |
