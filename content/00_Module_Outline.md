@@ -53,11 +53,6 @@ Key terminology from Sections 2.1 to 2.5, organized into six categories: Foundat
 ---
 
 
-**Thanks for learning with Mickey Mouse AI! 🐭**
-
-
----
-
 ## 🐭 A Note from Mickey Mouse
 
 Congratulations on making it through the foundations of Software and Symbolic AI!
