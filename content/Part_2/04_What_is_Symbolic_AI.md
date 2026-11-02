@@ -139,6 +139,10 @@ Early AI researchers believed that computers could demonstrate intelligent behav
 
 ### What Did GOFAI Focus On?
 
+![Timeline of Symbolic AI](../images/symbolic_ai_timeline.png)
+
+*Figure 2.3: Key milestones in the development of Symbolic AI.*
+
 GOFAI commonly involved:
 
 - Representing knowledge using symbols.
