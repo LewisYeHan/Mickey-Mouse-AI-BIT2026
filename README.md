@@ -32,65 +32,97 @@
 | Wong Hiu Chung Samuel (王晓聪) | 1820262001 | Visual lead | Diagrams, slide template | 1.4 summary, 2.1 | @Samuel940398 |
 | Goh Ye Han (吴宇航) | 1820262002 | Quality lead | Proofreading, quizzes, reviews | 1.4 quiz, Part 2 quiz | @LewisYeHan |
 
-## Folder structure
+## Folder Structure
 
-    .
-    ├── README.md                              ← you are here
-    └── content/
-        ├── 00_Module_Outline.md               ← start here
-        ├── 00_Project_Plan_and_Task_List.md   ← tasks, owners, status
-        │
-        │   Part 1: Software
-        ├── 01_Operating_Systems.md            ← 1.1
-        ├── 02_System_Software.md              ← 1.2
-        ├── 03_Application_Software.md         ← 1.3
-        ├── Part_1_Summary_and_Quiz.md         ← 1.4, Part 1 summary + quiz with answers
-        ├── Part_1_Glossary.md                 ← A–Z key terms (Parts 1)
-        │
-        │   Part 2: Symbolic AI
-        ├── 04_What_is_Symbolic_AI.md          ← 2.1
-        ├── 05_Knowledge_Representation.md     ← 2.2
-        ├── 06_How_Symbolic_AI_Reasons.md      ← 2.3
-        ├── 07_Expert_Systems.md               ← 2.4
-        ├── 08_Strengths_and_Limits.md         ← 2.5
-        ├── Part_2_Summary_and_Quiz.md          ← Part 2 summary + quiz with answers
-        ├── Part_2_Glossary.md                 ← A–Z key terms (Parts 2)
-        │
-        └── images/
-            ├── banner.svg                     ← README banner
-            ├── system_layers.jpeg             ← Figure 1.1
-            ├── round_robin.jpeg               ← Figure 1.2
-            ├── memory_hierarchy.jpeg          ← Figure 1.3
-            ├── boot_process.jpeg              ← Figure 1.4
-            ├── execution_lifecycle.png        ← Figure 1.5
-            └── concept_map.png                ← Figure 1.6
+```text
+Mickey-Mouse-AI-BIT2026/
+│
+├── README.md
+│
+└── content/
+    │
+    ├── 00_Module_Outline.md
+    ├── 00_Project_Plan_and_Task_List.md
+    │
+    ├── Part_1/
+    │   ├── 01_Operating_Systems.md
+    │   ├── 02_System_Software.md
+    │   ├── 03_Application_Software.md
+    │   ├── Part_1_Summary_and_Quiz.md
+    │   └── Part_1_Glossary.md
+    │
+    ├── Part_2/
+    │   ├── 04_What_is_Symbolic_AI.md
+    │   ├── 05_Knowledge_Representation.md
+    │   ├── 06_How_Symbolic_AI_Reasons.md
+    │   ├── 07_Expert_Systems.md
+    │   ├── 08_Strengths_and_Limits.md
+    │   ├── Part_2_Summary_and_Quiz.md
+    │   └── Part_2_Glossary.md
+    │
+    └── images/
+        ├── banner.svg
+        ├── system_layers.jpeg
+        ├── round_robin.jpeg
+        ├── memory_hierarchy.jpeg
+        ├── boot_process.jpeg
+        ├── execution_lifecycle.png
+        ├── concept_map.png
+        ├── symbolic_ai_process.png
+        ├── gofai_history.png
+        └── symbolic_ai_timeline.png
+```
 
-Each content file follows the same pattern: explanation → worked example → diagram (where useful) → practice questions with answers → references → reviewer note.
+### Quick Navigation
 
-## Current progress
+| Section | Learning Material | Link |
+|---|---|---|
+| Start Here | Module Outline | [Open](content/00_Module_Outline.md) |
+| Project | Project Plan & Task List | [Open](content/00_Project_Plan_and_Task_List.md) |
+| **Part 1: Software** | | |
+| 1.1 | Operating Systems | [Open](content/Part_1/01_Operating_Systems.md) |
+| 1.2 | System Software | [Open](content/Part_1/02_System_Software.md) |
+| 1.3 | Application Software | [Open](content/Part_1/03_Application_Software.md) |
+| 1.4 | Part 1 Summary & Quiz | [Open](content/Part_1/Part_1_Summary_and_Quiz.md) |
+| — | Part 1 Glossary | [Open](content/Part_1/Part_1_Glossary.md) |
+| **Part 2: Symbolic AI** | | |
+| 2.1 | What Is Symbolic AI? | [Open](content/Part_2/04_What_is_Symbolic_AI.md) |
+| 2.2 | Knowledge Representation | [Open](content/Part_2/05_Knowledge_Representation.md) |
+| 2.3 | How Symbolic AI Reasons | [Open](content/Part_2/06_How_Symbolic_AI_Reasons.md) |
+| 2.4 | Expert Systems | [Open](content/Part_2/07_Expert_Systems.md) |
+| 2.5 | Strengths and Limits | [Open](content/Part_2/08_Strengths_and_Limits.md) |
+| — | Part 2 Summary & Quiz | [Open](content/Part_2/Part_2_Summary_and_Quiz.md) |
+| — | Part 2 Glossary | [Open](content/Part_2/Part_2_Glossary.md) |
 
-Status labels: ✅ written and checked by a reviewer · 📝 drafted, not yet reviewed · 🔲 not started
+Each content file follows a consistent learning structure, including explanations, examples, diagrams where useful, practice questions, answers, and references.
 
-| Part | Writer | Reviewer | Status |
+## Current Progress
+
+Status labels:
+- ☑ Completed / included in the repository
+- 📝 In progress
+- ☐ Not yet completed or included
+
+| Deliverable | Writer / Owner | Reviewer | Status |
 |---|---|---|---|
-| README and repo setup | Cassinis Soulisack (Stage 1), Frederick Samuel Lesmana (Stage 2 update) | — | 📝 |
-| Module outline | Yeo Shih Jie | Goh Ye Han | ✅ |
-| Project plan and task list | Yeo Shih Jie (Stage 1), Frederick Samuel Lesmana (Stage 2 update) | — | 📝 |
-| 1.1 Operating Systems | Cao Minh Tuan, Frederick Samuel Lesmana | Goh Ye Han | ✅ |
-| 1.2 System Software | Cassinis Soulisack | Goh Ye Han | ✅ |
-| 1.3 Application Software | Lu My Ky | Goh Ye Han | ✅ |
-| 1.4 Summary and Quiz | Wong Hiu Chung Samuel (summary), Goh Ye Han (quiz) | Goh Ye Han (summary) | ✅ |
-| 2.1 What is Symbolic AI? | Wong Hiu Chung Samuel | Goh Ye Han | 🔲 |
-| 2.2 Knowledge Representation | Cao Minh Tuan | Goh Ye Han | 🔲 |
-| 2.3 How Symbolic AI Reasons | Frederick Samuel Lesmana | Goh Ye Han | 🔲 |
-| 2.4 Expert Systems | Lu My Ky | Goh Ye Han | 🔲 |
-| 2.5 Strengths and Limits | Cassinis Soulisack | Goh Ye Han | 🔲 |
-| Part 2 Summary and Quiz | Goh Ye Han | — | 🔲 |
-| Glossary updated with Part 2 terms | Goh Ye Han | — | 🔲 |
-| Part 2 diagrams | Wong Hiu Chung Samuel | — | 🔲 |
-| Study Guide & Test Bank 1.0 | Frederick Samuel Lesmana, Cao Minh Tuan | — | 🔲 |
-| PPT slides 1.0 | Wong Hiu Chung Samuel, Lu My Ky | — | 📝 |
-| Video tutorials 1.0 | Lu My Ky | — | 🔲 |
+| README and repository setup | Cassinis Soulisack, Frederick Samuel Lesmana | — | ☑ |
+| Module Outline | Yeo Shih Jie | Goh Ye Han | ☑ |
+| Project Plan and Task List | Yeo Shih Jie, Frederick Samuel Lesmana | — | ☑ |
+| 1.1 Operating Systems | Cao Minh Tuan, Frederick Samuel Lesmana | Goh Ye Han | ☑ |
+| 1.2 System Software | Cassinis Soulisack | Goh Ye Han | ☑ |
+| 1.3 Application Software | Lu My Ky | Goh Ye Han | ☑ |
+| 1.4 Part 1 Summary and Quiz | Wong Hiu Chung Samuel, Goh Ye Han | Goh Ye Han | ☑ |
+| 2.1 What Is Symbolic AI? | Wong Hiu Chung Samuel | Goh Ye Han | ☑ |
+| 2.2 Knowledge Representation | Cao Minh Tuan | Goh Ye Han | ☑ |
+| 2.3 How Symbolic AI Reasons | Frederick Samuel Lesmana | Goh Ye Han | ☑ |
+| 2.4 Expert Systems | Lu My Ky | Goh Ye Han | ☑ |
+| 2.5 Strengths and Limits | Cassinis Soulisack | Goh Ye Han | ☑ |
+| Part 2 Summary and Quiz | Goh Ye Han | — | ☑ |
+| Part 2 Glossary | Goh Ye Han | — | ☑ |
+| Part 2 Diagrams and Illustrations | Wong Hiu Chung Samuel | — | ☑ |
+| Study Guide and Test Bank 1.0 | Frederick Samuel Lesmana, Cao Minh Tuan | — | ☐ |
+| PPT Slides 1.0 | Wong Hiu Chung Samuel, Lu My Ky | — | 📝 |
+| Video Tutorials 1.0 | Lu My Ky | — | ☐ |
 
 See [`00_Project_Plan_and_Task_List.md`](content/00_Project_Plan_and_Task_List.md) for due dates and the full task list.
 
