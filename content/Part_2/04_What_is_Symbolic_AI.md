@@ -70,6 +70,8 @@ These facts tell the system that Sammy is a student, has a GPA of 3.8, and has a
 
 A **rule** describes what should happen when certain conditions are satisfied.
 
+![Timeline of Symbolic AI](../images/symbolic_ai_timeline.png)
+
 Rules are commonly written using the **IF–THEN** format:
 
 ```text
