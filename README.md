@@ -72,12 +72,13 @@ Status labels: ✅ written and checked by a reviewer · 📝 drafted, not yet re
 
 | Part | Writer | Reviewer | Status |
 |---|---|---|---|
-| README and repo setup | Cassinis Soulisack | Goh Ye Han | ✅ |
-| Module outline and project plan | Yeo Shih Jie | Goh Ye Han | ✅ |
+| README and repo setup | Cassinis Soulisack (Stage 1), Frederick Samuel Lesmana (Stage 2 update) | — | 📝 |
+| Module outline | Yeo Shih Jie | Goh Ye Han | ✅ |
+| Project plan and task list | Yeo Shih Jie (Stage 1), Frederick Samuel Lesmana (Stage 2 update) | — | 📝 |
 | 1.1 Operating Systems | Cao Minh Tuan, Frederick Samuel Lesmana | Goh Ye Han | ✅ |
 | 1.2 System Software | Cassinis Soulisack | Goh Ye Han | ✅ |
 | 1.3 Application Software | Lu My Ky | Goh Ye Han | ✅ |
-| 1.4 Summary and Quiz | Wong Hiu Chung Samuel, Goh Ye Han | — | ✅ |
+| 1.4 Summary and Quiz | Wong Hiu Chung Samuel (summary), Goh Ye Han (quiz) | Goh Ye Han (summary) | ✅ |
 | 2.1 What is Symbolic AI? | Wong Hiu Chung Samuel | Goh Ye Han | 🔲 |
 | 2.2 Knowledge Representation | Cao Minh Tuan | Goh Ye Han | 🔲 |
 | 2.3 How Symbolic AI Reasons | Frederick Samuel Lesmana | Goh Ye Han | 🔲 |
