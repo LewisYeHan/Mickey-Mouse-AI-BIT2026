@@ -1,7 +1,8 @@
 
 # 2.5 Strengths and Limitations of Symbolic AI
 
-**Status:** In Progress  
+**Status:** ✅
+
 **Team Member:** Frederick Samuel Lesmana
 
 ---
