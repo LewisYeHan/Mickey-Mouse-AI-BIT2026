@@ -1,164 +1,401 @@
-# 2.1 What is Symbolic AI?
 
-**Status:** 📝  
-**Team Member:** Frederick Samuel Lesmana (`@Ti4nCi`)
+# 2.1 What Is Symbolic AI?
 
-**In this section:** What is AI? · What "Symbolic" Means · A Short History (GOFAI) · How a Rule-Based Decision Works · Common Misunderstandings · Practice Questions
-
----
-
-## 1. Where We Are in the Module
-
-In Part 1 we learned that a computer only does what a program tells it to do. In [1.3 Application Software](03_Application_Software.md), an app was a list of machine-code instructions that the CPU fetches, decodes and executes, one by one.
-
-Part 2 asks a bigger question: **can we write a program that behaves intelligently?** The first serious answer, tried from the 1950s onwards, was **Symbolic AI**: write down what an expert knows as clear rules and facts, and let the computer follow them. This section explains the idea and its history. The next sections go deeper:
-
-* [2.2 Knowledge Representation](07_Knowledge_Representation.md): how facts are stored.
-* [2.3 How Symbolic AI Reasons](08_How_Symbolic_AI_Reasons.md): how the computer uses rules to reach new conclusions.
-* [2.4 Expert Systems](09_Expert_Systems.md): real systems built this way.
-* [2.5 Strengths and Limits](10_Strengths_and_Limits.md): where Symbolic AI works and where it fails.
+**Module:** Part 2 — Symbolic AI  
+**Section:** 2.1  
+**Status:** Reviewed  
+**Difficulty:** Beginner
 
 ---
 
-## 2. What is Artificial Intelligence?
+## Learning Objectives
 
-**Artificial intelligence (AI)** is the field of computer science that builds programs to do tasks we would normally say need intelligence, such as solving puzzles, understanding language, giving advice, or making decisions. This is one simple definition; textbooks such as Russell and Norvig (2020) compare several.
+By the end of this section, you should be able to:
 
-There are two big ways to build such a program:
-
-| | **Symbolic AI** | **Machine learning (ML)** |
-|---|---|---|
-| Where the knowledge comes from | People write it down as rules and facts | The program finds patterns in lots of example data |
-| What the knowledge looks like | Readable rules, e.g. `IF fever AND cough THEN flu is possible` | Millions of numbers inside a **model** (the program that ML builds from the data). These numbers are called **weights**, and the program adjusts them while it learns. |
-| Can you see why it decided? | Yes, you can point to the rule it used | Usually hard to explain |
-| Everyday example | A tax-advice system that checks your form against rules taken from the tax law | A photo app that recognises your friend's face |
-
-In the rule `IF fever AND cough THEN flu is possible`, **AND** means both parts must be true: a fever alone is not enough. Section [2.3](08_How_Symbolic_AI_Reasons.md) explains AND and OR in rules.
-
-This section is about the left column. Section [2.5](10_Strengths_and_Limits.md) compares the two in detail.
-
-> **Common mix-up:** "AI" does not only mean ChatGPT. ChatGPT is a machine-learning system. For about 40 years, from the mid-1950s to the mid-1990s, Symbolic AI was the main approach in AI research. Other ideas, such as early neural networks, also existed but got less attention.
+1. Define Symbolic AI and explain its main idea.
+2. Understand how symbols represent knowledge.
+3. Distinguish between facts, rules, and reasoning.
+4. Explain Good Old-Fashioned AI (GOFAI).
+5. Identify real-world applications of Symbolic AI.
 
 ---
 
-## 3. What Does "Symbolic" Mean?
+## 1. What Is Symbolic AI?
 
-A **symbol** is something that stands for something else. The word `cat` is not a cat; it is a symbol that stands for one. The number `7`, a red STOP sign, and the letter `H` in a chemistry formula are also symbols.
+Imagine a university wants to build a system that determines whether students qualify for a scholarship.
 
-**Symbolic AI** represents the world with symbols that people can read, and then works by **following rules to manipulate those symbols**. (**Manipulate** means to change symbols by rules: compare them, copy them, or write new ones.) For example:
+The university gives the system two rules:
 
-* **Facts** (things that are true about the situation): `Tom is a student.` · `Tom has borrowed 2 books.` (We also say the books are "on loan".)
-* **Rules** (what follows when certain facts are true): `IF a student has fewer than 5 books on loan THEN the student may borrow another book.`
-* **Conclusion** (what the program works out by applying a rule): either a **new fact**, such as `Tom may borrow another book.`, or a **decision**, such as `Refuse`. Inside the program, a decision is usually saved as one more fact, for example `decision = refuse`.
+- A student must have a GPA of at least 3.5.
+- A student must have an attendance rate of at least 90%.
 
-(This is a simplified example with one rule. In Section 5 we add more rules, for example about unpaid fines.)
+The system receives a student's information, checks the rules, and produces a decision.
 
-The computer does not "understand" what a student or a book is. It only checks whether the symbols in the facts match the symbols in the rule. This is the same thing the CPU does in Part 1: it follows instructions exactly, without understanding them. The difference is that in Symbolic AI the knowledge (facts and rules) is stored **separately**, like data. A general program reads the rules and applies them; the knowledge is not mixed into step-by-step code.
+This is a simple example of **Symbolic AI**.
 
-### The Big Idea Behind It
+Symbolic AI is an approach to Artificial Intelligence that represents knowledge using symbols, facts, and logical rules. It uses these representations to reason about information and derive conclusions.
 
-In 1976, looking back on twenty years of their own work, two AI pioneers, **Allen Newell** and **Herbert Simon**, wrote down the idea behind the whole approach. They called it the **Physical Symbol System Hypothesis**:
+Instead of learning everything from large amounts of data, a symbolic system works with knowledge that has been explicitly represented or provided to it.
 
-> "A physical symbol system has the necessary and sufficient means for general intelligent action." (Newell & Simon, 1976)
+### The Main Idea
 
-Let's take it apart word by word:
+Symbolic AI follows a straightforward principle:
 
-* A **physical symbol system** is a real machine, such as a computer, that stores symbols and changes them by rules. ("Physical" means it is built from real parts, not just an idea on paper.)
-* **General intelligent action** means acting intelligently in many kinds of situations, like a person does, not in only one narrow task.
-* **Sufficient** means such a machine *can* be intelligent.
-* **Necessary** means anything intelligent, even a human brain, *must* work this way.
+**Represent knowledge → Apply rules → Derive conclusions**
 
-In plain words: Newell and Simon believed that **thinking is symbol manipulation**. If they are right, a computer with the right symbols and rules could act as intelligently as a person. Many thinkers disagree: they say that matching symbols, as our programs do, is not the same as understanding. That is why it is called a **hypothesis**, a claim to be tested, not a proven fact. Section 2.5 explains why it turned out to be much harder than expected.
-
----
-
-## 4. A Short History: "Good Old-Fashioned AI"
-
-Symbolic AI is often called **GOFAI**, short for **"Good Old-Fashioned AI"**. The philosopher **John Haugeland** introduced the name in 1985 (Haugeland, 1985), as a label for the classic idea that intelligence is symbol manipulation. Today the name can sound fond or a little old-fashioned, depending on who uses it. In this module it simply means the classic, rule-based way of doing AI, from before machine learning became popular (from the 1990s, and especially after about 2012).
-
-![Timeline of Symbolic AI](images/symbolic_ai_timeline.png)
-
-*Figure 2.1: Key moments in the history of Symbolic AI, from the first AI program to today. Periods of excitement (green) were followed by "AI winters" (blue), when funding and interest dropped. White boxes mark single milestones. Events are evenly spaced, not drawn to scale.*
-
-| Year | Event | Why it matters |
-|---|---|---|
-| 1955–56 | **Logic Theorist** by Allen Newell, Herbert Simon and Cliff Shaw | Often called the first AI program. It proved 38 of the first 52 theorems in chapter 2 of *Principia Mathematica*, a famous book about the logic behind mathematics, by applying logic rules to symbols. |
-| 1956 | **Dartmouth workshop**, organised by John McCarthy, Marvin Minsky, Nathaniel Rochester and Claude Shannon | McCarthy had invented the name "artificial intelligence" in the 1955 proposal for this workshop (McCarthy et al., 1955). The workshop is seen as the start of AI as a research field. |
-| 1966 | **ELIZA** by Joseph Weizenbaum | A chatbot that imitated a therapist (Weizenbaum, 1966). It used simple pattern-matching rules, such as: IF the user types "I am X" THEN reply "How long have you been X?". So "I am sad" becomes "How long have you been sad?". Many users felt it understood them, even though it did not. |
-| 1970s (about 1974–1980) | **First AI winter** | Programs worked on small "toy" problems (for example, moving blocks around in a tiny pretend world) but failed on real ones, such as understanding normal conversation. Funding was cut in the UK, after the Lighthill report (1973), and in the US. |
-| 1970s–1980s | **Expert systems** | Programs that stored hundreds of rules from human experts. **MYCIN** (Stanford University, 1970s) suggested antibiotics for serious blood infections. It was a research system and was never used in hospitals. In the 1980s, companies started using other expert systems in real work, for example **XCON**, which helped the computer company DEC put together customers' orders (see [2.4](09_Expert_Systems.md)). |
-| Late 1980s–early 1990s | **Second AI winter** | Expert systems were expensive to build and keep up to date, and they broke when facing situations their rules did not cover. In 1987 the market for special AI computers (LISP machines) collapsed, and funding was cut. |
-| 1997 | **Deep Blue** beats world chess champion Garry Kasparov | IBM's chess computer used **search**: it looked ahead through about 200 million possible positions per second ("if I move here, they move there…") and gave each position a score with a formula that its programmers built with help from a chess grandmaster. Search is a classic Symbolic AI method. |
-| Today | Symbolic AI inside many systems | **Rule engines** (for example, a bank checking a loan form against its rules), **planning systems** (working out the steps to reach a goal, such as delivery routes) and **knowledge graphs** (large networks of linked facts, see [2.2](07_Knowledge_Representation.md)). They are often combined with machine learning; this is called **neuro-symbolic AI** (see [2.5](10_Strengths_and_Limits.md)). |
-
-> **Why "AI winter"?** After big promises, people expected human-level AI within a few decades. When the programs did not deliver, governments and companies stopped paying for research. The field "froze" for several years, like winter.
+<!-- IMAGE: Insert a simple conceptual illustration here.
+Suggested file: ../../images/part2/symbolic-ai-concept.png
+Show a computer receiving facts, applying logical rules, and producing a conclusion.
+Use a clean educational illustration rather than a decorative stock photo. -->
 
 ---
 
-## 5. How a Rule-Based Decision Works
+## 2. How Does Symbolic AI Represent Knowledge?
 
-The simplest kind of Symbolic AI is a **rule-based system**: a program that makes decisions by checking a list of IF-THEN rules against the facts it has. First, one new word: **inference** means working out something new from what you already know. For example: Lin has 5 books on loan, and the rule says 5 or more means refuse, so we *infer*: refuse Lin.
+Symbolic AI represents information through symbols that stand for objects, concepts, properties, or relationships.
 
-A rule-based system has three parts:
+For example, consider these statements:
 
-![How a rule-based system makes a decision](images/rule_based_system.png)
+- Sammy is a student.
+- Sammy has a GPA of 3.8.
+- Students with a GPA of at least 3.5 qualify academically for a scholarship.
 
-*Figure 2.2: The three parts of a rule-based system. Facts about the situation go into working memory. The inference engine compares them with the rules in the knowledge base and produces a decision, together with the rule that explains it. The knowledge (left) can be edited; the engine (right) stays the same.*
+A symbolic system can represent this information using facts and rules.
 
-1. **Knowledge base:** the list of rules, written by people who know the subject (domain experts).
-2. **Working memory:** the list of facts about the current situation, for example about one student. It changes for every new case.
-   > **Careful:** this is **not** the same as RAM from Part 1. RAM is the computer's hardware memory. "Working memory" is just the name for the system's list of current facts. While the program runs, this list is stored in RAM, like any other data. The name comes from psychology, where it means what a person is thinking about right now.
-3. **Inference engine:** the part of the program that compares the facts with the rules, picks which rule to use by a fixed method, and produces the result.
+### A. Symbols
 
-The key design idea is that **the knowledge (rules) is kept separate from the program that uses it (the inference engine)**. To change the library's policy, someone edits a rule in the knowledge base. In real projects this is often a **knowledge engineer** working together with the librarian. The system's behaviour changes, but the inference engine's code stays the same.
+A symbol is a representation of something in the real world.
 
-### Worked Example: The Library Borrowing Assistant
+For example:
 
-Our university library wants a program that decides whether a student may borrow a book. A librarian (the expert) gives us the policy, and we write it as four rules:
+| Symbol | Represents |
+|---|---|
+| `Sammy` | A particular student |
+| `Student` | The concept of a student |
+| `GPA` | A student's grade point average |
+| `Scholarship` | A scholarship opportunity |
 
-| Rule | IF … | THEN … |
-|---|---|---|
-| **R1** | the student has an unpaid fine | **Refuse:** "Please pay your fine first." |
-| **R2** | the book is reference-only | **Refuse:** "This book cannot leave the library." |
-| **R3** | the student already has 5 or more books on loan | **Refuse:** "You have reached the 5-book limit." |
-| **R4** | (always true: a **default rule** that catches every other case) | **Allow:** "You may borrow this book." |
+Symbols allow a computer to represent concepts in a structured form.
 
-Our engine uses the simplest method: it checks the rules **in order, from R1 to R4, and uses the first rule whose IF part is true**. (Real engines first find *all* the rules that match, then use a fixed method to pick one, for example "the rule that is higher in the list" or "the rule with the highest priority". "First match in order" is one simple method; Section [2.3](08_How_Symbolic_AI_Reasons.md) shows others.)
+### B. Facts
 
-Now let's trace three students step by step.
+A fact is a statement that the system treats as true within its knowledge base.
 
-**Student A: Mei.** Facts: no unpaid fine · book is normal · has 2 books on loan.
+Examples:
 
-1. R1: Does Mei have an unpaid fine? **No** → go to R2.
-2. R2: Is the book reference-only? **No** → go to R3.
-3. R3: Does Mei have 5 or more books? She has 2, so **No** → go to R4.
-4. R4: Always true → **Allow.** Explanation: "R4 (the default rule) was used, because no refusal rule applied: no fine, normal book, only 2 books on loan."
+```text
+Student(Sammy)
+GPA(Sammy, 3.8)
+```
 
-**Student B: Ali.** Facts: unpaid fine of 3 yuan · book is normal · has 1 book on loan.
+These statements tell the system that Sammy is a student and has a GPA of 3.8.
 
-1. R1: Does Ali have an unpaid fine? **Yes** → **Refuse: "Please pay your fine first."** The engine stops here.
+### C. Rules
 
-**Student C: Lin.** Facts: no unpaid fine · book is reference-only · has 5 books on loan.
+A rule describes what conclusion should follow when certain conditions are satisfied.
 
-1. R1: Unpaid fine? **No** → go to R2.
-2. R2: Is the book reference-only? **Yes** → **Refuse: "This book cannot leave the library."** The engine stops here.
+Rules are commonly written in an IF–THEN format.
 
-Notice three things in these traces:
+Example:
 
-* Lin **also** breaks R3 (she has 5 books), but the engine never checks R3, because R2 fired first. **The order of the rules changes which explanation the user gets.** The rule-writer must choose the order on purpose.
-* Order can even change the **decision**. If R4 ("always allow") were moved to the top, every student would be allowed! A different design could also check **all** the rules and tell Lin both reasons. Section 2.3 shows other ways an engine can choose rules.
-* The program can always say **which rule** it used. If Lin complains, the librarian can point to R2. This ability to explain a decision is one of the biggest strengths of Symbolic AI.
+```text
+IF GPA >= 3.5
+THEN academically_eligible = TRUE
+```
 
-### Is Every IF Statement "AI"?
+The system can apply this rule to the facts it already knows.
 
-No. Programming languages have an **`if`** instruction: "if this is true, do that, otherwise do something else". A programmer could write our library policy straight into the program's code, like this:
+**Remember the difference:**
 
-```python
-if the student has an unpaid fine:
-    refuse "Please pay your fine first."
-otherwise if the book is reference-only:
-    refuse "This book cannot leave the library."
-otherwise if the student has 5 or more books:
-    refuse "You have reached the 5-book limit."
-otherwise:
-    allow
+- Symbols represent things.
+- Facts describe what the system knows.
+- Rules describe how the system should reason.
+
+---
+
+## 3. How Does Symbolic AI Reason?
+
+Symbolic AI does not simply store information. It can use logical rules to derive new conclusions.
+
+Consider the scholarship example:
+
+**Known facts:**
+
+```text
+Student = Sammy
+GPA = 3.8
+Attendance = 95%
+```
+
+**Rules:**
+
+```text
+IF GPA >= 3.5
+AND Attendance >= 90%
+THEN Scholarship_Eligible = TRUE
+```
+
+**Reasoning process:**
+
+1. The system checks Sammy's GPA.
+2. It compares 3.8 with the minimum requirement of 3.5.
+3. The condition is satisfied.
+4. The system checks attendance.
+5. It compares 95% with the minimum requirement of 90%.
+6. Both conditions are satisfied.
+7. The system concludes that Sammy meets these scholarship requirements.
+
+<details>
+<summary><b>See the reasoning flow</b></summary>
+
+```mermaid
+flowchart TD
+    A["Student Information"] --> B["Check GPA >= 3.5"]
+    B --> C{"GPA condition satisfied?"}
+    C -->|No| D["GPA requirement not met"]
+    C -->|Yes| E["Check Attendance >= 90%"]
+    E --> F{"Attendance condition satisfied?"}
+    F -->|No| G["Attendance requirement not met"]
+    F -->|Yes| H["Meets the scholarship requirements"]
+```
+
+</details>
+
+This process is called **logical inference**: deriving a conclusion from existing facts and rules.
+
+The system does not need to guess whether Sammy qualifies. It follows the conditions that have been provided.
+
+*Note: This example only checks two scholarship requirements. A real university scholarship decision may involve additional conditions.*
+
+---
+
+## 4. Good Old-Fashioned AI (GOFAI)
+
+You may come across the term **Good Old-Fashioned AI (GOFAI)** when studying Symbolic AI.
+
+GOFAI is an informal term commonly used to describe early approaches to AI that relied heavily on symbols, explicit knowledge, and logical reasoning.
+
+The central idea was that intelligent behaviour could be achieved by representing knowledge and manipulating symbols according to formal rules.
+
+Early AI researchers explored whether computers could solve problems by using symbolic representations and logical operations.
+
+### What Did GOFAI Focus On?
+
+GOFAI commonly involved:
+
+- Representing knowledge using symbols.
+- Storing information as facts and relationships.
+- Defining rules for solving problems.
+- Using logical reasoning to derive conclusions.
+- Solving problems through structured search and planning.
+
+Symbolic AI became an important foundation for early AI research and knowledge-based systems.
+
+<!-- IMAGE: Insert a historical or conceptual illustration here.
+Suggested file: ../../images/part2/gofai-history.png
+Show an early computer or symbolic reasoning concept alongside modern AI.
+Keep it informative and historically accurate; avoid implying that all early AI used exactly the same methods. -->
+
+### Symbolic AI and GOFAI
+
+The terms are closely related, but they are not exactly interchangeable.
+
+| Term | Meaning |
+|---|---|
+| Symbolic AI | An AI approach that represents and processes knowledge using symbols and formal rules. |
+| GOFAI | An informal term for traditional, early approaches to AI that relied heavily on symbolic methods. |
+
+In simple terms, GOFAI is strongly associated with the development of Symbolic AI.
+
+---
+
+## 5. Where Is Symbolic AI Used?
+
+Symbolic AI is useful in situations where knowledge can be clearly represented and decisions can be made using defined rules.
+
+Some examples include:
+
+| Application | How Symbolic AI Is Used |
+|---|---|
+| Expert Systems | Uses stored expert knowledge and rules to provide recommendations. |
+| Medical Decision Support | Applies medical rules to patient information to assist with diagnosis. |
+| Rule-Based Chatbots | Uses predefined rules to respond to specific questions. |
+| Automated Planning | Uses representations of actions, goals, and conditions to plan a sequence of steps. |
+| Configuration Systems | Applies rules to determine compatible components and configurations. |
+
+For example, a medical expert system may use symptoms and medical rules to suggest possible diagnoses.
+
+However, it does not automatically understand medicine like a human doctor. Its conclusions depend on the knowledge and rules available to it.
+
+---
+
+## 6. Symbolic AI at a Glance
+
+| Feature | Description |
+|---|---|
+| Knowledge Representation | Uses symbols, facts, and relationships. |
+| Reasoning | Applies logical rules to derive conclusions. |
+| Learning | Usually depends on knowledge explicitly provided or encoded by people. |
+| Decisions | Often follows clearly defined rules and conditions. |
+| Explainability | Can often show which facts and rules led to a conclusion. |
+
+### A Simple Comparison
+
+Think of Symbolic AI as a student following a clearly written instruction sheet.
+
+If the instructions say:
+
+```text
+IF it is raining
+THEN bring an umbrella.
+```
+
+The student checks whether it is raining and follows the instruction.
+
+Symbolic AI works similarly: it uses represented knowledge and rules to determine what conclusion or action follows.
+
+---
+
+## 7. Key Takeaways
+
+- Symbolic AI represents knowledge using symbols, facts, and rules.
+- Symbols represent objects, concepts, and relationships.
+- Facts describe information that the system treats as true.
+- Rules define how the system should reason.
+- Logical inference allows the system to derive new conclusions.
+- GOFAI refers to traditional approaches to AI that relied heavily on symbolic methods.
+- Symbolic AI is useful when knowledge and decision-making rules can be clearly defined.
+
+**The main idea:** Symbolic AI attempts to make machines reason by representing knowledge explicitly and applying logical rules.
+
+---
+
+## 8. Quick Self-Check
+
+Try answering these questions before revealing the answers.
+
+### Question 1
+
+What is the main idea behind Symbolic AI?
+
+A. Learning entirely through trial and error.
+
+B. Representing knowledge using symbols and logical rules.
+
+C. Randomly generating possible answers.
+
+D. Processing images without any stored knowledge.
+
+<details>
+<summary><b>Show answer</b></summary>
+
+**Correct answer: B**
+
+Symbolic AI represents knowledge using symbols, facts, and rules to support logical reasoning.
+
+</details>
+
+### Question 2
+
+What is a fact in Symbolic AI?
+
+A. A possible conclusion that has not been checked.
+
+B. A random value generated by the system.
+
+C. A statement that the system treats as true.
+
+D. A rule that tells the system what to do.
+
+<details>
+<summary><b>Show answer</b></summary>
+
+**Correct answer: C**
+
+A fact represents information that the system accepts as true within its knowledge base.
+
+</details>
+
+### Question 3
+
+Which statement best describes an IF–THEN rule?
+
+A. It stores an image in memory.
+
+B. It defines what conclusion follows when certain conditions are met.
+
+C. It randomly selects an answer.
+
+D. It automatically learns from every user interaction.
+
+<details>
+<summary><b>Show answer</b></summary>
+
+**Correct answer: B**
+
+An IF–THEN rule specifies a condition and the conclusion or action that follows when the condition is satisfied.
+
+</details>
+
+### Question 4
+
+What does GOFAI refer to?
+
+A. An informal term for traditional AI approaches heavily based on symbolic methods.
+
+B. A programming language.
+
+C. A type of computer hardware.
+
+D. A modern neural network architecture.
+
+<details>
+<summary><b>Show answer</b></summary>
+
+**Correct answer: A**
+
+GOFAI stands for Good Old-Fashioned AI and is associated with traditional symbolic approaches to AI.
+
+</details>
+
+### Question 5 — Apply It
+
+A system contains the following rule:
+
+```text
+IF temperature > 38°C
+THEN fever = TRUE
+```
+
+The recorded temperature is 39°C.
+
+What should the system conclude?
+
+A. Fever = FALSE
+
+B. Temperature is unknown.
+
+C. Fever = TRUE
+
+D. The rule cannot be applied.
+
+<details>
+<summary><b>Show answer</b></summary>
+
+**Correct answer: C**
+
+Since 39°C is greater than 38°C, the condition is satisfied. The system concludes that `fever = TRUE`.
+
+</details>
+
+---
+
+## References
+
+1. Russell, S. J., & Norvig, P. (2021). *Artificial Intelligence: A Modern Approach* (4th ed.). Pearson.
+2. Haugeland, J. (1985). *Artificial Intelligence: The Very Idea*. MIT Press.
+3. Newell, A., & Simon, H. A. (1976). Computer Science as Empirical Inquiry: Symbols and Search. *Communications of the ACM, 19*(3), 113–126.
+
+---
+
+*End of Section 2.1 — What Is Symbolic AI?*
