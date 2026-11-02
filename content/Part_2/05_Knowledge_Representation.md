@@ -10,7 +10,7 @@
 
 ## 1. Where We Are in the Module
 
-In [2.1 What is Symbolic AI?](What_is_Symbolic_AI.md), we learned that Symbolic AI works by representing knowledge using symbols, facts and rules.
+In [2.1 What is Symbolic AI?](04_What_is_Symbolic_AI.md), we learned that Symbolic AI works by representing knowledge using symbols, facts and rules.
 
 But this raises an important question:
 
@@ -27,7 +27,7 @@ A computer cannot simply rely on vague ideas. We need a structured way to repres
 
 This is called **Knowledge Representation (KR)**.
 
-In this section, we explore several ways of representing knowledge. The next section, [2.3 How Symbolic AI Reasons](How_Symbolic_AI_Reasons.md), explains how a computer uses that knowledge to reach conclusions.
+In this section, we explore several ways of representing knowledge. The next section, [2.3 How Symbolic AI Reasons](06_How_Symbolic_AI_Reasons.md), explains how a computer uses that knowledge to reach conclusions.
 
 ---
 
