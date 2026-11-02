@@ -24,7 +24,7 @@ Every app runs in a protected area of memory called **user space**. From there i
 ## 2. What Happens When You Open an App
 Double-clicking an icon feels instant, but behind the scenes the app goes through five steps (Arpaci-Dusseau & Arpaci-Dusseau, 2018). Let's follow what happens when you open Google Chrome.
 
-![Application execution lifecycle](images/execution_lifecycle.png)
+![Application execution lifecycle](../images/execution_lifecycle.png)
 *Figure 1.5: The 5 steps of running an app, from a file on the SSD to the kernel sending back a result.*
 
 Figure 1.5 shows the five steps from top to bottom. The dashed arrow on the right is the loop: after the kernel sends back a result, the app goes back to running its instructions in Step 3.
