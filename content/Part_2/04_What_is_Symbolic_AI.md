@@ -2,7 +2,7 @@
 # 2.1 What Is Symbolic AI?
 
 **Status:** ✅  
-**Team Member:** Frederick Samuel Lesmana (Ti4nCi)
+**Team Member:** Frederick Samuel Lesmana (@Ti4nCi)
 
 **In this section:** What is Symbolic AI · Symbols, Facts & Rules · How Symbolic AI Works · GOFAI · Real-World Applications · Summary · Practice Questions
 
