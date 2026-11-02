@@ -162,7 +162,7 @@ Four common scheduling methods, using the example of a supermarket checkout:
 3. **Priority scheduling:** The most important process goes first. To stop low-priority processes from starving, the OS can slowly raise the priority of anyone who has waited a long time. This is called **aging**.
 4. **Round Robin:** Everyone gets a short, equal turn (a **time slice**), then goes to the back of the line. This is fair, and the same time-slice idea is part of why desktop systems feel smooth even with many apps open. If the time slice is too small, though, the CPU wastes time on context switches.
 
-![Round Robin timeline with a time slice of 2: P1, P2 and P3 take turns on the CPU until P3, P2 and then P1 finish](images/round_robin.jpeg)
+![Round Robin timeline with a time slice of 2: P1, P2 and P3 take turns on the CPU until P3, P2 and then P1 finish](../images/round_robin.jpeg)
 *Figure 1.2: Round Robin. Each process gets a short turn on the CPU, then goes to the back of the line.*
 
 In Figure 1.2, the time slice is 2 units. P1 needs 5 units, P2 needs 3, and P3 needs 2. P3 finishes first at time 6 because it only needed one turn. P2 finishes at 9, and P1, the longest job, finishes last at 10.
@@ -188,7 +188,7 @@ The OS can deal with deadlock in three ways:
 ## 9. Memory Management
 A program has to be in **RAM** to run, but RAM is limited and shared by every running program. Memory management decides who gets which part of RAM and keeps programs from touching each other's memory.
 
-![Memory hierarchy pyramid: registers at the top, then cache, RAM, and SSD or HDD at the bottom](images/memory_hierarchy.jpeg)
+![Memory hierarchy pyramid: registers at the top, then cache, RAM, and SSD or HDD at the bottom](../images/memory_hierarchy.jpeg)
 *Figure 1.3: Memory hierarchy. Faster and smaller at the top, slower and bigger at the bottom.*
 
 Figure 1.3 shows the trade-off. The fastest memory (CPU registers and cache) is tiny and expensive, while the biggest storage (SSD and HDD) is cheap but much slower. RAM sits in the middle.
