@@ -95,7 +95,7 @@ Two common reasoning methods are:
 - Forward Chaining: Starts with known facts and derives conclusions.
 - Backward Chaining: Starts with a goal and searches for supporting facts.
 
-These methods were discussed in [2.3 How Symbolic AI Reasons](08_How_Symbolic_AI_Reasons.md).
+These methods were discussed in [2.3 How Symbolic AI Reasons](06_How_Symbolic_AI_Reasons.md).
 
 ### 2.5 Explanation Facility
 
