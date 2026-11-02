@@ -118,7 +118,7 @@ The system follows these steps:
 4. Both conditions are satisfied.
 5. It applies the rule and concludes that Sammy meets the scholarship requirements.
 
-![Symbolic AI reasoning process](images/symbolic_ai_process.png)
+![Symbolic AI reasoning process](../images/symbolic_ai_process.png)
 *Figure 2.1: How Symbolic AI uses facts and rules to derive a conclusion.*
 
 This process is called **logical inference**. It means deriving new conclusions from information that the system already knows.
