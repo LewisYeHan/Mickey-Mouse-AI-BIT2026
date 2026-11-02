@@ -10,7 +10,7 @@
 
 ## Part 1: Software ✅
 
-### [1.1 Operating Systems](content/Part_1/01_Operating_Systems.md) ✅
+### [1.1 Operating Systems](Part_1/01_Operating_Systems.md) ✅
 What an OS is, kernel vs. shell, CLI vs. GUI. OS history and types, and a comparison of Windows, macOS, Linux, Android and iOS. How an OS works: processes and process states, system calls, scheduling, deadlocks, memory, I/O and security. Practice questions with answers.
 
 ### [1.2 System Software](content/Part_1/02_System_Software.md) ✅
