@@ -70,8 +70,6 @@ These facts tell the system that Sammy is a student, has a GPA of 3.8, and has a
 
 A **rule** describes what should happen when certain conditions are satisfied.
 
-![Timeline of Symbolic AI](../images/symbolic_ai_timeline.png)
-
 Rules are commonly written using the **IF–THEN** format:
 
 ```text
@@ -149,7 +147,7 @@ GOFAI commonly involved:
 - Applying logical reasoning to derive conclusions.
 - Using structured search and planning to solve problems.
 
-![Early artificial intelligence research](images/gofai_history.png)
+![Early artificial intelligence research](../images/gofai_history.png)
 *Figure 2.2: Early AI research focused heavily on symbolic representations and logical problem-solving.*
 
 ### Symbolic AI vs. GOFAI
