@@ -52,26 +52,152 @@ Key terminology from Sections 2.1 to 2.5, organized into six categories: Foundat
 
 ---
 
-## 🎯 Your Mini Challenge
 
-Think you've understood everything? Try these without looking back at the chapters.
+---
 
-1. **Software:** What happens between pressing the power button and seeing your login screen?
-2. **Operating Systems:** Why can't an ordinary application directly control every hardware component?
-3. **Symbolic AI:** How can an AI system use facts and rules to reach a conclusion?
-4. **Knowledge Representation:** What's the difference between storing a fact and representing a relationship between two entities?
-5. **Expert Systems:** Why does an expert system need both a knowledge base and an inference engine?
+## 🎮 The Mickey Mouse AI Challenge
+
+Think you've mastered the basics? Test yourself!
+
+**Rules:**
+- Try answering without revisiting the chapters.
+- Reveal the answer only after making your choice.
+- No cheating, Mickey is watching. 👀
+
+### Question 1 — Operating Systems
+
+Which component manages communication between software and hardware?
+
+- A. User Interface
+- B. Kernel
+- C. Web Browser
+- D. Compiler
 
 <details>
-<summary><b>Show hints</b></summary>
+<summary>💡 Reveal answer</summary>
 
-1. Think about firmware, bootloaders, and the operating system.
-2. Think about kernel space and user space.
-3. Think about IF–THEN rules and logical inference.
-4. Think about facts, entities, and relationships in a knowledge graph.
-5. Think about stored knowledge versus the process of reasoning with it.
+**Correct answer: B — Kernel**
+
+The kernel manages system resources and provides the interface between software and hardware.
 
 </details>
+
+### Question 2 — System Software
+
+What is the main purpose of a device driver?
+
+- A. To create documents
+- B. To browse the internet
+- C. To allow the OS to communicate with hardware
+- D. To compile source code
+
+<details>
+<summary>💡 Reveal answer</summary>
+
+**Correct answer: C**
+
+A device driver allows the operating system to communicate with and control a hardware device.
+
+</details>
+
+### Question 3 — Application Software
+
+Which type of application runs through a web browser?
+
+- A. Native application
+- B. Web application
+- C. Firmware
+- D. Device driver
+
+<details>
+<summary>💡 Reveal answer</summary>
+
+**Correct answer: B — Web application**
+
+Web applications are accessed through browsers rather than being installed as traditional native applications.
+
+</details>
+
+### Question 4 — Symbolic AI
+
+What does Symbolic AI primarily use to represent knowledge?
+
+- A. Random numbers
+- B. Symbols, facts, and rules
+- C. Images only
+- D. Hardware components
+
+<details>
+<summary>💡 Reveal answer</summary>
+
+**Correct answer: B**
+
+Symbolic AI represents knowledge explicitly through symbols, facts, and logical rules.
+
+</details>
+
+### Question 5 — Logical Reasoning
+
+If:
+
+- All humans are mortal.
+- Socrates is human.
+
+What can we conclude?
+
+- A. Socrates is immortal.
+- B. Socrates is mortal.
+- C. Socrates is not human.
+- D. There is insufficient information.
+
+<details>
+<summary>💡 Reveal answer</summary>
+
+**Correct answer: B — Socrates is mortal.**
+
+This is an example of logical inference using a general rule and a specific fact.
+
+</details>
+
+### Question 6 — Expert Systems
+
+Which component applies rules to facts to derive conclusions?
+
+- A. Knowledge Base
+- B. User Interface
+- C. Inference Engine
+- D. Working Memory
+
+<details>
+<summary>💡 Reveal answer</summary>
+
+**Correct answer: C — Inference Engine**
+
+The inference engine applies reasoning methods to the information stored in the knowledge base and working memory.
+
+</details>
+
+---
+
+### 🏁 Final Question
+
+You've reached the end. But here's something to think about:
+
+**If Symbolic AI is good at logical reasoning, why do we still need Machine Learning?**
+
+There isn't just one correct answer. Think about learning from data, recognizing patterns, and handling situations that are difficult to describe using fixed rules.
+
+<details>
+<summary>🧠 Suggested answer</summary>
+
+Symbolic AI is effective when knowledge and rules can be explicitly defined. However, many real-world problems involve complex patterns, uncertainty, and large amounts of data.
+
+Machine Learning can learn patterns from examples instead of requiring every rule to be manually written. Combining both approaches leads to Neuro-Symbolic AI.
+
+</details>
+
+**Thanks for learning with Mickey Mouse AI! 🐭**
+
 
 ---
 
