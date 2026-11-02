@@ -1,9 +1,10 @@
+
 # Module Outline: Software and Symbolic AI
 
-**Team:** Mickey Mouse · **Coordinator:** Yeo Shih Jie (@ysjie03)
-**For:** first-year students with no CS background. Read the sections in order.
+**Team:** Mickey Mouse · **Coordinator:** Yeo Shih Jie (@ysjie03)  
+**For:** First-year students with no CS background. Read the sections in order.
 
-Status: ✅ reviewed · 📝 drafted · 🔲 not started
+**Status:** ✅ reviewed · 📝 drafted · 🔲 not started · 🛠️ under maintenance
 
 ---
 
@@ -18,20 +19,37 @@ System vs. application software, firmware, BIOS vs. UEFI, and the boot process f
 ### [1.3 Application Software](03_Application_Software.md) ✅
 User space vs. kernel space, the 5-step execution lifecycle, and system calls. The 8 types of applications, and native vs. web vs. cross-platform apps. Practice questions with answers.
 
-### [1.4 Summary and Quiz](Part_1_Summary_and_Quiz) ✅
-How 1.1 to 1.3 connect, key ideas from each section, and a 13-question quiz (recall and apply-it questions) with answers.
+### [1.4 Summary and Quiz](Part_1_Summary_and_Quiz.md) ✅
+How 1.1 to 1.3 connect, key ideas from each section, and a 13-question quiz covering recall and application, with an answer key.
 
 ### [1.5 Glossary](Part_1_Glossary.md) ✅
-Every key term from 1.1 to 1.3 in A–Z order, with the section that explains each one.
+Key terms from 1.1 to 1.3, organized alphabetically, with the section where each term is explained.
 
 ---
 
-## Part 2: Symbolic AI 🔲
+## Part 2: Symbolic AI ✅
 
-| Section | Topics | Date |
-|---|---|---|
-| 2.1 What is Symbolic AI? | GOFAI, rule-based decisions | 28 Oct |
-| 2.2 Knowledge Representation | Symbols, semantic networks, knowledge graphs | 30 Oct |
-| 2.3 How Symbolic AI Reasons | IF-THEN rules, forward and backward chaining | 1 Nov |
-| 2.4 Expert Systems | How they're built; medical and engineering examples | 2 Nov |
-| 2.5 Strengths and Limits | Symbolic AI vs. machine learning, neuro-symbolic AI | 3 Nov |
+### [2.1 What Is Symbolic AI?](06_What_is_Symbolic_AI.md) ✅
+Introduction to Symbolic AI, its foundations, Good Old-Fashioned AI (GOFAI), symbols, explicit knowledge, and rule-based decision-making.
+
+### [2.2 Knowledge Representation](07_Knowledge_Representation.md) ✅
+How AI systems represent and organize knowledge using facts, propositions, propositional logic, predicate logic, semantic networks, frames, ontologies, and knowledge graphs.
+
+### [2.3 How Symbolic AI Reasons](08_How_Symbolic_AI_Reasons.md) ✅
+How AI derives conclusions from facts and rules. Covers logical inference, Modus Ponens, Modus Tollens, forward chaining, backward chaining, unification, resolution, and reasoning under uncertainty.
+
+### [2.4 Expert Systems](09_Expert_Systems.md) ✅
+How expert systems work and how they are built. Covers the knowledge base, inference engine, working memory, explanation facility, knowledge acquisition, and examples such as MYCIN, DENDRAL, and XCON.
+
+### [2.5 Strengths and Limitations](10_Strengths_and_Limits.md) ✅
+The advantages and limitations of Symbolic AI, including explainability, consistency, knowledge acquisition bottlenecks, ambiguity, and scalability. Compares Symbolic AI with Machine Learning and introduces Neuro-Symbolic AI.
+
+### [2.6 Module Summary and Self-Check Quiz](Part_2_Summary.md) ✅
+Connects the five sections of Part 2, reviews their key ideas, and provides a 13-question self-check quiz covering knowledge recall and practical application, with explanations in the answer key.
+
+### [2.7 Glossary](Part_2_Glossary.md) ✅
+Key terminology from 2.1 to 2.5, organized into six categories: Foundations of Symbolic AI, Knowledge Representation, Logical Reasoning, Uncertainty and Reasoning Methods, Expert Systems, and AI Approaches and Evaluation.
+
+---
+
+*Part 2 is complete and reviewed. Further revisions may be made during maintenance.*
