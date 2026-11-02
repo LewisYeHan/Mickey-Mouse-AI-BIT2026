@@ -1,7 +1,7 @@
 
 # 2.2 Knowledge Representation
 
-**Status:** 📝  
+**Status:** ✅  
 **Team Member:** Frederick Samuel Lesmana (`@Ti4nCi`)
 
 **In this section:** What is Knowledge Representation? · Facts and Data · Propositional Logic · Predicate Logic · Semantic Networks · Frames · Ontologies and Knowledge Graphs · Choosing a Representation · Practice Questions
