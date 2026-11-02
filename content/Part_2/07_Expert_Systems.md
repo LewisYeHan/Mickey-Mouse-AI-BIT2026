@@ -1,8 +1,8 @@
 
 # 2.4 Expert Systems
 
-**Status:** In Progress  
-**Team Member:** Frederick Samuel Lesmana
+**Status:** ✅ 
+**Team Member:** Frederick Samuel Lesmana (Ti4nCi)
 
 ---
 
