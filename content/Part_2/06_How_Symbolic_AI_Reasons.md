@@ -2,7 +2,7 @@
 # 2.3 How Symbolic AI Reasons
 
 **Status:** ✅ 
-**Team Member:** Frederick Samuel Lesmana (@T1an_Ci)
+**Team Member:** Frederick Samuel Lesmana (@Ti4nCi)
 
 ---
 
