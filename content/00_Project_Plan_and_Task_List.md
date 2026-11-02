@@ -1,6 +1,6 @@
 # Project Plan and Task List
 
-**Team:** Mickey Mouse · **Coordinator:** Yeo Shih Jie (@ysjie03) · **Last updated:** 27 Oct 2026
+**Team:** Mickey Mouse · **Coordinator:** Yeo Shih Jie (@ysjie03) · **Last updated:** 2 Nov 2026
 
 **Status:** ✅ done & reviewed · 📝 in progress · 🔲 not started
 
@@ -9,12 +9,12 @@
 | Member | Role | Main tasks |
 |---|---|---|
 | Yeo Shih Jie | CEO / coordination | Plan, roles, check-ins, logs, submissions |
-| Cassinis Soulisack | CIO | Repo, submission checks, wrote 1.2 |
-| Cao Minh Tuan | Content | Wrote 1.1 |
-| Frederick Samuel Lesmana | Content | Wrote 1.1, study guide |
-| Lu My Ky | Content + video | Wrote 1.3, video |
-| Wong Hiu Chung Samuel | Visual lead | Diagrams, slide template, 1.4 summary |
-| Goh Ye Han | Quality lead | Proofreading, 1.4 quiz, GitHub |
+| Cassinis Soulisack | CIO | Repo, submission checks, wrote 1.2, writing 2.5 |
+| Cao Minh Tuan | Content | Wrote 1.1, writing 2.2, study guide |
+| Frederick Samuel Lesmana | Content | Wrote 1.1, writing 2.3, study guide, README |
+| Lu My Ky | Content + video | Wrote 1.3, writing 2.4, video |
+| Wong Hiu Chung Samuel | Visual lead | Diagrams, slide template, 1.4 summary, writing 2.1 |
+| Goh Ye Han | Quality lead | Proofreading, quizzes, peer reviews, GitHub |
 
 ## Stage One Feedback and What We Changed
 
@@ -39,26 +39,58 @@
 | Stage One submission | Goh Ye Han, Yeo Shih Jie, Cassinis Soulisack | 26 Oct | Submission Report PDF, Markdown ZIP, content PDF | ✅ |
 | Stage One logs | Yeo Shih Jie + all | 26 Oct | Meeting log + one personal log per member | ✅ |
 
-## Stage Two
+## Stage Two — Markdown V2.0 (deadline 7 Nov 2026, 23:59 Beijing time)
+
+### A. Repo and planning
 
 | Task | Owner(s) | Due | Depends on | Expected result | Status |
 |---|---|---|---|---|---|
-| 2.1 What is Symbolic AI? | Wong Hiu Chung Samuel | 28 Oct | — | `05_What_is_Symbolic_AI.md` committed | 🔲 |
-| 2.2 Knowledge Representation | Cao Minh Tuan | 30 Oct | — | `06_Knowledge_Representation.md` committed | 🔲 |
-| 2.3 How Symbolic AI Reasons | Frederick Samuel Lesmana | 1 Nov | — | `07_How_Symbolic_AI_Reasons.md` committed | 🔲 |
-| 2.4 Expert Systems | Lu My Ky | 2 Nov | — | `08_Expert_Systems.md` committed | 🔲 |
-| 2.5 Strengths and Limits | Cassinis Soulisack | 3 Nov | — | `09_Strengths_and_Limits.md` committed | 🔲 |
-| Review Part 2 sections | Goh Ye Han | 1 day after each draft | Sections 2.1 to 2.5 | Each section covers every outline topic in full paragraphs, not just bullets | 🔲 |
-| Part 2 diagrams | Wong Hiu Chung Samuel | 4 Nov | — | Real images committed, no ASCII diagrams, each with a clear caption | 🔲 |
-| Part 2 quiz | Goh Ye Han | 6 Nov | 2.5 Strengths and Limits | Part 2 quiz committed | 🔲 |
-| Study guide 1.0 | Frederick Samuel Lesmana, Cao Minh Tuan | 6 Nov | Review Part 2 sections | One study guide covering Parts 1 and 2 | 🔲 |
+| Update README for Stage 2 | Frederick Samuel Lesmana | 2 Nov | — | Part 2 file plan (`06`–`11`), status table with writers and reviewers, review workflow | 📝 |
+| Update task list | Frederick Samuel Lesmana | 2 Nov | — | This file: new filenames, review and submission tasks, realistic due dates | 📝 |
+| Confirm Part 2 owners and dates | Yeo Shih Jie | 2 Nov check-in | — | Owners and dates in this table agreed by the whole team | 📝 |
+
+### B. Part 2 content (Symbolic AI)
+
+Each section must include: explanation of key terms → worked example → diagram where useful → at least one activity (trace, predict, compare or find-the-error) → checked answers → references.
+
+| Task | Owner(s) | Due | Depends on | Expected result | Status |
+|---|---|---|---|---|---|
+| 2.1 What is Symbolic AI? | Wong Hiu Chung Samuel | 3 Nov | — | `06_What_is_Symbolic_AI.md` committed | 🔲 |
+| 2.2 Knowledge Representation | Cao Minh Tuan | 4 Nov | 2.1 | `07_Knowledge_Representation.md` committed | 🔲 |
+| 2.3 How Symbolic AI Reasons | Frederick Samuel Lesmana | 4 Nov | 2.2 | `08_How_Symbolic_AI_Reasons.md` committed | 🔲 |
+| 2.4 Expert Systems | Lu My Ky | 4 Nov | 2.3 | `09_Expert_Systems.md` committed | 🔲 |
+| 2.5 Strengths and Limits | Cassinis Soulisack | 5 Nov | — | `10_Strengths_and_Limits.md` committed | 🔲 |
+| Part 2 diagrams | Wong Hiu Chung Samuel | 5 Nov | 2.1–2.4 drafts | Real images in `content/images/`, each with a caption, no ASCII diagrams | 🔲 |
+| Part 2 summary and quiz | Goh Ye Han | 6 Nov | 2.1–2.5 | `11_Part2_Summary_and_Quiz.md` with answer key | 🔲 |
+| Glossary update | Goh Ye Han | 6 Nov | 2.1–2.5 | Part 2 terms added to `05_Glossary.md`, same wording as the sections | 🔲 |
+
+### C. Review and testing (brief section D)
+
+| Task | Owner(s) | Due | Depends on | Expected result | Status |
+|---|---|---|---|---|---|
+| Peer review of each Part 2 section | Reviewer is never the writer: Goh Ye Han reviews 2.1–2.5; another member reviews Goh's quiz and glossary | 1 day after each draft | Each section draft | "Reviewed by" note at the end of each file; fixes committed | 🔲 |
+| Learner test of one explanation or activity per section | A teammate who did not write it | 6 Nov | Peer review | Notes: what they understood, where they got confused, what we changed (in Stage 2 logs) | 🔲 |
+| Accuracy check | Goh Ye Han + section writers | 6 Nov | Peer review | Claims, examples and answers checked against references; terms consistent across files | 🔲 |
+| Re-check Part 1 against Stage 1 feedback | Goh Ye Han | 5 Nov | — | Same problems (placeholders, thin content, ASCII) not present anywhere else | 🔲 |
+
+### D. Learning resources (brief section E)
+
+| Task | Owner(s) | Due | Depends on | Expected result | Status |
+|---|---|---|---|---|---|
+| Study Guide & Test Bank 1.0 | Frederick Samuel Lesmana, Cao Minh Tuan | 6 Nov | Part 2 reviewed | Covers Parts 1 and 2; questions match the Markdown answers | 🔲 |
 | Slides PPT 1.0 | Wong Hiu Chung Samuel, Lu My Ky | 7 Nov | Study guide 1.0 | Slide deck using the team template | 📝 |
-| Video tutorial 1.0 | Lu My Ky | 7 Nov | Slides PPT 1.0 | Video based on the slides | 🔲 |
-| PDF check | Cassinis Soulisack | 7 Nov | Study guide 1.0 | PDFs show formatted headings, tables and images, no raw Markdown | 🔲 |
-| Placeholder check | Goh Ye Han | 7 Nov | PDF check | Submission report and all files checked, no placeholders or empty sections left | 🔲 |
-| Stage Two submission | Yeo Shih Jie, Cassinis Soulisack, Goh Ye Han | 7 Nov | Placeholder check, Slides PPT 1.0, Video tutorial 1.0 | All Stage Two files submitted | 🔲 |
-| Stage Two logs | Yeo Shih Jie + all | 7 Nov | — | Meeting log + one personal log per member | 🔲 |
+| Video tutorials 1.0 | Lu My Ky | 7 Nov | Slides PPT 1.0 | Videos based on the slides | 🔲 |
+| Resource mapping table | Frederick Samuel Lesmana | 7 Nov | Study guide, slides | Markdown section → study guide / slide / video topic | 🔲 |
 
-*Part 2 owners are tentative and will be confirmed at the 29 Oct check-in.*
+### E. Submission (brief section G)
 
-**Check-ins:** Yeo Shih Jie runs short team check-ins on 29 Oct, 2 Nov and 5 Nov.
+| Task | Owner(s) | Due | Depends on | Expected result | Status |
+|---|---|---|---|---|---|
+| Readable content PDF | Cassinis Soulisack | 7 Nov | All content reviewed | Full V2.0 content as PDF; headings, tables and images display, no raw Markdown | 🔲 |
+| Submission report | Yeo Shih Jie, Goh Ye Han | 7 Nov | Mapping, reviews | Team info, repo URL, snapshot date + latest commit ID, revision summary, review results, mapping, GitHub evidence, remaining gaps | 🔲 |
+| GitHub evidence | Cassinis Soulisack | 7 Nov | — | Screenshots of commit history and example content changes since Stage 1 | 🔲 |
+| Placeholder check | Goh Ye Han | 7 Nov | PDF, report | No placeholders or empty sections in any file | 🔲 |
+| Build and test ZIP | Cassinis Soulisack | 7 Nov | All of the above | `MickeyMouse_Stage2_Markdown_V2.zip`, extracted into a new folder and checked: files open, images display | 🔲 |
+| Stage Two logs | Yeo Shih Jie + all | 7 Nov | — | Meeting log + one personal log per member, with AI use and review evidence beside each entry | 🔲 |
+
+**Check-ins:** Yeo Shih Jie runs short team check-ins on 2 Nov, 5 Nov and 7 Nov (final check before submitting).
