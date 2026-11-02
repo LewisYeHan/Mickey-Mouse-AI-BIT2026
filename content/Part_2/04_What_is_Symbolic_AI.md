@@ -141,7 +141,7 @@ Early AI researchers believed that computers could demonstrate intelligent behav
 
 ![Timeline of Symbolic AI](../images/symbolic_ai_timeline.png)
 
-*Figure 2.3: Key milestones in the development of Symbolic AI.*
+*Figure 2.2: Key milestones in the development of Symbolic AI.*
 
 GOFAI commonly involved:
 
@@ -152,7 +152,7 @@ GOFAI commonly involved:
 - Using structured search and planning to solve problems.
 
 ![Early artificial intelligence research](../images/gofai_history.png)
-*Figure 2.2: Early AI research focused heavily on symbolic representations and logical problem-solving.*
+*Figure 2.3: Early AI research focused heavily on symbolic representations and logical problem-solving.*
 
 ### Symbolic AI vs. GOFAI
 
