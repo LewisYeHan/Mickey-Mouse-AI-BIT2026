@@ -18,7 +18,7 @@ System vs. application software, firmware, BIOS vs. UEFI, and the boot process f
 ### [1.3 Application Software](03_Application_Software.md) ✅
 User space vs. kernel space, the 5-step execution lifecycle, and system calls. The 8 types of applications, and native vs. web vs. cross-platform apps. Practice questions with answers.
 
-### [1.4 Summary and Quiz](04_Summary_and_Quiz_Part1.md) ✅
+### [1.4 Summary and Quiz](Part_1_Summary_and_Quiz) ✅
 How 1.1 to 1.3 connect, key ideas from each section, and a 13-question quiz (recall and apply-it questions) with answers.
 
 ### [1.5 Glossary](05_Glossary.md) ✅
