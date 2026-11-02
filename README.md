@@ -44,8 +44,8 @@
         ├── 01_Operating_Systems.md            ← 1.1
         ├── 02_System_Software.md              ← 1.2
         ├── 03_Application_Software.md         ← 1.3
-        ├── Part_1_Summary_and_Quiz.md             ← 1.4, Part 1 summary + quiz with answers
-        ├── Glossary.md                     ← A–Z key terms (Parts 1 and 2)
+        ├── Part_1_Summary_and_Quiz.md         ← 1.4, Part 1 summary + quiz with answers
+        ├── Part_1_Glossary.md                 ← A–Z key terms (Parts 1)
         │
         │   Part 2: Symbolic AI
         ├── 04_What_is_Symbolic_AI.md          ← 2.1
@@ -53,7 +53,8 @@
         ├── 06_How_Symbolic_AI_Reasons.md      ← 2.3
         ├── 07_Expert_Systems.md               ← 2.4
         ├── 08_Strengths_and_Limits.md         ← 2.5
-        ├── Part2_Summary_and_Quiz.md       ← Part 2 summary + quiz with answers
+        ├── Part2_Summary_and_Quiz.md          ← Part 2 summary + quiz with answers
+        ├── Part_2_Glossary.md                 ← A–Z key terms (Parts 2)
         │
         └── images/
             ├── banner.svg                     ← README banner
