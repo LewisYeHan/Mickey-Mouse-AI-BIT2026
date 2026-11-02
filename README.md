@@ -45,14 +45,14 @@
         ├── 02_System_Software.md              ← 1.2
         ├── 03_Application_Software.md         ← 1.3
         ├── Part_1_Summary_and_Quiz.md             ← 1.4, Part 1 summary + quiz with answers
-        ├── 05_Glossary.md                     ← A–Z key terms (Parts 1 and 2)
+        ├── Glossary.md                     ← A–Z key terms (Parts 1 and 2)
         │
         │   Part 2: Symbolic AI
-        ├── 06_What_is_Symbolic_AI.md          ← 2.1
-        ├── 07_Knowledge_Representation.md     ← 2.2
-        ├── 08_How_Symbolic_AI_Reasons.md      ← 2.3
-        ├── 09_Expert_Systems.md               ← 2.4
-        ├── 10_Strengths_and_Limits.md         ← 2.5
+        ├── 04_What_is_Symbolic_AI.md          ← 2.1
+        ├── 05_Knowledge_Representation.md     ← 2.2
+        ├── 06_How_Symbolic_AI_Reasons.md      ← 2.3
+        ├── 07_Expert_Systems.md               ← 2.4
+        ├── 08_Strengths_and_Limits.md         ← 2.5
         ├── Part2_Summary_and_Quiz.md       ← Part 2 summary + quiz with answers
         │
         └── images/
