@@ -24,13 +24,13 @@
 
 | Member | Student ID | Role | Main job | Sections written | GitHub |
 |---|---|---|---|---|---|
-| Yeo Shih Jie (杨世杰) | 1820262289 | CEO | Plan, task tracker, coordination | — | @ysjie03 |
-| Cassinis Soulisack (苏浩然) | 1820262224 | CIO | Repo setup, submission checks | 1.2, 2.5 | @DiegoSmiley |
+| Yeo Shih Jie (杨世杰) | 1820262289 | CEO | Plan, task tracker, coordination | 2.6 | @ysjie03 |
+| Cassinis Soulisack (苏浩然) | 1820262224 | CIO | Repo setup, submission checks | 1.2, 2.5, 2.7 | @DiegoSmiley |
 | Cao Minh Tuan (高明俊) | 1820262251 | Content lead | Content writing | 1.1, 2.2 | @mnhtnc |
 | Frederick Samuel Lesmana (梁天赐) | 1820262240 | Content lead | Content writing, study guide | 1.1, 2.3 | @Ti4nCi |
 | Lu My Ky (吕美琪) | 1820262269 | Video & content lead | Content writing, video | 1.3, 2.4 | @jojolu11 |
 | Wong Hiu Chung Samuel (王晓聪) | 1820262001 | Visual lead | Diagrams, slide template | 1.4 summary, 2.1 | @Samuel940398 |
-| Goh Ye Han (吴宇航) | 1820262002 | Quality lead | Proofreading, quizzes, reviews | 1.4 quiz, Part 2 quiz | @LewisYeHan |
+| Goh Ye Han (吴宇航) | 1820262002 | Quality lead | Proofreading, quizzes, reviews | 1.4 quiz, 2.8 quiz, 2.9 glossary | @LewisYeHan |
 
 ## Folder Structure
 
@@ -57,6 +57,8 @@ Mickey-Mouse-AI-BIT2026/
     │   ├── 06_How_Symbolic_AI_Reasons.md
     │   ├── 07_Expert_Systems.md
     │   ├── 08_Strengths_and_Limits.md
+    │   ├── 09_Planning_and_Problem_Solving.md
+    │   ├── 10_NLP_in_Symbolic_AI.md
     │   ├── Part_2_Summary_and_Quiz.md
     │   └── Part_2_Glossary.md
     │
@@ -70,7 +72,10 @@ Mickey-Mouse-AI-BIT2026/
         ├── concept_map.png
         ├── symbolic_ai_process.png
         ├── gofai_history.png
-        └── symbolic_ai_timeline.png
+        ├── symbolic_ai_timeline.png
+        ├── campus_map_search.png
+        ├── minimax_tree.png
+        └── parse_tree.png
 ```
 
 ### Quick Navigation
@@ -84,15 +89,17 @@ Mickey-Mouse-AI-BIT2026/
 | 1.2 | System Software | [Open](content/Part_1/02_System_Software.md) |
 | 1.3 | Application Software | [Open](content/Part_1/03_Application_Software.md) |
 | 1.4 | Part 1 Summary & Quiz | [Open](content/Part_1/Part_1_Summary_and_Quiz.md) |
-| — | Part 1 Glossary | [Open](content/Part_1/Part_1_Glossary.md) |
+| 1.5 | Part 1 Glossary | [Open](content/Part_1/Part_1_Glossary.md) |
 | **Part 2: Symbolic AI** | | |
 | 2.1 | What Is Symbolic AI? | [Open](content/Part_2/04_What_is_Symbolic_AI.md) |
 | 2.2 | Knowledge Representation | [Open](content/Part_2/05_Knowledge_Representation.md) |
 | 2.3 | How Symbolic AI Reasons | [Open](content/Part_2/06_How_Symbolic_AI_Reasons.md) |
 | 2.4 | Expert Systems | [Open](content/Part_2/07_Expert_Systems.md) |
 | 2.5 | Strengths and Limits | [Open](content/Part_2/08_Strengths_and_Limits.md) |
-| — | Part 2 Summary & Quiz | [Open](content/Part_2/Part_2_Summary_and_Quiz.md) |
-| — | Part 2 Glossary | [Open](content/Part_2/Part_2_Glossary.md) |
+| 2.6 | Planning and Problem Solving | [Open](content/Part_2/09_Planning_and_Problem_Solving.md) |
+| 2.7 | NLP in Symbolic AI | [Open](content/Part_2/10_NLP_in_Symbolic_AI.md) |
+| 2.8 | Part 2 Summary & Quiz | [Open](content/Part_2/Part_2_Summary_and_Quiz.md) |
+| 2.9 | Part 2 Glossary | [Open](content/Part_2/Part_2_Glossary.md) |
 
 Each content file follows a consistent learning structure, including explanations, examples, diagrams where useful, practice questions, answers, and references.
 
@@ -117,9 +124,11 @@ Status labels:
 | 2.3 How Symbolic AI Reasons | Frederick Samuel Lesmana | Goh Ye Han | ☑ |
 | 2.4 Expert Systems | Lu My Ky | Goh Ye Han | ☑ |
 | 2.5 Strengths and Limits | Cassinis Soulisack | Goh Ye Han | ☑ |
-| Part 2 Summary and Quiz | Goh Ye Han | — | ☑ |
-| Part 2 Glossary | Goh Ye Han | — | ☑ |
-| Part 2 Diagrams and Illustrations | Wong Hiu Chung Samuel | — | ☑ |
+| 2.6 Planning and Problem Solving | Yeo Shih Jie | Goh Ye Han | 📝 |
+| 2.7 NLP in Symbolic AI | Cassinis Soulisack | Goh Ye Han | 📝 |
+| 2.8 Part 2 Summary and Quiz (updated for 2.6–2.7) | Goh Ye Han | — | 📝 |
+| 2.9 Part 2 Glossary (updated for 2.6–2.7) | Goh Ye Han | — | 📝 |
+| Part 2 Diagrams and Illustrations | Wong Hiu Chung Samuel | — | 📝 |
 | Study Guide and Test Bank 1.0 | Frederick Samuel Lesmana, Cao Minh Tuan | — | ☐ |
 | PPT Slides 1.0 | Wong Hiu Chung Samuel, Lu My Ky | — | 📝 |
 | Video Tutorials 1.0 | Lu My Ky | — | ☐ |
@@ -134,7 +143,7 @@ See [`00_Project_Plan_and_Task_List.md`](content/00_Project_Plan_and_Task_List.m
 | Content was incomplete | Rewrote bullet notes as full explanations; added a written summary | `01`–`04` |
 | AI-made ASCII diagrams | Replaced them with real images, each with a caption | `content/images/`, `01`–`03` |
 | PDF showed raw Markdown | Re-exported so headings, tables and images display properly | Content PDF |
-| Part 2 (Symbolic AI) not yet written | Writing sections 2.1–2.5 with examples, activities and answers | `06`–`11` |
+| Part 2 (Symbolic AI) not yet written | Wrote sections 2.1–2.7 with examples, activities and answers, covering every topic in lecture chapter 4 | `Part_2/04`–`10` |
 
 ## How we work
 
