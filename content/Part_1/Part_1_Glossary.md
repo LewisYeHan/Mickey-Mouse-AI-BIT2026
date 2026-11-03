@@ -1,4 +1,6 @@
-# Glossary
+# 1.5 Glossary
+
+**Status:** ✅  
 
 **In this section:** every key term from Part 1, in A–Z order. The last column shows which section explains it in more detail.
 
