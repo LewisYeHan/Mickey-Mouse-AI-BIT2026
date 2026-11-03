@@ -1,10 +1,9 @@
-
 # 2.2 Knowledge Representation
 
 **Status:** ✅  
-**Team Member:** Frederick Samuel Lesmana (`@Ti4nCi`)
+**Team Member:** Cao Minh Tuan (`@mnhtnc`)
 
-**In this section:** What is Knowledge Representation? · Facts and Data · Propositional Logic · Predicate Logic · Semantic Networks · Frames · Ontologies and Knowledge Graphs · Choosing a Representation · Practice Questions
+**In this section:** What is Knowledge Representation? · Facts and Data · Propositional Logic and Logical Equivalences · Predicate Logic · Semantic Networks · Frames and Scripts · Rule-Based Representation · Ontologies and Knowledge Graphs · Choosing a Representation · Applications · Practice Questions
 
 ---
 
@@ -148,7 +147,7 @@ Different problems require different structures.
 
 For example, representing a person's age is relatively simple. Representing the relationships between thousands of people, universities and courses is much more complicated.
 
-Let's explore four important approaches.
+Let's explore five important approaches.
 
 ### 4.1 Propositional Logic
 
@@ -266,6 +265,42 @@ For IMPLIES:
 | FALSE | FALSE | TRUE |
 
 Notice that an implication is only FALSE when P is TRUE and Q is FALSE.
+
+**IF AND ONLY IF (↔)**
+
+```text
+P ↔ Q
+```
+
+This is called a **biconditional**. It means P and Q are always both TRUE or both FALSE. For example: "A student may enter the exam hall (P) **if and only if** they show their student card (Q)." The card is needed, and it is also enough.
+
+| P | Q | P ↔ Q |
+|---|---|---|
+| TRUE | TRUE | TRUE |
+| TRUE | FALSE | FALSE |
+| FALSE | TRUE | FALSE |
+| FALSE | FALSE | TRUE |
+
+#### Logical Equivalences
+
+Two statements are **logically equivalent** (written ≡) if they have the same truth value in every possible situation. Equivalences let a system rewrite a statement into a simpler or more useful form without changing its meaning.
+
+| Name | Equivalence | In words |
+|---|---|---|
+| **Double negation** | ¬(¬P) ≡ P | "It is not true that Alex is not a student" means "Alex is a student". |
+| **De Morgan's law (AND)** | ¬(P ∧ Q) ≡ ¬P ∨ ¬Q | "Not (fine paid AND book returned)" means "fine not paid OR book not returned". |
+| **De Morgan's law (OR)** | ¬(P ∨ Q) ≡ ¬P ∧ ¬Q | "Not (has fever OR has cough)" means "no fever AND no cough". |
+
+We can check De Morgan's law (AND) with a truth table. The two bold columns match in every row, so the statements are equivalent:
+
+| P | Q | P ∧ Q | **¬(P ∧ Q)** | ¬P | ¬Q | **¬P ∨ ¬Q** |
+|---|---|---|---|---|---|---|
+| TRUE | TRUE | TRUE | **FALSE** | FALSE | FALSE | **FALSE** |
+| TRUE | FALSE | FALSE | **TRUE** | FALSE | TRUE | **TRUE** |
+| FALSE | TRUE | FALSE | **TRUE** | TRUE | FALSE | **TRUE** |
+| FALSE | FALSE | FALSE | **TRUE** | TRUE | TRUE | **TRUE** |
+
+> **Tip for remembering De Morgan's laws:** when you move a NOT inside the brackets, NOT goes onto each part and AND and OR swap places.
 
 #### When Is Propositional Logic Useful?
 
@@ -598,6 +633,40 @@ Examples include:
 | Supports default values | Inheritance can become complicated |
 | Supports reusable structures | Different systems may implement frames differently |
 
+#### Scripts
+
+A frame describes one object or situation. A **script** is a **sequence of frames** that describes a typical series of events. It tells the system what usually happens, and in what order.
+
+```text
+SCRIPT: Borrowing a Library Book
+
+1. Student enters the library.
+2. Student finds the book on the shelf.
+3. Student takes the book to the counter.
+4. Librarian scans the student card and the book.
+5. Student leaves with the book.
+```
+
+Because the system knows the script, it can fill in missing steps. If it is told "Alex took a book to the counter and then left the library", it can infer that the librarian scanned Alex's card, even though nobody said so.
+
+---
+
+### 4.5 Rule-Based Representation
+
+**Rule-based representation** stores knowledge as **production rules**: IF-THEN statements that capture conditions and the actions or conclusions that follow. The system uses these rules to infer new knowledge from what it already knows.
+
+For example, a medical diagnosis system might contain:
+
+```text
+IF the patient has a fever
+AND the patient has a cough
+THEN consider the possibility of a respiratory infection.
+```
+
+If the system knows that a patient has a fever and a cough, it applies the rule and concludes that a respiratory infection is possible.
+
+Rule-based representation is easy for people to read and update, because each rule is one piece of knowledge. How a system chooses and applies its rules is explained in [2.3 How Symbolic AI Reasons](06_How_Symbolic_AI_Reasons.md), and full rule-based systems are explained in [2.4 Expert Systems](07_Expert_Systems.md).
+
 ---
 
 ## 5. Ontologies and Knowledge Graphs
@@ -767,7 +836,8 @@ Let's compare them.
 | Propositional Logic | True or false statements | Simple logical conditions |
 | Predicate Logic | Objects, properties and relationships | More expressive logical statements |
 | Semantic Networks | Connected nodes and relationships | Visualising connected concepts |
-| Frames | Objects with attributes and values | Structured object descriptions |
+| Frames and Scripts | Objects with attributes, and typical sequences of events | Structured object descriptions and everyday situations |
+| Rule-Based Representation | IF-THEN production rules | Conditions that lead to conclusions or actions |
 | Ontologies | Formal concepts and their definitions | Defining a shared domain vocabulary |
 | Knowledge Graphs | Connected entities and facts | Linking and retrieving related information |
 
@@ -787,6 +857,15 @@ For example:
 - If we need to connect information across thousands of entities, a knowledge graph may be appropriate.
 
 In real-world systems, multiple representation methods can be combined.
+
+### Where Is Knowledge Representation Used?
+
+| Application | How knowledge representation helps |
+|---|---|
+| Medical diagnosis | Captures symptoms, diseases and medical expertise to help with diagnosis. |
+| Natural language understanding | Represents knowledge about language so AI systems can understand and generate it (see [2.7](10_NLP_in_Symbolic_AI.md)). |
+| Robotics | Represents space, objects and tasks so robots can reason about where things are, handle objects and plan tasks (see [2.6](09_Planning_and_Problem_Solving.md)). |
+| Expert systems | Represents knowledge from a specific field so the system can give expert-level advice (see [2.4](07_Expert_Systems.md)). |
 
 ---
 
