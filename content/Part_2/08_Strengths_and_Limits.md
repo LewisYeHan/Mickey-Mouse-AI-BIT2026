@@ -1,9 +1,9 @@
-
 # 2.5 Strengths and Limitations of Symbolic AI
 
-**Status:** ✅
+**Status:** ✅  
+**Team Member:** Cassinis Soulisack (`@DiegoSmiley`)
 
-**Team Member:** Frederick Samuel Lesmana
+**In this section:** Strengths · Limitations · Symbolic AI vs. Machine Learning · When to Use Symbolic AI · Combining Symbolic AI with Machine Learning · Real-World Applications · Key Takeaways · Review Questions and Answers
 
 ---
 
@@ -279,7 +279,7 @@ Combining Symbolic AI with Machine Learning offers another approach to building 
 
 ---
 
-## 9. Review Questions
+## 9. Review Questions and Answers
 
 ### Understanding
 
@@ -303,6 +303,28 @@ Combining Symbolic AI with Machine Learning offers another approach to building 
 9. Can Symbolic AI and Machine Learning complement each other? Give an example.
 
 10. Do you think Symbolic AI will remain relevant as Machine Learning continues to develop? Explain your reasoning.
+
+### Answers
+
+**1.** Any three of: **explainability** (it can show which facts and rules led to a decision), **logical consistency** (it applies rules the same way every time), **clear knowledge representation** (knowledge is readable and editable), **efficient reasoning in well-defined domains**, and **knowledge preservation** (experts' knowledge is kept after they leave).
+
+**2.** It is the difficulty, time and cost of collecting knowledge from human experts and turning it into rules a computer can use. Experts may find it hard to put their knowledge into words, and large knowledge bases are slow to build and maintain.
+
+**3.** The reasoning only guarantees a correct conclusion if the facts and rules are correct. If a rule is outdated, incomplete or wrong, or a fact is incorrect, the system will still apply it perfectly and reach a wrong conclusion.
+
+**4.** Symbolic AI uses facts and rules that people write explicitly and reasons with logic, so its decisions are usually easy to explain. Machine learning learns patterns from large amounts of data, which makes it better at tasks like recognising images, but its decisions are often harder to explain.
+
+**5.** Business rules, such as loan conditions, insurance policies or discount rules, are already written down clearly. Symbolic AI can apply them consistently, explain every decision to customers or auditors, and be updated quickly when a policy changes by editing a rule.
+
+**6.** **Machine learning.** Objects in photographs vary in lighting, angle, size and background, and it is almost impossible to write rules that describe every possible appearance of, say, a cat. Machine learning can learn these visual patterns from many example images.
+
+**7.** It can apply medical rules to a patient's symptoms and test results to suggest possible diagnoses or treatments, remind the doctor of options they might miss, and explain which rules led to each suggestion. The doctor still makes the final decision.
+
+**8.** In areas such as medicine, finance, law and education, decisions affect people's lives. People need to understand why a decision was made so they can check it, challenge mistakes and trust the system. Regulations may also require decisions to be explained.
+
+**9.** **Yes.** For example, in a medical assistance system, a machine-learning model can analyse X-ray images to detect possible problems, and a symbolic rule-based system can combine that result with medical guidelines and patient history to recommend next steps and explain the recommendation.
+
+**10.** Answers will vary. A strong answer explains that machine learning is better at pattern recognition, but symbolic AI stays relevant where decisions must follow explicit rules and be explained, such as law, finance and safety-critical systems. Hybrid neuro-symbolic systems suggest the two approaches will increasingly be used together rather than one replacing the other.
 
 ---
 
