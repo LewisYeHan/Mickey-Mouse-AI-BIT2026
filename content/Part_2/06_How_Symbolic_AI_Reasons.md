@@ -1,9 +1,9 @@
-
 # 2.3 How Symbolic AI Reasons
 
 **Status:** ✅  
+**Team Member:** Frederick Samuel Lesmana (`@Ti4nCi`)
 
-**Team Member:** Frederick Samuel Lesmana (@Ti4nCi)
+**In this section:** Facts, Rules and Inference · Modus Ponens and Modus Tollens · Forward Chaining · Backward Chaining · Resolution and Unification · Conflict Resolution · Reasoning Under Uncertainty · Python Example · Limitations · Key Takeaways · Review Questions and Answers
 
 ---
 
@@ -551,7 +551,7 @@ Combining symbolic reasoning with machine learning can help address some of thes
 
 ---
 
-## 13. Review Questions
+## 13. Review Questions and Answers
 
 ### Understanding
 
@@ -585,6 +585,30 @@ Student(Alex)
 10. Can a symbolic system reach an incorrect conclusion even when it applies its rules correctly? Explain.
 
 11. Why might combining symbolic reasoning with machine learning be useful?
+
+### Answers
+
+**1.** Reasoning is the process of using known facts and rules to derive new conclusions. For example, from `Human(Socrates)` and the rule `Human(x) → Mortal(x)`, the system derives `Mortal(Socrates)`.
+
+**2.** A **fact** is a statement the system accepts as true, such as `Student(Alex)`. A **rule** describes what follows when certain conditions are true, such as `IF Student(x) THEN LibraryAccess(x)`. Facts describe the situation; rules describe how to reason about it.
+
+**3.** **Modus Ponens:** if P → Q and P is true, then Q is true (it rains → the ground is wet; it is raining; so the ground is wet). **Modus Tollens:** if P → Q and Q is false, then P is false (if a device is connected, its indicator is on; the indicator is off; so the device is not connected).
+
+**4.** **Forward chaining** starts from the known facts and applies rules to derive new facts until a conclusion is reached (data-driven). **Backward chaining** starts from a goal and works backward, looking for rules and facts that would prove it (goal-driven).
+
+**5.** Unification finds a substitution that makes two logical expressions match. For example, `Student(x)` and `Student(Alex)` match with `x = Alex`, which lets a general rule about `x` be applied to Alex.
+
+**6.** By unification (`x = Alex`) and Modus Ponens, the system derives `LibraryAccess(Alex)`: Alex has library access.
+
+**7.** Backward chaining only explores the rules and facts that are relevant to the one goal being tested. It does not waste time deriving every possible conclusion from all the facts, so it is more efficient when there is a single question to answer, such as "Does this patient have condition X?".
+
+**8.** Several rules can be triggered by the same facts and may recommend different or competing actions. For example, a student may meet both `ExcellentStudent` and `FlagForReview` rules. Conflict resolution strategies, such as rule priority, specificity or recency, decide which rule to apply first so that the system behaves consistently.
+
+**9.** **Fuzzy logic** represents how much something belongs to a vague category, such as 30°C being "hot" to degree 0.8. **Probabilistic reasoning** represents how likely an uncertain event or hypothesis is, such as an 80% chance of rain. Fuzzy logic deals with vagueness; probability deals with uncertainty.
+
+**10.** **Yes.** The reasoning can be logically valid but still reach a wrong conclusion if a fact is wrong or a rule is incomplete or outdated. For example, Modus Tollens concludes a device is unplugged when its indicator is off, but if the indicator bulb is broken, that conclusion is wrong. Correct reasoning only guarantees correct conclusions when the facts and rules are correct.
+
+**11.** Machine learning is good at learning patterns from messy data, such as recognising images or speech, while symbolic reasoning is good at applying explicit rules and explaining its decisions. Combining them can give a system that both copes with real-world data and gives transparent, rule-checked answers. This is the idea behind neuro-symbolic AI (see [2.5](08_Strengths_and_Limits.md)).
 
 ---
 
