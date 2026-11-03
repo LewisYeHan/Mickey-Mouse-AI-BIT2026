@@ -45,9 +45,9 @@
 
 | Task | Owner(s) | Due | Depends on | Expected result | Status |
 |---|---|---|---|---|---|
-| Update README for Stage 2 | Frederick Samuel Lesmana | 2 Nov | — | Part 2 file plan (`06`–`11`), status table with writers and reviewers, review workflow | 📝 |
-| Update task list | Frederick Samuel Lesmana | 2 Nov | — | This file: new filenames, review and submission tasks, realistic due dates | 📝 |
-| Confirm Part 2 owners and dates | Yeo Shih Jie | 2 Nov check-in | — | Owners and dates in this table agreed by the whole team | 📝 |
+| Update README for Stage 2 | Frederick Samuel Lesmana | 2 Nov | — | Part 2 file plan (`04`–`10`), status table with writers and reviewers, review workflow | ✅ |
+| Update task list | Frederick Samuel Lesmana | 2 Nov | — | This file: new filenames, review and submission tasks, realistic due dates | ✅ |
+| Confirm Part 2 owners and dates | Yeo Shih Jie | 5 Nov check-in | — | Owners and dates in this table agreed by the whole team, including the new 2.6 and 2.7 | 📝 |
 
 ### B. Part 2 content (Symbolic AI)
 
@@ -55,20 +55,22 @@ Each section must include: explanation of key terms → worked example → diagr
 
 | Task | Owner(s) | Due | Depends on | Expected result | Status |
 |---|---|---|---|---|---|
-| 2.1 What is Symbolic AI? | Wong Hiu Chung Samuel | 3 Nov | — | `06_What_is_Symbolic_AI.md` committed | 🔲 |
-| 2.2 Knowledge Representation | Cao Minh Tuan | 4 Nov | 2.1 | `07_Knowledge_Representation.md` committed | 🔲 |
-| 2.3 How Symbolic AI Reasons | Frederick Samuel Lesmana | 4 Nov | 2.2 | `08_How_Symbolic_AI_Reasons.md` committed | 🔲 |
-| 2.4 Expert Systems | Lu My Ky | 4 Nov | 2.3 | `09_Expert_Systems.md` committed | 🔲 |
-| 2.5 Strengths and Limits | Cassinis Soulisack | 5 Nov | — | `10_Strengths_and_Limits.md` committed | 🔲 |
-| Part 2 diagrams | Wong Hiu Chung Samuel | 5 Nov | 2.1–2.4 drafts | Real images in `content/images/`, each with a caption, no ASCII diagrams | 🔲 |
-| Part 2 summary and quiz | Goh Ye Han | 6 Nov | 2.1–2.5 | `11_Part2_Summary_and_Quiz.md` with answer key | 🔲 |
-| Glossary update | Goh Ye Han | 6 Nov | 2.1–2.5 | Part 2 terms added to `05_Glossary.md`, same wording as the sections | 🔲 |
+| 2.1 What is Symbolic AI? | Wong Hiu Chung Samuel | 3 Nov | — | `Part_2/04_What_is_Symbolic_AI.md` committed | ✅ |
+| 2.2 Knowledge Representation | Cao Minh Tuan | 4 Nov | 2.1 | `Part_2/05_Knowledge_Representation.md` committed, including logical equivalences and De Morgan's laws | ✅ |
+| 2.3 How Symbolic AI Reasons | Frederick Samuel Lesmana | 4 Nov | 2.2 | `Part_2/06_How_Symbolic_AI_Reasons.md` committed, with answers to review questions | ✅ |
+| 2.4 Expert Systems | Lu My Ky | 4 Nov | 2.3 | `Part_2/07_Expert_Systems.md` committed, with answers to review questions | ✅ |
+| 2.5 Strengths and Limits | Cassinis Soulisack | 5 Nov | — | `Part_2/08_Strengths_and_Limits.md` committed, with answers to review questions | ✅ |
+| 2.6 Planning and Problem Solving | Yeo Shih Jie | 5 Nov | 2.3 | `Part_2/09_Planning_and_Problem_Solving.md` committed (lecture ch. 4: planning, search) | 📝 |
+| 2.7 NLP in Symbolic AI | Cassinis Soulisack | 5 Nov | 2.2, 2.3 | `Part_2/10_NLP_in_Symbolic_AI.md` committed (lecture ch. 4: NLP) | 📝 |
+| Part 2 diagrams | Wong Hiu Chung Samuel | 5 Nov | 2.1–2.7 drafts | Real images in `content/images/`, each with a caption, no ASCII diagrams (2.1 done; 2.6 and 2.7 figures to check) | 📝 |
+| Part 2 summary and quiz | Goh Ye Han | 6 Nov | 2.1–2.7 | `Part_2/Part_2_Summary_and_Quiz.md` covers all seven sections, 15 questions with answer key | 📝 |
+| Glossary update | Goh Ye Han | 6 Nov | 2.1–2.7 | Part 2 terms in `Part_2/Part_2_Glossary.md`, same wording as the sections | 📝 |
 
 ### C. Review and testing (brief section D)
 
 | Task | Owner(s) | Due | Depends on | Expected result | Status |
 |---|---|---|---|---|---|
-| Peer review of each Part 2 section | Reviewer is never the writer: Goh Ye Han reviews 2.1–2.5; another member reviews Goh's quiz and glossary | 1 day after each draft | Each section draft | "Reviewed by" note at the end of each file; fixes committed | 🔲 |
+| Peer review of each Part 2 section | Reviewer is never the writer: Goh Ye Han reviews 2.1–2.7; another member reviews Goh's quiz and glossary | 1 day after each draft | Each section draft | "Reviewed by" note at the end of each file; fixes committed | 📝 |
 | Learner test of one explanation or activity per section | A teammate who did not write it | 6 Nov | Peer review | Notes: what they understood, where they got confused, what we changed (in Stage 2 logs) | 🔲 |
 | Accuracy check | Goh Ye Han + section writers | 6 Nov | Peer review | Claims, examples and answers checked against references; terms consistent across files | 🔲 |
 | Re-check Part 1 against Stage 1 feedback | Goh Ye Han | 5 Nov | — | Same problems (placeholders, thin content, ASCII) not present anywhere else | 🔲 |
