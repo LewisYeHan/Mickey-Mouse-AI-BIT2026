@@ -1,8 +1,7 @@
-
 # 2.1 What Is Symbolic AI?
 
 **Status:** ✅  
-**Team Member:** Frederick Samuel Lesmana (@Ti4nCi)
+**Team Member:** Wong Hiu Chung Samuel (`@Samuel940398`)
 
 **In this section:** What is Symbolic AI · Symbols, Facts & Rules · How Symbolic AI Works · GOFAI · Real-World Applications · Summary · Practice Questions
 
@@ -137,11 +136,11 @@ GOFAI is an informal term used to describe traditional approaches to AI that rel
 
 Early AI researchers believed that computers could demonstrate intelligent behaviour by representing knowledge and manipulating symbols according to formal rules.
 
-### What Did GOFAI Focus On?
-
 ![Timeline of Symbolic AI](../images/symbolic_ai_timeline.png)
 
-*Figure 2.2: Key milestones in the development of Symbolic AI.*
+*Figure 2.2: Key milestones in the development of Symbolic AI, from the birth of AI (1952–1956) through the first AI winter (1974–1980), the expert-systems boom (1980–1987) and the second AI winter (1987–1993).*
+
+### What Did GOFAI Focus On?
 
 GOFAI commonly involved:
 
@@ -152,6 +151,7 @@ GOFAI commonly involved:
 - Using structured search and planning to solve problems.
 
 ![Early artificial intelligence research](../images/gofai_history.png)
+
 *Figure 2.3: Early AI research focused heavily on symbolic representations and logical problem-solving.*
 
 ### Symbolic AI vs. GOFAI
