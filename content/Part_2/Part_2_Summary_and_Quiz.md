@@ -1,16 +1,15 @@
+# 2.8 Module Summary & Self-Check Quiz
 
-# 2.6 Module Summary & Self-Check Quiz
+**Status:** 📝  
+**Team Member:** Goh Ye Han (`@LewisYeHan`)
 
-**Status:** ✅  
-**Module:** Part 2 — Symbolic AI
-
-**In this section:** How It All Connects · Key Ideas from Each Section · Quiz (13 questions) · Answer Key · References
+**In this section:** How It All Connects · Key Ideas from Each Section · Quiz (15 questions) · Answer Key · References
 
 ---
 
 ## 1. How It All Connects
 
-Sections 2.1 to 2.5 explain how Symbolic AI represents knowledge, reasons with it, and uses it to solve problems. Each section builds on the previous one: first, we understand what Symbolic AI is; then we explore how it stores knowledge, how it reasons, how expert systems apply these ideas, and finally where this approach succeeds and struggles.
+Sections 2.1 to 2.7 explain how Symbolic AI represents knowledge, reasons with it, and uses it to solve problems. Each section builds on the previous one: first, we understand what Symbolic AI is; then we explore how it stores knowledge, how it reasons, how expert systems apply these ideas, and where this approach succeeds and struggles. The last two sections show how the same ideas are used to plan sequences of actions and to understand human language.
 
 The easiest way to understand the whole module is to imagine building an AI system that helps decide whether a student qualifies for a scholarship.
 
@@ -30,7 +29,11 @@ This is an example of **Modus Ponens**: if P implies Q, and P is true, then Q fo
 
 **Evaluating the approach (2.5 Strengths and Limitations).** Symbolic AI can explain its decisions because its reasoning follows explicit rules. However, it depends on the quality of its knowledge base. If scholarship requirements change and the rules are not updated, the system may produce incorrect decisions.
 
-**The main idea:** Symbolic AI follows a cycle: represent knowledge, store facts and rules, reason with them, and use the conclusions to solve problems. Its strength is structured and explainable reasoning, but its limitation is that knowledge must be represented and maintained.
+**Planning the steps (2.6 Planning and Problem Solving).** Some problems need a sequence of actions, not just one conclusion. If the student must submit a transcript, get a reference and attend an interview, a planner can describe each step with preconditions and effects and search for an order that reaches the goal "application complete". Search methods such as breadth-first search, uniform-cost search and A\* find routes through the possible states, and minimax handles games against an opponent.
+
+**Understanding the question (2.7 NLP in Symbolic AI).** A student might simply type "Am I eligible for the scholarship?". Symbolic NLP tags each word, parses the sentence with grammar rules, turns its meaning into a logical query such as `ScholarshipEligible(Student)`, and answers it with the inference methods from 2.3.
+
+**The main idea:** Symbolic AI follows a cycle: represent knowledge, store facts and rules, reason with them, and use the conclusions to solve problems, whether that means answering a question, planning a sequence of actions or understanding a sentence. Its strength is structured and explainable reasoning, but its limitation is that knowledge must be represented and maintained.
 
 ---
 
@@ -43,8 +46,10 @@ This is an example of **Modus Ponens**: if P implies Q, and P is true, then Q fo
 | **2.3 Logical Reasoning** | How does AI reach conclusions? | Modus Ponens, Modus Tollens, forward chaining, backward chaining, unification, resolution, uncertainty |
 | **2.4 Expert Systems** | How is symbolic reasoning applied? | Knowledge base, inference engine, working memory, user interface, explanation facility, knowledge acquisition |
 | **2.5 Strengths and Limitations** | Where does Symbolic AI succeed or struggle? | Explainability, consistency, knowledge acquisition bottleneck, ambiguity, limited learning, Neuro-Symbolic AI |
+| **2.6 Planning and Problem Solving** | How does AI find a sequence of actions? | States, actions, preconditions and effects, BFS, DFS, uniform-cost search, heuristics, A\*, minimax, hill climbing |
+| **2.7 NLP in Symbolic AI** | How does AI understand human language? | Syntax and formal grammars, parse trees, semantics in logic, rule-based NLP (part-of-speech tagging, parsing, information extraction), logic and inference, sentiment analysis, question answering, information retrieval |
 
-### Words That Connect the Five Sections
+### Words That Connect the Seven Sections
 
 | Term | Meaning | Role in Symbolic AI |
 | :--- | :--- | :--- |
@@ -54,6 +59,8 @@ This is an example of **Modus Ponens**: if P implies Q, and P is true, then Q fo
 | **Knowledge Base** | A collection of stored facts and rules | Stores the system's domain knowledge |
 | **Inference Engine** | The mechanism that applies logical rules | Uses knowledge to derive conclusions |
 | **Expert System** | An AI program designed for a specific domain | Applies symbolic reasoning to solve problems |
+| **State** | A description of the world at one moment | Lets planners and search methods track progress toward a goal |
+| **Formal Grammar** | A set of rules describing sentence structure | Lets NLP systems turn sentences into structured, logical meaning |
 
 ### Important Reasoning Methods
 
@@ -65,6 +72,8 @@ This is an example of **Modus Ponens**: if P implies Q, and P is true, then Q fo
 | **Backward Chaining** | Starts with a goal and works backward to find supporting facts. |
 | **Unification** | Finds substitutions that make logical expressions match. |
 | **Resolution** | Uses logical clauses to derive conclusions or establish contradictions. |
+| **A\* Search** | Explores the state with the smallest cost so far plus estimated cost to the goal (f = g + h). |
+| **Minimax** | Chooses the move with the best guaranteed result, assuming the opponent also plays its best. |
 
 ### Symbolic AI vs. Machine Learning
 
@@ -82,7 +91,7 @@ This is an example of **Modus Ponens**: if P implies Q, and P is true, then Q fo
 
 ## 3. Self-Check Quiz
 
-Try all 13 questions first, then check your answers in Section 4. Part A checks your understanding of the key concepts. Parts B and C ask you to apply and evaluate them.
+Try all 15 questions first, then check your answers in Section 4. Part A checks your understanding of the key concepts. Parts B and C ask you to apply and evaluate them.
 
 ### Part A: Multiple Choice
 
@@ -169,13 +178,27 @@ Which knowledge representation method most naturally represents these connected 
 * C) Stop using logical reasoning.
 * D) Update the knowledge base with the current eligibility requirements.
 
+**Q11. A route planner searches a campus map. Paths have different walking times, and it has a heuristic that never overestimates the remaining time. Which method is guaranteed to find the quickest route while using the heuristic to explore fewer places?**
+
+* A) Breadth-First Search
+* B) Depth-First Search
+* C) A\* Search
+* D) Greedy Best-First Search
+
+**Q12. A course-feedback system uses this sentiment lexicon: clear = +1, boring = −1, and the rule "*not* flips the score of the next sentiment word". What is the total score of: "The lecture was not boring and the notes were clear"?**
+
+* A) −2
+* B) 0
+* C) +1
+* D) +2
+
 ### Part C: True or False
 
-**Q11.** Forward chaining begins with a goal and works backward to find supporting facts.
+**Q13.** Forward chaining begins with a goal and works backward to find supporting facts.
 
-**Q12.** An explanation facility in an expert system helps users understand how a conclusion was reached.
+**Q14.** An explanation facility in an expert system helps users understand how a conclusion was reached.
 
-**Q13.** Neuro-Symbolic AI combines neural networks with symbolic reasoning.
+**Q15.** Neuro-Symbolic AI combines neural networks with symbolic reasoning.
 
 ---
 
@@ -196,9 +219,11 @@ Which knowledge representation method most naturally represents these connected 
 | **Q8** | **C** | Backward chaining starts with a goal and searches for rules and facts that can prove it. The system begins with the question about condition X rather than starting with known symptoms. *(2.3)* |
 | **Q9** | **A** | A knowledge graph represents entities such as Alice and BIT as nodes and their relationships as connections. This is a natural way to organize the information in the question. *(2.2)* |
 | **Q10** | **D** | The system's conclusion depends on the accuracy of its stored knowledge. Updating the knowledge base ensures that the inference engine uses current eligibility requirements. *(2.4, 2.5)* |
-| **Q11** | **False** | This describes backward chaining. Forward chaining starts with known facts and applies rules to reach conclusions. *(2.3)* |
-| **Q12** | **True** | An explanation facility shows users the reasoning or rules behind a system's conclusion. This is one reason expert systems can provide transparent decisions. *(2.4)* |
-| **Q13** | **True** | Neuro-Symbolic AI combines neural networks, which learn patterns from data, with symbolic methods, which represent knowledge and reason using logic. *(2.5)* |
+| **Q11** | **C** | A\* explores the state with the smallest f = g + h. When the heuristic never overestimates (it is admissible), A\* is guaranteed to find the cheapest route. BFS ignores path costs, DFS can return long routes, and greedy search can be fooled by the heuristic. *(2.6)* |
+| **Q12** | **D** | *not boring* flips −1 to +1, and *clear* is +1, so the total is +1 + 1 = +2. The feedback is positive. *(2.7)* |
+| **Q13** | **False** | This describes backward chaining. Forward chaining starts with known facts and applies rules to reach conclusions. *(2.3)* |
+| **Q14** | **True** | An explanation facility shows users the reasoning or rules behind a system's conclusion. This is one reason expert systems can provide transparent decisions. *(2.4)* |
+| **Q15** | **True** | Neuro-Symbolic AI combines neural networks, which learn patterns from data, with symbolic methods, which represent knowledge and reason using logic. *(2.5)* |
 
 </details>
 
@@ -210,4 +235,6 @@ Which knowledge representation method most naturally represents these connected 
 2. Brachman, R. J., & Levesque, H. J. (2004). *Knowledge Representation and Reasoning*. Morgan Kaufmann.
 3. Giarratano, J. C., & Riley, G. D. (2005). *Expert Systems: Principles and Programming* (4th ed.). Thomson.
 4. Jackson, P. (1998). *Introduction to Expert Systems* (3rd ed.). Addison-Wesley.
-5. BIT2026 Course Lecture Slides (Part 2 — Symbolic AI).
+5. Hart, P. E., Nilsson, N. J., & Raphael, B. (1968). A formal basis for the heuristic determination of minimum cost paths. *IEEE Transactions on Systems Science and Cybernetics*, 4(2), 100–107.
+6. Jurafsky, D., & Martin, J. H. *Speech and Language Processing* (3rd ed. draft). [Online textbook](https://web.stanford.edu/~jurafsky/slp3/)
+7. BIT2026 Course Lecture Slides (Part 2 — Symbolic AI).
