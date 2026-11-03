@@ -1,9 +1,9 @@
-
 # 2.4 Expert Systems
 
-**Status:** ✅ 
+**Status:** ✅  
+**Team Member:** Lu My Ky (`@jojolu11`)
 
-**Team Member:** Frederick Samuel Lesmana (Ti4nCi)
+**In this section:** How Expert Systems Work · How an Expert System Makes Decisions · MYCIN, DENDRAL and XCON · Expert Systems vs. Traditional Programs · Advantages · Limitations · Expert Systems and Modern AI · Key Takeaways · Review Questions and Answers
 
 ---
 
@@ -314,7 +314,7 @@ This combination brings together the pattern-recognition capabilities of machine
 
 ---
 
-## 10. Review Questions
+## 10. Review Questions and Answers
 
 ### Understanding
 
@@ -339,6 +339,30 @@ This combination brings together the pattern-recognition capabilities of machine
 10. Why are traditional expert systems limited when dealing with constantly changing information?
 
 11. How could combining expert systems with machine learning improve AI applications?
+
+### Answers
+
+**1.** An expert system is a computer program that uses stored expert knowledge and an inference engine to solve problems in a specific domain, such as medicine or engineering, in a way that imitates a human expert's decisions.
+
+**2.** The main components are the **knowledge base** (facts and rules), the **inference engine** (applies the rules), **working memory** (facts about the current case), the **user interface** (how users enter information and see results) and the **explanation facility** (shows how a conclusion was reached). Many systems also have a **knowledge acquisition** component for adding and updating knowledge.
+
+**3.** The inference engine applies the rules in the knowledge base to the facts in working memory to derive new facts and conclusions. It decides which rules to use, in what order, using methods such as forward or backward chaining.
+
+**4.** The knowledge base holds the expert knowledge that the whole system depends on. If the knowledge base is incomplete or wrong, the system cannot reach correct conclusions, however good its inference engine is.
+
+**5.** The explanation facility shows users **how** and **why** the system reached a conclusion, for example by listing the rules and facts it used. This builds trust and lets experts check and correct the system's reasoning.
+
+**6.** The knowledge base would store eligibility rules, such as `IF GPA >= 3.8 THEN ExcellentAcademicPerformance` and `IF ExcellentAcademicPerformance AND CommunityService THEN ScholarshipEligible`. The student's details go into working memory. The inference engine applies the rules (for example by forward chaining), derives `ScholarshipEligible(Alex)` if the conditions hold, and the explanation facility shows which rules were used.
+
+**7.** **Forward chaining** starts with the facts entered by the user and applies rules until it reaches a conclusion; it suits problems where all the data is known first, such as configuration. **Backward chaining** starts from a possible conclusion and asks for the facts needed to prove it; it suits diagnosis, where the system tests one hypothesis at a time.
+
+**8.** **MYCIN** applied medical knowledge, as rules with certainty factors, to identify bacterial infections and recommend antibiotics. **DENDRAL** applied chemistry knowledge to identify possible molecular structures from chemical data. **XCON** applied engineering knowledge to select compatible components and configure DEC computer systems from customer orders.
+
+**9.** It may have missing, incorrect or outdated rules or facts, the user may enter wrong information, or the situation may fall outside the knowledge it was built for. The inference engine follows its rules exactly, so wrong knowledge leads to wrong conclusions.
+
+**10.** Their knowledge is written and updated by people. When information changes often, the rules quickly become outdated and must be updated by hand, which is slow and expensive. Traditional expert systems cannot learn new rules from experience by themselves.
+
+**11.** Machine learning could learn patterns from data, such as recognising symptoms in medical images, or suggest new rules from past cases, while the expert system applies explicit rules and explains its decisions. Together they can handle messy real-world data and still give transparent answers that experts can check.
 
 ---
 
