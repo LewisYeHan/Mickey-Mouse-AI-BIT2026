@@ -1,3 +1,4 @@
+[06_Knowledge_Representation.md](https://github.com/user-attachments/files/34430516/06_Knowledge_Representation.md)
 # 2.3 Knowledge Representation
 
 **Status:** ✅  
