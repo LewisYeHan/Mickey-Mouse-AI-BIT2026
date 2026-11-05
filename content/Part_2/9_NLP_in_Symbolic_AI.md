@@ -1,6 +1,6 @@
 # 2.6 Natural Language Processing (NLP) in Symbolic AI
 
-**Status:** 📝  
+**Status:** ✅  
 **Team Member:** Cassinis Soulisack (`@DiegoSmiley`)
 
 **In this section:** Where We Are · What Is NLP? · Syntax · Semantics · Knowledge Representation in NLP · Rule-Based NLP · Logic and Inference · Sentiment Analysis · Question Answering · Information Retrieval · Common Misunderstandings · Key Takeaways · Practice Questions
