@@ -1,6 +1,6 @@
 # 2.7 Glossary — Symbolic AI
 
-**Status:** 📝  
+**Status:** ✅  
 **Team Member:** Goh Ye Han (`@LewisYeHan`)
 
 **In this section:** key terms from Sections 2.1 to 2.7, grouped into eight categories and listed A–Z within each category.
