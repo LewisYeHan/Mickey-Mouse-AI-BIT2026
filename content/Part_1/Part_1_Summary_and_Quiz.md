@@ -1,4 +1,4 @@
-# 1.4 Module Summary & Self-Check Quiz
+# 1.5 Module Summary & Self-Check Quiz
 
 **Status:** ✅  
 **Team Members:** Wong Hiu Chung Samuel (`@Samuel940398`) & Goh Ye Han (`@LewisYeHan`)
