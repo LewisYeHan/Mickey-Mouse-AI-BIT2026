@@ -35,22 +35,22 @@ Introduction to Symbolic AI, its foundations, Good Old-Fashioned AI (GOFAI), sym
 ### [2.2 Logic_and_Reasoning](Part_2/05_Logic_and_Reasoning.md) ✅
 How AI systems represent and organize knowledge using facts, propositions, propositional logic, logical equivalences (including De Morgan's laws), predicate logic, semantic networks, frames and scripts, rule-based representation, ontologies, and knowledge graphs, with real-world applications.
 
-### [2.3 Knowledge Representation](Part_2/06_Knowledge Representation.md) ✅
+### [2.3 Knowledge Representation](Part_2/06_Knowledge_Representation.md) ✅
 How AI derives conclusions from facts and rules. Covers logical inference, Modus Ponens, Modus Tollens, forward chaining, backward chaining, unification, resolution, and reasoning under uncertainty.
 
 ### [2.4 Expert Systems](Part_2/07_Expert_Systems.md) ✅
 How expert systems work and how they are built. Covers the knowledge base, inference engine, working memory, explanation facility, knowledge acquisition, and examples such as MYCIN, DENDRAL, and XCON.
 
-### [2.5 Planning and Problem Solving](Part_2/09_Planning_and_Problem_Solving.md) 📝
+### [2.5 Planning and Problem Solving](Part_2/09_Planning_and_Problem_Solving.md) ✅
 How AI finds a sequence of actions that reaches a goal. Covers states, actions with preconditions and effects, uninformed search (BFS, DFS, uniform-cost search), informed search (greedy best-first, A\*), adversarial search (minimax, alpha-beta pruning) and local search (hill climbing, simulated annealing), using a campus map example.
 
-### [2.6 NLP in Symbolic AI](Part_2/10_NLP_in_Symbolic_AI.md) 📝
+### [2.6 NLP in Symbolic AI](Part_2/10_NLP_in_Symbolic_AI.md) ✅
 How symbolic methods help computers understand human language. Covers syntax with context-free and phrase structure grammars, semantics in logic, semantic networks and ontologies, rule-based NLP (part-of-speech tagging, parsing, information extraction), logic and inference, sentiment analysis, question answering and information retrieval.
 
-### [2.8 Glossary](Part_2/Part_2 Glossary.md) 📝
+### [2.8 Glossary](Part_2/Part_2 Glossary.md) ✅
 Connects the seven sections of Part 2, reviews their key ideas, and provides a 15-question self-check quiz covering knowledge recall and practical application, with explanations in the answer key.
 
-### [2.9_Summary_and_Quiz](Part_2/Part_2_Summary_and_Quiz.md) 📝
+### [2.9_Summary_and_Quiz](Part_2/Part_2_Summary_and_Quiz.md) ✅
 Key terminology from Sections 2.1 to 2.7, organized into eight categories: Foundations of Symbolic AI, Knowledge Representation, Logical Reasoning, Uncertainty and Reasoning Methods, Expert Systems, AI Approaches and Evaluation, Planning and Search, and Natural Language Processing.
 
 ---
