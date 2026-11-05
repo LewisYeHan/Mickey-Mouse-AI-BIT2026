@@ -44,13 +44,10 @@ How expert systems work and how they are built. Covers the knowledge base, infer
 ### [2.5 Planning and Problem Solving](Part_2/09_Planning_and_Problem_Solving.md) ✅
 How AI finds a sequence of actions that reaches a goal. Covers states, actions with preconditions and effects, uninformed search (BFS, DFS, uniform-cost search), informed search (greedy best-first, A\*), adversarial search (minimax, alpha-beta pruning) and local search (hill climbing, simulated annealing), using a campus map example.
 
-### [2.6 NLP in Symbolic AI](Part_2/10_NLP_in_Symbolic_AI.md) ✅
-How symbolic methods help computers understand human language. Covers syntax with context-free and phrase structure grammars, semantics in logic, semantic networks and ontologies, rule-based NLP (part-of-speech tagging, parsing, information extraction), logic and inference, sentiment analysis, question answering and information retrieval.
-
-### [2.7 Glossary](Part_2/Part_2_Glossary.md) ✅
+### [2.6 Glossary](Part_2/Part_2_Glossary.md) ✅
 Connects the seven sections of Part 2, reviews their key ideas, and provides a 15-question self-check quiz covering knowledge recall and practical application, with explanations in the answer key.
 
-### [2.8 Summary_and_Quiz](Part_2/Part_2_Summary_and_Quiz.md) ✅
+### [2.7 Summary_and_Quiz](Part_2/Part_2_Summary_and_Quiz.md) ✅
 Key terminology from Sections 2.1 to 2.7, organized into eight categories: Foundations of Symbolic AI, Knowledge Representation, Logical Reasoning, Uncertainty and Reasoning Methods, Expert Systems, AI Approaches and Evaluation, Planning and Search, and Natural Language Processing.
 
 ---
