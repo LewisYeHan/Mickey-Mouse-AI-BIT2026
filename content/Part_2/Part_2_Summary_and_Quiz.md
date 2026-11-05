@@ -1,6 +1,6 @@
 # 2.8 Module Summary & Self-Check Quiz
 
-**Status:** 📝  
+**Status:** ✅  
 **Team Member:** Goh Ye Han (`@LewisYeHan`)
 
 **In this section:** How It All Connects · Key Ideas from Each Section · Quiz (15 questions) · Answer Key · References
