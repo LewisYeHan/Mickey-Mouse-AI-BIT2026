@@ -1,4 +1,4 @@
-# 2.2 Knowledge Representation
+# 2.3 Knowledge Representation
 
 **Status:** ✅  
 **Team Member:** Cao Minh Tuan (`@mnhtnc`)
