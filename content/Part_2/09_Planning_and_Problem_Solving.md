@@ -1,4 +1,4 @@
-# 2.6 Planning and Problem Solving
+# 2.5 Planning and Problem Solving
 
 **Status:** 📝  
 **Team Member:** Yeo Shih Jie (`@ysjie03`)
