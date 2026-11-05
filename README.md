@@ -94,8 +94,8 @@ Mickey-Mouse-AI-BIT2026/
 | 2.3 | Knowledge Representation | [Open](content/Part_2/06_Knowledge_Representation.md) |
 | 2.4 | Expert Systems | [Open](content/Part_2/07_Expert_Systems.md) |
 | 2.5 | Planning and Problem Solving | [Open](content/Part_2/08_Planning_and_Problem_Solving.md) |
-| 2.7 | Part 2 Glossary | [Open](content/Part_2/Part_2_Glossary.md) |
-| 2.8 | Part 2 Summary & Quiz | [Open](content/Part_2/Part_2_Summary_and_Quiz.md) |
+| 2.6 | Part 2 Glossary | [Open](content/Part_2/Part_2_Glossary.md) |
+| 2.7 | Part 2 Summary & Quiz | [Open](content/Part_2/Part_2_Summary_and_Quiz.md) |
 
 Each content file follows a consistent learning structure, including explanations, examples, diagrams where useful, practice questions, answers, and references.
 
