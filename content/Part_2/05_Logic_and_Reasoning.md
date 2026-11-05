@@ -1,4 +1,4 @@
-# 2.2 How Symbolic AI Reasons
+# 2.2 Logic and Reasoning
 
 **Status:** ✅  
 **Team Member:** Frederick Samuel Lesmana (`@Ti4nCi`)
@@ -9,9 +9,9 @@
 
 ## 1. Introduction
 
-In the previous chapters, we explored how Symbolic AI represents knowledge through facts, rules, and logical structures.
+In [2.1](04_What_is_Symbolic_AI.md), we saw that Symbolic AI stores knowledge as symbols, facts and rules.
 
-However, storing knowledge is not enough. An intelligent system must also use that knowledge to reach conclusions.
+But stored knowledge is not enough. An intelligent system must also use it to reach conclusions.
 
 This process is called **reasoning**.
 
@@ -29,7 +29,7 @@ The system derives a new conclusion by applying a logical rule to existing knowl
 
 Three fundamental elements form the basis of symbolic reasoning.
 
-### 2.1 Facts
+### Facts
 
 Facts are statements that a system accepts as true within its knowledge base.
 
@@ -41,7 +41,7 @@ Student(Alex)
 Studies(Alex, Mathematics)
 ```
 
-### 2.2 Rules
+### Rules
 
 Rules describe relationships between conditions and conclusions. They are commonly expressed using IF–THEN statements.
 
@@ -54,13 +54,13 @@ THEN that person is mortal.
 
 In predicate logic:
 
-\[
-Human(x) \rightarrow Mortal(x)
-\]
+```text
+Human(x) → Mortal(x)
+```
 
-Here, \(x\) represents an individual, and \(\rightarrow\) means "implies."
+Here, `x` represents an individual, and `→` means "implies."
 
-### 2.3 Inference
+### Inference
 
 Inference is the process of deriving new conclusions from existing facts and rules.
 
@@ -85,21 +85,15 @@ Logical inference provides formal methods for deriving valid conclusions.
 
 Two fundamental inference rules are Modus Ponens and Modus Tollens.
 
-### 3.1 Modus Ponens
+### Modus Ponens
 
 Modus Ponens follows this structure:
 
-\[
-P \rightarrow Q
-\]
-
-\[
+```text
+P → Q
 P
-\]
-
-\[
-\therefore Q
-\]
+∴ Q
+```
 
 If P implies Q, and P is true, then Q must be true.
 
@@ -109,21 +103,15 @@ If P implies Q, and P is true, then Q must be true.
 - Fact: It is raining.
 - Conclusion: The ground is wet.
 
-### 3.2 Modus Tollens
+### Modus Tollens
 
 Modus Tollens follows this structure:
 
-\[
-P \rightarrow Q
-\]
-
-\[
-\neg Q
-\]
-
-\[
-\therefore \neg P
-\]
+```text
+P → Q
+¬Q
+∴ ¬P
+```
 
 If P implies Q, but Q is false, then P must also be false.
 
@@ -155,20 +143,20 @@ Suppose a system contains these rules:
 
 ```text
 Rule 1:
-IF GPA >= 3.8
-THEN ExcellentAcademicPerformance.
+IF GPA(x) >= 3.8
+THEN ExcellentAcademicPerformance(x).
 
 Rule 2:
-IF ExcellentAcademicPerformance
-AND NoDisciplinaryRecord
-THEN ScholarshipEligible.
+IF ExcellentAcademicPerformance(x)
+AND CommunityService(x)
+THEN ScholarshipEligible(x).
 ```
 
 Initial facts:
 
 ```text
 GPA(Alex) = 3.9
-NoDisciplinaryRecord(Alex)
+CommunityService(Alex)
 ```
 
 The system applies Rule 1:
@@ -234,7 +222,7 @@ It finds Rule 2:
 
 ```text
 IF ExcellentAcademicPerformance(x)
-AND NoDisciplinaryRecord(x)
+AND CommunityService(x)
 THEN ScholarshipEligible(x).
 ```
 
@@ -242,7 +230,7 @@ It now needs to establish two conditions:
 
 ```text
 ExcellentAcademicPerformance(Alex)
-NoDisciplinaryRecord(Alex)
+CommunityService(Alex)
 ```
 
 The second fact is already known.
@@ -268,15 +256,15 @@ The original goal has been proven.
 
 ```mermaid
 flowchart TD
-    A["Goal: Scholarship Eligible?"] --> B["Find Supporting Rule"]
-    B --> C["Check Required Conditions"]
-    C --> D["Check GPA"]
-    C --> E["Check Disciplinary Record"]
-    D --> F["GPA = 3.9"]
-    E --> G["No Disciplinary Record"]
-    F --> H["All Conditions Satisfied"]
+    A["Goal: ScholarshipEligible(Alex)?"] --> B["Rule 2 needs two conditions"]
+    B --> C["ExcellentAcademicPerformance(Alex)?"]
+    B --> D["CommunityService(Alex)?"]
+    C --> E["Rule 1 needs GPA >= 3.8"]
+    E --> F["GPA(Alex) = 3.9: true"]
+    D --> G["Known fact: true"]
+    F --> H["All conditions satisfied"]
     G --> H
-    H --> I["Goal Proven"]
+    H --> I["Goal proven"]
 ```
 
 ### Applications
@@ -311,49 +299,40 @@ Neither method is universally better. The choice depends on the problem.
 
 Symbolic systems also use techniques to match logical statements and derive conclusions.
 
-### 7.1 Resolution
+### Resolution
 
 Resolution is an inference technique used in automated theorem proving. It combines logical statements by eliminating complementary expressions.
 
 For example:
 
-\[
-P \lor Q
-\]
-
-\[
-\neg P
-\]
-
-Therefore:
-
-\[
-Q
-\]
+```text
+P ∨ Q
+¬P
+∴ Q
+```
 
 Since P is false, Q must be true.
 
+This is the simplest case. More generally, resolution takes two statements with opposite terms, such as `P ∨ Q` and `¬P ∨ R`, and derives `Q ∨ R`.
+
 Resolution is particularly important in formal logic and automated proof systems.
 
-### 7.2 Unification
+### Unification
 
 Unification finds substitutions that make two logical expressions identical.
 
 Consider:
 
-\[
+```text
 Student(x)
-\]
-
-\[
 Student(Alex)
-\]
+```
 
 These expressions can be matched using:
 
-\[
+```text
 x = Alex
-\]
+```
 
 This substitution is called a **unifier**.
 
@@ -388,17 +367,15 @@ Consider:
 
 ```text
 Rule 1:
-IF a student has GPA >= 3.8
-THEN ExcellentStudent.
+IF Student(x)
+THEN LibraryAccess(x).
 
 Rule 2:
-IF a student has a disciplinary record
-THEN FlagForReview.
+IF Suspended(x)
+THEN NOT LibraryAccess(x).
 ```
 
-A student may satisfy both conditions.
-
-If the rules prescribe competing actions, the system needs a conflict resolution strategy.
+A suspended student is still a student, so both rules fire and they contradict each other. The system needs a conflict resolution strategy to decide which rule wins.
 
 Common strategies include:
 
@@ -408,7 +385,7 @@ Common strategies include:
 | Specificity | Prefer more specific rules over general rules. |
 | Recency | Prioritize rules triggered by more recently added information. |
 
-For example, a rule concerning a suspended student may override a general rule granting library access to students.
+Here, Rule 2 wins because it is more specific (it covers only suspended students), or because it is given a higher priority. The suspended student does not get library access.
 
 Conflict resolution helps maintain consistent decision-making.
 
@@ -420,7 +397,7 @@ Traditional classical logic generally treats statements as true or false. Howeve
 
 Symbolic systems can incorporate additional methods to handle uncertainty.
 
-### 9.1 Certainty Factors
+### Certainty Factors
 
 Certainty factors represent the degree of confidence associated with a conclusion.
 
@@ -434,15 +411,15 @@ This represents a confidence value of 0.75 within the system.
 
 Certainty factors were used in expert systems such as MYCIN.
 
-### 9.2 Fuzzy Logic
+### Fuzzy Logic
 
 Fuzzy Logic represents degrees of membership rather than restricting statements to completely true or false.
 
 For example:
 
-\[
-\mu_{Hot}(30^\circ C) = 0.8
-\]
+```text
+Hot(30°C) = 0.8
+```
 
 This means that 30°C has a membership degree of 0.8 in the fuzzy category "Hot."
 
@@ -453,21 +430,21 @@ It is useful for representing vague concepts such as:
 - Fast and slow
 - High and low risk
 
-### 9.3 Probabilistic Reasoning
+### Probabilistic Reasoning
 
 Probabilistic reasoning uses probability theory to reason about uncertain information.
 
 One common method is Bayes' theorem:
 
-\[
-P(H|E)=\frac{P(E|H)P(H)}{P(E)}
-\]
+```text
+P(H|E) = P(E|H) × P(H) / P(E)
+```
 
 Where:
 
-- \(H\) = hypothesis.
-- \(E\) = observed evidence.
-- \(P(H|E)\) = probability of the hypothesis given the evidence.
+- `H` = hypothesis.
+- `E` = observed evidence.
+- `P(H|E)` = probability of the hypothesis given the evidence.
 
 **Important distinction:** Fuzzy Logic represents degrees of membership in vague categories, while probability represents uncertainty about events or hypotheses.
 
@@ -586,6 +563,19 @@ Student(Alex)
 
 11. Why might combining symbolic reasoning with machine learning be useful?
 
+### Activities
+
+12. **Trace it.** Use forward chaining on these rules and facts. List each step.
+
+```text
+Rule 1: IF A AND B THEN C
+Rule 2: IF C THEN D
+Rule 3: IF D AND E THEN F
+Facts:  A, B, E
+```
+
+13. **Find the error.** A system reasons: "If it rains, the ground is wet. The ground is wet. Therefore, it rained." What is wrong?
+
 ### Answers
 
 **1.** Reasoning is the process of using known facts and rules to derive new conclusions. For example, from `Human(Socrates)` and the rule `Human(x) → Mortal(x)`, the system derives `Mortal(Socrates)`.
@@ -602,13 +592,17 @@ Student(Alex)
 
 **7.** Backward chaining only explores the rules and facts that are relevant to the one goal being tested. It does not waste time deriving every possible conclusion from all the facts, so it is more efficient when there is a single question to answer, such as "Does this patient have condition X?".
 
-**8.** Several rules can be triggered by the same facts and may recommend different or competing actions. For example, a student may meet both `ExcellentStudent` and `FlagForReview` rules. Conflict resolution strategies, such as rule priority, specificity or recency, decide which rule to apply first so that the system behaves consistently.
+**8.** Several rules can be triggered by the same facts and may recommend different or competing actions. For example, a suspended student triggers both `IF Student(x) THEN LibraryAccess(x)` and `IF Suspended(x) THEN NOT LibraryAccess(x)`, which contradict each other. Conflict resolution strategies, such as rule priority, specificity or recency, decide which rule wins so that the system behaves consistently.
 
 **9.** **Fuzzy logic** represents how much something belongs to a vague category, such as 30°C being "hot" to degree 0.8. **Probabilistic reasoning** represents how likely an uncertain event or hypothesis is, such as an 80% chance of rain. Fuzzy logic deals with vagueness; probability deals with uncertainty.
 
 **10.** **Yes.** The reasoning can be logically valid but still reach a wrong conclusion if a fact is wrong or a rule is incomplete or outdated. For example, Modus Tollens concludes a device is unplugged when its indicator is off, but if the indicator bulb is broken, that conclusion is wrong. Correct reasoning only guarantees correct conclusions when the facts and rules are correct.
 
-**11.** Machine learning is good at learning patterns from messy data, such as recognising images or speech, while symbolic reasoning is good at applying explicit rules and explaining its decisions. Combining them can give a system that both copes with real-world data and gives transparent, rule-checked answers. This is the idea behind neuro-symbolic AI (see [2.5](08_Strengths_and_Limits.md)).
+**11.** Machine learning is good at learning patterns from messy data, such as recognising images or speech, while symbolic reasoning is good at applying explicit rules and explaining its decisions. Combining them can give a system that both copes with real-world data and gives transparent, rule-checked answers. This is the idea behind neuro-symbolic AI (see [2.4](07_Expert_Systems.md)).
+
+**12.** Step 1: A and B are true, so Rule 1 fires and adds C. Step 2: C is now true, so Rule 2 fires and adds D. Step 3: D and E are true, so Rule 3 fires and adds F. No more rules apply. Final facts: A, B, E, C, D, F.
+
+**13.** The system reversed the rule. "If it rains, the ground is wet" does not mean "if the ground is wet, it rained", because someone could have watered the garden. This mistake is called affirming the consequent. Modus Ponens needs P to be true, and Modus Tollens needs Q to be false.
 
 ---
 
@@ -619,4 +613,3 @@ Student(Alex)
 3. Poole, D., & Mackworth, A. (2017). *Artificial Intelligence: Foundations of Computational Agents* (2nd ed.). Cambridge University Press. [Online textbook](https://artint.info/2e/html/ArtInt2e.html)
 4. Stanford Encyclopedia of Philosophy. [Classical Logic](https://plato.stanford.edu/entries/logic-classical/)
 5. Stanford Encyclopedia of Philosophy. [Fuzzy Logic](https://plato.stanford.edu/entries/logic-fuzzy/)
-
