@@ -1,4 +1,4 @@
-# 2.7 Natural Language Processing (NLP) in Symbolic AI
+# 2.6 Natural Language Processing (NLP) in Symbolic AI
 
 **Status:** 📝  
 **Team Member:** Cassinis Soulisack (`@DiegoSmiley`)
