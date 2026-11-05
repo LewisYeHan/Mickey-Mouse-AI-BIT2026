@@ -1,4 +1,4 @@
-# 1.5 Glossary
+# 1.4 Glossary
 
 **Status:** ✅  
 
