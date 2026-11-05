@@ -3,59 +3,29 @@
 **Status:** ✅  
 **Team Member:** Wong Hiu Chung Samuel (`@Samuel940398`)
 
-**In this section:** What is Symbolic AI · Symbols, Facts & Rules · How Symbolic AI Works · GOFAI · Real-World Applications · Summary · Practice Questions
+**In this section:** What Is Symbolic AI · How It Works · GOFAI · Applications · Why It Matters · Summary · Practice Questions
 
 ---
 
 ## 1. What Is Symbolic AI?
 
-Imagine you are applying for a university scholarship. The university has two requirements:
+A university scholarship has two requirements: a GPA of at least 3.5 and attendance of at least 90%. Give those requirements to a computer, add a student's details, and it tells you whether the student qualifies.
 
-- Your GPA must be at least 3.5.
-- Your attendance must be at least 90%.
+That is **Symbolic AI**: an approach to AI that stores knowledge as symbols, facts and rules, then reasons with them to reach conclusions. It does not learn from huge amounts of data. It uses knowledge that people have written down for it.
 
-Someone gives a computer these requirements and asks it to determine whether you qualify. The computer checks your information against the requirements and produces an answer.
+| Part | What it is | Example |
+| :--- | :--- | :--- |
+| **Symbol** | Stands for a person, object or concept | `Sammy`, `Student`, `GPA` |
+| **Fact** | Something the system treats as true | `GPA(Sammy, 3.8)` |
+| **Rule** | Says what follows when conditions are met | `IF GPA >= 3.5 AND Attendance >= 90% THEN ScholarshipEligible` |
 
-This is a simple example of **Symbolic AI**.
-
-**Symbolic AI** is an approach to Artificial Intelligence that represents knowledge using symbols, facts, and logical rules. It uses these representations to reason about information and reach conclusions.
-
-Instead of learning everything from large amounts of data, Symbolic AI works with knowledge that has been explicitly represented and provided to the system.
-
-There are three important ideas behind Symbolic AI:
-
-1. **Symbols:** Represent objects, concepts, or relationships.
-2. **Facts:** Store information that the system treats as true.
-3. **Rules:** Tell the system how to use information to reach conclusions.
-
-The main idea is simple: give the computer knowledge, provide rules, and let it reason.
+**In short:** symbols name things, facts say what is true, rules say what follows.
 
 ---
 
-## 2. Symbols, Facts, and Rules
+## 2. How It Works
 
-To understand Symbolic AI, you first need to understand how it represents knowledge. Think of it like teaching a new student about the world: you give them information, explain relationships, and establish rules.
-
-### Symbols
-
-A **symbol** is a representation of something, such as a person, object, concept, or relationship.
-
-For example:
-
-| Symbol | Represents |
-| :--- | :--- |
-| `Sammy` | A particular person |
-| `Student` | The concept of a student |
-| `GPA` | Grade Point Average |
-| `Scholarship` | A scholarship opportunity |
-
-Symbols allow computers to represent real-world concepts in a structured way.
-
-### Facts
-
-A **fact** is a statement that the system treats as true within its knowledge base.
-
-For example:
+Facts about Sammy:
 
 ```text
 Student(Sammy)
@@ -63,202 +33,110 @@ GPA(Sammy, 3.8)
 Attendance(Sammy, 95%)
 ```
 
-These facts tell the system that Sammy is a student, has a GPA of 3.8, and has an attendance rate of 95%.
+The system reasons in four steps:
 
-### Rules
+1. It reads Sammy's facts.
+2. GPA: 3.8 is at least 3.5 ✓
+3. Attendance: 95% is at least 90% ✓
+4. Both conditions pass, so the rule fires: `ScholarshipEligible(Sammy)`.
 
-A **rule** describes what should happen when certain conditions are satisfied.
+![A robot detective reads the facts, reads the rule, reasons, and announces the student is eligible](../images/symbolic_ai_process.png)
 
-Rules are commonly written using the **IF–THEN** format:
-
-```text
-IF GPA >= 3.5
-AND Attendance >= 90%
-THEN Scholarship_Eligible = TRUE
-```
-
-The system checks whether the conditions are satisfied before reaching a conclusion.
-
-**Remember the difference:**
-
-- Symbols represent things.
-- Facts describe what the system knows.
-- Rules tell the system how to reason.
-
----
-
-## 3. How Does Symbolic AI Work?
-
-Now let's put everything together using our scholarship example.
-
-Suppose the system has the following information:
-
-**Facts:**
-
-```text
-Student = Sammy
-GPA = 3.8
-Attendance = 95%
-```
-
-**Rule:**
-
-```text
-IF GPA >= 3.5
-AND Attendance >= 90%
-THEN Scholarship_Eligible = TRUE
-```
-
-The system follows these steps:
-
-1. It receives Sammy's information.
-2. It checks whether his GPA meets the minimum requirement.
-3. It checks whether his attendance meets the minimum requirement.
-4. Both conditions are satisfied.
-5. It applies the rule and concludes that Sammy meets the scholarship requirements.
-
-![Symbolic AI reasoning process](../images/symbolic_ai_process.png)
 *Figure 2.1: How Symbolic AI uses facts and rules to derive a conclusion.*
 
-This process is called **logical inference**. It means deriving new conclusions from information that the system already knows.
-
-The computer does not need to guess whether Sammy qualifies. It follows the rules that were provided to it.
-
-**Important:** This example only checks two scholarship requirements. A real scholarship decision may involve additional conditions.
+Deriving a new conclusion from known facts is called **logical inference**. The computer does not guess. It follows the rule.
 
 ---
 
-## 4. Good Old-Fashioned AI (GOFAI)
+## 3. Good Old-Fashioned AI (GOFAI)
 
-You may come across the term **Good Old-Fashioned AI (GOFAI)** when studying the history of Artificial Intelligence.
+**GOFAI** is the informal name for the traditional approach to AI built on symbols, explicit knowledge and logical reasoning. The philosopher John Haugeland popularised the term in 1985 (reference 2). Early researchers believed machines could think by manipulating symbols with formal rules.
 
-GOFAI is an informal term used to describe traditional approaches to AI that relied heavily on symbols, explicit knowledge, and logical reasoning.
+![Timeline of Symbolic AI from 1952 to 1993](../images/symbolic_ai_timeline.png)
 
-Early AI researchers believed that computers could demonstrate intelligent behaviour by representing knowledge and manipulating symbols according to formal rules.
+*Figure 2.2: Symbolic AI from the birth of AI (1952–1956) and its early programs (1956–1974), through the first AI winter (1974–1980) and the expert-systems boom (1980–1987), to the second AI winter (1987–1993).*
 
-![Timeline of Symbolic AI](../images/symbolic_ai_timeline.png)
+![A man playing chess at the console of an IBM 7090 mainframe computer](../images/gofai_history.png)
 
-*Figure 2.2: Key milestones in the development of Symbolic AI, from the birth of AI (1952–1956) through the first AI winter (1974–1980), the expert-systems boom (1980–1987) and the second AI winter (1987–1993).*
+*Figure 2.3: An IBM 7090 mainframe set up to play chess. Early researchers used games like chess to test symbols, rules and search.*
 
-### What Did GOFAI Focus On?
+**Symbolic AI vs. GOFAI:** Symbolic AI is the approach. GOFAI is the name for its traditional, early form.
 
-GOFAI commonly involved:
+---
 
-- Representing knowledge using symbols.
-- Storing information as facts and relationships.
-- Defining rules for solving problems.
-- Applying logical reasoning to derive conclusions.
-- Using structured search and planning to solve problems.
+## 4. Where Is It Used?
 
-![Early artificial intelligence research](../images/gofai_history.png)
-
-*Figure 2.3: Early AI research focused heavily on symbolic representations and logical problem-solving.*
-
-### Symbolic AI vs. GOFAI
-
-These terms are closely related, but they are not exactly interchangeable.
-
-| Term | Meaning |
+| Application | What it does |
 | :--- | :--- |
-| **Symbolic AI** | An AI approach that represents and processes knowledge using symbols and formal rules. |
-| **GOFAI** | An informal term for traditional AI approaches that relied heavily on symbolic methods. |
+| **Expert systems** | Uses expert knowledge and rules to give recommendations |
+| **Medical decision support** | Matches patient symptoms to medical rules |
+| **Rule-based chatbots** | Answers specific questions using preset rules |
+| **Automated planning** | Works out a sequence of steps to reach a goal |
+| **Configuration systems** | Checks which components work together |
 
-In simple terms, GOFAI is strongly associated with the early development of Symbolic AI.
-
----
-
-## 5. Real-World Applications of Symbolic AI
-
-Symbolic AI is useful when knowledge can be clearly represented and decisions can be made using defined rules.
-
-Some common applications include:
-
-| Application | How It Is Used |
-| :--- | :--- |
-| **Expert Systems** | Uses stored expert knowledge and rules to provide recommendations. |
-| **Medical Decision Support** | Applies medical rules to patient information to assist with diagnosis. |
-| **Rule-Based Chatbots** | Uses predefined rules to respond to specific questions. |
-| **Automated Planning** | Uses goals, actions, and conditions to determine a sequence of steps. |
-| **Configuration Systems** | Applies rules to determine compatible components and configurations. |
-
-For example, a medical expert system may examine a patient's symptoms and compare them against medical rules to suggest possible diagnoses.
-
-However, it does not automatically understand medicine like a human doctor. Its conclusions depend on the knowledge and rules available to it.
+These systems do not understand a field like a human expert. They only know what their rules say.
 
 ---
 
-## 6. Why Is Symbolic AI Important?
+## 5. Why Does It Matter?
 
-Symbolic AI played an important role in the development of Artificial Intelligence because it demonstrated that computers could solve certain problems through explicit knowledge and logical reasoning.
-
-One of its biggest advantages is **explainability**.
-
-Because a symbolic system uses identifiable facts and rules, it can often show how it reached a particular conclusion.
-
-For example:
+Symbolic AI showed that computers can solve problems using explicit knowledge and logic. Its biggest strength is **explainability**: you can follow its reasoning step by step.
 
 ```text
-Fact: GPA = 3.8
-Rule: IF GPA >= 3.5 THEN Academically_Eligible
-Conclusion: Academically_Eligible = TRUE
+Fact:       GPA(Sammy, 3.8)
+Rule:       IF GPA >= 3.5 THEN AcademicallyEligible
+Conclusion: AcademicallyEligible(Sammy)
 ```
 
-A person can follow the same reasoning and understand why the system produced its answer.
-
-However, Symbolic AI also has limitations. It can struggle when information is incomplete, ambiguous, or difficult to represent using predefined rules.
-
-These strengths and limitations will be explored further in [2.5 Strengths and Limitations](08_Strengths_and_Limits.md).
+Its weakness is that it struggles when information is incomplete, vague or hard to write as rules. See [2.5 Strengths and Limitations](08_Strengths_and_Limits.md).
 
 ---
 
-## 7. Summary
+## 6. Summary
 
 | Concept | Meaning |
 | :--- | :--- |
-| **Symbolic AI** | An AI approach that represents knowledge using symbols, facts, and rules. |
-| **Symbol** | A representation of an object, concept, or relationship. |
-| **Fact** | A statement that the system treats as true. |
-| **Rule** | A condition that determines what conclusion or action should follow. |
-| **Logical Inference** | Deriving conclusions from existing facts and rules. |
-| **GOFAI** | Traditional AI approaches that relied heavily on symbolic methods. |
-| **Explainability** | The ability to understand how a system reaches a conclusion. |
-
-### Key Points to Remember
-
-1. **Symbolic AI** represents knowledge using symbols, facts, and rules.
-2. **Symbols** represent objects and concepts, while facts describe information.
-3. **Rules** tell the system how to use information to reach conclusions.
-4. **Logical inference** allows the system to derive new conclusions.
-5. **GOFAI** refers to traditional AI approaches heavily associated with symbolic reasoning.
-6. Symbolic AI is useful when knowledge and decision-making rules can be clearly defined.
+| **Symbolic AI** | AI that reasons with symbols, facts and rules |
+| **Symbol** | Stands for an object, concept or relationship |
+| **Fact** | A statement the system treats as true |
+| **Rule** | Says what conclusion follows from certain conditions |
+| **Logical inference** | Deriving new conclusions from facts and rules |
+| **GOFAI** | The traditional, early form of symbolic AI |
+| **Explainability** | Being able to see how a conclusion was reached |
 
 ---
 
-## 8. Practice Questions and Answers
+## 7. Practice Questions and Answers
 
-Try answering each question yourself first, then read the answer.
+Try each question yourself first, then check the answer.
 
 **Questions**
 
-1. What is Symbolic AI, and what are its three main components?
+1. What is Symbolic AI, and what are its three main parts?
 2. What is the difference between a fact and a rule?
-3. A system contains the rule `IF temperature > 38°C THEN fever = TRUE`. If the recorded temperature is 39°C, what conclusion should the system reach?
-4. What does GOFAI stand for, and what was its main approach to Artificial Intelligence?
-5. Why can Symbolic AI explain how it reaches certain conclusions?
-6. A scholarship system requires a GPA of at least 3.5 and attendance of at least 90%. A student has a GPA of 3.2 and attendance of 98%. Does the student satisfy both requirements? Explain your answer.
+3. A system has the rule `IF temperature > 38°C THEN fever = TRUE`. The recorded temperature is 39°C. What does it conclude?
+4. What does GOFAI stand for, and what was its main approach?
+5. **Find the error.** A student writes `IF GPA >= 3.5 THEN AcademicallyEligible` in a knowledge base and calls it a fact. What is wrong?
+6. **Trace it.** Using the scholarship rule from Section 1, the system has these facts. What does it conclude, and why?
+
+   ```text
+   Student(Lee)
+   GPA(Lee, 3.6)
+   Attendance(Lee, 88%)
+   ```
 
 **Answers**
 
-1. Symbolic AI is an approach to AI that represents knowledge using symbols, facts, and rules. Its three main components are symbols (representations), facts (stored information), and rules (conditions used for reasoning).
-2. A fact is information that the system treats as true, while a rule describes what conclusion follows when certain conditions are satisfied.
-3. The system concludes `fever = TRUE` because 39°C is greater than 38°C, satisfying the rule.
-4. GOFAI stands for Good Old-Fashioned AI. It describes traditional approaches to AI that relied heavily on symbols, explicit knowledge, and logical reasoning.
-5. Symbolic AI uses identifiable facts and rules. These can often be traced to show how the system reached its conclusion.
-6. No. Although the student's attendance meets the requirement, the GPA of 3.2 is below the required 3.5. Both conditions must be satisfied.
+1. Symbolic AI represents knowledge and reasons with it. Its parts are symbols, facts and rules.
+2. A fact is something the system treats as true. A rule says what follows when conditions are met.
+3. `fever = TRUE`, because 39°C is greater than 38°C.
+4. Good Old-Fashioned AI. It relied on symbols, explicit knowledge and logical reasoning.
+5. It is a **rule**, not a fact, because it has an IF–THEN structure. A fact would be `GPA(Sammy, 3.8)`.
+6. GPA 3.6 passes (at least 3.5), but attendance 88% fails (below 90%). The rule needs both conditions, so it does not fire. The system cannot conclude `ScholarshipEligible(Lee)`.
 
 ---
 
-## 9. References
+## 8. References
 
 1. Russell, S. J., & Norvig, P. (2021). *Artificial Intelligence: A Modern Approach* (4th ed.). Pearson.
 2. Haugeland, J. (1985). *Artificial Intelligence: The Very Idea*. MIT Press.
