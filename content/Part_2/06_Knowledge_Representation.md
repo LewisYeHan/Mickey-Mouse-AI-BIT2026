@@ -1,3 +1,4 @@
+
 # 2.3 Knowledge Representation
 
 **Status:** ✅  
@@ -514,3 +515,4 @@ A slot is an attribute, such as Name or Age; a slot value is what fills it, such
 5. Berners-Lee, T., Hendler, J., & Lassila, O. (2001). The Semantic Web. *Scientific American*, 284(5), 34–43.
 6. W3C. (2014). *RDF 1.1 Concepts and Abstract Syntax*. https://www.w3.org/TR/rdf11-concepts/
 7. W3C. (2012). *OWL 2 Web Ontology Language: Document Overview (Second Edition)*. https://www.w3.org/TR/owl2-overview/
+
