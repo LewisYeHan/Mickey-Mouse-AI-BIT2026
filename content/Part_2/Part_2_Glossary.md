@@ -1,4 +1,4 @@
-# 2.7 Glossary — Symbolic AI
+# 2.6 Glossary — Symbolic AI
 
 **Status:** ✅  
 **Team Member:** Goh Ye Han (`@LewisYeHan`)
