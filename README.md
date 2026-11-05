@@ -120,9 +120,8 @@ Status labels:
 | 2.3 Knowledge Representation | Cao Minh Tuan | Goh Ye Han | ☑ |
 | 2.4 Expert Systems | Lu My Ky | Goh Ye Han | ☑ |
 | 2.5 Planning and Problem Solving | Yeo Shih Jie | Goh Ye Han | ☑ |
-| 2.6 NLP in Symbolic AI | Cassinis Soulisack | Goh Ye Han | ☑ |
-| 2.7 Part 2 Glossary (updated for 2.5–2.6) | Goh Ye Han | — | ☑ |
-| 2.8 Part 2 Summary and Quiz (updated for 2.5–2.6) | Goh Ye Han | — | ☑ |
+| 2.6 Part 2 Glossary (updated for 2.5–2.6) | Goh Ye Han | — | ☑ |
+| 2.7 Part 2 Summary and Quiz (updated for 2.5–2.6) | Goh Ye Han | — | ☑ |
 | Part 2 Diagrams and Illustrations | Wong Hiu Chung Samuel | — | ☑ |
 | Study Guide and Test Bank 1.0 | Frederick Samuel Lesmana, Cao Minh Tuan | — | ☑ |
 | PPT Slides 1.0 | Wong Hiu Chung Samuel, Lu My Ky | — | ☑ |
