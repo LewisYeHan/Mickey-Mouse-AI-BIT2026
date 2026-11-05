@@ -1,5 +1,5 @@
 2.3 Knowledge Representation
-Status: ✅
+Status: ✅  
 Team Member: Cao Minh Tuan (@mnhtnc)
 
 In this section: What is Knowledge Representation? · Data, Information and Knowledge · Propositional Logic and Logical Equivalences · Predicate Logic · Semantic Networks · Frames and Scripts · Rule-Based Representation · Ontologies and Knowledge Graphs · Comparing Methods · Where KR Is Used · Key Takeaways · Lab: Build a Knowledge Web · Practice Questions
