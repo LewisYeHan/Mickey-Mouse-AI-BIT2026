@@ -1,4 +1,4 @@
-# 2.8 Module Summary & Self-Check Quiz
+# 2.7 Module Summary & Self-Check Quiz
 
 **Status:** ✅  
 **Team Member:** Goh Ye Han (`@LewisYeHan`)
