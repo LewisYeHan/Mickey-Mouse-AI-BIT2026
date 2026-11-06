@@ -3,7 +3,7 @@
 **Status:** ✅   
 **Team Member:** Yeo Shih Jie (`@ysjie03`)
 
-**In this section:** Where We Are · What Is Planning? · Describing a Problem as a Search · Uninformed Search · Informed Search · Adversarial Search · Local Search · Comparing the Methods · Common Misunderstandings · Key Takeaways · Practice Questions
+**In this section:** Where We Are · What Is Planning? · Describing a Problem as a Search · Uninformed Search · Informed Search · Adversarial Search · Local Search · Comparing the Methods · Common Misunderstandings · Key Takeaways · Practice Questions 
 
 ---
 
