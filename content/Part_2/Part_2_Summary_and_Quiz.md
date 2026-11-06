@@ -23,11 +23,11 @@ Follow one AI through the module: it decides whether Alex qualifies for a schola
 
 **2.2 Logic and Reasoning: draw conclusions.** Modus Ponens turns that fact and rule into a new fact. Forward chaining repeats this until nothing new appears; backward chaining starts from the goal "Is Alex eligible?" and seeks facts that prove it. Conflict resolution picks a rule when several match; certainty factors and fuzzy logic handle unsure facts.
 
-**2.3 Knowledge Representation: organize what is known.** The same knowledge can be stored as predicate logic (`GPA(Alex, 3.9)`), a semantic network, a frame, rules, an ontology or a knowledge graph, each suited to a different job.
+**2.3 Knowledge Representation: organize what is known.** The same knowledge can be stored as predicate logic (`GPA(Alex, 3.9)`), a semantic network, a frame, rules, an ontology, or a knowledge graph, each suited to a different job.
 
 **2.4 Expert Systems: package it.** Rules go into a knowledge base, Alex's details into working memory, and an inference engine chains through them; the explanation facility shows why Alex qualifies. If the requirements change but the rules do not, the answer is wrong.
 
-**2.5 Planning and Problem Solving: act on it.** To apply, Alex must submit a transcript, get a reference and attend an interview. A planner describes each step by its preconditions and effects and searches (BFS, uniform-cost search, A\*) for an order that reaches "application complete".
+**2.5 Planning and Problem Solving: act on it.** To apply, Alex must submit a transcript, get a reference, and attend an interview. A planner describes each step by its preconditions and effects and searches (BFS, uniform-cost search, A\*) for an order that reaches "application complete".
 
 **The big idea:** represent knowledge explicitly, reason with it, plan with it. The result explains itself, but is only as good as the knowledge people maintain.
 
@@ -99,14 +99,14 @@ Try all 21 questions, then check Section 4. Part A checks key concepts, Parts B 
 
 ### Part B: Apply It
 
-**Q7. Fact: P is true. Rule: if P is true, then Q is true. What follows by Modus Ponens?**
+**Q7. Fact: P is true. Rule: If P is true, then Q is true. What follows by Modus Ponens?**
 
 * A) P is false.
 * B) Q is true.
 * C) Q is false.
 * D) No conclusion.
 
-**Q8. A medical expert system is asked "Does this patient have condition X?" It starts from this goal and searches for symptoms and rules that support it. Which method is this?**
+**Q8. A medical expert system is asked, "Does this patient have condition X?" It starts from this goal and searches for symptoms and rules that support it. Which method is this?**
 
 * A) Forward Chaining
 * B) Modus Tollens
@@ -175,7 +175,7 @@ A PC's working memory is BeepsAtStart, FiveBeeps, BlackScreen. Forward chaining 
 * C) Nothing at all
 * D) SuspectRAM only
 
-**Q20. (The River Crossing, 2.5)** Byte must row a wolf, a goat and a cabbage across a river; the boat holds Byte and at most one passenger. Without Byte, the wolf must never be left with the goat, nor the goat with the cabbage. Why is taking the goat the only safe first crossing?
+**Q20. (The River Crossing, 2.5)** Byte must row a wolf, a goat, and a cabbage across a river; the boat holds Byte and at most one passenger. Without Byte, the wolf must never be left with the goat, nor the goat with the cabbage. Why is taking the goat the only safe first crossing?
 
 * A) The goat is the lightest passenger.
 * B) Every other first crossing (alone, with the wolf, or with the cabbage) leaves a dangerous pair alone on the start bank.
@@ -200,8 +200,8 @@ The section in brackets says where to revise.
 
 | Question | Answer | Explanation |
 | :--- | :--- | :--- |
-| **Q1** | **B** | Symbolic AI stores knowledge explicitly as symbols, facts and rules and reasons with logic; learning from trial and error or data is machine learning. *(2.1)* |
-| **Q2** | **B** | Predicate logic describes objects, properties and relationships, e.g. `Student(Alice)`; propositional logic only handles whole true/false statements. *(2.3)* |
+| **Q1** | **B** | Symbolic AI stores knowledge explicitly as symbols, facts, and rules and reasons with logic; learning from trial and error or data is machine learning. *(2.1)* |
+| **Q2** | **B** | Predicate logic describes objects, properties, and relationships, e.g., `Student(Alice)`; propositional logic only handles whole true/false statements. *(2.3)* |
 | **Q3** | **C** | A knowledge graph links entities through named relationships, such as Alice → studies at → BIT. *(2.3)* |
 | **Q4** | **D** | Forward chaining works from known facts to new conclusions; backward chaining starts from a goal. *(2.2)* |
 | **Q5** | **B** | The inference engine applies the knowledge-base rules to the facts; working memory only holds the current facts, and the user interface handles input and output. *(2.4)* |
