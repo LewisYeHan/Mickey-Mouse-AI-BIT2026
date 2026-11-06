@@ -3,7 +3,7 @@
 **Status:** ✅  
 **Team Member:** Lu My Ky (`@jojolu11`)
 
-**In this section:** How Expert Systems Work · How an Expert System Makes Decisions · MYCIN, DENDRAL and XCON · Expert Systems vs. Traditional Programs · Advantages · Limitations · Expert Systems and Modern AI · Key Takeaways · Review Questions and Answers
+**In this section:** How Expert Systems Work · How an Expert System Makes Decisions · MYCIN, DENDRAL and XCON · Expert Systems vs. Traditional Programs · Advantages · Limitations · Expert Systems and Modern AI · Key Takeaways · Review Questions and Answers 
 
 ---
 
