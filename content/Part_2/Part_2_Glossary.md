@@ -119,7 +119,7 @@
 
 | Term | Definition |
 |---|---|
-| A\* Search | An informed search method that explores the state with the smallest f = g + h, where g is the cost so far and h is the estimated cost to the goal. |
+| A\* Search | An informed search method that explores the state with the smallest f = g + h, where g is the cost so far, and h is the estimated cost to the goal. |
 | Action | Something an agent can do that changes the current state, described by its preconditions and effects. |
 | Admissible Heuristic | A heuristic that never overestimates the true cost of reaching the goal. It guarantees that A\* finds the cheapest solution. |
 | Adversarial Search | Search in situations where an opponent chooses actions against the agent, such as in games. |
@@ -155,16 +155,16 @@
 | Formal Grammar | A set of rules that defines which sentences are valid and shows their hierarchical structure. |
 | Information Extraction | Pulling specific facts, such as Chased(Cat, Mouse), out of ordinary text using rules or patterns. |
 | Information Retrieval | Finding the documents in a large collection that are relevant to a query. |
-| Natural Language Processing (NLP) | The part of AI that focuses on how computers understand, interpret and generate human language. |
+| Natural Language Processing (NLP) | The part of AI that focuses on how computers understand, interpret, and generate human language. |
 | Parse Tree | A tree diagram showing how a sentence is built from the rules of a grammar. |
 | Parser | A program that uses grammar rules to work out the structure of a sentence. |
-| Part-of-Speech Tagging | Labelling each word in a sentence with its word type, such as noun, verb or adjective. |
+| Part-of-Speech Tagging | Labelling each word in a sentence with its word type, such as noun, verb, or adjective. |
 | Phrase Structure Grammar | A grammar that describes how words group into phrases and phrases group into sentences. |
 | Question Answering | Answering questions asked in natural language, for example by turning them into logical queries over a knowledge base. |
 | Rule-Based NLP | NLP that uses explicitly defined rules and patterns to analyse and process language. |
 | Semantics | The meaning of words and sentences. |
 | Sentiment Analysis | Finding the emotional tone, positive or negative, of a piece of text. |
-| Symbolic NLP | NLP that uses formal rules, logic and symbolic representations to process and understand language. |
+| Symbolic NLP | NLP that uses formal rules, logic, and symbolic representations to process and understand language. |
 | Syntax | The grammatical structure of a sentence. |
 
 ---
