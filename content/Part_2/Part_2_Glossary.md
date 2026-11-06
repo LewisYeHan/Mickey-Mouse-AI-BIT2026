@@ -1,188 +1,146 @@
-# 2.6 Glossary — Symbolic AI
+# 2.6 Glossary
 
 **Status:** ✅  
 **Team Member:** Goh Ye Han (`@LewisYeHan`)
 
-**In this section:** key terms from Sections 2.1 to 2.7, grouped into eight categories and listed A–Z within each category.
+**In this section:** [Foundations](#1-foundations-of-symbolic-ai-taught-in-21) · [Knowledge Representation](#2-knowledge-representation-taught-in-23) · [Logical Reasoning](#3-logical-reasoning-taught-in-22-the-inference-engine-also-in-24) · [Uncertainty](#4-uncertainty-and-reasoning-methods-taught-in-22-section-9) · [Expert Systems](#5-expert-systems-taught-in-24) · [AI Approaches](#6-ai-approaches-and-evaluation-taught-in-21-section-5-22-section-11-and-24-sections-68) · [Planning and Search](#7-planning-and-search-taught-in-25)
+
+Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading names the section that teaches its terms, so you can go back to the full explanation.
 
 ---
 
-## 1. Foundations of Symbolic AI
+## 1. Foundations of Symbolic AI (taught in 2.1)
 
 | Term | Definition |
 |---|---|
-| Artificial Intelligence (AI) | The field of creating machines or systems capable of performing tasks that normally require human intelligence. |
-| Explicit Knowledge | Knowledge that is clearly represented and stored in a form that a computer can process. |
-| Fact | A statement representing something considered true within a knowledge base. |
-| Inference | The process of deriving new conclusions from existing facts and rules. |
-| Knowledge | Organized information that can be used to understand situations, solve problems, or make decisions. |
-| Knowledge-Based System | An AI system that uses stored knowledge and reasoning methods to solve problems. |
-| Logic | A formal system used to represent statements and determine whether conclusions follow from them. |
-| Rule-Based System | A system that uses predefined IF–THEN rules to make decisions or derive conclusions. |
-| Symbol | A representation of an object, concept, relationship, or piece of knowledge. |
-| Symbolic AI | An approach to AI that represents knowledge using symbols, facts, rules, and logical reasoning. |
+| Artificial Intelligence (AI) | Building machines that do tasks which normally need human intelligence. |
+| Explicit Knowledge | Knowledge written out clearly, in a form a computer can store and process. |
+| Fact | A statement the system treats as true, such as "Alex is a student". |
+| GOFAI | "Good Old-Fashioned AI": the traditional, early form of Symbolic AI. |
+| Inference | Deriving new conclusions from existing facts and rules. |
+| Knowledge | Organized information that can be used to understand situations and make decisions. |
+| Logic | A formal system for writing statements and checking whether conclusions follow from them. |
+| Symbol | A name or sign that stands for an object, concept or relationship. |
+| Symbolic AI | AI that represents knowledge with symbols, facts and rules, and reasons with logic. |
 
-## 2. Knowledge Representation
-
-| Term | Definition |
-|---|---|
-| Biconditional | A logical connective (↔) meaning that two statements are either both true or both false ("if and only if"). |
-| Constant | A symbol representing a specific object or individual in predicate logic. |
-| Data | Raw facts or observations that have not necessarily been interpreted. |
-| De Morgan's Laws | Logical equivalences stating that ¬(P ∧ Q) ≡ ¬P ∨ ¬Q and ¬(P ∨ Q) ≡ ¬P ∧ ¬Q. |
-| Entity | An identifiable object, person, place, or concept represented in a knowledge system. |
-| Existential Quantifier | A logical symbol (∃) meaning that at least one object satisfies a given condition. |
-| Frame | A knowledge representation structure used to describe an object or concept through attributes and values. |
-| Information | Data that has been processed or organized to provide meaning. |
-| Knowledge Graph | A structure that represents entities and their relationships as connected data. |
-| Knowledge Representation (KR) | The method of organizing and storing knowledge so that an AI system can use it. |
-| Logical Equivalence | A relationship (≡) between two statements that have the same truth value in every possible situation. |
-| Logical Operator | A symbol or operation used to connect or modify logical statements, such as AND, OR, and NOT. |
-| Ontology | A formal description of the concepts, categories, and relationships within a particular domain. |
-| Predicate | A logical expression that describes a property of an object or a relationship between objects. |
-| Predicate Logic | A logical system that represents objects, their properties, and relationships using predicates and quantifiers. |
-| Production Rule | An IF-THEN rule that states a condition and the conclusion or action that follows. |
-| Proposition | A statement that can be evaluated as either true or false. |
-| Propositional Logic | A logical system that works with propositions and logical operators. |
-| Quantifier | A logical symbol that specifies how many objects satisfy a condition. |
-| Relationship | A connection between two or more entities in a knowledge representation system. |
-| Rule-Based Representation | Representing knowledge as production rules (IF-THEN statements). |
-| Script | A sequence of frames that describes a typical series of events, such as borrowing a library book. |
-| Semantic Network | A graph-based representation of knowledge in which nodes represent concepts and edges represent relationships. |
-| Slot | An attribute or property within a frame that stores information about an object or concept. |
-| Universal Quantifier | A logical symbol (∀) meaning that a statement applies to every object in a specified domain. |
-| Variable | A symbol representing an unspecified object or value in predicate logic. |
-
-## 3. Logical Reasoning
+## 2. Knowledge Representation (taught in 2.3)
 
 | Term | Definition |
 |---|---|
-| Backward Chaining | A reasoning method that starts with a goal and works backward to determine whether supporting facts and rules exist. |
-| Conclusion | A statement derived from premises through logical reasoning. |
-| Conflict Resolution | The process of deciding which rule to execute when multiple rules can be applied. |
-| Forward Chaining | A reasoning method that starts with known facts and repeatedly applies rules to derive new conclusions. |
-| Inference Engine | The component of an expert system that applies reasoning methods to facts and rules. |
-| Modus Ponens | A reasoning rule stating that if P implies Q and P is true, then Q must also be true. |
-| Modus Tollens | A reasoning rule stating that if P implies Q and Q is false, then P must also be false. |
-| Premise | A statement or assumption used as the starting point for logical reasoning. |
-| Resolution | An inference technique that uses logical clauses to derive conclusions or demonstrate contradictions. |
-| Rule | A logical statement that specifies what conclusion follows when certain conditions are satisfied. |
-| Substitution | The process of replacing variables with specific values or expressions. |
-| Unification | The process of finding substitutions that make two logical expressions identical. |
+| Biconditional | The connective ↔ ("if and only if"): both statements are true or both are false. |
+| Constant | In predicate logic, a symbol naming one specific object, such as `Alex`. |
+| Data | Raw values without context, such as `19` or `Alex`. |
+| De Morgan's Laws | ¬(P ∧ Q) ≡ ¬P ∨ ¬Q and ¬(P ∨ Q) ≡ ¬P ∧ ¬Q. |
+| Default Value | The value a frame slot takes when nothing more specific is given, such as Major = Undeclared. |
+| Entity | An object, person, place or concept that a knowledge system describes. |
+| Existential Quantifier | ∃: "there is at least one" object for which the statement is true. |
+| Frame | A form-like structure describing an object or concept by its slots and their values. |
+| Information | Data in a meaningful context, such as "Alex is 19". |
+| Inheritance | A specific concept receiving properties from a general one along IS-A links (a Student gets Name from Person). |
+| Instance | One specific member of a general concept, such as Alex of Student; in frames, a filled-in copy of the template. |
+| Knowledge Graph | Entities and their relationships stored as a network of linked facts (triples). |
+| Knowledge Representation (KR) | How knowledge is organized and stored so that an AI system can use it. |
+| Logical Equivalence | ≡: two statements that have the same truth value in every situation. |
+| Logical Operator | A connective that joins or changes statements: AND (∧), OR (∨), NOT (¬), → and ↔. |
+| Ontology | A formal, shared vocabulary of a domain's concepts, categories and relationships. |
+| Predicate | A property of an object or a relation between objects, such as `Studies(Alex, AI)`. |
+| Predicate Logic | Logic that uses predicates, variables and quantifiers to describe objects and their relationships. |
+| Production Rule | See Rule (Section 3). |
+| Proposition | A statement that is either true or false. |
+| Propositional Logic | Logic that combines whole true/false statements with logical operators. |
+| Quantifier | A symbol saying how many objects a statement covers: ∀ (all) or ∃ (at least one). |
+| Relationship | A link between entities, such as "studies" or "is a". |
+| Rule-Based Representation | Storing knowledge as a set of IF–THEN rules. |
+| Script | A sequence of frames describing a typical series of events, such as borrowing a library book. |
+| Semantic Network | A graph whose nodes are concepts and whose labelled edges are relationships. |
+| Slot | One attribute of a frame, such as Name or Major. |
+| Triple | One knowledge-graph fact: subject → relationship → object, such as Alex → studies → Computer Science. |
+| Universal Quantifier | ∀: the statement is true for every object in the domain. |
+| Variable | In predicate logic, a symbol standing for any object, such as `x`. |
 
-## 4. Uncertainty and Reasoning Methods
-
-| Term | Definition |
-|---|---|
-| Certainty Factor | A numerical value representing the degree of confidence in a conclusion or piece of evidence. |
-| Fuzzy Logic | A form of logic that allows truth values to exist between completely false and completely true. |
-| Membership Function | A function that assigns a degree of membership, usually between 0 and 1, to an element in a fuzzy set. |
-| Probability | A numerical measure of how likely an event or statement is to occur or be true. |
-| Probabilistic Reasoning | A reasoning approach that uses probability to handle uncertainty and incomplete information. |
-| Uncertainty | A situation in which information is incomplete, ambiguous, or insufficient to determine a definite conclusion. |
-
-## 5. Expert Systems
-
-| Term | Definition |
-|---|---|
-| Domain | A specific area of knowledge or expertise that an expert system is designed to handle. |
-| DENDRAL | An early expert system developed to help identify the molecular structures of chemical compounds. |
-| Expert | A person with specialized knowledge or experience in a particular field. |
-| Expert System | An AI system that uses domain-specific knowledge and reasoning methods to solve problems that normally require human expertise. |
-| Explanation Facility | A component that explains how an expert system reached a particular conclusion. |
-| Inference Mechanism | The reasoning process used to apply knowledge and derive conclusions. |
-| Knowledge Acquisition | The process of collecting and organizing knowledge from experts or other sources for use in an AI system. |
-| Knowledge Base | The stored collection of facts, rules, and domain knowledge used by an expert system. |
-| Knowledge Engineer | A person responsible for collecting, organizing, and representing expert knowledge in an AI system. |
-| MYCIN | An early medical expert system designed to help diagnose bacterial infections and recommend antibiotics. |
-| User Interface | The part of a system through which users interact with the application. |
-| Working Memory | The temporary storage area containing facts and information relevant to the current reasoning process. |
-| XCON | An expert system developed to configure computer systems, particularly DEC VAX computer orders. |
-
-## 6. AI Approaches and Evaluation
+## 3. Logical Reasoning (taught in 2.2; the inference engine also in 2.4)
 
 | Term | Definition |
 |---|---|
-| Accuracy | The degree to which a system's outputs or conclusions are correct. |
-| Ambiguity | A situation in which information can have multiple possible meanings or interpretations. |
-| Explainability | The ability to provide understandable reasons for a system's decisions or conclusions. |
-| Generalization | The ability of an AI system to apply what it has learned to new, previously unseen situations. |
-| Knowledge Acquisition Bottleneck | The difficulty and time required to collect, represent, and maintain expert knowledge in a knowledge-based system. |
-| Knowledge Maintenance | The process of updating and correcting stored knowledge to keep a system reliable and relevant. |
-| Machine Learning (ML) | An AI approach in which systems learn patterns from data instead of relying entirely on manually defined rules. |
-| Neural Network | A computational model inspired by the structure of biological neural networks, commonly used to learn patterns from data. |
-| Neuro-Symbolic AI | An approach that combines neural networks with symbolic representations and logical reasoning. |
-| Pattern Recognition | The process of identifying patterns or regularities in data. |
-| Scalability | The ability of a system to handle increasing amounts of knowledge, data, or complexity. |
+| Backward Chaining | Reasoning from a goal back to the facts and rules that would prove it. |
+| Conclusion | A new statement derived from facts and rules. |
+| Conflict Resolution | Choosing which rule to fire when several rules match at once. |
+| Forward Chaining | Reasoning from known facts, applying rules repeatedly until no new facts appear. |
+| Inference Engine | The part of an expert system that applies rules to facts to derive conclusions. |
+| Modus Ponens | If P → Q and P is true, then Q is true. |
+| Modus Tollens | If P → Q and Q is false, then P is false. |
+| Resolution | A proof method that combines clauses to derive conclusions or expose a contradiction. |
+| Rule | An IF–THEN statement: when the conditions hold, the conclusion follows. Also called a production rule. |
+| Rule-Based System | A system that reaches decisions by applying IF–THEN rules; an expert system is one kind. |
+| Substitution | Replacing variables with specific values, such as x = Alex. |
+| Unification | Finding the substitution that makes two logical expressions identical. |
 
-## 7. Planning and Search
-
-| Term | Definition |
-|---|---|
-| A\* Search | An informed search method that explores the state with the smallest f = g + h, where g is the cost so far, and h is the estimated cost to the goal. |
-| Action | Something an agent can do that changes the current state, described by its preconditions and effects. |
-| Admissible Heuristic | A heuristic that never overestimates the true cost of reaching the goal. It guarantees that A\* finds the cheapest solution. |
-| Adversarial Search | Search in situations where an opponent chooses actions against the agent, such as in games. |
-| Alpha-Beta Pruning | A technique that gives the same result as minimax while skipping branches that cannot change the final decision. |
-| Breadth-First Search (BFS) | An uninformed search method that explores all states one step away, then two steps away, and so on. |
-| Depth-First Search (DFS) | An uninformed search method that follows one path as deep as possible before backing up. |
-| Effect | A change that becomes true or false after an action is performed. |
-| Frontier | The list of states that have been discovered but not yet explored during a search. |
-| Goal State | The state, or set of conditions, that a planner or search method is trying to reach. |
-| Greedy Best-First Search | An informed search method that always explores the state that appears closest to the goal according to the heuristic. |
-| Heuristic | An estimate of how close a state is to the goal, used to guide informed search. |
-| Hill Climbing | A local search method that repeatedly moves to a better neighbouring solution until no neighbour is better. |
-| Informed Search | Search that uses a heuristic to explore more promising states first. |
-| Initial State | The state in which a planning or search problem begins. |
-| Local Maximum | A solution that is better than all its neighbours but is not the best solution overall. |
-| Local Search | Search that improves a single solution step by step instead of building a path from the start. |
-| Minimax | An adversarial search method in which one player maximises and the other minimises the score, assuming both play their best. |
-| Path Cost | The total cost of a sequence of actions, such as total distance or time. |
-| Plan | A sequence of actions that changes the initial state into a goal state. |
-| Planning | The process of finding a plan to reach a goal. |
-| Precondition | A condition that must be true before an action can be performed. |
-| Simulated Annealing | A local search method that sometimes accepts worse solutions, less often over time, to escape local maxima. |
-| State | A description of the world at a particular moment. |
-| State Space | The set of all possible states and the actions that connect them. |
-| Uniform-Cost Search (UCS) | An uninformed search method that always explores the state with the lowest total cost so far. |
-| Uninformed Search | Search that uses no extra knowledge about where the goal is; also called blind search. |
-
-## 8. Natural Language Processing
+## 4. Uncertainty and Reasoning Methods (taught in 2.2, Section 9)
 
 | Term | Definition |
 |---|---|
-| Context-Free Grammar (CFG) | A formal grammar made of rewrite rules, such as S → NP VP, that defines valid sentences and their structure. |
-| Formal Grammar | A set of rules that defines which sentences are valid and shows their hierarchical structure. |
-| Information Extraction | Pulling specific facts, such as Chased(Cat, Mouse), out of ordinary text using rules or patterns. |
-| Information Retrieval | Finding the documents in a large collection that are relevant to a query. |
-| Natural Language Processing (NLP) | The part of AI that focuses on how computers understand, interpret, and generate human language. |
-| Parse Tree | A tree diagram showing how a sentence is built from the rules of a grammar. |
-| Parser | A program that uses grammar rules to work out the structure of a sentence. |
-| Part-of-Speech Tagging | Labelling each word in a sentence with its word type, such as noun, verb, or adjective. |
-| Phrase Structure Grammar | A grammar that describes how words group into phrases and phrases group into sentences. |
-| Question Answering | Answering questions asked in natural language, for example by turning them into logical queries over a knowledge base. |
-| Rule-Based NLP | NLP that uses explicitly defined rules and patterns to analyse and process language. |
-| Semantics | The meaning of words and sentences. |
-| Sentiment Analysis | Finding the emotional tone, positive or negative, of a piece of text. |
-| Symbolic NLP | NLP that uses formal rules, logic, and symbolic representations to process and understand language. |
-| Syntax | The grammatical structure of a sentence. |
+| Certainty Factor | A number from −1 (definitely false) to +1 (definitely true) for confidence in a conclusion, as in MYCIN; not a probability. |
+| Fuzzy Logic | Logic in which truth can lie anywhere between false (0) and true (1). |
+| Membership Degree | In fuzzy logic, how much something belongs to a vague category, from 0 to 1 (30°C is "hot" to degree 0.8). |
+| Probabilistic Reasoning | Handling uncertainty by working with probabilities. |
+| Probability | A number from 0 to 1 for how likely something is to be true. |
+| Uncertainty | Information too incomplete or unclear to give a definite conclusion. |
 
----
+## 5. Expert Systems (taught in 2.4)
 
-## Quick Reference: The Eight Categories
-
-| Category | Main Focus |
+| Term | Definition |
 |---|---|
-| 1. Foundations of Symbolic AI | The basic concepts behind symbolic intelligence. |
-| 2. Knowledge Representation | How AI stores and organizes knowledge. |
-| 3. Logical Reasoning | How AI derives conclusions from facts and rules. |
-| 4. Uncertainty and Reasoning Methods | How AI handles incomplete or uncertain information. |
-| 5. Expert Systems | How symbolic reasoning is applied to specialized problems. |
-| 6. AI Approaches and Evaluation | How Symbolic AI compares with other AI approaches and its strengths and limitations. |
-| 7. Planning and Search | How AI finds sequences of actions and searches through possible states. |
-| 8. Natural Language Processing | How symbolic methods help computers understand human language. |
+| DENDRAL | Early expert system (Stanford, from 1965) that found molecular structures from chemical data. |
+| Domain | The specific area of expertise a system is built for, such as medicine. |
+| Expert System | AI that applies expert knowledge, stored as rules, to solve problems in one domain. |
+| Explanation Facility | The part of an expert system that shows how and why it reached a conclusion. |
+| Knowledge Acquisition | Collecting experts' knowledge and turning it into rules; slow and difficult, so a major limitation. |
+| Knowledge Base | An expert system's stored facts and rules. |
+| MYCIN | Early medical expert system (Stanford, 1970s) for bacterial infections and antibiotics. |
+| User Interface | The part through which users enter facts and see results. |
+| Working Memory | The facts about the current case, which grow as rules fire. |
+| XCON | Expert system (also R1) that configured DEC VAX computers from customer orders. |
 
----
+## 6. AI Approaches and Evaluation (taught in 2.1 Section 5, 2.2 Section 11 and 2.4 Sections 6–8)
 
-*End of Part 2 Glossary*
+| Term | Definition |
+|---|---|
+| Ambiguity | Information with more than one possible meaning, which is hard to represent as symbols. |
+| Explainability | Being able to give understandable reasons for a decision. |
+| Knowledge Maintenance | Updating stored rules and facts; out-of-date rules give wrong answers, however good the engine. |
+| Machine Learning (ML) | AI that learns patterns from data instead of following hand-written rules. |
+| Neuro-Symbolic AI | Combining machine learning (patterns from data) with symbolic reasoning (rules and logic). |
+| Pattern Recognition | Spotting regularities in data, such as signs of disease in images; a strength of machine learning. |
 
+## 7. Planning and Search (taught in 2.5)
+
+| Term | Definition |
+|---|---|
+| A\* Search | Informed search that explores the state with the smallest f = g + h (cost so far + estimated cost to goal). |
+| Action | Something an agent can do to change the state, described by preconditions and effects. |
+| Admissible Heuristic | A heuristic that never overestimates the true remaining cost; with it, A\* finds the cheapest solution (if allowed to re-explore a state reached more cheaply). |
+| Adversarial Search | Search against an opponent who chooses moves, as in games. |
+| Alpha-Beta Pruning | Skipping branches that cannot change minimax's decision; same result, less work. |
+| Breadth-First Search (BFS) | Uninformed search that explores all states 1 step away, then 2 steps, and so on. |
+| Constraint | A rule every allowed state must obey, such as "the goat is never left alone with the cabbage". |
+| Depth-First Search (DFS) | Uninformed search that follows one path as deep as possible before backing up. |
+| Effect | What becomes true or false after an action. |
+| Frontier | The states discovered but not yet explored. |
+| Goal State | The state, or set of conditions, the search is trying to reach. |
+| Greedy Best-First Search | Informed search that always explores the state the heuristic says is closest to the goal. |
+| Heuristic | An estimate of how far a state is from the goal. |
+| Hill Climbing | Local search that keeps moving to a better neighbour until none is better. |
+| Informed Search | Search that uses a heuristic to try promising states first. |
+| Initial State | The state where the problem starts. |
+| Local Maximum | A solution better than all its neighbours but not the best overall. |
+| Local Search | Improving one solution step by step instead of building a path from the start. |
+| Minimax | Game search in which one player maximises and the other minimises the score, both playing their best. |
+| Path Cost | The total cost of a sequence of actions, such as total time. |
+| Plan | A sequence of actions that turns the initial state into a goal state. |
+| Planning | Finding a plan that reaches a goal. |
+| Precondition | What must be true before an action can be done. |
+| Simulated Annealing | Local search that sometimes accepts a worse solution, less often over time, to escape local maxima. |
+| State | A description of the world at one moment. |
+| State Space | All possible states and the actions that connect them. |
+| Uniform-Cost Search (UCS) | Uninformed search that always explores the state with the lowest total cost so far. |
+| Uninformed Search | Search with no extra knowledge of where the goal is (blind search). |
