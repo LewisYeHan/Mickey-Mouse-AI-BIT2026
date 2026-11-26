@@ -49,6 +49,12 @@ Figure 1.1 shows the same layers as the table. Requests go down from you to the 
 
 Two details are worth knowing. First, device drivers run inside the OS, together with the kernel. Second, the motherboard firmware (BIOS or UEFI) does its main job **when the computer starts**. Once the OS is running, the drivers talk to the hardware directly, not through the BIOS.
 
+The **hardware** at the bottom of Figure 1.1 is the physical machine. Its most important part is the **CPU** (processor), the chip that runs every instruction of every program:
+
+<p align="center"><img src="../images/photo_cpu.jpg" alt="An AMD Ryzen 9 9950X processor seen from the top: a square green circuit board with a silver metal lid printed with AMD Ryzen" width="280"></p>
+
+*Photo: an AMD Ryzen 9 9950X processor seen from the top. The chip itself sits under the metal lid. Photo by 4300streetcar, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons.*
+
 ---
 
 ## 3. Firmware
@@ -70,6 +76,10 @@ When you press the power button on a PC, the CPU does not yet know where Windows
 3. **Reads saved settings:** It loads settings such as the boot order and the clock from **CMOS** memory, which is kept alive by a small coin-cell battery. That is why a PC still knows the time after being unplugged.
 4. **Finds a drive to start from:** It checks the SSD, hard drive, or USB stick, in the boot order you set.
 5. **Hands over to the bootloader:** It starts the small program on that drive that knows how to load the OS.
+
+<p align="center"><img src="../images/photo_bios_chip.jpg" alt="Part of a motherboard: a square chip labelled PMC Flash, which stores the BIOS, next to a round silver coin-cell battery that keeps the CMOS settings and clock alive" width="400"></p>
+
+*Photo: the BIOS chip (the square chip labelled PMC Flash) and the round coin-cell CMOS battery on an ASUS P4P800-E motherboard. Photo by Samuel Peixoto, public domain, via Wikimedia Commons.*
 
 ### Legacy BIOS vs. Modern UEFI
 **UEFI (Unified Extensible Firmware Interface)** replaced the old BIOS and has been standard on PCs since about 2012. Many people still call it "the BIOS" out of habit.
