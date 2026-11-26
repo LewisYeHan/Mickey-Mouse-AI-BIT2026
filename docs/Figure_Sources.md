@@ -47,6 +47,9 @@ These screenshots show learners what the screen should look like during a lab. T
 | Screenshot | File | Used in | Made by | How it was made | Source and licence |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | A chat with ELIZA | `content/images/eliza_chat.png` | 2.1 Lab | Yeo Shih Jie (Stage 3) | Screenshot taken in his browser with AI assistance, then cropped; the replies were checked against the lab feedback | Screenshot of N. Landsteiner's online ELIZA (mass:werk), shown to teach about the program |
+| System Information, BIOS rows | `content/images/msinfo_bios.png` | 1.1 Lab | Yeo Shih Jie (Stage 3) | Screenshot of his own laptop; cropped, System Name and User Name rows removed and key rows outlined with AI assistance | Team's own screenshot |
+| Device Manager, Driver tab | `content/images/device_manager_driver.png` | 1.1 Lab | Yeo Shih Jie (Stage 3) | Screenshot of his own laptop; key rows outlined with AI assistance | Team's own screenshot |
+| Task Manager, Details page | `content/images/task_manager_details.png` | 1.3 Lab | Yeo Shih Jie (Stage 3) | Screenshot of his own laptop; cropped, User name column blanked and columns outlined with AI assistance | Team's own screenshot |
 | The forward-chaining program running | `content/images/python_forward_chaining.png` | 2.2 Lab | Yeo Shih Jie (Stage 3) | Screenshot taken in his browser with AI assistance, then cropped; the output was checked against a local run of the same code | Team's own code, shown in the Programiz online editor |
 
 ## Other images
