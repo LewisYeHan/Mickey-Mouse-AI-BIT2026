@@ -1,6 +1,5 @@
 # 2.7 Module Summary & Self-Check Quiz
 
-**Status:** ✅  
 **Team Member:** Goh Ye Han (`@LewisYeHan`)
 
 **In this section:** [How It All Connects](#1-how-it-all-connects) · [Key Ideas from Each Section](#2-key-ideas-from-each-section) · [Quiz (21 questions)](#3-self-check-quiz) · [Answer Key](#4-answer-key) · [References](#5-references)
@@ -19,9 +18,9 @@
 
 Follow one AI through the module: it decides whether Alex qualifies for a scholarship, then helps Alex apply.
 
-**2.1 Symbolic AI: write knowledge down.** Instead of learning from examples, the system is given explicit facts and rules: the fact "Alex's GPA is 3.9" and the rule "IF GPA ≥ 3.8 THEN ExcellentAcademicPerformance".
+**2.1 Symbolic AI: write knowledge down.** Instead of learning from examples, the system is given explicit facts and rules. In 2.1, Sammy's facts (`GPA(Sammy, 3.8)`, attendance 95%) and the Merit Scholarship rule (GPA ≥ 3.5 and attendance ≥ 90%) are enough to conclude `ScholarshipEligible(Sammy)`. From 2.2 on, we follow Alex and the Excellence Scholarship: the fact `GPA(Alex, 3.9)` and the rule "IF GPA ≥ 3.8 THEN ExcellentAcademicPerformance".
 
-**2.2 Logic and Reasoning: draw conclusions.** Modus Ponens turns that fact and rule into a new fact. Forward chaining repeats this until nothing new appears; backward chaining starts from the goal "Is Alex eligible?" and seeks facts that prove it. Conflict resolution picks a rule when several match; certainty factors and fuzzy logic handle unsure facts.
+**2.2 Logic and Reasoning: draw conclusions.** Modus Ponens turns that fact and rule into a new fact. Forward chaining repeats this until no rule adds a new fact; backward chaining starts from the goal "Is Alex eligible?" and seeks facts that prove it. Conflict resolution picks a rule when several match; certainty factors and fuzzy logic handle unsure facts.
 
 **2.3 Knowledge Representation: organize what is known.** The same knowledge can be stored as predicate logic (`GPA(Alex, 3.9)`), a semantic network, a frame, rules, an ontology or a knowledge graph, each suited to a different job.
 
@@ -226,6 +225,14 @@ The section in brackets says where to revise.
 
 ---
 
+## A Note from Team Mickey Mouse
+
+Congratulations on making it through the foundations of Software and Symbolic AI! Learning AI is not just about understanding how intelligent systems work. It is about learning how to build, question and improve them.
+
+**Stay curious. Keep building. And don't be afraid to make mistakes.**
+
+---
+
 ## 5. References
 
 1. Russell, S. J., & Norvig, P. (2021). *Artificial Intelligence: A Modern Approach* (4th ed.). Pearson.
@@ -233,4 +240,4 @@ The section in brackets says where to revise.
 3. Giarratano, J. C., & Riley, G. D. (2005). *Expert Systems: Principles and Programming* (4th ed.). Thomson.
 4. Jackson, P. (1998). *Introduction to Expert Systems* (3rd ed.). Addison-Wesley.
 5. Hart, P. E., Nilsson, N. J., & Raphael, B. (1968). A formal basis for the heuristic determination of minimum cost paths. *IEEE Transactions on Systems Science and Cybernetics*, 4(2), 100–107.
-6. BIT2026 Course Lecture Slides (Part 2 — Symbolic AI).
+6. BIT2026 Foundations of CS & AI, course lecture slides, Chapter 4: Symbolic AI (2026).
