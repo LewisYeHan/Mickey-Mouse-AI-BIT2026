@@ -2,7 +2,7 @@
 
 **Team Member:** Frederick Samuel Lesmana (`@Ti4nCi`)
 
-**In this section:** Facts, Rules and Inference · Modus Ponens and Modus Tollens · Forward Chaining · Backward Chaining · Resolution and Unification · Conflict Resolution · Reasoning Under Uncertainty · Python Example · Limitations · Key Takeaways · Practice Questions and Answers
+**In this section:** [Introduction](#1-introduction) · [Facts, Rules and Inference](#2-facts-rules-and-inference) · [Modus Ponens and Modus Tollens](#3-logical-inference) · [Forward Chaining](#4-forward-chaining) · [Backward Chaining](#5-backward-chaining) · [Forward vs. Backward](#6-forward-chaining-vs-backward-chaining) · [Resolution and Unification](#7-resolution-and-unification) · [Conflict Resolution](#8-conflict-resolution) · [Reasoning Under Uncertainty](#9-reasoning-under-uncertainty) · [Python Example](#10-practical-implementation-in-python) · [Limitations](#11-limitations-of-symbolic-reasoning) · [Key Takeaways](#12-key-takeaways) · [Lab: Run a Forward-Chaining Engine](#lab-run-a-forward-chaining-engine-in-python) · [Practice Questions](#13-practice-questions-and-answers) · [References](#14-references)
 
 **Learning goals.** By the end of this section you can:
 * use Modus Ponens and Modus Tollens to reach a conclusion, and spot the "affirming the consequent" mistake;
@@ -525,7 +525,126 @@ Combining symbolic reasoning with machine learning can help address some of thes
 
 ---
 
+## Lab: Run a Forward-Chaining Engine in Python
+
+* **Goal:** Run a small forward-chaining engine (§4), and watch it add facts until no rule adds anything new.
+* **Preparation:** About 20 minutes; re-read §4 and §10. No programming experience is needed: you copy the program and change one line at a time. You need Python 3 in any form: **IDLE**, which is installed together with Python from <https://www.python.org/downloads/>; VS Code; or a free online editor such as [Programiz](https://www.programiz.com/python-programming/online-compiler/), which needs no installation. Copy the program below into the editor. No computer? Trace the program on paper; the feedback box shows what it prints.
+
+  ```python
+  # Forward chaining: the Excellence Scholarship from Section 4
+
+  # Step 2: change this number
+  gpa = 3.9
+
+  # The facts we start with
+  facts = {"CommunityService(Alex)"}
+  if gpa >= 3.8:
+      facts.add("GPA>=3.8(Alex)")
+
+  # Each rule: (name, IF these facts, THEN this fact)
+  rules = [
+      ("Rule 1",
+       ["GPA>=3.8(Alex)"],
+       "ExcellentAcademicPerformance(Alex)"),
+      ("Rule 2",
+       ["ExcellentAcademicPerformance(Alex)",
+        "CommunityService(Alex)"],
+       "ScholarshipEligible(Alex)"),
+  ]
+
+  # Repeat until a whole pass adds no new fact
+  pass_number = 0
+  new_fact_added = True
+  while new_fact_added:
+      pass_number += 1
+      print(f"Pass {pass_number}: check every rule")
+      new_fact_added = False
+      for name, conditions, conclusion in rules:
+          matched = all(c in facts for c in conditions)
+          if matched and conclusion not in facts:
+              facts.add(conclusion)
+              print(f"  {name} fires and adds {conclusion}")
+              new_fact_added = True
+
+  print("No rule can add a new fact, so the system stops.")
+  print("Eligible?", "ScholarshipEligible(Alex)" in facts)
+  ```
+
+  The program in §10 checks each rule once, in a fixed order. This one works more like a real inference engine. It keeps the known facts in a set, stores each rule as data (its name, the facts it needs, and the fact it adds), and makes **passes** over all the rules until a whole pass adds nothing new: the stopping test in Figure 2.4.
+
+* **Task:**
+
+  **Step 1, predict, then run:** how many passes will the program make, and which rules will fire? Run it and compare.  
+  **Step 2, change a fact:** change `gpa = 3.9` to `gpa = 3.7`. Predict, then run.  
+  **Step 3, add a rule:** change `gpa` back to `3.9`. Add these lines to the `rules` list, straight after Rule 2 and before the closing `]`, then run the program.
+
+  ```python
+      ("Rule 3",
+       ["ScholarshipEligible(Alex)"],
+       "InvitedToInterview(Alex)"),
+  ```
+
+  **Step 4, change the order:** delete Rule 3 again. Move the four lines of Rule 2 so that they come **before** Rule 1. Predict how many passes the program needs now, then run it.
+
+  ![The Programiz online Python editor: the forward-chaining program on the left, and its output on the right: Pass 1 with Rule 1 and Rule 2 firing, Pass 2 adding nothing, then Eligible? True](../images/python_forward_chaining.png)
+
+  *Lab screenshot: the program from Step 1 running in the Programiz online editor.*
+
+* **Observation:** For each step, record the number of passes, the rules that fired in order, and the final `Eligible?` answer.
+* **Reflection:**
+  1. Why does the program always end with one pass that adds nothing?
+  2. In Step 2 the program prints `Eligible? False`. Does this prove that Alex can never get the scholarship, or only that these rules cannot show it from these facts?
+  3. In Step 4, did changing the order of the rules change the answer? What did it change?
+  4. Is this forward or backward chaining? How would backward chaining (§5) start on the same rules?
+
+<details>
+<summary><b>Feedback: check your results</b></summary>
+
+* **Step 1** prints the output in the screenshot: 2 passes. Rule 1 fires first and adds `ExcellentAcademicPerformance(Alex)`; Rule 2, checked next in the same pass, can now match and adds `ScholarshipEligible(Alex)`.
+
+  ```text
+  Pass 1: check every rule
+    Rule 1 fires and adds ExcellentAcademicPerformance(Alex)
+    Rule 2 fires and adds ScholarshipEligible(Alex)
+  Pass 2: check every rule
+  No rule can add a new fact, so the system stops.
+  Eligible? True
+  ```
+
+* **Step 2** makes 1 pass and no rule fires. With a GPA of 3.7 the fact `GPA>=3.8(Alex)` is never added, so Rule 1 cannot match, and Rule 2 never gets the fact it needs.
+
+  ```text
+  Pass 1: check every rule
+  No rule can add a new fact, so the system stops.
+  Eligible? False
+  ```
+
+* **Step 3** makes 2 passes. Rules 1, 2 and 3 all fire in Pass 1, and the last new fact is `InvitedToInterview(Alex)`. One new fact can trigger the next rule: this is the chain in *forward chaining*.
+* **Step 4** makes 3 passes. Pass 1 checks Rule 2 before Rule 1 has added the fact Rule 2 needs, so only Rule 1 fires. Rule 2 fires in Pass 2, and Pass 3 adds nothing.
+
+  ```text
+  Pass 1: check every rule
+    Rule 1 fires and adds ExcellentAcademicPerformance(Alex)
+  Pass 2: check every rule
+    Rule 2 fires and adds ScholarshipEligible(Alex)
+  Pass 3: check every rule
+  No rule can add a new fact, so the system stops.
+  Eligible? True
+  ```
+
+* **Reflection answers:**
+  1. The engine stops only when a whole pass adds no new fact (step 5 of the process in §4). It cannot know that nothing new is possible until it has checked every rule once more.
+  2. Only that **these rules** cannot show it from **these facts**. Alex might still qualify for a different scholarship whose rules are not in this program. A rule-based system depends only on the facts and rules it is given (*Knowledge Dependency* in §11).
+  3. The answer stayed the same, but the engine needed 3 passes instead of 2, so the order changed how much work it did. When rules recommend different things, order can change the answer too, which is why §8 needs conflict resolution.
+  4. **Forward chaining:** it starts from the facts and works towards conclusions. Backward chaining would start from the goal `ScholarshipEligible(Alex)`, find Rule 2, and then try to prove its two conditions (§5).
+
+</details>
+
+---
+
 ## 13. Practice Questions and Answers
+
+Try each question yourself first, then open the answers to check.
 
 ### Understanding
 
@@ -573,7 +692,8 @@ Facts:  A, B, E
 
 13. **Find the error.** A system reasons: "If it rains, the ground is wet. The ground is wet. Therefore, it rained." What is wrong?
 
-### Answers
+<details>
+<summary><b>Show answers</b> (try the questions first!)</summary>
 
 **1.** Reasoning is the process of using known facts and rules to derive new conclusions. For example, from `Human(Socrates)` and the rule `∀x (Human(x) → Mortal(x))`, the system derives `Mortal(Socrates)`.
 
@@ -600,6 +720,8 @@ Facts:  A, B, E
 **12.** Step 1: A and B are true, so Rule 1 fires and adds C. Step 2: C is now true, so Rule 2 fires and adds D. Step 3: D and E are true, so Rule 3 fires and adds F. No rule can add a new fact, so the system stops. Final facts: A, B, E, C, D, F.
 
 **13.** The system reversed the rule. "If it rains, the ground is wet" does not mean "if the ground is wet, it rained", because someone could have watered the garden. This mistake is called affirming the consequent. Modus Ponens needs P to be true, and Modus Tollens needs Q to be false.
+
+</details>
 
 ---
 
