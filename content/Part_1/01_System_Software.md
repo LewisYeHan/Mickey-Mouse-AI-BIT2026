@@ -2,7 +2,7 @@
 
 **Team Member:** Cassinis Soulisack (`@DiegoSmiley`)
 
-**In this section:** What is System Software · Layers · Firmware · BIOS & UEFI · Boot Process · Kernel · Drivers · Utilities & Translators · Summary · Practice Questions
+**In this section:** [What is System Software?](#1-what-is-system-software) · [Layers](#2-layers-of-a-computer-system) · [Firmware](#3-firmware) · [BIOS & UEFI](#4-bios-and-uefi) · [Boot Process](#5-the-boot-process) · [Kernel](#6-the-kernel) · [Drivers](#7-device-drivers) · [Utilities & Translators](#8-utilities-and-language-translators) · [Summary](#9-summary) · [Lab: Find Your Computer's System Software](#lab-find-your-computers-system-software) · [Practice Questions](#10-practice-questions-and-answers) · [References](#11-references)
 
 **Learning goals.** By the end of this section you can:
 * explain what system software is and name its five kinds;
@@ -189,8 +189,54 @@ Turning a C program into something you can run takes five steps:
 
 ---
 
+## Lab: Find Your Computer's System Software
+
+* **Goal:** Find the firmware and one device driver on your own computer, and link what you see to Sections 3, 4 and 7.
+* **Preparation:** A Windows 10 or 11 computer and about 15 minutes; re-read §3, §4 and §7. You only look at information, so nothing on your computer changes. On a Mac, follow the note at the end of the task. No computer? Do the Reflection with the typical results in the feedback box.
+* **Task:**
+
+  **Step 1, predict:** does your computer start with Legacy BIOS or with UEFI? Write down your guess. (§4 says when UEFI became standard.)  
+  **Step 2, find the firmware:** press **Windows key + R**, type `msinfo32` and press **Enter**. System Information opens on **System Summary**. In the list on the right, find and write down three rows: **BIOS Version/Date**, **BIOS Mode** and **Secure Boot State**.  
+  **Step 3, find a driver:** right-click the **Start** button and choose **Device Manager**. Expand **Display adapters**, right-click your graphics card and choose **Properties**, then open the **Driver** tab. Write down **Driver Provider**, **Driver Date** and **Driver Version**, then click **Cancel**. Leave the other buttons on this tab alone, because they change the driver.  
+  **Step 4, look for problems:** still in Device Manager, expand a few other groups, such as **Network adapters** and **Audio inputs and outputs**. Look for any device marked with a small yellow warning triangle.
+
+  *On a Mac:* hold **Option**, click the **Apple menu** and choose **System Information**. The **Hardware Overview** page shows the **System Firmware Version**. Macs use Apple's own firmware, and their drivers come built into macOS, so do Steps 1 and 2 with the firmware version and skip Steps 3 and 4.
+
+* **Observation:** Copy this table and fill it in.
+
+  | Value | What you found | Firmware or driver? | Stored on the motherboard chip, or inside the OS? |
+  | :--- | :--- | :--- | :--- |
+  | BIOS Version/Date | | | |
+  | BIOS Mode | | | |
+  | Secure Boot State | | | |
+  | Driver Provider | | | |
+  | Driver Date | | | |
+  | Driver Version | | | |
+
+* **Reflection:**
+  1. Was your guess in Step 1 right? If BIOS Mode says **UEFI**, which disk format does your boot drive use, MBR or GPT? How do you know?
+  2. What does Secure Boot protect your computer from?
+  3. Your firmware and your driver probably have different makers and dates. Use the "driver vs. firmware" point in §7 to explain why.
+  4. What would a yellow warning triangle in Step 4 mean, and what can the OS not do until it is fixed?
+
+<details>
+<summary><b>Feedback: check your findings</b></summary>
+
+* **Step 2:** **BIOS Mode** shows **UEFI** on almost every PC made since about 2012; **Legacy** means the older BIOS way of starting. **BIOS Version/Date** is the firmware's version, set by the PC or motherboard maker. Its date is often a year or more old, because firmware is updated rarely. **Secure Boot State** shows **On**, **Off** or **Unsupported**.
+* **Step 3:** **Driver Provider** is usually the maker of the graphics chip, such as Intel, AMD or NVIDIA, or Microsoft. The **Driver Date** is usually newer than the firmware date, because drivers are updated often, through Windows Update or the maker's own app.
+* **Observation:** BIOS Version/Date, BIOS Mode and Secure Boot State describe the **firmware**, stored on a chip on the motherboard. Driver Provider, Driver Date and Driver Version describe a **driver**, stored inside the OS on your drive.
+* **Reflection answers:**
+  1. UEFI starts Windows from a **GPT** disk, and Legacy BIOS starts it from an **MBR** disk (the table in §4).
+  2. Malware that tries to load **before** the OS, where antivirus software cannot see it. Secure Boot lets only digitally signed, trusted bootloaders and operating systems start (§4).
+  3. The firmware lives on a chip on the motherboard and comes from the PC maker. It is updated rarely, because a failed update can leave the PC unable to start (§3). The driver lives inside the OS and comes from the device maker or Microsoft. It is updated often, to fix bugs and to keep working with new versions of Windows (§7).
+  4. It usually means Windows has no working driver for that device, so the OS cannot use the device until a driver is installed. Plug and Play normally finds one automatically (§7).
+
+</details>
+
+---
+
 ## 10. Practice Questions and Answers
-Try answering each question yourself first, then read the answer.
+Try each question yourself first, then open the answers to check.
 
 **Questions**
 1. Is a printer driver system software or application software? Why?
@@ -200,13 +246,17 @@ Try answering each question yourself first, then read the answer.
 5. What is the difference between firmware and a driver?
 6. Your friend says Python is compiled like C. Are they right?
 
-**Answers**
+<details>
+<summary><b>Show answers</b> (try the questions first!)</summary>
+
 1. System software. It does not do a task for the user; it lets the OS control a piece of hardware.
 2. The **POST** check in the BIOS/UEFI. Beep codes are how it reports hardware problems before the screen is working.
 3. POST → bootloader starts → kernel loads → login screen.
 4. Most drivers run in **kernel mode**, which has full access to the whole system, so a crash there affects everything. Apps run in **user mode**, which is kept separate, so only that app is affected.
 5. Firmware is stored on a chip inside the device itself. A driver is stored inside the OS on your computer and tells the OS how to use that device.
 6. Not quite. C is compiled into an executable before it runs. Python is interpreted: it is turned into bytecode and run step by step while the program is running.
+
+</details>
 
 ---
 
