@@ -314,7 +314,7 @@ From position 1 (score 2) it moves to 2 (4), then 3 (6). Both neighbours of 3 sc
 
 **Mission check.** The fewest is **7** crossings, and there are exactly **two** shortest plans, both starting with the goat. Taking the wolf first leaves the goat with the cabbage, and Byte must bring the goat back once, midway. The lab feedback shows the full plan and the BFS levels.
 
-Try each question yourself before reading the answers.
+Try each question yourself first, then open the answers to check.
 
 ### Questions
 
@@ -334,7 +334,8 @@ Try each question yourself before reading the answers.
 
 **8.** A timetable program uses hill climbing and gets stuck with two clashes, although a clash-free timetable exists. Why, and what method would do better?
 
-### Answers
+<details>
+<summary><b>Show answers</b> (try the questions first!)</summary>
 
 **1.** Planning is finding a sequence of actions that changes the initial state into a goal state. The planner needs the **initial state**, the **goal state** and the allowed **actions** (with their preconditions and effects).
 
@@ -351,6 +352,8 @@ Try each question yourself before reading the answers.
 **7.** **No:** it overestimates (8 > 6). A\* might think the route through A is worse than it is, explore another route first, and return a route that is **not the cheapest**. On this map it happens to still find 10 minutes: f(A) becomes 4 + 8 = 12, tying with G (12, via B), and only the alphabetical tie-break explores A first; with G first, A\* would return S → B → G (12 minutes). With an overestimating heuristic, the cheapest answer is no longer guaranteed.
 
 **8.** Hill climbing accepts only improvements. It reached a **local maximum**, where every small change made things worse, so it stopped although a better timetable existed. **Simulated annealing** helps, because it sometimes accepts a worse change early on and so can escape the local maximum.
+
+</details>
 
 ---
 
