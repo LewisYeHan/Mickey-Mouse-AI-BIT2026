@@ -1,6 +1,5 @@
 # 2.4 Expert Systems
 
-**Status:** ✅  
 **Team Member:** Lu My Ky (`@jojolu11`)
 
 **In this section:** [Components](#2-how-expert-systems-work) · [Making Decisions](#3-how-an-expert-system-makes-decisions) · [MYCIN, DENDRAL, XCON](#4-real-world-examples-of-expert-systems) · [vs. Traditional Programs](#5-expert-systems-vs-traditional-programs) · [Advantages](#6-advantages-of-expert-systems) · [Limitations](#7-limitations-of-expert-systems) · [Modern AI](#8-expert-systems-and-modern-ai) · [Key Takeaways](#9-key-takeaways) · [Lab: PC Clinic](#lab-dr-pixels-pc-clinic) · [Practice Questions](#10-practice-questions-and-answers)
@@ -10,7 +9,7 @@
 * act as the inference engine: forward chain through a small rule base to a diagnosis and explain *why*;
 * use MYCIN, DENDRAL and XCON to show what expert systems do well and where they fail.
 
-**Before you start:** this builds on rules as knowledge ([2.3](06_Knowledge_Representation.md) §4.5) and forward and backward chaining ([2.2](05_Logic_and_Reasoning.md) §4–5). For the Mission, recall from [1.2](../Part_1/02_System_Software.md) that a PC's start-up check (POST) reports hardware faults with beeps.
+**Before you start:** this builds on rules as knowledge ([2.3](06_Knowledge_Representation.md) §4.5) and forward and backward chaining ([2.2](05_Logic_and_Reasoning.md) §4–5). For the Mission, recall from [1.1](../Part_1/01_System_Software.md) that a PC's start-up check (POST) reports hardware faults with beeps.
 
 > **Pixel's Mission**  
 > Byte opens a PC Clinic. The first PC beeps three times. Professor Pixel says: *"Let's put a technician's knowledge inside you."*  
@@ -193,7 +192,7 @@ Inaccurate rules lead to incorrect conclusions, so expert systems should support
 <summary><b>Feedback: check your diagnosis</b></summary>
 
 * **PC A:** R1 adds `POSTFailed`. Restart: R1 adds nothing new, R2 adds `SuspectRAM`. Restart: R1–R2 add nothing, R3 fails (no `FiveBeeps`), R4 adds *reseat the RAM*. The next pass adds nothing, so Byte stops. Fired: **R1, R2, R4**; working memory ends with the four starting facts plus `POSTFailed`, `SuspectRAM` and the advice.
-* **PC B:** R1–R4 do not match (no beeps, screen not black); R5 matches and fires: *close programs or add RAM*. Fired: **R5** (thrashing, from 1.1).
+* **PC B:** R1–R4 do not match (no beeps, screen not black); R5 matches and fires: *close programs or add RAM*. Fired: **R5** (thrashing, from 1.2).
 * **PC C:** **no rule fires.** R1 needs `BeepsAtStart`; the others need facts PC C lacks. Byte stops with **no conclusion**.
 * **Step 3, for example:** "Your PC beeped and the screen stayed black, so the start-up check failed (R1). Three beeps point to the RAM (R2), and the first fix is to reseat it (R4)." Name facts and rules in the order used, as the explanation facility does.
 * **Step 4, for example:** `R6: IF NoLights AND NoFanNoise THEN Advice: check the power cable and power supply`; now R6 fires. You changed only the **knowledge base**, not your checking method (the engine): the knowledge–reasoning separation of §5, and why maintenance means updating rules (§7).
