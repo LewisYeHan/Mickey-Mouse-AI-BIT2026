@@ -2,7 +2,7 @@
 
 **Team Members:** Cao Minh Tuan (`@mnhtnc`) & Frederick Samuel Lesmana (`@Ti4nCi`)
 
-**In this section:** What is an OS · History · Types · Platforms · Components · Processes and Threads · System Calls and Kernel Designs · Scheduling and Deadlock · Memory · Files · I/O · Performance · Security · Practice Questions
+**In this section:** [What is an OS?](#1-what-is-an-operating-system) · [History](#2-how-the-operating-system-evolved) · [Types](#3-types-of-operating-systems) · [Platforms](#4-platform-comparison-windows-vs-macos-vs-linux-vs-android-vs-ios) · [Components](#5-the-8-core-components-of-an-os) · [Processes and Threads](#6-processes-and-threads) · [System Calls and Kernel Designs](#7-system-calls-and-kernel-designs) · [Scheduling and Deadlock](#8-cpu-scheduling-and-deadlock) · [Memory](#9-memory-management) · [Files](#10-files-and-file-systems) · [I/O](#11-device-io-management) · [Performance](#12-performance-monitoring) · [Security](#13-security-and-protection) · [Advantages and Disadvantages](#14-advantages-and-disadvantages-of-operating-systems) · [Practice Questions](#15-practice-questions-and-answers) · [References](#16-references)
 
 **Learning goals.** By the end of this section you can:
 * explain how an OS lets many programs share one CPU, and trace a process through its states;
@@ -390,7 +390,7 @@ To do this, the OS uses separate user and administrator (`root`) accounts, file 
 ---
 
 ## 15. Practice Questions and Answers
-Try answering each question yourself first, then read the answer.
+Try each question yourself first, then open the answers to check.
 
 **Questions**
 1. What is the difference between a program and a process?
@@ -405,7 +405,9 @@ Try answering each question yourself first, then read the answer.
 10. Your laptop has 8 cores and Task Manager shows 400 processes. Is it running them concurrently, in parallel, or both? Explain.
 11. You are in the folder `/home/mei`. Write the absolute path and the relative path to `cat.jpg` in Figure 1.8.
 
-**Answers**
+<details>
+<summary><b>Show answers</b> (try the questions first!)</summary>
+
 1. A program is a file stored on disk. A process is that program actually running in memory.
 2. The PCB stores the process ID, state, program counter, CPU registers, memory, open files, and priority. During a context switch, the OS saves the current process's progress into its PCB so it can continue later from exactly the same point.
 3. It moves from **Running** to **Waiting**. When the read is finished, it moves to **Ready** and waits for its next turn on the CPU.
@@ -417,6 +419,8 @@ Try answering each question yourself first, then read the answer.
 9. **FCFS** runs P (0–2), Q (2–6), R (6–7), so the waiting times are 0, 2 and 6, and the average is 8 ÷ 3 ≈ **2.67**. **SJF** runs R (0–1), P (1–3), Q (3–7), so the waiting times are R 0, P 1 and Q 3, and the average is 4 ÷ 3 ≈ **1.33**. SJF is lower because the short jobs go first.
 10. Both. The 8 cores run 8 processes (16 threads with hyper-threading) at the same moment, which is parallelism. Each core also switches between many processes in turn, which is concurrency.
 11. Absolute path: `/home/mei/Pictures/cat.jpg`. Relative path from `/home/mei`: `Pictures/cat.jpg`.
+
+</details>
 
 ---
 
