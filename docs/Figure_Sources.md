@@ -40,6 +40,15 @@ Every image used in the learning content, who made it, and where it came from. "
 | 2.17 Hill climbing landscape | `content/images/hill_climbing_landscape.png` | 2.5 Section 7 | Wong Hiu Chung Samuel | Team diagram | Team's own work |
 | 2.18 River crossing search | `content/images/river_crossing_bfs.png` | 2.5 Lab | Wong Hiu Chung Samuel | Team diagram | Team's own work |
 
+## Lab screenshots
+
+These screenshots show learners what the screen should look like during a lab. They are not numbered as figures.
+
+| Screenshot | File | Used in | Made by | How it was made | Source and licence |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| A chat with ELIZA | `content/images/eliza_chat.png` | 2.1 Lab | Yeo Shih Jie (Stage 3) | Screenshot taken in his browser with AI assistance, then cropped; the replies were checked against the lab feedback | Screenshot of N. Landsteiner's online ELIZA (mass:werk), shown to teach about the program |
+| The forward-chaining program running | `content/images/python_forward_chaining.png` | 2.2 Lab | Yeo Shih Jie (Stage 3) | Screenshot taken in his browser with AI assistance, then cropped; the output was checked against a local run of the same code | Team's own code, shown in the Programiz online editor |
+
 ## Other images
 
 | Image | File | Used in | Source |
