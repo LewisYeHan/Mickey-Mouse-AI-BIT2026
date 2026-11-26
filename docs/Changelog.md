@@ -9,6 +9,12 @@ The full history is in the Git log. This file lists the main changes between ver
 * Part 1 reordered: System Software is now 1.1 and Operating Systems is 1.2 ("system software should go before operating system"). Files renamed (their history is kept); titles, figures, glossary, quiz tags and every link updated. Kernel designs moved into 1.2 so they are taught once.
 * More figures for the other resources to build on: process states (Figure 1.3), a Task Manager screenshot (1.4), the FCFS / Round Robin / SJF comparison (1.5), a folder tree (1.8), a redrawn concept map (1.10), and the forward and backward chaining figures in 2.2 (2.4, 2.5) in place of Mermaid code.
 
+**General Stage 2 feedback (navigation, answers and activities)**
+
+* Clickable contents: the "In this section" line at the top of 1.1, 1.2, 1.3, 1.5, 2.1, 2.2 and the Module Outline now links to every heading, as 2.3 to 2.7 already did.
+* Answers no longer sit directly after the exercises: the practice answers in all eight teaching sections are now in fold-out boxes, like the quiz answer keys and lab feedback. The PDF copy prints them open.
+* Four new hands-on labs that use real tools, each with steps, an observation task, reflection questions, feedback and a no-computer fallback: *Find Your Computer's System Software* (1.1, Windows System Information and Device Manager), *Follow an App from File to Process* (1.3, Task Manager), *Chat with ELIZA* (2.1, an online copy of the 1966 chatbot) and *Run a Forward-Chaining Engine in Python* (2.2, with a screenshot of the program running).
+
 **Teacher feedback on PPT V1.0 and Stage 1 feedback**
 
 * The two figures with Disney character silhouettes and ALL-CAPS text were replaced with redrawn diagrams that match the text (Figures 1.1 and 1.2). The boot figure's steps now match the six numbered steps.
