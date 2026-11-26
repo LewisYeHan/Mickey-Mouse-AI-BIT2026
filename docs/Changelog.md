@@ -13,7 +13,7 @@ The full history is in the Git log. This file lists the main changes between ver
 
 * Clickable contents: the "In this section" line at the top of 1.1, 1.2, 1.3, 1.5, 2.1, 2.2 and the Module Outline now links to every heading, as 2.3 to 2.7 already did.
 * Answers no longer sit directly after the exercises: the practice answers in all eight teaching sections are now in fold-out boxes, like the quiz answer keys and lab feedback. The PDF copy prints them open.
-* Four new hands-on labs that use real tools, each with steps, an observation task, reflection questions, feedback and a no-computer fallback: *Find Your Computer's System Software* (1.1, Windows System Information and Device Manager), *Follow an App from File to Process* (1.3, Task Manager), *Chat with ELIZA* (2.1, an online copy of the 1966 chatbot) and *Run a Forward-Chaining Engine in Python* (2.2, with a screenshot of the program running).
+* Four new hands-on labs that use real tools, each with steps, screenshots of what learners should see, an observation task, reflection questions, feedback and a no-computer fallback: *Find Your Computer's System Software* (1.1, Windows System Information and Device Manager), *Follow an App from File to Process* (1.3, Task Manager), *Chat with ELIZA* (2.1, an online copy of the 1966 chatbot) and *Run a Forward-Chaining Engine in Python* (2.2).
 
 **Teacher feedback on PPT V1.0 and Stage 1 feedback**
 
