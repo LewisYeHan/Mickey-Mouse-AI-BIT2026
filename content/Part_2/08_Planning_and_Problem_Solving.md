@@ -196,6 +196,12 @@ The 9 makes R look tempting, but a good opponent would never allow it.
 
 **Alpha-beta pruning** gives the same answer as minimax while checking fewer positions (Knuth & Moore, 1975). In Figure 2.16, once L guarantees 3, you check R. Its first result is 2, so the opponent can hold you to 2 or less after R, and R can never beat 3. The 9 need not be checked: that branch is **pruned**.
 
+**In real games.** Chess has far too many positions to search to the end, so a chess program searches a few moves ahead and gives each position it reaches a score. In 1997, IBM's **Deep Blue** beat the world chess champion Garry Kasparov in a six-game match this way: it used minimax with alpha-beta pruning and special chess chips to check over 100 million positions per second (Campbell et al., 2002).
+
+<p align="center"><img src="../images/photo_deep_blue.jpg" alt="Deep Blue: a tall black IBM RS/6000 SP computer cabinet, next to an information panel showing a photo of one of its chess chips" width="260"></p>
+
+*Photo: Deep Blue, the IBM chess computer that beat Garry Kasparov in 1997, on display. The panel beside it shows one of its special chess chips. Photo by Erik Pitti, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), via Wikimedia Commons.*
+
 ---
 
 ## 7. Local Search
@@ -359,10 +365,11 @@ Try each question yourself first, then open the answers to check.
 
 ## 12. References
 
-1. Fikes, R. E., & Nilsson, N. J. (1971). STRIPS: A new approach to the application of theorem proving to problem solving. *Artificial Intelligence*, 2(3–4), 189–208.
-2. Hart, P. E., Nilsson, N. J., & Raphael, B. (1968). A formal basis for the heuristic determination of minimum cost paths. *IEEE Transactions on Systems Science and Cybernetics*, 4(2), 100–107.
-3. Kirkpatrick, S., Gelatt, C. D., & Vecchi, M. P. (1983). Optimization by simulated annealing. *Science*, 220(4598), 671–680.
-4. Knuth, D. E., & Moore, R. W. (1975). An analysis of alpha-beta pruning. *Artificial Intelligence*, 6(4), 293–326.
-5. Poole, D., & Mackworth, A. (2017). *Artificial Intelligence: Foundations of Computational Agents* (2nd ed.). Cambridge University Press. [Online textbook](https://artint.info/2e/html/ArtInt2e.html)
-6. Russell, S. J., & Norvig, P. (2021). *Artificial Intelligence: A Modern Approach* (4th ed.). Pearson.
-7. BIT2026 Foundations of CS & AI, course lecture slides, Chapter 4: Symbolic AI (Planning and Problem Solving) (2026).
+1. Campbell, M., Hoane, A. J., & Hsu, F.-H. (2002). Deep Blue. *Artificial Intelligence*, 134(1–2), 57–83.
+2. Fikes, R. E., & Nilsson, N. J. (1971). STRIPS: A new approach to the application of theorem proving to problem solving. *Artificial Intelligence*, 2(3–4), 189–208.
+3. Hart, P. E., Nilsson, N. J., & Raphael, B. (1968). A formal basis for the heuristic determination of minimum cost paths. *IEEE Transactions on Systems Science and Cybernetics*, 4(2), 100–107.
+4. Kirkpatrick, S., Gelatt, C. D., & Vecchi, M. P. (1983). Optimization by simulated annealing. *Science*, 220(4598), 671–680.
+5. Knuth, D. E., & Moore, R. W. (1975). An analysis of alpha-beta pruning. *Artificial Intelligence*, 6(4), 293–326.
+6. Poole, D., & Mackworth, A. (2017). *Artificial Intelligence: Foundations of Computational Agents* (2nd ed.). Cambridge University Press. [Online textbook](https://artint.info/2e/html/ArtInt2e.html)
+7. Russell, S. J., & Norvig, P. (2021). *Artificial Intelligence: A Modern Approach* (4th ed.). Pearson.
+8. BIT2026 Foundations of CS & AI, course lecture slides, Chapter 4: Symbolic AI (Planning and Problem Solving) (2026).
