@@ -192,7 +192,7 @@ Turning a C program into something you can run takes five steps:
 ## Lab: Find Your Computer's System Software
 
 * **Goal:** Find the firmware and one device driver on your own computer, and link what you see to Sections 3, 4 and 7.
-* **Preparation:** A Windows 10 or 11 computer and about 15 minutes; re-read §3, §4 and §7. You only look at information, so nothing on your computer changes. On a Mac, follow the note at the end of the task. No computer? Do the Reflection with the typical results in the feedback box.
+* **Preparation:** A Windows 10 or 11 computer and about 15 minutes; re-read §3, §4 and §7. You only look at information, so nothing on your computer changes. On a Mac, follow the note at the end of the task. No computer? Use the screenshots from a team member's laptop below and the example in the feedback box.
 * **Task:**
 
   **Step 1, predict:** does your computer start with Legacy BIOS or with UEFI? Write down your guess. (§4 says when UEFI became standard.)  
@@ -201,6 +201,14 @@ Turning a C program into something you can run takes five steps:
   **Step 4, look for problems:** still in Device Manager, expand a few other groups, such as **Network adapters** and **Audio inputs and outputs**. Look for any device marked with a small yellow warning triangle.
 
   *On a Mac:* hold **Option**, click the **Apple menu** and choose **System Information**. The **Hardware Overview** page shows the **System Firmware Version**. Macs use Apple's own firmware, and their drivers come built into macOS, so do Steps 1 and 2 with the firmware version and skip Steps 3 and 4.
+
+  ![System Information, System Summary page on a Windows 11 laptop: BIOS Version/Date reads American Megatrends International, LLC. GA605KM.307, 12/1/2026; BIOS Mode reads UEFI; Secure Boot State reads On; these three rows are outlined in red](../images/msinfo_bios.png)
+
+  *Lab screenshot: Step 2 on a team member's laptop. The three rows to find are outlined; the System Name and User Name rows were removed.*
+
+  ![Device Manager properties for an NVIDIA GeForce RTX 5060 Laptop GPU, Driver tab: Driver Provider NVIDIA, Driver Date 7/11/2026 and Driver Version 32.0.16.2124 are outlined in red; the Update Driver, Roll Back Driver, Disable Device and Uninstall Device buttons are below](../images/device_manager_driver.png)
+
+  *Lab screenshot: Step 3 on the same laptop. Read the outlined rows, then click Cancel.*
 
 * **Observation:** Copy this table and fill it in.
 
@@ -222,13 +230,14 @@ Turning a C program into something you can run takes five steps:
 <details>
 <summary><b>Feedback: check your findings</b></summary>
 
-* **Step 2:** **BIOS Mode** shows **UEFI** on almost every PC made since about 2012; **Legacy** means the older BIOS way of starting. **BIOS Version/Date** is the firmware's version, set by the PC or motherboard maker. Its date is often a year or more old, because firmware is updated rarely. **Secure Boot State** shows **On**, **Off** or **Unsupported**.
-* **Step 3:** **Driver Provider** is usually the maker of the graphics chip, such as Intel, AMD or NVIDIA, or Microsoft. The **Driver Date** is usually newer than the firmware date, because drivers are updated often, through Windows Update or the maker's own app.
+* **Step 2:** **BIOS Mode** shows **UEFI** on almost every PC made since about 2012; **Legacy** means the older BIOS way of starting. **BIOS Version/Date** names the firmware's maker, its version and its release date. Many PC makers build on firmware from a specialist company, such as American Megatrends in the screenshot. **Secure Boot State** shows **On**, **Off** or **Unsupported**.
+* **Step 3:** **Driver Provider** is usually the maker of the graphics chip, such as Intel, AMD or NVIDIA, or Microsoft. **Driver Date** and **Driver Version** show which release of the driver is installed. Drivers are updated through Windows Update or the maker's own app.
+* **Example (the laptop in the screenshots):** BIOS Version/Date *American Megatrends International, LLC. GA605KM.307, 12/1/2026*; BIOS Mode *UEFI*; Secure Boot State *On*; Driver Provider *NVIDIA*; Driver Date *7/11/2026*; Driver Version *32.0.16.2124*. The firmware and the driver come from different companies and have different dates.
 * **Observation:** BIOS Version/Date, BIOS Mode and Secure Boot State describe the **firmware**, stored on a chip on the motherboard. Driver Provider, Driver Date and Driver Version describe a **driver**, stored inside the OS on your drive.
 * **Reflection answers:**
   1. UEFI starts Windows from a **GPT** disk, and Legacy BIOS starts it from an **MBR** disk (the table in §4).
   2. Malware that tries to load **before** the OS, where antivirus software cannot see it. Secure Boot lets only digitally signed, trusted bootloaders and operating systems start (§4).
-  3. The firmware lives on a chip on the motherboard and comes from the PC maker. It is updated rarely, because a failed update can leave the PC unable to start (§3). The driver lives inside the OS and comes from the device maker or Microsoft. It is updated often, to fix bugs and to keep working with new versions of Windows (§7).
+  3. The firmware lives on a chip on the motherboard and comes from the PC maker, often built on code from a firmware company such as American Megatrends. It is updated rarely, because a failed update can leave the PC unable to start (§3). The driver lives inside the OS and comes from the device maker or Microsoft. It is updated often, to fix bugs and to keep working with new versions of Windows (§7).
   4. It usually means Windows has no working driver for that device, so the OS cannot use the device until a driver is installed. Plug and Play normally finds one automatically (§7).
 
 </details>
