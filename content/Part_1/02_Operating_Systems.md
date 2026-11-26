@@ -297,6 +297,10 @@ Figure 1.7 shows the trade-off. The fastest memory (CPU registers and cache) is 
 | **RAM (main memory)** | No (volatile) | Very fast | 8–64 GB | Expensive per GB |
 | **SSD / HDD (storage)** | Yes (non-volatile) | Slower | 256 GB – 4 TB+ | Cheap per GB |
 
+<p align="center"><img src="../images/photo_ram.jpg" alt="A long, thin red DDR4 RAM module with a row of gold contacts along the bottom edge" width="420"></p>
+
+*Photo: a DDR4 RAM module for a desktop PC. Its chips hold the running programs and their data, and lose everything when the power goes off. Photo by ElooKoN, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons.*
+
 ### Key Ideas
 * **Paging:** The OS splits memory into small, equal-sized blocks. A program's blocks are called **pages**, and the matching blocks in RAM are called **frames**. Because all blocks are the same size, the OS can fit a program into any free frames, even if they are not next to each other, like parking cars in any free spaces in a car park.
 * **Segmentation:** Instead of equal blocks, memory is split into meaningful parts of a program, such as its code, its data, and its stack.
