@@ -33,6 +33,7 @@ Video 1 follows the old order: Operating Systems from 1:20, System Software from
 | 1.1 Boot process (6 steps) | SG 1.2, p. 26, Lab 1.4 | TF5, MC6 | 46–48 | V1 12:40–14:20 | SG still has the old boot figure |
 | 1.1 Drivers, utilities | SG 1.2 | **GAP** | 51–52, 55 | V1 15:20 | |
 | 1.1 Translators, C build pipeline | SG 1.2, Lab 1.5 | MC9, OE3 | 56–59 | V1 16:00–16:40 | |
+| 1.1 Lab: Find Your Computer's System Software | **GAP** | **GAP** | **GAP** | **GAP** | New in the final Markdown (Windows System Information and Device Manager) |
 | 1.2 What an OS is, kernel and shell, CLI and GUI | SG 1.1, p. 7 | **GAP** | 11–14 | V1 1:40–2:40 | |
 | 1.2 History, types, platforms (Going further) | SG 1.1 | **GAP** | 15–18 | V1 3:20–4:00 | |
 | 1.2 Processes, states, PCB, threads | SG 1.1, Lab 1.1 | TF2, MC1, MC2 | 19–22 | V1 4:20–6:00 | PPT and V1 say "Done" for Terminated |
@@ -47,6 +48,7 @@ Video 1 follows the old order: Operating Systems from 1:20, System Software from
 | 1.2 I/O, interrupts, security | SG 1.1 | **GAP** | 34–36 | V1 10:20–11:20 | |
 | 1.3 Execution lifecycle | SG 1.3, p. 32, Lab 1.6 | TF7, MC10, MC11, OE2 | 62–66 | V1 17:00–18:20 | |
 | 1.3 App types; native, web, cross-platform | SG 1.3, Lab 1.7 | TF8, MC12 | 67–70 | V1 18:40–19:20 | |
+| 1.3 Lab: Follow an App from File to Process | **GAP** | **GAP** | **GAP** | **GAP** | New in the final Markdown (Windows Task Manager) |
 | 1.4 Glossary, 1.5 Summary and quiz | SG pp. 40, 42 | *Not selected* | 71–72 | *Not selected* | PPT notes cite the "1.4 Quiz"; the quiz is in 1.5 |
 
 ## Part 2: Symbolic AI
@@ -55,9 +57,11 @@ Video 1 follows the old order: Operating Systems from 1:20, System Software from
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 2.1 What is Symbolic AI, GOFAI | SG 2.1, p. 47, Lab 2.1 | TF9–10, MC13 | 74–80 | V2 1:00–3:40 | |
 | 2.1 Strengths and limitations | SG 2.1 (one paragraph), SG 2.2 Section 8 | **GAP** | **GAP** | **GAP** | New table in the final Markdown |
+| 2.1 Lab: Chat with ELIZA | **GAP** | **GAP** | **GAP** | **GAP** | New in the final Markdown (online ELIZA) |
 | 2.2 Logic symbols | SG 2.3, pp. 63–64 | TF15–16, MC17 | 83–88 | V2 4:40–6:00 | Taught in full in 2.3; 2.2 now has a symbol table |
 | 2.2 Inference, forward and backward chaining | SG 2.2, p. 53 | TF11–12, MC14 | 89–98 | V2 6:20–8:40 | Figures 2.4 and 2.5 match SG |
 | 2.2 Resolution, unification, conflict resolution, uncertainty | SG 2.2, Lab 2.2 | TF13–14, MC15–16, OE4 | 96, 99–103 | V2 9:00–11:20 | TB MC16 and PPT slide 101 keep the older wording ("both rules fire") |
+| 2.2 Lab: Run a Forward-Chaining Engine in Python | **GAP** | **GAP** | **GAP** | **GAP** | New in the final Markdown; builds on the Python example in 2.2 Section 10 |
 | 2.3 Semantic networks, frames, scripts | SG 2.3, p. 62 | TF17, MC19 | 106–111 | V2 12:20–13:20 | |
 | 2.3 Ontologies, knowledge graphs | SG 2.3, Lab 2.3 | TF18, MC18, OE5 | 112–118 | V2 13:40–15:50 | |
 | 2.4 Expert systems, MYCIN, DENDRAL, XCON | SG 2.4, p. 73 | TF19–21, MC21 | 119–128 | V3 0:00–3:40 | |
