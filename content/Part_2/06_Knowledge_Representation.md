@@ -1,6 +1,5 @@
 # 2.3 Knowledge Representation
 
-**Status:** ✅  
 **Team Member:** Cao Minh Tuan (`@mnhtnc`)
 
 **In this section:** [What is Knowledge Representation?](#2-what-is-knowledge-representation) · [Data, Information and Knowledge](#3-data-information-and-knowledge) · [Propositional Logic and Logical Equivalences](#41-propositional-logic) · [Predicate Logic](#42-predicate-logic) · [Semantic Networks](#43-semantic-networks) · [Frames and Scripts](#44-frames) · [Rule-Based Representation](#45-rule-based-representation) · [Ontologies and Knowledge Graphs](#5-ontologies-and-knowledge-graphs) · [Comparing Methods](#6-comparing-knowledge-representation-methods) · [Where KR Is Used](#where-is-knowledge-representation-used) · [Key Takeaways](#9-key-takeaways) · [Lab: Build a Knowledge Web](#lab-build-a-knowledge-web) · [Practice Questions](#10-practice-questions-and-answers)
