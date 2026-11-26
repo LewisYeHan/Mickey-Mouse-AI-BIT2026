@@ -2,7 +2,7 @@
 
 **Team Member:** Wong Hiu Chung Samuel (`@Samuel940398`)
 
-**In this section:** What Is Symbolic AI · How It Works · GOFAI · Applications · Strengths and Limitations · Summary · Practice Questions
+**In this section:** [What Is Symbolic AI?](#1-what-is-symbolic-ai) · [How It Works](#2-how-it-works) · [GOFAI](#3-good-old-fashioned-ai-gofai) · [Where It Is Used](#4-where-is-it-used) · [Strengths and Limitations](#5-strengths-and-limitations) · [Summary](#6-summary) · [Lab: Chat with ELIZA](#lab-chat-with-eliza-a-chatbot-from-1966) · [Practice Questions](#7-practice-questions-and-answers) · [References](#8-references)
 
 **Learning goals.** By the end of this section you can:
 * explain what Symbolic AI is and name its three parts: symbols, facts and rules;
@@ -122,9 +122,52 @@ These limitations are why modern AI often combines symbolic reasoning with machi
 
 ---
 
+## Lab: Chat with ELIZA, a Chatbot from 1966
+
+* **Goal:** Find the hidden rules inside one of the first chatbots, and test the strengths and limitations in §5.
+* **Preparation:** A browser with internet and about 15 minutes; re-read §4 and §5. **ELIZA** was written by Joseph Weizenbaum at MIT and described in 1966 (Weizenbaum, 1966). It is a **rule-based chatbot** (§4): it looks for keywords in your sentence and answers with a reply pattern that belongs to that keyword. Open the free online copy at <https://www.masswerk.at/elizabot/eliza.html>, click **open ELIZA terminal**, type after `YOU:` and press **Enter** after each sentence. No internet? Use the chat in the screenshot below for Steps 2 to 5.
+* **Task:**
+
+  **Step 1, predict:** will ELIZA understand your sentences, or only react to certain words?  
+  **Step 2, find a rule:** type `I am tired`, then `I am hungry`. Compare the two replies.  
+  **Step 3, find another rule:** type `My mother cooks well`, then `My brother plays football`.  
+  **Step 4, give it nothing to match:** type `The weather is nice today`.  
+  **Step 5, test the limits:** type `I am a purple elephant made of cheese`.
+
+  ![ELIZA terminal: ELIZA asks what has been bothering the user; I am tired gets How long have you been tired?; My mother cooks well gets Your mother?; The weather is nice today gets Earlier you said your mother cooks well; I am a purple elephant made of cheese gets Is it because you are a purple elephant made of cheese that you came to me?](../images/eliza_chat.png)
+
+  *Lab screenshot: a real chat with the online ELIZA, using the sentences from Steps 2 to 5.*
+
+* **Observation:** For each step, write down your sentence and ELIZA's reply, and underline any words ELIZA copied from you.
+* **Reflection:**
+  1. Write the rule you found in Step 2 as an IF–THEN rule, like the rules in §1.
+  2. Which words in Step 3 do you think ELIZA reacted to?
+  3. What did ELIZA do in Step 4, when your sentence had no keyword?
+  4. Did ELIZA notice that Step 5 was nonsense? Which limitation in §5 does this show?
+  5. Which strength from §5 does ELIZA have, once you know its rules?
+
+<details>
+<summary><b>Feedback: check your findings</b></summary>
+
+* ELIZA keeps several replies for each keyword and picks one, so your exact replies may differ from a classmate's. The rules behind them are the same.
+* **Step 2:** ELIZA looks for `I am` and copies the words after it into a reply, such as *"How long have you been tired?"* or *"Do you enjoy being hungry?"*.
+* **Step 3:** ELIZA reacts to **my** followed by a family word (mother, father, brother, sister and a few more). Replies include *"Tell me more about your family."* and *"Your mother?"*. It also saves sentences that contain *my*, so it can bring them back later.
+* **Step 4:** No keyword matched, so ELIZA gave a general reply, such as *"Please go on."*, or brought back a saved sentence, such as *"Earlier you said your mother cooks well."* in the screenshot.
+* **Step 5:** ELIZA matched `I am` again and copied the words without noticing that they make no sense, for example *"Is it because you are a purple elephant made of cheese that you came to me?"*.
+* **Reflection answers:**
+  1. `IF the sentence contains "I am X" THEN reply "How long have you been X?"` (or another reply from the same list).
+  2. **my** together with **mother** or **brother**.
+  3. It used a fallback rule: a general reply, or a sentence it had saved earlier.
+  4. No. ELIZA only matches words; it has no common sense and does not understand meaning. This is the limitation *struggles with vague or messy input, such as … common sense*, and it is also **brittle**: input its rules do not expect gets a silly reply.
+  5. **Explainable:** once you know its rules, you can predict and explain every reply ELIZA gives.
+
+</details>
+
+---
+
 ## 7. Practice Questions and Answers
 
-Try each question yourself first, then check the answer.
+Try each question yourself first, then open the answers to check.
 
 **Questions**
 
@@ -141,7 +184,8 @@ Try each question yourself first, then check the answer.
    Attendance(Lee, 88%)
    ```
 
-**Answers**
+<details>
+<summary><b>Show answers</b> (try the questions first!)</summary>
 
 1. Symbolic AI represents knowledge and reasons with it. Its parts are symbols, facts and rules.
 2. A fact is something the system treats as true. A rule says what follows when conditions are met.
@@ -149,6 +193,8 @@ Try each question yourself first, then check the answer.
 4. Good Old-Fashioned AI. It relied on symbols, explicit knowledge and logical reasoning.
 5. It is a **rule**, not a fact, because it has an IF–THEN structure. A fact would be `GPA(Sammy, 3.8)`.
 6. GPA 3.6 passes (at least 3.5), but attendance 88% fails (below 90%). The rule needs both conditions, so it does not fire. The system cannot conclude `ScholarshipEligible(Lee)`.
+
+</details>
 
 ---
 
@@ -158,3 +204,5 @@ Try each question yourself first, then check the answer.
 2. Haugeland, J. (1985). *Artificial Intelligence: The Very Idea*. MIT Press.
 3. Newell, A., & Simon, H. A. (1976). Computer Science as Empirical Inquiry: Symbols and Search. *Communications of the ACM, 19*(3), 113–126.
 4. BIT2026 Foundations of CS & AI, course lecture slides: Symbolic AI module (2026).
+5. Weizenbaum, J. (1966). ELIZA: A computer program for the study of natural language communication between man and machine. *Communications of the ACM, 9*(1), 36–45.
+6. Landsteiner, N. (2005). *ELIZA terminal* (online version of ELIZA, used in the lab). mass:werk. https://www.masswerk.at/elizabot/eliza.html
