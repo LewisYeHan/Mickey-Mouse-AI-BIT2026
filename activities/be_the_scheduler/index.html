@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Be the Scheduler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a CPU dispatch console. Ready queue left, the CPU chip centre stage, scoreboard right, dispatch log (Gantt) along the bottom. One theme, by choice. */
+:root{
+  --bg:#1B1F3B; --panel:#232850; --panel-2:#2B3160; --line:#3B4279; --ink:#F2F3FA; --muted:#A3A8CC;
+  --pA:#F2A541; --pB:#1F7A70; --pC:#C8415A; --tA:#1B1F3B; --tB:#FFFFFF; --tC:#FFFFFF; --sw:#3B4279; --good:#3DDC97;
+  --display:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --body:'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background-color:var(--bg);background-image:linear-gradient(var(--panel) 1px,transparent 1px),linear-gradient(90deg,var(--panel) 1px,transparent 1px);background-size:32px 32px;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+.app{max-width:1360px;margin:0 auto;padding:24px clamp(16px,3vw,40px) 32px;display:flex;flex-direction:column;gap:20px}
+h1,h2{font-family:var(--display);margin:0;text-wrap:balance}
+h2{font-size:15px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+/* Top bar */
+.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px}
+.brand .eyebrow{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.brand h1{font-size:clamp(36px,4.6vw,60px);font-weight:800;line-height:1;letter-spacing:-.02em}
+.brand h1 b{color:var(--pA);font-weight:800}
+.modes{display:flex;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:4px;gap:4px}
+.modes button{border:0;background:transparent;padding:10px 18px;border-radius:9px;font-weight:600;cursor:pointer;color:var(--muted);white-space:nowrap}
+.modes button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.modes button:hover:not([aria-selected="true"]){color:var(--ink)}
+.clock{display:flex;flex-direction:column;align-items:flex-end}
+.clock .lbl{font-size:13px;color:var(--muted)}
+.clock .val{font-family:var(--mono);font-size:34px;font-weight:600;line-height:1.1}
+
+.hint{margin:0;padding:14px 18px;border:1px solid var(--line);border-left:4px solid var(--pA);background:var(--panel);border-radius:0;font-size:17px}
+.hint.done{border-left-color:var(--pC)}
+
+/* Stage */
+.stage{display:grid;grid-template-columns:minmax(0,1fr) 300px minmax(0,1fr);gap:20px;align-items:stretch}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:14px}
+
+/* Process cards */
+.procs{display:flex;flex-direction:column;gap:12px}
+.proc{--c:var(--pA);display:grid;grid-template-columns:56px 1fr auto;grid-template-rows:auto auto;column-gap:14px;row-gap:8px;align-items:center;text-align:left;background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;transition:border-color .15s,transform .15s}
+.proc:hover:not([aria-disabled="true"]){border-color:var(--c);transform:translateX(3px)}
+.proc[aria-disabled="true"]{cursor:default}
+.proc .tag{grid-row:1 / span 2;width:56px;height:56px;border-radius:10px;background:var(--c);color:var(--t);font-family:var(--display);font-weight:800;font-size:30px;display:grid;place-items:center}
+.proc .name{font-weight:600;font-size:17px}
+.proc .burst{font-size:13px;color:var(--muted)}
+.proc .state{grid-column:3;grid-row:1;font-size:13px;font-weight:600;padding:3px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.proc .cells{grid-column:2 / span 2;display:flex;gap:6px}
+.proc .cell{width:22px;height:22px;border-radius:5px;border:2px solid var(--c);opacity:.55}
+.proc .cell.on{background:var(--c);opacity:1}
+.proc.running{border-color:var(--c);box-shadow:0 0 0 1px var(--c)}
+.proc.running .state{background:var(--c);color:var(--t);border-color:var(--c)}
+.proc.done{opacity:.6}
+.proc.done .state{color:var(--good);border-color:var(--good)}
+.proc kbd{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 5px;margin-left:6px}
+
+/* CPU chip */
+.cpu-col{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:12px 0}
+.chip{--c:var(--line);position:relative;width:220px;height:220px;display:grid;place-items:center}
+.pins{position:absolute;inset:0}
+.pins i{position:absolute;background:repeating-linear-gradient(90deg,var(--muted) 0 6px,transparent 6px 18px)}
+.pins i:nth-child(1){left:34px;right:34px;top:0;height:18px}
+.pins i:nth-child(2){left:34px;right:34px;bottom:0;height:18px}
+.pins i:nth-child(3){top:34px;bottom:34px;left:0;width:18px;background:repeating-linear-gradient(180deg,var(--muted) 0 6px,transparent 6px 18px)}
+.pins i:nth-child(4){top:34px;bottom:34px;right:0;width:18px;background:repeating-linear-gradient(180deg,var(--muted) 0 6px,transparent 6px 18px)}
+.die{position:relative;width:176px;height:176px;border-radius:18px;background:var(--panel-2);border:3px solid var(--c);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:border-color .2s,box-shadow .2s}
+.chip.active .die{box-shadow:0 0 0 8px color-mix(in srgb,var(--c) 22%,transparent)}
+.die .lbl{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.08em}
+.die .now{font-family:var(--display);font-size:76px;font-weight:800;line-height:1;color:var(--c)}
+.die .now.idle{font-size:30px;color:var(--muted)}
+.die .sub{font-size:13px;color:var(--muted)}
+.chip.pop .now{animation:pop .35s ease-out}
+@keyframes pop{0%{transform:scale(.6);opacity:.3}100%{transform:scale(1);opacity:1}}
+.controls{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.btn{border:1px solid var(--line);background:var(--panel-2);padding:10px 16px;border-radius:10px;font-weight:600;cursor:pointer}
+.btn:hover:not(:disabled){border-color:var(--muted)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+
+/* Scoreboard */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.tile .k{font-size:13px;color:var(--muted)}
+.tile .v{font-family:var(--mono);font-size:28px;font-weight:600}
+.tile.c{border-color:var(--pC)}
+.tile.c .v{color:var(--pC)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:right;padding:7px 6px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}
+th{font-size:12px;color:var(--muted);font-weight:500}
+td.mono{font-family:var(--mono)}
+tr.best td{color:var(--good)}
+tr.cur td:first-child::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--ink);margin-right:8px;vertical-align:middle}
+.note{font-size:13px;color:var(--muted);margin:0}
+
+/* Dispatch log */
+.log-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:14px;height:14px;border-radius:4px;display:inline-block}
+.gwrap{display:flex;gap:12px;align-items:flex-start}
+.glabel{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:38px;width:44px;flex:none}
+.gscroll{overflow-x:auto;flex:1;padding-bottom:4px}
+.ginner{position:relative;padding-top:28px}
+.track{position:relative;height:64px;border:1px dashed var(--line);border-radius:10px}
+.bars{position:absolute;inset:-1px;display:flex}
+.blk{--c:var(--pA);position:relative;height:64px;background:var(--c);border-right:2px solid var(--bg);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:24px;color:var(--t);transform-origin:left center}
+.blk:first-child{border-radius:9px 0 0 9px}
+.blk.sw{background:repeating-linear-gradient(135deg,var(--sw) 0 6px,var(--panel-2) 6px 12px);color:var(--muted);font-family:var(--mono);font-size:12px;font-weight:600}
+.blk.new{animation:grow .3s ease-out}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.flag{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:6px;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap}
+.flag.c{color:var(--pC)}
+.ticks{position:relative;height:22px;margin-top:6px}
+.ticks span:first-child{transform:none}
+.ticks span{position:absolute;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Footer settings */
+.settings{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between}
+.switch{display:inline-flex;align-items:center;gap:12px;cursor:pointer;font-weight:500}
+.switch input{position:absolute;opacity:0;width:1px;height:1px}
+.switch .t{width:46px;height:26px;border-radius:999px;background:var(--sw);position:relative;transition:background .2s;flex:none}
+.switch .t::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--ink);transition:transform .2s}
+.switch input:checked + .t{background:var(--pA)}
+.switch input:checked + .t::after{transform:translateX(20px)}
+.switch input:focus-visible + .t{outline:3px solid var(--pA);outline-offset:3px}
+.jobs{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.jobs .lbl{font-size:14px;color:var(--muted)}
+
+@media (max-width:1040px){
+  .stage{grid-template-columns:1fr}
+  .cpu-col{order:-1}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <div class="eyebrow">SW3 · CPU scheduling · Team Mickey Mouse</div>
+      <h1>Be the <b>Scheduler</b></h1>
+    </div>
+    <div class="modes" role="tablist" aria-label="Scheduling mode">
+      <button role="tab" id="mode-you" data-mode="you">You schedule</button>
+      <button role="tab" id="mode-fcfs" data-mode="fcfs">First-Come-First-Served</button>
+      <button role="tab" id="mode-rr" data-mode="rr">Round Robin</button>
+    </div>
+    <div class="clock" aria-live="polite"><span class="lbl">System clock</span><span class="val" id="clock">t = 0</span></div>
+  </header>
+
+  <p class="hint" id="hint"></p>
+
+  <main class="stage">
+    <section class="panel" aria-labelledby="q-h">
+      <h2 id="q-h">Ready queue</h2>
+      <div class="procs" id="procs"></div>
+    </section>
+
+    <section class="cpu-col" aria-label="CPU">
+      <div class="chip" id="chip">
+        <div class="pins" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="die">
+          <span class="lbl">CPU CORE 0</span>
+          <span class="now idle" id="now">idle</span>
+          <span class="sub" id="nowSub">waiting for work</span>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn primary" id="play">Play</button>
+        <button class="btn" id="step">Step</button>
+        <button class="btn" id="reset">Reset</button>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="s-h">
+      <h2 id="s-h">Scoreboard</h2>
+      <div class="tiles">
+        <div class="tile c"><div class="k">C finishes at</div><div class="v" id="tC">–</div></div>
+        <div class="tile"><div class="k">Average finish time</div><div class="v" id="tAvg">–</div></div>
+        <div class="tile"><div class="k">Context switches</div><div class="v" id="tSw">0</div></div>
+        <div class="tile"><div class="k">Time lost switching</div><div class="v" id="tLost">0</div></div>
+      </div>
+      <table aria-label="Compare schedules for this job set">
+        <thead><tr><th>Schedule</th><th>C finishes</th><th>Avg finish</th><th>Switches</th></tr></thead>
+        <tbody id="cmp"></tbody>
+      </table>
+      <p class="note">All jobs arrive at t = 0, so finish time = turnaround time.</p>
+    </section>
+  </main>
+
+  <section class="panel" aria-labelledby="l-h">
+    <div class="log-head">
+      <h2 id="l-h">Dispatch log · who had the CPU, when</h2>
+      <div class="legend" aria-hidden="true">
+        <span><i style="background:var(--pA)"></i>A</span>
+        <span><i style="background:var(--pB)"></i>B</span>
+        <span><i style="background:var(--pC)"></i>C</span>
+        <span><i style="background:repeating-linear-gradient(135deg,var(--sw) 0 3px,var(--panel-2) 3px 6px)"></i>Context switch</span>
+      </div>
+    </div>
+    <div class="gwrap">
+      <div class="glabel">CPU 0</div>
+      <div class="gscroll" id="gscroll">
+        <div class="ginner" id="ginner">
+          <div class="track" id="track"><div class="bars" id="bars"></div></div>
+          <div class="ticks" id="ticks"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="settings">
+    <label class="switch" for="cost">
+      <input type="checkbox" id="cost">
+      <span class="t" aria-hidden="true"></span>
+      Context switches cost time (0.5 units each)
+    </label>
+    <div class="jobs">
+      <span class="lbl">Job set</span>
+      <button class="btn" id="classic">Classic: 3 · 2 · 1</button>
+      <button class="btn" id="shuffle">Shuffle burst times</button>
+    </div>
+  </footer>
+</div>
+
+<script>
+const IDS = ['A','B','C'];
+const KEYS = {A:'1',B:'2',C:'3'};
+const NAMES = {you:'You', fcfs:'FCFS', rr:'Round Robin'};
+let app, timer = null, lastLen = 0;
+
+const $ = s => document.querySelector(s);
+const fmt = n => (Math.round(n * 100) / 100).toString();
+const fresh = base => ({ jobs: IDS.map((id, i) => ({ id, need: base[i], done: 0, end: null })), log: [], time: 0, last: null, sw: 0 });
+const job = id => app.s.jobs.find(j => j.id === id);
+const left = () => app.s.jobs.filter(j => j.done < j.need);
+const finished = () => left().length === 0;
+
+function best() {
+  const order = [...app.s.jobs].sort((a, b) => a.need - b.need || a.id.localeCompare(b.id));
+  let t = 0; const ends = {};
+  order.forEach((j, i) => { if (i > 0 && app.cost) t += 0.5; t += j.need; ends[j.id] = t; });
+  const avg = Object.values(ends).reduce((a, b) => a + b, 0) / 3;
+  return { cEnd: ends.C, avg, sw: 2 };
+}
+
+function run(id) {
+  const s = app.s, j = job(id);
+  if (!j || j.done >= j.need) return;
+  if (s.last && s.last !== id) { s.sw++; if (app.cost) { s.log.push({ k: 'sw', d: 0.5 }); s.time += 0.5; } }
+  s.log.push({ k: 'run', id, d: 1 }); s.time += 1; j.done++; s.last = id;
+  if (j.done === j.need) { j.end = s.time; s.log[s.log.length - 1].fin = true; }
+  if (finished()) {
+    const ends = s.jobs.map(x => x.end);
+    app.results[app.mode] = { cEnd: job('C').end, avg: ends.reduce((a, b) => a + b, 0) / 3, sw: s.sw };
+    stop();
+  }
+  render(true);
+}
+
+function nextAuto() {
+  const l = left(); if (!l.length) return null;
+  if (app.mode === 'fcfs') return l[0].id;
+  const startAt = app.s.last ? IDS.indexOf(app.s.last) + 1 : 0;
+  for (let k = 0; k < 3; k++) { const id = IDS[(startAt + k) % 3]; if (job(id).done < job(id).need) return id; }
+  return null;
+}
+
+function step() { if (app.mode === 'you' || finished()) return; const id = nextAuto(); if (id) run(id); }
+function play() {
+  if (timer) { stop(); render(); return; }
+  if (finished()) resetRun();
+  timer = setInterval(() => { finished() ? stop() : step(); }, 750);
+  step(); render();
+}
+function stop() { clearInterval(timer); timer = null; }
+function resetRun() { stop(); app.s = fresh(app.base); lastLen = 0; render(); }
+function setMode(m) { app.mode = m; resetRun(); }
+function newJobs(base) { app.base = base; app.results = {}; resetRun(); }
+
+function buildProcs() {
+  $('#procs').innerHTML = IDS.map(id => `
+    <button class="proc" id="proc-${id}" data-id="${id}" style="--c:var(--p${id});--t:var(--t${id})">
+      <span class="tag">${id}</span>
+      <span><span class="name">Process ${id}</span><kbd>${KEYS[id]}</kbd><br><span class="burst mono" id="burst-${id}"></span></span>
+      <span class="state" id="state-${id}"></span>
+      <span class="cells" id="cells-${id}"></span>
+    </button>`).join('');
+  IDS.forEach(id => $('#proc-' + id).addEventListener('click', () => { if (app.mode === 'you' && !finished()) run(id); }));
+}
+
+function hintText() {
+  const s = app.s;
+  if (finished()) {
+    let t = `All jobs done at t = ${fmt(s.time)}. Which schedule felt fairer to C? Switch modes and compare the scoreboard.`;
+    if (app.mode === 'you') {
+      const b = best(), mine = app.results.you.avg;
+      t = mine <= b.avg + 1e-9
+        ? `All jobs done at t = ${fmt(s.time)}. You matched the best possible average finish time. Running the shortest job first is called Shortest Job First.`
+        : `All jobs done at t = ${fmt(s.time)}. Your average finish time is ${fmt(mine)}; the best possible is ${fmt(b.avg)}. Press Reset and try to match it.`;
+    }
+    return t;
+  }
+  if (app.mode === 'you') return 'You are the scheduler. Click a process, or press 1, 2 or 3, to give it the CPU for one time unit. Try to get every job done fast.';
+  if (app.mode === 'fcfs') return 'First-Come-First-Served: each process keeps the CPU until it finishes, in arrival order. Press Play or Step.';
+  return 'Round Robin: each process gets one time unit, then the CPU moves to the next process in line. Press Play or Step.';
+}
+
+function render(animate) {
+  const s = app.s, done = finished();
+  document.querySelectorAll('.modes button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.mode === app.mode)));
+  $('#cost').checked = app.cost;
+  $('#clock').textContent = `t = ${fmt(s.time)}`;
+  const h = $('#hint'); h.textContent = hintText(); h.classList.toggle('done', done);
+
+  const running = !done && s.last && job(s.last).done < job(s.last).need ? s.last : (done ? null : s.last);
+  IDS.forEach(id => {
+    const j = job(id), el = $('#proc-' + id);
+    el.setAttribute('aria-disabled', String(app.mode !== 'you' || done || j.done >= j.need));
+    el.classList.toggle('running', !done && s.last === id && j.done < j.need);
+    el.classList.toggle('done', j.done >= j.need);
+    $('#burst-' + id).textContent = `burst ${j.need} · ran ${j.done}`;
+    $('#state-' + id).textContent = j.done >= j.need ? `done at t=${fmt(j.end)}` : (s.last === id ? 'on CPU' : (j.done ? 'paused' : 'waiting'));
+    $('#cells-' + id).innerHTML = Array.from({ length: j.need }, (_, i) => `<span class="cell${i < j.done ? ' on' : ''}"></span>`).join('');
+  });
+
+  const chip = $('#chip'), now = $('#now'), sub = $('#nowSub');
+  const cur = done ? null : s.last;
+  if (cur) {
+    chip.style.setProperty('--c', `var(--p${cur})`); chip.classList.add('active');
+    now.textContent = cur; now.classList.remove('idle');
+    sub.textContent = job(cur).done >= job(cur).need ? `${cur} just finished` : `running process ${cur}`;
+  } else {
+    chip.style.setProperty('--c', done ? 'var(--good)' : 'var(--line)'); chip.classList.remove('active');
+    now.textContent = done ? 'done' : 'idle'; now.classList.add('idle');
+    sub.textContent = done ? 'all jobs finished' : 'waiting for work';
+  }
+  if (animate) { chip.classList.remove('pop'); void chip.offsetWidth; chip.classList.add('pop'); }
+
+  $('#play').textContent = timer ? 'Pause' : (done ? 'Replay' : 'Play');
+  $('#play').disabled = app.mode === 'you';
+  $('#step').disabled = app.mode === 'you' || done;
+
+  const c = job('C');
+  $('#tC').textContent = c.end != null ? `t = ${fmt(c.end)}` : '–';
+  $('#tAvg').textContent = done ? fmt(app.results[app.mode].avg) : '–';
+  $('#tSw').textContent = s.sw;
+  $('#tLost').textContent = app.cost ? fmt(s.sw * 0.5) : '0';
+
+  const b = best();
+  const row = (key, label, r, cls) => `<tr class="${cls || ''}"><td>${label}</td><td class="mono">${r ? fmt(r.cEnd) : '–'}</td><td class="mono">${r ? fmt(r.avg) : '–'}</td><td class="mono">${r ? r.sw : '–'}</td></tr>`;
+  $('#cmp').innerHTML = ['you', 'fcfs', 'rr'].map(m => row(m, NAMES[m], app.results[m], m === app.mode ? 'cur' : '')).join('')
+    + row('best', 'Best possible', b, 'best');
+
+  renderGantt();
+}
+
+function renderGantt() {
+  const s = app.s;
+  const total = s.jobs.reduce((a, j) => a + j.need, 0);
+  const span = total + (app.cost ? (total - 1) * 0.5 : 0);
+  const avail = $('#gscroll').clientWidth - 4;
+  const u = Math.max(40, Math.min(110, avail / span));
+  $('#ginner').style.width = `${span * u}px`;
+  $('#bars').innerHTML = s.log.map((e, i) => {
+    const cls = i >= lastLen ? ' new' : '';
+    if (e.k === 'sw') return `<div class="blk sw${cls}" style="width:${e.d * u}px" title="Context switch">ctx</div>`;
+    const flag = e.fin ? `<span class="flag${e.id === 'C' ? ' c' : ''}">${e.id} done</span>` : '';
+    return `<div class="blk${cls}" style="width:${u}px;--c:var(--p${e.id});--t:var(--t${e.id})">${e.id}${flag}</div>`;
+  }).join('');
+  lastLen = s.log.length;
+  const ticks = [];
+  for (let t = 0; t <= Math.floor(span); t++) ticks.push(`<span style="left:${t * u}px">${t}</span>`);
+  $('#ticks').innerHTML = ticks.join('');
+}
+
+function bind() {
+  buildProcs();
+  document.querySelectorAll('.modes button').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
+  $('#play').addEventListener('click', play);
+  $('#step').addEventListener('click', step);
+  $('#reset').addEventListener('click', resetRun);
+  $('#cost').addEventListener('change', e => { app.cost = e.target.checked; app.results = {}; resetRun(); });
+  $('#classic').addEventListener('click', () => newJobs([3, 2, 1]));
+  $('#shuffle').addEventListener('click', () => {
+    let b; do { b = IDS.map(() => 1 + Math.floor(Math.random() * 5)); } while (new Set(b).size < 2);
+    newJobs(b);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.target.closest && e.target.closest('input')) return;
+    const id = Object.keys(KEYS).find(k => KEYS[k] === e.key);
+    if (id && app.mode === 'you' && !finished()) run(id);
+    if (e.key === ' ' && app.mode !== 'you' && !e.target.closest('button')) { e.preventDefault(); step(); }
+  });
+  window.addEventListener('resize', renderGantt);
+}
+
+function start(d) {
+  app = { base: d.base || [3, 2, 1], mode: d.mode || 'you', cost: !!d.cost, results: d.results || {}, s: d.s || null };
+  if (!app.s) app.s = fresh(app.base);
+  lastLen = app.s.log.length;
+  bind(); render();
+}
+window.claude?.hot?.snapshot?.(() => ({ base: app.base, mode: app.mode, cost: app.cost, results: app.results, s: app.s }));
+window.claude?.hot?.ready ? window.claude.hot.ready(start) : start(window.claude?.hot?.data ?? {});
+</script>
+</body>
+</html>
