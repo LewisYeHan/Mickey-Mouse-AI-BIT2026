@@ -40,6 +40,18 @@ Every image used in the learning content, who made it, and where it came from. "
 | 2.17 Hill climbing landscape | `content/images/hill_climbing_landscape.png` | 2.5 Section 7 | Wong Hiu Chung Samuel | Team diagram | Team's own work |
 | 2.18 River crossing search | `content/images/river_crossing_bfs.png` | 2.5 Lab | Wong Hiu Chung Samuel | Team diagram | Team's own work |
 
+## Photos
+
+Real photos of the hardware and systems the text describes. They are not numbered as figures. All come from Wikimedia Commons and were downloaded at 960 pixels wide (the BIOS photo at its original 640 pixels); they were not edited.
+
+| Photo | File | Used in | Photographer | Source | Licence |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| AMD Ryzen 9 9950X processor (CPU) | `content/images/photo_cpu.jpg` | 1.1 Section 2 | 4300streetcar | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:AMD_Ryzen_9_9950X.jpg) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| BIOS chip and CMOS battery on an ASUS P4P800-E motherboard | `content/images/photo_bios_chip.jpg` | 1.1 Section 4 | Samuel Peixoto | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:FlashROM_BIOS_Batery_ASUS.jpg) | Public domain |
+| DDR4 RAM module | `content/images/photo_ram.jpg` | 1.2 Section 9 | ElooKoN | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:RAM_Module_%28SDRAM-DDR4%29.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Samsung 980 PRO M.2 NVMe SSD | `content/images/photo_ssd.jpg` | 1.3 Section 2 | D-Kuru | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Samsung_980_PRO_PCIe_4.0_NVMe_SSD_1TB-top_PNr%C2%B00915.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| IBM Deep Blue | `content/images/photo_deep_blue.jpg` | 2.5 Section 6 | Erik Pitti | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Say_hello_to_Deep_Blue_%282586059148%29.jpg) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
+
 ## Lab screenshots
 
 These screenshots show learners what the screen should look like during a lab. They are not numbered as figures.
@@ -49,6 +61,7 @@ These screenshots show learners what the screen should look like during a lab. T
 | A chat with ELIZA | `content/images/eliza_chat.png` | 2.1 Lab | Yeo Shih Jie (Stage 3) | Screenshot taken in his browser with AI assistance, then cropped; the replies were checked against the lab feedback | Screenshot of N. Landsteiner's online ELIZA (mass:werk), shown to teach about the program |
 | System Information, BIOS rows | `content/images/msinfo_bios.png` | 1.1 Lab | Yeo Shih Jie (Stage 3) | Screenshot of his own laptop; cropped, System Name and User Name rows removed and key rows outlined with AI assistance | Team's own screenshot |
 | Device Manager, Driver tab | `content/images/device_manager_driver.png` | 1.1 Lab | Yeo Shih Jie (Stage 3) | Screenshot of his own laptop; key rows outlined with AI assistance | Team's own screenshot |
+| File Explorer at Edge's program folder | `content/images/edge_program_folder.png` | 1.3 Lab | Yeo Shih Jie (Stage 3) | Screenshot of his own laptop, unedited | Team's own screenshot |
 | Task Manager, Details page | `content/images/task_manager_details.png` | 1.3 Lab | Yeo Shih Jie (Stage 3) | Screenshot of his own laptop; cropped, User name column blanked and columns outlined with AI assistance | Team's own screenshot |
 | The forward-chaining program running | `content/images/python_forward_chaining.png` | 2.2 Lab | Yeo Shih Jie (Stage 3) | Screenshot taken in his browser with AI assistance, then cropped; the output was checked against a local run of the same code | Team's own code, shown in the Programiz online editor |
 
