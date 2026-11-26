@@ -60,7 +60,7 @@ The Part 2 file names start at `04` because they were numbered before the Part 1
 | `README.md` | This page |
 | `VERSION.txt` | The final version label; Git fills in the commit ID when the snapshot is exported |
 | `content/` | All the learning content: the Module Outline, `Part_1/` and `Part_2/` |
-| `content/images/` | Every figure and lab screenshot used in the content (each one is listed in `docs/Figure_Sources.md`) |
+| `content/images/` | Every figure, photo and lab screenshot used in the content (each one is listed in `docs/Figure_Sources.md`) |
 | `activities/be_the_scheduler/` | The *Be the Scheduler* game from our mini lecture, used in 1.2 Section 8. Opens offline |
 | `docs/Figure_Sources.md` | Who made each figure, how, and its source |
 | `docs/Resource_Mapping.md` | Where each topic appears in the Study Guide, Test Bank, slides and videos |
@@ -116,7 +116,7 @@ Each section file names its writers at the top. The Git history shows who commit
 | :--- | :--- | :--- |
 | Teacher: system software should go before operating system | Part 1 reordered; System Software is now 1.1 | `content/Part_1/` |
 | Teacher: more images and figures for the other resources to build on | Six new or redrawn figures in Part 1; chaining figures in 2.2 | `content/images/`, 1.1, 1.2, 1.5, 2.2 |
-| Teacher (PPT): more real images, not only AI-generated ones | Disney-silhouette figures replaced; a real Task Manager screenshot added; figure credits added | 1.1, 1.2, `docs/Figure_Sources.md` |
+| Teacher (PPT): more real images, not only AI-generated ones | Disney-silhouette figures replaced; real photos of a CPU, BIOS chip, RAM, SSD and Deep Blue; real screenshots in Figure 1.4 and the labs; credits for every image | 1.1, 1.2, 1.3, 2.5, `docs/Figure_Sources.md` |
 | Mini lecture SW3 | Scheduling worked example, concurrency vs. parallelism, *Be the Scheduler* activity with an offline copy | 1.2 Section 8, `activities/` |
 | Teacher (general Stage 2 feedback): clickable contents, answers kept apart from exercises, activities with real tools and screenshots | Linked contents at the top of every section; practice answers moved into fold-out boxes; four new hands-on labs | 1.1, 1.3, 2.1 and 2.2 labs; every teaching section |
 | Own review | Files and file systems; 2.2 logic fixes; 2.1 strengths and limitations; learning goals in every teaching section; new Module Outline | See `docs/Changelog.md` |
