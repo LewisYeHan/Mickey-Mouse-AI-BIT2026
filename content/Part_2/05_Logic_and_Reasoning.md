@@ -1,21 +1,32 @@
 # 2.2 Logic and Reasoning
 
-**Status:** ✅  
 **Team Member:** Frederick Samuel Lesmana (`@Ti4nCi`)
 
-**In this section:** Facts, Rules and Inference · Modus Ponens and Modus Tollens · Forward Chaining · Backward Chaining · Resolution and Unification · Conflict Resolution · Reasoning Under Uncertainty · Python Example · Limitations · Key Takeaways · Review Questions and Answers
+**In this section:** Facts, Rules and Inference · Modus Ponens and Modus Tollens · Forward Chaining · Backward Chaining · Resolution and Unification · Conflict Resolution · Reasoning Under Uncertainty · Python Example · Limitations · Key Takeaways · Practice Questions and Answers
+
+**Learning goals.** By the end of this section you can:
+* use Modus Ponens and Modus Tollens to reach a conclusion, and spot the "affirming the consequent" mistake;
+* trace forward chaining and backward chaining on a small set of rules;
+* explain why a rule-based system needs conflict resolution and a way to handle uncertainty.
+
+**Before you start:** read [2.1](04_What_is_Symbolic_AI.md). The logic symbols used in this section are listed in the table below; [2.3 Section 4](06_Knowledge_Representation.md) teaches them in full with truth tables.
+
+**Logic symbols used in this section:**
+
+| Symbol | Read it as | Example | Meaning of the example |
+| :--- | :--- | :--- | :--- |
+| `→` | "implies" or "if … then" | `Rain → WetGround` | If it rains, the ground is wet. |
+| `¬` | "not" | `¬WetGround` | The ground is not wet. |
+| `∧` | "and" | `Student(x) ∧ Suspended(x)` | x is a student and x is suspended. |
+| `∨` | "or" | `P ∨ Q` | P is true, or Q is true, or both. |
+| `∀x` | "for every x" | `∀x (Human(x) → Mortal(x))` | Every human is mortal. |
+| `∴` | "therefore" | `∴ Q` | So Q must be true. |
 
 ---
 
 ## 1. Introduction
 
-In [2.1](04_What_is_Symbolic_AI.md), we saw that Symbolic AI stores knowledge as symbols, facts and rules.
-
-But stored knowledge is not enough. An intelligent system must also use it to reach conclusions.
-
-This process is called **reasoning**.
-
-For example:
+In [2.1](04_What_is_Symbolic_AI.md), we saw that Symbolic AI stores knowledge as symbols, facts and rules. But stored knowledge is not enough: an intelligent system must also use it to reach conclusions. This process is called **reasoning**. For example:
 
 - Fact: Socrates is human.
 - Rule: All humans are mortal.
@@ -55,10 +66,10 @@ THEN that person is mortal.
 In predicate logic:
 
 ```text
-Human(x) → Mortal(x)
+∀x (Human(x) → Mortal(x))
 ```
 
-Here, `x` represents an individual, and `→` means "implies."
+Here, `x` stands for any individual, `∀x` means "for every x", and `→` means "implies". Inside a rule, the `∀x` is often left out, so `Human(x) → Mortal(x)` is read the same way.
 
 ### Inference
 
@@ -135,11 +146,11 @@ If P implies Q, but Q is false, then P must also be false.
 2. Find rules whose conditions match those facts.
 3. Apply the matching rules.
 4. Add new conclusions to the knowledge base.
-5. Repeat until no more rules can be applied.
+5. Repeat until no rule adds a new fact. (A rule that has already fired would keep matching, so the system stops when nothing *new* can be added.)
 
 ### Example: University Scholarship System
 
-Suppose a system contains these rules:
+This example uses the university's **Excellence Scholarship**, which has different rules from the Merit Scholarship in 2.1. Suppose a system contains these rules:
 
 ```text
 Rule 1:
@@ -152,7 +163,7 @@ AND CommunityService(x)
 THEN ScholarshipEligible(x).
 ```
 
-Initial facts:
+Initial facts (`GPA(Alex) = 3.9` is another way of writing `GPA(Alex, 3.9)`, the two-part form used for `GPA(Sammy, 3.8)` in 2.1):
 
 ```text
 GPA(Alex) = 3.9
@@ -171,20 +182,14 @@ It then applies Rule 2:
 ScholarshipEligible(Alex)
 ```
 
-The system reaches a conclusion by working forward from known information.
+It checks the rules once more. Both rules still match, but neither adds a fact that is not already known, so the system stops. It has reached a conclusion by working forward from known information.
 
 ### Forward Chaining Diagram
 
-```mermaid
-flowchart TD
-    A["Initial Facts"] --> B["Check Rules"]
-    B --> C{"Rule Conditions Match?"}
-    C -->|Yes| D["Apply Rule"]
-    D --> E["Generate New Fact"]
-    E --> B
-    C -->|No| F["Stop"]
-    F --> G["Final Knowledge"]
-```
+![Forward chaining flowchart: start from the initial facts, check the rules; if a rule matches and gives a new fact, apply it, generate the new fact and repeat; if not, stop with the final knowledge](../images/forward_chaining_flow.png)
+*Figure 2.4: Forward chaining repeats "match a rule, add a new fact" until no rule can add anything new.*
+
+Read Figure 2.4 from the top. The dashed arrow on the left is the loop: every new fact sends the system back to check the rules again. The diamond is the stopping test.
 
 ### Applications
 
@@ -254,18 +259,10 @@ The original goal has been proven.
 
 ### Backward Chaining Diagram
 
-```mermaid
-flowchart TD
-    A["Goal: ScholarshipEligible(Alex)?"] --> B["Rule 2 needs two conditions"]
-    B --> C["ExcellentAcademicPerformance(Alex)?"]
-    B --> D["CommunityService(Alex)?"]
-    C --> E["Rule 1 needs GPA >= 3.8"]
-    E --> F["GPA(Alex) = 3.9: true"]
-    D --> G["Known fact: true"]
-    F --> H["All conditions satisfied"]
-    G --> H
-    H --> I["Goal proven"]
-```
+![Backward chaining tree: the goal ScholarshipEligible(Alex) needs two conditions from Rule 2; ExcellentAcademicPerformance(Alex) needs Rule 1, which needs GPA at least 3.8, and GPA(Alex) = 3.9 is true; CommunityService(Alex) is a known fact; all conditions are satisfied, so the goal is proven](../images/backward_chaining_tree.png)
+*Figure 2.5: Backward chaining starts from the goal and works down to known facts.*
+
+Read Figure 2.5 from the top down: each question splits into the smaller questions it depends on, until every branch ends in a known fact.
 
 ### Applications
 
@@ -311,11 +308,9 @@ P ∨ Q
 ∴ Q
 ```
 
-Since P is false, Q must be true.
+Since P is false, Q must be true. This is the simplest case. Resolution works on statements made of terms joined by "or" (called **clauses**). More generally, resolution takes two statements with opposite terms, such as `P ∨ Q` and `¬P ∨ R`, and derives `Q ∨ R`.
 
-This is the simplest case. More generally, resolution takes two statements with opposite terms, such as `P ∨ Q` and `¬P ∨ R`, and derives `Q ∨ R`.
-
-Resolution is particularly important in formal logic and automated proof systems.
+Resolution is particularly important in automated proof systems, which use it to prove something by contradiction. To prove Q from `P ∨ Q` and `¬P`, the system adds the opposite, `¬Q`. Resolving `P ∨ Q` with `¬P` gives `Q`, and `Q` with `¬Q` leaves nothing at all (an empty clause). That means the facts contradict `¬Q`, so Q must be true.
 
 ### Unification
 
@@ -361,7 +356,7 @@ Unification is fundamental to logic programming languages such as Prolog.
 
 ## 8. Conflict Resolution
 
-In a rule-based system, multiple rules may be triggered simultaneously.
+In a rule-based system, several rules can **match** the same facts at once. They are said to be *triggered*, and together they form the **conflict set**. The system must choose which one actually **fires** (runs).
 
 Consider:
 
@@ -371,11 +366,11 @@ IF Student(x)
 THEN LibraryAccess(x).
 
 Rule 2:
-IF Suspended(x)
+IF Student(x) AND Suspended(x)
 THEN NOT LibraryAccess(x).
 ```
 
-A suspended student is still a student, so both rules fire and they contradict each other. The system needs a conflict resolution strategy to decide which rule wins.
+For a suspended student, both rules match, and they recommend opposite things. If both fired, the knowledge base would contradict itself. The system needs a conflict resolution strategy to decide which rule fires.
 
 Common strategies include:
 
@@ -385,7 +380,7 @@ Common strategies include:
 | Specificity | Prefer more specific rules over general rules. |
 | Recency | Prioritize rules triggered by more recently added information. |
 
-Here, Rule 2 wins because it is more specific (it covers only suspended students), or because it is given a higher priority. The suspended student does not get library access.
+Here, Rule 2 wins by **specificity**: it has all of Rule 1's conditions plus one more (`Suspended(x)`), so it describes a narrower, more specific case. It could also win because it is given a higher priority. Only Rule 2 fires, and the suspended student does not get library access.
 
 Conflict resolution helps maintain consistent decision-making.
 
@@ -393,7 +388,7 @@ Conflict resolution helps maintain consistent decision-making.
 
 ## 9. Reasoning Under Uncertainty
 
-Traditional classical logic generally treats statements as true or false. However, real-world information is often incomplete or uncertain.
+Classical logic treats every statement as either true or false. However, real-world information is often incomplete or uncertain.
 
 Symbolic systems can incorporate additional methods to handle uncertainty.
 
@@ -445,6 +440,8 @@ Where:
 - `H` = hypothesis.
 - `E` = observed evidence.
 - `P(H|E)` = probability of the hypothesis given the evidence.
+
+For example, suppose 1 student in 100 has the flu (P(H) = 0.01). A flu test is positive for 90% of students who have flu (P(E|H) = 0.9), and 5 students in 100 test positive overall (P(E) = 0.05). Then a positive test means P(H|E) = 0.9 × 0.01 ÷ 0.05 = 0.18: only an 18% chance of flu, because most positive tests come from the many healthy students.
 
 **Important distinction:** Fuzzy Logic represents degrees of membership in vague categories, while probability represents uncertainty about events or hypotheses.
 
@@ -528,7 +525,7 @@ Combining symbolic reasoning with machine learning can help address some of thes
 
 ---
 
-## 13. Review Questions and Answers
+## 13. Practice Questions and Answers
 
 ### Understanding
 
@@ -578,7 +575,7 @@ Facts:  A, B, E
 
 ### Answers
 
-**1.** Reasoning is the process of using known facts and rules to derive new conclusions. For example, from `Human(Socrates)` and the rule `Human(x) → Mortal(x)`, the system derives `Mortal(Socrates)`.
+**1.** Reasoning is the process of using known facts and rules to derive new conclusions. For example, from `Human(Socrates)` and the rule `∀x (Human(x) → Mortal(x))`, the system derives `Mortal(Socrates)`.
 
 **2.** A **fact** is a statement the system accepts as true, such as `Student(Alex)`. A **rule** describes what follows when certain conditions are true, such as `IF Student(x) THEN LibraryAccess(x)`. Facts describe the situation; rules describe how to reason about it.
 
@@ -592,7 +589,7 @@ Facts:  A, B, E
 
 **7.** Backward chaining only explores the rules and facts that are relevant to the one goal being tested. It does not waste time deriving every possible conclusion from all the facts, so it is more efficient when there is a single question to answer, such as "Does this patient have condition X?".
 
-**8.** Several rules can be triggered by the same facts and may recommend different or competing actions. For example, a suspended student triggers both `IF Student(x) THEN LibraryAccess(x)` and `IF Suspended(x) THEN NOT LibraryAccess(x)`, which contradict each other. Conflict resolution strategies, such as rule priority, specificity or recency, decide which rule wins so that the system behaves consistently.
+**8.** Several rules can match the same facts and may recommend different or competing actions. For example, a suspended student matches both `IF Student(x) THEN LibraryAccess(x)` and `IF Student(x) AND Suspended(x) THEN NOT LibraryAccess(x)`, which contradict each other. Conflict resolution strategies, such as rule priority, specificity or recency, decide which matching rule fires, so that the system behaves consistently.
 
 **9.** **Fuzzy logic** represents how much something belongs to a vague category, such as 30°C being "hot" to degree 0.8. **Probabilistic reasoning** represents how likely an uncertain event or hypothesis is, such as an 80% chance of rain. Fuzzy logic deals with vagueness; probability deals with uncertainty.
 
@@ -600,7 +597,7 @@ Facts:  A, B, E
 
 **11.** Machine learning is good at learning patterns from messy data, such as recognising images or speech, while symbolic reasoning is good at applying explicit rules and explaining its decisions. Combining them can give a system that both copes with real-world data and gives transparent, rule-checked answers. This is the idea behind neuro-symbolic AI (see [2.4](07_Expert_Systems.md)).
 
-**12.** Step 1: A and B are true, so Rule 1 fires and adds C. Step 2: C is now true, so Rule 2 fires and adds D. Step 3: D and E are true, so Rule 3 fires and adds F. No more rules apply. Final facts: A, B, E, C, D, F.
+**12.** Step 1: A and B are true, so Rule 1 fires and adds C. Step 2: C is now true, so Rule 2 fires and adds D. Step 3: D and E are true, so Rule 3 fires and adds F. No rule can add a new fact, so the system stops. Final facts: A, B, E, C, D, F.
 
 **13.** The system reversed the rule. "If it rains, the ground is wet" does not mean "if the ground is wet, it rained", because someone could have watered the garden. This mistake is called affirming the consequent. Modus Ponens needs P to be true, and Modus Tollens needs Q to be false.
 
