@@ -138,7 +138,7 @@ A **cross-platform app** is written once and then runs on several operating syst
 ## Lab: Follow an App from File to Process
 
 * **Goal:** See Steps 1 and 2 of Figure 1.9 on your own computer: one program file on the drive, and the processes the OS creates from it.
-* **Preparation:** A Windows 10 or 11 computer with Microsoft Edge (it comes with Windows) and about 15 minutes; re-read §2. You only look, so nothing on your computer changes. On a Mac, follow the note at the end of the task. No computer? Do the Reflection with the typical results in the feedback box.
+* **Preparation:** A Windows 10 or 11 computer with Microsoft Edge (it comes with Windows) and about 15 minutes; re-read §2. You only look, so nothing on your computer changes. On a Mac, follow the note at the end of the task. No computer? Use the screenshot from a team member's laptop below and the typical results in the feedback box.
 * **Task:**
 
   **Step 1, predict:** you open Edge with one tab. How many processes will it use: 1, between 2 and 5, or more than 5?  
@@ -148,6 +148,10 @@ A **cross-platform app** is written once and then runs on several operating syst
   **Step 5, change something:** in Edge, open three new tabs with three different websites. Go back to the **Processes** page and read the number in brackets again. Then close those three tabs and read it once more.
 
   *On a Mac:* open **Activity Monitor** (press **Command + Space** and type *Activity Monitor*), open your browser with a few websites, and look for your browser's processes in the list. The browser's program file is in the **Applications** folder.
+
+  ![Task Manager, Details page sorted by Name: a long list of msedge.exe rows, each with its own PID and its own Memory value; the PID and Memory columns are outlined in red](../images/task_manager_details.png)
+
+  *Lab screenshot: Step 4 on a team member's laptop. Every msedge.exe row is a separate Edge process with its own PID and memory, and the list continues below. The User name column was blanked.*
 
 * **Observation:** Record the number in brackets from Step 2 and from both parts of Step 5, the folder path from Step 3, and the number of `msedge.exe` rows from Step 4.
 * **Reflection:**
@@ -161,7 +165,7 @@ A **cross-platform app** is written once and then runs on several operating syst
 
 * **Step 2:** Edge usually shows **more than 5** processes, even with one tab. It splits its work into a main browser process and helper processes, for example one for the graphics card, one for the network and one for each website you have open. The exact number depends on your Edge version and extensions.
 * **Step 3:** The folder is usually `C:\Program Files (x86)\Microsoft\Edge\Application`. This is the program file of Step 1: machine code stored on the drive, doing nothing until it runs.
-* **Step 4:** There is one `msedge.exe` row for each process, and every row has a different PID.
+* **Step 4:** There is one `msedge.exe` row for each process, and every row has a different PID. The laptop in the screenshot had more than 40 `msedge.exe` rows.
 * **Step 5:** The number usually goes up when you open new websites and down when you close them. It may not change by exactly one per tab, because Edge can let tabs from the same website share a process.
 * **Reflection answers:**
   1. **Step 2** of the lifecycle. Edge's main process asks the OS to create each new process, and the OS gives every one its own memory and its own **Process Control Block (PCB)**. The **PID** is the number the OS uses to tell the processes apart.
