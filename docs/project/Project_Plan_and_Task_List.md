@@ -105,7 +105,7 @@ The Stage 3 content changes were drafted with AI assistance and checked and comm
 
 | Task | Owner(s) | Due | Feedback it answers | Expected result | Status |
 |---|---|---|---|---|---|
-| Put System Software before Operating Systems | Yeo Shih Jie | 26 Nov | Teacher, Markdown V2 | Files renamed with `git mv`; titles, figures, glossary, quiz tags and links updated | ✅ |
+| Put System Software before Operating Systems | Yeo Shih Jie | 26 Nov | Teacher, Markdown V2 | Files renamed; titles, figures, glossary, quiz tags and links updated | ✅ |
 | Replace the Disney figures; use the finished chaining figures; add new figures and credits | Yeo Shih Jie | 27 Nov | Teacher, Markdown V2 and PPT V1; Stage 1 feedback | Figures 1.1–1.10 and 2.4–2.5 in place; `docs/Figure_Sources.md` | ✅ |
 | Scheduling section and Be the Scheduler activity from the mini lecture; files and file systems | Yeo Shih Jie | 27 Nov | Mini lecture SW3 | 1.2 Sections 8 and 10; `activities/be_the_scheduler/` | ✅ |
 | 2.2 fixes: symbol table, stop rule, conflict resolution, figures | Yeo Shih Jie | 27 Nov | Own consistency check | 2.2 updated | ✅ |
