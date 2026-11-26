@@ -60,7 +60,7 @@ The Part 2 file names start at `04` because they were numbered before the Part 1
 | `README.md` | This page |
 | `VERSION.txt` | The final version label; Git fills in the commit ID when the snapshot is exported |
 | `content/` | All the learning content: the Module Outline, `Part_1/` and `Part_2/` |
-| `content/images/` | Every figure used in the content (each one is listed in `docs/Figure_Sources.md`) |
+| `content/images/` | Every figure and lab screenshot used in the content (each one is listed in `docs/Figure_Sources.md`) |
 | `activities/be_the_scheduler/` | The *Be the Scheduler* game from our mini lecture, used in 1.2 Section 8. Opens offline |
 | `docs/Figure_Sources.md` | Who made each figure, how, and its source |
 | `docs/Resource_Mapping.md` | Where each topic appears in the Study Guide, Test Bank, slides and videos |
@@ -85,8 +85,8 @@ These were submitted under their own assignments and are not stored in this repo
 * **On GitHub:** click any file in the table above. GitHub shows the formatted page with its figures.
 * **Offline:** open this folder in Visual Studio Code and press `Ctrl + Shift + V` (`Cmd + Shift + V` on a Mac) on any `.md` file to see it formatted. Typora or any other Markdown viewer also works. All links and images are relative, so they work from any folder.
 * **PDF:** the submitted package includes the whole module as one PDF, in reading order, with every answer shown.
-* **Answers:** practice answers follow the questions. Quiz answer keys are inside a fold-out box: click *Show answers* to open it.
-* **Activities:** to play *Be the Scheduler*, double-click `activities/be_the_scheduler/index.html`. The 2.4 Prolog extension uses the free website <https://swish.swi-prolog.org>; the expected answers are in 2.4 if you are offline.
+* **Answers:** practice answers, quiz answer keys and lab feedback are inside fold-out boxes. Click the title of a box (for example *Show answers*) to open it. The PDF prints them all open.
+* **Activities:** to play *Be the Scheduler*, double-click `activities/be_the_scheduler/index.html`. The labs in 1.1 and 1.3 use tools built into Windows (System Information, Device Manager and Task Manager), with a note for Mac users. The 2.1 lab uses an online copy of ELIZA, <https://www.masswerk.at/elizabot/eliza.html>. The 2.2 lab runs a short Python program in IDLE or any online Python editor. The 2.4 Prolog extension uses the free website <https://swish.swi-prolog.org>. Every lab and activity has a no-computer fallback: its feedback box shows the expected results.
 
 ## Team
 
@@ -118,6 +118,7 @@ Each section file names its writers at the top. The Git history shows who commit
 | Teacher: more images and figures for the other resources to build on | Six new or redrawn figures in Part 1; chaining figures in 2.2 | `content/images/`, 1.1, 1.2, 1.5, 2.2 |
 | Teacher (PPT): more real images, not only AI-generated ones | Disney-silhouette figures replaced; a real Task Manager screenshot added; figure credits added | 1.1, 1.2, `docs/Figure_Sources.md` |
 | Mini lecture SW3 | Scheduling worked example, concurrency vs. parallelism, *Be the Scheduler* activity with an offline copy | 1.2 Section 8, `activities/` |
+| Teacher (general Stage 2 feedback): clickable contents, answers kept apart from exercises, activities with real tools and screenshots | Linked contents at the top of every section; practice answers moved into fold-out boxes; four new hands-on labs | 1.1, 1.3, 2.1 and 2.2 labs; every teaching section |
 | Own review | Files and file systems; 2.2 logic fixes; 2.1 strengths and limitations; learning goals in every teaching section; new Module Outline | See `docs/Changelog.md` |
 
 ## Known Limitations
@@ -126,7 +127,8 @@ Each section file names its writers at the top. The Git history shows who commit
 * A few wording differences remain in those resources, for example Test Bank MC16 and PPT slide 101 say "both rules fire" where 2.2 now says the rules *match* and one *fires*. All known differences are listed in `docs/Resource_Mapping.md`.
 * The original source and licence of the historical photo in Figure 2.3 (an IBM 7090 set up to play chess) have not been confirmed.
 * Some Study Guide labs (for example Prolog Family Detective and Little Man Computer) are in the Study Guide only, not in this Markdown.
-* The online copy of *Be the Scheduler* and the SWISH website need internet. Both have offline alternatives (the local game file and the expected answers in the text).
+* The online copy of *Be the Scheduler*, the online ELIZA, online Python editors and the SWISH website need internet. Each has an offline alternative: the local game file, IDLE, or the expected results in the feedback boxes.
+* The labs in 1.1 and 1.3 give full steps for Windows only. Mac users get a short note and can use the expected results in the feedback.
 
 ## How We Work
 
