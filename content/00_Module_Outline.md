@@ -2,7 +2,7 @@
 
 **Team:** Mickey Mouse · **Coordinator:** Yeo Shih Jie (`@ysjie03`)
 
-**In this section:** Who This Module Is For · What You Need · What You Will Learn · Reading Order · Part 1 · Part 2 · How Each Section Works · Your Guides
+**In this section:** [Who This Module Is For](#who-this-module-is-for) · [What You Need](#what-you-need) · [What You Will Learn](#what-you-will-learn) · [Reading Order](#reading-order) · [Part 1](#part-1-software) · [Part 2](#part-2-symbolic-ai) · [How Each Section Works](#how-each-section-works) · [Your Guides](#your-guides)
 
 ---
 
@@ -15,7 +15,7 @@ First-year university students with no computer science background. You will lea
 * No programming experience. Every piece of code is given to you and explained.
 * Basic computer skills: opening apps, using a browser, copying and pasting.
 * Paper and a pen for the activities. A few activities work best with a partner.
-* A laptop (Windows, macOS or Linux) for the optional computer activities. Every activity also has a paper version, so you can finish the module offline.
+* A computer for the labs. The labs in 1.1 and 1.3 use tools built into Windows (with a note for Mac users), the 2.1 lab needs internet, and the 2.2 lab needs Python or a free online Python editor. Every lab also has a no-computer fallback, so you can finish the module offline.
 
 ## What You Will Learn
 
@@ -48,13 +48,13 @@ Read the sections in order. The whole module takes about 12 hours, for example s
 ## Part 1: Software
 
 ### [1.1 System Software](Part_1/01_System_Software.md)
-What system software is and its five kinds; the layers of a computer; firmware, BIOS vs. UEFI and the six steps of the boot process; the kernel and CPU modes; device drivers (with a printing example), utilities, and translators (assembler, compiler, interpreter). Practice questions with answers.
+What system software is and its five kinds; the layers of a computer; firmware, BIOS vs. UEFI and the six steps of the boot process; the kernel and CPU modes; device drivers (with a printing example), utilities, and translators (assembler, compiler, interpreter). Includes the *Find Your Computer's System Software* lab. Practice questions with answers.
 
 ### [1.2 Operating Systems](Part_1/02_Operating_Systems.md)
 What an OS is, kernel vs. shell, CLI vs. GUI. Processes, process states and threads; system calls and kernel designs; how hundreds of processes share a few cores (concurrency vs. parallelism); CPU scheduling with a worked FCFS, Round Robin and SJF example and the *Be the Scheduler* activity; deadlock; memory management; files and file systems; I/O and security. History, OS types and a platform comparison are included as *Going further* reading. Practice questions with answers.
 
 ### [1.3 Application Software](Part_1/03_Application_Software.md)
-User space vs. kernel space, the 5-step execution lifecycle, and system calls. The types of applications, and native vs. web vs. cross-platform apps. Practice questions with answers.
+User space vs. kernel space, the 5-step execution lifecycle, and system calls. The types of applications, and native vs. web vs. cross-platform apps. Includes the *Follow an App from File to Process* lab. Practice questions with answers.
 
 ### [1.4 Glossary](Part_1/Part_1_Glossary.md)
 Every key term from Sections 1.1 to 1.3 in A–Z order, with the section where each term is explained.
@@ -67,10 +67,10 @@ How Sections 1.1 to 1.3 connect, the key ideas from each section, and a 15-quest
 ## Part 2: Symbolic AI
 
 ### [2.1 What Is Symbolic AI?](Part_2/04_What_is_Symbolic_AI.md)
-Symbols, facts and rules; how a rule-based system reaches a conclusion; Good Old-Fashioned AI (GOFAI) and the Physical Symbol System Hypothesis; where Symbolic AI is used; its strengths and limitations.
+Symbols, facts and rules; how a rule-based system reaches a conclusion; Good Old-Fashioned AI (GOFAI) and the Physical Symbol System Hypothesis; where Symbolic AI is used; its strengths and limitations. Includes the *Chat with ELIZA* lab.
 
 ### [2.2 Logic and Reasoning](Part_2/05_Logic_and_Reasoning.md)
-How AI derives conclusions from facts and rules: Modus Ponens and Modus Tollens, forward chaining, backward chaining, resolution and unification, conflict resolution, and reasoning under uncertainty (certainty factors, fuzzy logic, probability), with a short Python example.
+How AI derives conclusions from facts and rules: Modus Ponens and Modus Tollens, forward chaining, backward chaining, resolution and unification, conflict resolution, and reasoning under uncertainty (certainty factors, fuzzy logic, probability), with a short Python example. Includes the *Run a Forward-Chaining Engine in Python* lab.
 
 ### [2.3 Knowledge Representation](Part_2/06_Knowledge_Representation.md)
 How AI stores knowledge: data, information and knowledge; propositional and predicate logic (with truth tables and De Morgan's laws); semantic networks, frames, scripts and rules; ontologies and knowledge graphs. Includes the *Build a Knowledge Web* lab.
@@ -91,7 +91,7 @@ How Sections 2.1 to 2.5 connect through one scholarship example, the key ideas f
 
 ## How Each Section Works
 
-Each teaching section (1.1 to 1.3 and 2.1 to 2.5) starts with its learning goals and what to read first, then explains the ideas with examples and figures, and ends with practice questions. The glossaries (1.4, 2.6) and summaries (1.5, 2.7) review the whole part. The answer to each question comes after the questions, so try them first. In the PDF copy, the answers inside fold-out boxes are printed open.
+Each teaching section (1.1 to 1.3 and 2.1 to 2.5) starts with its learning goals and what to read first, then explains the ideas with examples and figures, and ends with practice questions. Every teaching section except 1.2 has a hands-on lab just before its practice questions; 1.2 has the *Be the Scheduler* activity in Section 8. The glossaries (1.4, 2.6) and summaries (1.5, 2.7) review the whole part. Answers, quiz answer keys and lab feedback are in fold-out boxes, so try each question first and then open the box to check. In the PDF copy, the fold-out boxes are printed open.
 
 ## Your Guides
 
