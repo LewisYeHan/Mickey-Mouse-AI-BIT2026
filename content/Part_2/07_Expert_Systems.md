@@ -207,7 +207,7 @@ Inaccurate rules lead to incorrect conclusions, so expert systems should support
 
 **Mission check.** Byte fails on any PC its five rules do not describe (in the lab, PC C), and on new problems, unusual symptoms or two faults at once: the **limited domain** limitation (§7). The fix is to add rules, not to change the inference engine.
 
-Try each question yourself before reading the answers.
+Try each question yourself first, then open the answers to check.
 
 ### Questions
 
@@ -235,7 +235,8 @@ Try each question yourself before reading the answers.
 
 **11.** How could combining expert systems with machine learning improve AI applications?
 
-### Answers
+<details>
+<summary><b>Show answers</b> (try the questions first!)</summary>
 
 **1.** A program that imitates a human expert in one domain, such as medicine, by applying stored expert rules with an inference engine.
 
@@ -258,6 +259,8 @@ Try each question yourself before reading the answers.
 **10.** People write the rules. When information changes often, the rules go out of date and must be fixed by hand, which is slow and expensive, because the system cannot learn new rules itself.
 
 **11.** Machine learning finds patterns in messy data, such as signs of disease in images; the expert system applies explicit rules to them and explains its decisions. The result handles real-world data yet stays checkable.
+
+</details>
 
 ---
 
