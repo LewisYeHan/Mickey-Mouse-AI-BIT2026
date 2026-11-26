@@ -1,14 +1,20 @@
-# 1.2 System Software
+# 1.1 System Software
 
-**Status:** ✅  
 **Team Member:** Cassinis Soulisack (`@DiegoSmiley`)
 
 **In this section:** What is System Software · Layers · Firmware · BIOS & UEFI · Boot Process · Kernel · Drivers · Utilities & Translators · Summary · Practice Questions
 
+**Learning goals.** By the end of this section you can:
+* explain what system software is and name its five kinds;
+* describe the six steps a computer goes through from the power button to the login screen;
+* explain what a device driver does, and how a compiler differs from an interpreter.
+
+**Before you start:** nothing. This is the first section of the module. You only need to have used a computer or phone.
+
 ---
 
 ## 1. What is System Software?
-Think of a restaurant. The **hardware** is the kitchen: the stoves, ovens, and fridges. The **applications** are the dishes that customers order. But dishes do not cook themselves. Someone has to light the stoves, keep the fridge cold, and make sure two cooks do not use the same pan at once. That is the kitchen staff, and in a computer, the kitchen staff is **system software**. You, the customer, never touch the hot stove directly.
+Think of a restaurant. The **hardware** is the kitchen: the stoves, ovens, and fridges. The **applications** are the dishes that customers order. But dishes do not cook themselves. Someone has to light the stoves, keep the fridge cold, and make sure two cooks do not use the same pan at once. That is the kitchen staff, and in a computer, the kitchen staff is **system software**. You, the customer, never touch the hot stove directly. The most important member of the staff is the head chef, who decides which cook uses which stove and when. That head chef is the **operating system**, and Section 1.2 looks at it in detail.
 
 **System software** is software that runs and manages the computer itself so that other programs can run on top of it. It is different from **application software**:
 * **Application software** works for *you*. Chrome, Word, and games are examples.
@@ -35,6 +41,11 @@ A computer is built in layers, like a building. Each layer relies on the one bel
 | **Device drivers** | GPU driver, Wi-Fi driver, printer driver | **System software** |
 | **Firmware (BIOS / UEFI)** | Motherboard ROM chip | **System software** |
 | **Hardware** | CPU, RAM, SSD | Physical hardware |
+
+![Layers of a computer: user, application software, then a bracket marked system software containing utilities and translators, the operating system with device drivers inside it, and firmware, with hardware at the bottom](../images/system_layers.png)
+*Figure 1.1: Layers of a computer. Everything inside the red bracket is system software; the operating system is its largest part.*
+
+Figure 1.1 shows the same layers as the table. Requests go down from you to the hardware, and results come back up. Notice that the operating system sits *inside* the bracket: it is one kind of system software, not a separate layer above it.
 
 Two details are worth knowing. First, device drivers run inside the OS, together with the kernel. Second, the motherboard firmware (BIOS or UEFI) does its main job **when the computer starts**. Once the OS is running, the drivers talk to the hardware directly, not through the BIOS.
 
@@ -79,9 +90,10 @@ The most important difference is **Secure Boot**. It only lets bootloaders and o
 ## 5. The Boot Process
 **Booting** means starting the computer, from pressing the power button until the login screen appears. A **cold boot** starts from fully off. A **warm boot** is a restart. The name comes from the phrase "pulling yourself up by your bootstraps": the computer starts a tiny program, which starts a bigger one, which starts the whole OS.
 
-![Six boot steps in a loop of circles: power on, BIOS/UEFI, boot drive, bootloader, kernel loads, login screen](../images/boot_process.jpeg)
-*Figure 1.4: The 6 steps of booting, from pressing the power button to the login screen.*
-Figure 1.4 shows the six steps in order, following the arrows from "Power on" to "Login screen". Each step is explained below.
+![Six numbered boot steps: power on and BIOS/UEFI with the POST check, boot drive (MBR or GPT), bootloader (GRUB or Windows Boot Manager), kernel loads into RAM and starts drivers, services start (systemd/init or smss.exe), login screen](../images/boot_process.png)
+*Figure 1.2: The 6 steps of booting, from pressing the power button to the login screen.*
+
+Figure 1.2 shows the six steps in order, following the arrows from step 1 to step 6. Each step is explained below.
 
 1. **Power on → BIOS / UEFI:** The CPU wakes up and runs the firmware, which does the **POST** check and prepares RAM and devices.
 2. **Boot drive (MBR / GPT):** The firmware follows the boot order and reads the start-up information on the main drive. On Legacy BIOS this is the first 512 bytes of the disk, called the **MBR**. On UEFI it is a small partition called the **EFI System Partition**.
@@ -93,24 +105,13 @@ Figure 1.4 shows the six steps in order, following the arrows from "Power on" to
 ---
 
 ## 6. The Kernel
-The **operating system** manages processes, memory, files, devices, and security (see [1.1 Operating Systems](01_Operating_Systems.md) for the details). Its most important part is the **kernel**: the core of the OS that stays in memory and controls the hardware directly.
+At step 4 of the boot process, the bootloader loads the **kernel**. The kernel is the core of the operating system: it stays in memory the whole time the computer is on and controls the hardware directly.
 
 The CPU protects the kernel by running in two modes:
 * **Kernel mode** has full access to the hardware. The kernel and most drivers run here. Because nothing stops it, a crash here brings down the whole PC. On Windows, this is the "Blue Screen of Death."
 * **User mode** has limited access. Normal apps run here. If an app crashes, only that app closes and the rest of the computer keeps working.
 
-Two more terms connect apps and hardware to the kernel:
-* A **system call** is how an app in user mode asks the kernel for help. For example, when a C program uses `printf()` to show text, it ends up making the `write()` system call.
-* An **interrupt** is a signal from the hardware that tells the CPU *"stop, I need attention,"* for example when you press a key. The CPU deals with it, then carries on with what it was doing.
-
-### Kernel Types
-Kernels are designed in different ways. The question is how much of the OS should live inside the kernel:
-
-| Kernel type | Main idea | Examples |
-| :--- | :--- | :--- |
-| **Monolithic** | Almost everything, including drivers and file systems, runs inside one big kernel. It is very fast, but one bug can crash the whole system. | Linux |
-| **Microkernel** | The kernel is kept tiny, and drivers and file systems run outside it as separate programs. If one crashes, it can be restarted, so the system is very stable, but slightly slower. | MINIX, QNX |
-| **Hybrid** | A mix of both: mostly fast like a monolithic kernel, but more modular. | Windows, macOS |
+How apps ask the kernel for help (**system calls**) and the different ways a kernel can be designed (**kernel types**) are explained in [1.2 Operating Systems, Section 7](02_Operating_Systems.md#7-system-calls-and-kernel-designs).
 
 ---
 
@@ -184,6 +185,8 @@ Turning a C program into something you can run takes five steps:
 4. **Drivers** let the OS talk to each hardware device.
 5. **Utilities** keep the PC healthy, and **translators** turn human code into machine code.
 
+**What comes next.** One kind of system software does far more than the others: the operating system. Once the kernel is loaded, it shares the CPU, memory, files and devices between every program you run. [Section 1.2](02_Operating_Systems.md) looks inside it.
+
 ---
 
 ## 10. Practice Questions and Answers
@@ -211,4 +214,4 @@ Try answering each question yourself first, then read the answer.
 1. Mueller, S. (2015). *Upgrading and Repairing PCs* (22nd ed.). Que Publishing.
 2. Patterson, D. A., & Hennessy, J. L. (2020). *Computer Organization and Design* (6th ed.). Morgan Kaufmann.
 3. Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). *Operating System Concepts* (10th ed.). Wiley.
-4. BIT2026 Course Lecture Slides (System Software Module).
+4. BIT2026 Foundations of CS & AI, course lecture slides: System Software module (2026).
