@@ -433,7 +433,7 @@ Sections 4–5 described one university (Beijing Institute of Technology, BIT) i
 
 **Mission check.** Linked facts are fastest: in 500 loose sentences nothing tells Byte which one matters. In the knowledge graph (§5.2), Byte follows two links from Alex to the **Engineering Faculty**. A table or frame holds one student's details, but this question also needs the major-to-faculty link, which a graph stores (as you saw with Mei in the lab).
 
-Try each question yourself before reading the answers.
+Try each question yourself first, then open the answers to check.
 
 ### Questions
 
@@ -467,7 +467,8 @@ e. A search engine must connect facts about millions of real people, organisatio
 
 **10.** *Connecting to 2.1.* Symbolic AI uses facts and rules (2.1). How does Knowledge Representation help a system store them in an organised way?
 
-### Answers
+<details>
+<summary><b>Show answers</b> (try the questions first!)</summary>
 
 **1.** KR is organising and storing knowledge in a form a computer can use. Symbolic AI needs this structure to retrieve information, apply rules and solve problems.
 
@@ -501,6 +502,8 @@ A slot is an attribute, such as Name or Age; a slot value is what fills it, such
 **9.** Methods have different strengths: frames store Alex's profile neatly, IF-THEN rules state the scholarship conditions, and an ontology makes two systems agree on what "Student" means. No single method does all three well, so real systems combine them.
 
 **10.** KR gives facts and rules a structure: predicate logic stores facts such as `Student(Alex)`, and rule-based representation stores rules such as "IF a student studies Computer Science THEN the student belongs to the Computer Science department". Because both use the same symbols, the reasoning of 2.2 (and an expert system's inference engine, 2.4) can match facts against rules to reach new conclusions.
+
+</details>
 
 ---
 
