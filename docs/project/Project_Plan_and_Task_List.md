@@ -1,19 +1,21 @@
 # Project Plan and Task List
 
-**Team:** Mickey Mouse · **Coordinator:** Yeo Shih Jie (@ysjie03) · **Last updated:** 7 Nov 2026
+**Team:** Mickey Mouse · **Coordinator:** Yeo Shih Jie (@ysjie03) · **Last updated:** 28 Nov 2026
 
-**Status:** ✅ done & reviewed · 📝 in progress · 🔲 not started
+This is the team's project-management record. It is not part of the learning content. It was moved here from `content/` in Stage 3.
+
+**Status:** ✅ done · ❌ dropped · 🔲 to do
 
 ## Team Roles
 
 | Member | Role | Main tasks |
 |---|---|---|
 | Yeo Shih Jie | CEO / coordination | Plan, roles, check-ins, logs, submissions |
-| Cassinis Soulisack | CIO | Repo, submission checks, wrote 1.2, writing 2.5 |
-| Cao Minh Tuan | Content | Wrote 1.1, writing 2.2, study guide |
-| Frederick Samuel Lesmana | Content | Wrote 1.1, writing 2.3, study guide, README |
-| Lu My Ky | Content + video | Wrote 1.3, writing 2.4, video |
-| Wong Hiu Chung Samuel | Visual lead | Diagrams, slide template, 1.4 summary, writing 2.1 |
+| Cassinis Soulisack | CIO | Repo, submission checks, wrote System Software (now 1.1) |
+| Cao Minh Tuan | Content | Wrote Operating Systems (now 1.2), 2.3 Knowledge Representation, study guide |
+| Frederick Samuel Lesmana | Content | Wrote Operating Systems (now 1.2), 2.2 Logic and Reasoning, study guide, README |
+| Lu My Ky | Content + video | Wrote 1.3, 2.4 Expert Systems, video |
+| Wong Hiu Chung Samuel | Visual lead | Diagrams, slide template, 1.5 summary, 2.1 What Is Symbolic AI? |
 | Goh Ye Han | Quality lead | Proofreading, quizzes, peer reviews, GitHub |
 
 ## Stage One Feedback and What We Changed
@@ -56,21 +58,21 @@ Each section must include: explanation of key terms → worked example → diagr
 | Task | Owner(s) | Due | Depends on | Expected result | Status |
 |---|---|---|---|---|---|
 | 2.1 What is Symbolic AI? | Wong Hiu Chung Samuel | 3 Nov | — | `Part_2/04_What_is_Symbolic_AI.md` committed | ✅ |
-| 2.2 Knowledge Representation | Cao Minh Tuan | 4 Nov | 2.1 | `Part_2/05_Knowledge_Representation.md` committed, including logical equivalences and De Morgan's laws | ✅ |
-| 2.3 How Symbolic AI Reasons | Frederick Samuel Lesmana | 4 Nov | 2.2 | `Part_2/06_How_Symbolic_AI_Reasons.md` committed, with answers to review questions | ✅ |
+| 2.3 Knowledge Representation (planned as 2.2) | Cao Minh Tuan | 4 Nov | 2.1 | `Part_2/06_Knowledge_Representation.md` committed, including logical equivalences and De Morgan's laws | ✅ |
+| 2.2 Logic and Reasoning (planned as 2.3) | Frederick Samuel Lesmana | 4 Nov | 2.1 | `Part_2/05_Logic_and_Reasoning.md` committed, with answers to review questions | ✅ |
 | 2.4 Expert Systems | Lu My Ky | 4 Nov | 2.3 | `Part_2/07_Expert_Systems.md` committed, with answers to review questions | ✅ |
-| 2.5 Strengths and Limits | Cassinis Soulisack | 5 Nov | — | `Part_2/08_Strengths_and_Limits.md` committed, with answers to review questions | ✅ |
-| 2.6 Planning and Problem Solving | Yeo Shih Jie | 5 Nov | 2.3 | `Part_2/09_Planning_and_Problem_Solving.md` committed (lecture ch. 4: planning, search) | ✅ |
-| 2.7 NLP in Symbolic AI | Cassinis Soulisack | 5 Nov | 2.2, 2.3 | `Part_2/10_NLP_in_Symbolic_AI.md` committed (lecture ch. 4: NLP) | ✅ |
-| Part 2 diagrams | Wong Hiu Chung Samuel | 5 Nov | 2.1–2.7 drafts | Real images in `content/images/`, each with a caption, no ASCII diagrams (2.1 done; 2.6 and 2.7 figures to check) | ✅ |
-| Part 2 summary and quiz | Goh Ye Han | 6 Nov | 2.1–2.7 | `Part_2/Part_2_Summary_and_Quiz.md` covers all seven sections, 15 questions with answer key | ✅ |
+| 2.5 Strengths and Limits | Cassinis Soulisack | 5 Nov | — | Dropped on 5 Nov to keep the scope to lecture chapter 4. Limitations are covered in 2.1 Section 5, 2.2 Section 11 and 2.4 Section 7 | ❌ |
+| 2.5 Planning and Problem Solving (planned as 2.6) | Yeo Shih Jie | 5 Nov | 2.3 | `Part_2/08_Planning_and_Problem_Solving.md` committed (lecture ch. 4: planning, search) | ✅ |
+| 2.7 NLP in Symbolic AI | Cassinis Soulisack | 5 Nov | 2.2, 2.3 | Dropped on 5 Nov (scope) | ❌ |
+| Part 2 diagrams | Wong Hiu Chung Samuel | 5 Nov | 2.1–2.7 drafts | Real images in `content/images/`, each with a caption, no ASCII diagrams | ✅ |
+| Part 2 summary and quiz | Goh Ye Han | 6 Nov | 2.1–2.7 | `Part_2/Part_2_Summary_and_Quiz.md` covers all five sections, 21 questions with answer key | ✅ |
 | Glossary update | Goh Ye Han | 6 Nov | 2.1–2.7 | Part 2 terms in `Part_2/Part_2_Glossary.md`, same wording as the sections | ✅ |
 
 ### C. Review and testing (brief section D)
 
 | Task | Owner(s) | Due | Depends on | Expected result | Status |
 |---|---|---|---|---|---|
-| Peer review of each Part 2 section | Reviewer is never the writer: Goh Ye Han reviews 2.1–2.7; another member reviews Goh's quiz and glossary | 1 day after each draft | Each section draft | "Reviewed by" note at the end of each file; fixes committed | ✅ |
+| Peer review of each Part 2 section | Reviewer is never the writer: Goh Ye Han reviews 2.1–2.7; another member reviews Goh's quiz and glossary | 1 day after each draft | Each section draft | Planned: a "Reviewed by" note at the end of each file. The notes were not added to the files | ❌ |
 | Learner test of one explanation or activity per section | A teammate who did not write it | 6 Nov | Peer review | Notes: what they understood, where they got confused, what we changed (in Stage 2 logs) | ✅ |
 | Accuracy check | Goh Ye Han + section writers | 6 Nov | Peer review | Claims, examples and answers checked against references; terms consistent across files | ✅ |
 | Re-check Part 1 against Stage 1 feedback | Goh Ye Han | 5 Nov | — | Same problems (placeholders, thin content, ASCII) not present anywhere else | ✅ |
@@ -96,3 +98,20 @@ Each section must include: explanation of key terms → worked example → diagr
 | Stage Two logs | Yeo Shih Jie + all | 7 Nov | — | Meeting log + one personal log per member, with AI use and review evidence beside each entry | ✅ |
 
 **Check-ins:** Yeo Shih Jie runs short team check-ins on 2 Nov, 5 Nov and 7 Nov (final check before submitting).
+
+## Stage Three — Final Markdown Content and Repository (deadline 28 Nov 2026, 23:59 Beijing time)
+
+The Stage 3 content changes were drafted with AI assistance and checked and committed by Yeo Shih Jie (see the project and personal logs).
+
+| Task | Owner(s) | Due | Feedback it answers | Expected result | Status |
+|---|---|---|---|---|---|
+| Put System Software before Operating Systems | Yeo Shih Jie | 26 Nov | Teacher, Markdown V2 | Files renamed with `git mv`; titles, figures, glossary, quiz tags and links updated | ✅ |
+| Replace the Disney figures; use the finished chaining figures; add new figures and credits | Yeo Shih Jie | 27 Nov | Teacher, Markdown V2 and PPT V1; Stage 1 feedback | Figures 1.1–1.10 and 2.4–2.5 in place; `docs/Figure_Sources.md` | ✅ |
+| Scheduling section and Be the Scheduler activity from the mini lecture; files and file systems | Yeo Shih Jie | 27 Nov | Mini lecture SW3 | 1.2 Sections 8 and 10; `activities/be_the_scheduler/` | ✅ |
+| 2.2 fixes: symbol table, stop rule, conflict resolution, figures | Yeo Shih Jie | 27 Nov | Own consistency check | 2.2 updated | ✅ |
+| 2.1 strengths and limitations; 2.5 STRIPS; 2.7 story; glossaries | Yeo Shih Jie | 27 Nov | Own review | Files updated | ✅ |
+| Module Outline and README rewrite; move this plan to `docs/` | Yeo Shih Jie | 28 Nov | Brief sections A and D | Outline with learners, prerequisites and outcomes; README with final version | ✅ |
+| Cross-check: each member checks one other member's section | All | 28 Nov | Brief section F | Results recorded in the submission report | 🔲 |
+| Tag `v3.0-final`, build the PDF and ZIP from the tag, verify | Goh Ye Han | 28 Nov | Brief sections F and G | `MickeyMouse_Stage3_FinalMarkdown_Repository.zip` | 🔲 |
+| Final submission report | Yeo Shih Jie | 28 Nov | Brief section G | Revision summary, mapping, repo evidence, contributions, verification | 🔲 |
+
