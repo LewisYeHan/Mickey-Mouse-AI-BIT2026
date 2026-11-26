@@ -2,7 +2,7 @@
 
 **Team Members:** Wong Hiu Chung Samuel (`@Samuel940398`) & Goh Ye Han (`@LewisYeHan`)
 
-**In this section:** How It All Connects · Key Ideas from Each Section · Quiz (15 questions) · Answer Key · References
+**In this section:** [How It All Connects](#1-how-it-all-connects) · [Key Ideas from Each Section](#2-key-ideas-from-each-section) · [Quiz (15 questions)](#3-self-check-quiz) · [Answer Key](#4-answer-key) · [References](#5-references)
 
 ---
 
