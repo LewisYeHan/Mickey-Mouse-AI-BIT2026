@@ -1,14 +1,20 @@
 # 1.3 Application Software
 
-**Status:** ✅  
 **Team Member:** Lu My Ky (`@jojolu11`)
 
 **In this section:** What is Application Software · The Execution Lifecycle · Types of Applications · How Apps Are Built · Practice Questions
 
+**Learning goals.** By the end of this section you can:
+* explain the difference between application software and system software;
+* describe the five steps from double-clicking an app to the kernel sending back a result;
+* compare native, web and cross-platform apps and choose one for a given job.
+
+**Before you start:** read [1.1 System Software](01_System_Software.md) and [1.2 Operating Systems](02_Operating_Systems.md), especially processes (1.2 Section 6) and system calls (1.2 Section 7).
+
 ---
 
 ## 1. What is Application Software?
-In [1.2 System Software](02_System_Software.md), we compared a computer to a restaurant: the hardware is the kitchen, and system software is the kitchen staff. **Application software** is the food you actually ordered. It is the reason you use the computer at all.
+In [1.1 System Software](01_System_Software.md), we compared a computer to a restaurant: the hardware is the kitchen, and system software is the kitchen staff. **Application software** is the dishes you actually ordered. It is the reason you use the computer at all.
 
 An **application** (or **app**) is a program made to help a person do a specific task: writing an essay in Word, editing a photo in Photoshop, or watching a video in Chrome. Apps run **on top of** the operating system. They do not control the hardware themselves; they ask the OS to do that for them.
 
@@ -17,23 +23,23 @@ The simplest way to tell the two kinds of software apart is to ask *who it works
 * **System software** works for **the computer**. It runs in the background so that apps can work.
 
 ### Where Apps Live: User Space
-Every app runs in a protected area of memory called **user space**. From there it cannot directly control devices, reach other programs' memory, or change protected CPU settings. Only the kernel, which runs in **kernel space**, has full access to the hardware. When an app needs something from the hardware, such as saving a file, it has to ask the kernel through a **system call**. (User mode, kernel mode, and system calls are explained in detail in [1.1 §7](01_Operating_Systems.md#7-system-calls).)
+Every app runs in a protected area of memory called **user space**. From there it cannot directly control devices, reach other programs' memory, or change protected CPU settings. Only the kernel, which runs in **kernel space**, has full access to the hardware. When an app needs something from the hardware, such as saving a file, it has to ask the kernel through a **system call**. (User mode, kernel mode, and system calls are explained in detail in [1.2 Section 7](02_Operating_Systems.md#7-system-calls-and-kernel-designs).)
 
 ---
 
 ## 2. What Happens When You Open an App
 Double-clicking an icon feels instant, but behind the scenes the app goes through five steps (Arpaci-Dusseau & Arpaci-Dusseau, 2018). Let's follow what happens when you open Google Chrome.
 
-![Application execution lifecycle](../images/execution_lifecycle.png)
-*Figure 1.5: The 5 steps of running an app, from a file on the SSD to the kernel sending back a result.*
+![Application execution lifecycle: 1 program file on the SSD, 2 OS loader makes a process in RAM, 3 CPU runs the instructions, 4 app asks for hardware with a system call, 5 kernel does it safely and sends the result back to step 3](../images/execution_lifecycle.png)
+*Figure 1.9: The 5 steps of running an app, from a file on the SSD to the kernel sending back a result.*
 
-Figure 1.5 shows the five steps from top to bottom. The dashed arrow on the right is the loop: after the kernel sends back a result, the app goes back to running its instructions in Step 3.
+Figure 1.9 shows the five steps from top to bottom. The dashed arrow on the right is the loop: after the kernel sends back a result, the app goes back to running its instructions in Step 3.
 
 ### Step 1: The program file sits on the SSD
 Before you click, Chrome is just a file on your drive (`chrome.exe` on Windows). It contains machine code and data, but it is not doing anything. It is like a recipe in a closed cookbook.
 
 ### Step 2: The OS loader turns it into a process in RAM
-When you click the icon, a part of the OS called the **loader** copies the program from the SSD into RAM, because RAM is far faster for the CPU to read. The OS then creates a **process** (the running copy of the program) and a **Process Control Block (PCB)** to keep track of it.
+When you click the icon, a part of the OS called the **loader** copies the program from the SSD into RAM, because RAM is far faster for the CPU to read. (In practice, the OS loads the program's pages only as they are needed: this is demand paging, from 1.2 Section 9.) The OS then creates a **process** (the running copy of the program) and a **Process Control Block (PCB)** to keep track of it.
 
 The OS also gives the process its own memory, divided into four areas:
 * **Code:** the program's instructions.
@@ -64,7 +70,7 @@ This might seem like a lot of steps just to save a file, but it gives three big 
 ---
 
 ## 3. Types of Application Software
-There are thousands of apps, but most of them fit into a few groups based on the job they help you do (Silberschatz et al., 2018):
+There are thousands of apps, but most of them fit into a few groups based on the job they help you do:
 
 | Type | What it helps you do | Examples |
 | :--- | :--- | :--- |
