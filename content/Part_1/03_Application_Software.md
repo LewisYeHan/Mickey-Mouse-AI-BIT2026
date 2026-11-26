@@ -2,7 +2,7 @@
 
 **Team Member:** Lu My Ky (`@jojolu11`)
 
-**In this section:** What is Application Software · The Execution Lifecycle · Types of Applications · How Apps Are Built · Practice Questions
+**In this section:** [What is Application Software?](#1-what-is-application-software) · [The Execution Lifecycle](#2-what-happens-when-you-open-an-app) · [Types of Applications](#3-types-of-application-software) · [How Apps Are Built](#4-how-apps-are-built-native-vs-web-vs-cross-platform) · [Lab: Follow an App from File to Process](#lab-follow-an-app-from-file-to-process) · [Practice Questions](#5-practice-questions-and-answers) · [References](#6-references)
 
 **Learning goals.** By the end of this section you can:
 * explain the difference between application software and system software;
@@ -135,8 +135,46 @@ A **cross-platform app** is written once and then runs on several operating syst
 
 ---
 
+## Lab: Follow an App from File to Process
+
+* **Goal:** See Steps 1 and 2 of Figure 1.9 on your own computer: one program file on the drive, and the processes the OS creates from it.
+* **Preparation:** A Windows 10 or 11 computer with Microsoft Edge (it comes with Windows) and about 15 minutes; re-read §2. You only look, so nothing on your computer changes. On a Mac, follow the note at the end of the task. No computer? Do the Reflection with the typical results in the feedback box.
+* **Task:**
+
+  **Step 1, predict:** you open Edge with one tab. How many processes will it use: 1, between 2 and 5, or more than 5?  
+  **Step 2, count the processes:** open Edge with one tab. Press **Ctrl + Shift + Esc** to open Task Manager (if it opens as a small window, click **More details**). On the **Processes** page, find **Microsoft Edge**. The number in brackets after the name is how many processes it is using (Figure 1.4 in [1.2 Section 8](02_Operating_Systems.md#8-cpu-scheduling-and-deadlock) shows an example: *Microsoft Edge (19)*). Write it down.  
+  **Step 3, find the program file (Step 1 of the lifecycle):** right-click **Microsoft Edge** and choose **Open file location**. File Explorer opens the folder that holds `msedge.exe`. Write down the folder path shown in the address bar.  
+  **Step 4, see the processes (Step 2 of the lifecycle):** in Task Manager, open the **Details** page and click the **Name** column heading to sort the list. Scroll to `msedge.exe`. Count its rows, and look at the **PID** and **Memory** columns.  
+  **Step 5, change something:** in Edge, open three new tabs with three different websites. Go back to the **Processes** page and read the number in brackets again. Then close those three tabs and read it once more.
+
+  *On a Mac:* open **Activity Monitor** (press **Command + Space** and type *Activity Monitor*), open your browser with a few websites, and look for your browser's processes in the list. The browser's program file is in the **Applications** folder.
+
+* **Observation:** Record the number in brackets from Step 2 and from both parts of Step 5, the folder path from Step 3, and the number of `msedge.exe` rows from Step 4.
+* **Reflection:**
+  1. `msedge.exe` is stored only once on the drive, yet the Details page shows many `msedge.exe` rows. Which step of the lifecycle creates them, and what does the OS keep for each one?
+  2. Every row has its own PID and its own memory. Why might a browser run each website in a separate process instead of as threads inside one process? (Hint: *Why Computers Work This Way* in §2, and Practice Question 5.)
+  3. What happened to the number when you opened and closed tabs? What does this show about when processes start and end?
+  4. If VS Code, Discord or Slack is installed, open it and find it on the Processes page. Why does it also show several processes and use a lot of memory (§4)?
+
+<details>
+<summary><b>Feedback: check your findings</b></summary>
+
+* **Step 2:** Edge usually shows **more than 5** processes, even with one tab. It splits its work into a main browser process and helper processes, for example one for the graphics card, one for the network and one for each website you have open. The exact number depends on your Edge version and extensions.
+* **Step 3:** The folder is usually `C:\Program Files (x86)\Microsoft\Edge\Application`. This is the program file of Step 1: machine code stored on the drive, doing nothing until it runs.
+* **Step 4:** There is one `msedge.exe` row for each process, and every row has a different PID.
+* **Step 5:** The number usually goes up when you open new websites and down when you close them. It may not change by exactly one per tab, because Edge can let tabs from the same website share a process.
+* **Reflection answers:**
+  1. **Step 2** of the lifecycle. Edge's main process asks the OS to create each new process, and the OS gives every one its own memory and its own **Process Control Block (PCB)**. The **PID** is the number the OS uses to tell the processes apart.
+  2. Processes do not share memory. If one website crashes or contains harmful code, it cannot read or crash the other tabs: the **safety** benefit in §2. Threads inside one process share its memory (Practice Question 5), so one bad tab could break all of them.
+  3. The OS creates a process when the browser needs one and ends it when the tab closes, freeing its memory (the *Terminated* state in 1.2 Section 6).
+  4. They are **Electron** apps. Each one carries its own copy of Chromium, the browser engine inside Chrome and Edge, so it uses the same many-process design and needs extra memory.
+
+</details>
+
+---
+
 ## 5. Practice Questions and Answers
-Try answering each question yourself first, then read the answer.
+Try each question yourself first, then open the answers to check.
 
 **Questions**
 1. What is the simplest way to tell application software apart from system software?
@@ -148,7 +186,9 @@ Try answering each question yourself first, then read the answer.
 7. A small team wants its new app on Windows, macOS, and Linux as fast as possible, and does not mind if it uses more memory. Which way of building it fits best, and why?
 8. Why do Discord and VS Code use more RAM than a similar native app?
 
-**Answers**
+<details>
+<summary><b>Show answers</b> (try the questions first!)</summary>
+
 1. Ask who it works for. Application software works for you and does a task you chose. System software works for the computer and runs in the background so apps can work.
 2. **Step 4**, a system call (such as `write()`). The CPU switches from user mode into **kernel mode**; then in Step 5 the kernel saves the file and switches back to user mode.
 3. The **heap**, which holds memory that the program asks for while it is running.
@@ -157,6 +197,8 @@ Try answering each question yourself first, then read the answer.
 6. Duolingo: educational. Excel: spreadsheet. Blender: graphics. Microsoft Flight Simulator: simulation.
 7. A **cross-platform app with Electron**. One codebase runs on all three systems, which saves time, and the team has accepted the extra memory use.
 8. They are built with **Electron**, so each one carries its own copy of the Chromium browser engine, which takes up a lot of RAM.
+
+</details>
 
 ---
 
