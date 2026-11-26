@@ -1,22 +1,21 @@
 # 1.5 Module Summary & Self-Check Quiz
 
-**Status:** ✅  
 **Team Members:** Wong Hiu Chung Samuel (`@Samuel940398`) & Goh Ye Han (`@LewisYeHan`)
 
-**In this section:** How It All Connects · Key Ideas from Each Section · Quiz (13 questions) · Answer Key · References
+**In this section:** How It All Connects · Key Ideas from Each Section · Quiz (15 questions) · Answer Key · References
 
 ---
 
 ## 1. How It All Connects
 
-![How sections 1.1 to 1.3 connect](../images/concept_map.png)
-*Figure 1.6: How system software, the OS, and applications work together on top of the hardware.*
+![Concept map: 1.1 System Software boots and loads 1.2 Operating System; 1.3 Application Software sends system calls to the OS and gets results back; system software checks the hardware with POST, the OS controls it through drivers, and applications never touch it directly](../images/concept_map.png)
+*Figure 1.10: How system software, the OS, and applications work together on top of the hardware.*
 
-Sections 1.1 to 1.3 describe three layers of software that work together every time you use a computer. Figure 1.6 shows them side by side: system software (1.2) starts the computer and loads the OS, the OS (1.1) manages the hardware through drivers, and applications (1.3) never touch the hardware directly; they ask the OS through system calls. Read the figure from left to right: the computer starts with 1.2, so it comes first. The easiest way to see how this works is to follow one story, from the moment you press the power button to the moment an app saves a file.
+Sections 1.1 to 1.3 describe three layers of software that work together every time you use a computer. Figure 1.10 shows them side by side, in the order the computer uses them: system software (1.1) starts the computer and loads the OS, the OS (1.2) manages the hardware through drivers, and applications (1.3) never touch the hardware directly; they ask the OS through system calls. The easiest way to see how this works is to follow one story, from the moment you press the power button to the moment an app saves a file.
 
-**Starting up (1.2 System Software).** When you press the power button, the first thing that runs is the **firmware** (BIOS or UEFI) stored on the motherboard. It checks the hardware with **POST**, finds the boot drive, and starts the **bootloader**. The bootloader loads the **kernel** into RAM, and the kernel starts the device drivers and the first process (such as `systemd`), which starts the system services until the login screen appears.
+**Starting up (1.1 System Software).** When you press the power button, the first thing that runs is the **firmware** (BIOS or UEFI) stored on the motherboard. It checks the hardware with **POST**, finds the boot drive, and starts the **bootloader**. The bootloader loads the **kernel** into RAM, and the kernel starts the device drivers and the first process (such as `systemd`), which starts the system services until the login screen appears.
 
-**Managing everything (1.1 Operating Systems).** Once the OS is running, it shares the computer between everything that wants to use it, like a head chef running a busy kitchen. It turns programs into **processes**, decides which one gets the CPU next (**scheduling**), gives each one its own private memory (**virtual memory** and **paging**), and controls devices through **drivers**. It also has to prevent problems like **deadlock** and **thrashing**.
+**Managing everything (1.2 Operating Systems).** Once the OS is running, it shares the computer between everything that wants to use it, like a head chef running a busy kitchen. It turns programs into **processes**, takes turns between them so quickly that hundreds seem to run at once (**concurrency**), decides which one gets the CPU next (**scheduling**), gives each one its own private memory (**virtual memory** and **paging**), keeps files organised in a **file system**, and controls devices through **drivers**. It also has to prevent problems like **deadlock** and **thrashing**.
 
 **Doing the user's work (1.3 Application Software).** When you open an app, the OS **loader** copies it from the SSD into RAM as a new process, and the CPU starts running its instructions. The app lives in **user space**, so it cannot touch the hardware directly. Whenever it needs to save a file or use the network, it makes a **system call**, and the kernel does the job safely and sends the result back.
 
@@ -28,13 +27,13 @@ Sections 1.1 to 1.3 describe three layers of software that work together every t
 
 | Section | Main question | Key ideas |
 | :--- | :--- | :--- |
-| **1.1 Operating Systems** | How does the OS share the computer? | Processes and process states, CPU scheduling (FCFS, SJF, Priority, Round Robin), deadlock, virtual memory and paging, I/O and drivers |
-| **1.2 System Software** | How does the computer start and control hardware? | Firmware, BIOS vs. UEFI, the boot process, kernel types, device drivers, utilities, compilers and interpreters |
+| **1.1 System Software** | How does the computer start and control hardware? | Firmware, BIOS vs. UEFI, the boot process, kernel and CPU modes, device drivers, utilities, compilers and interpreters |
+| **1.2 Operating Systems** | How does the OS share the computer? | Processes and process states, system calls and kernel designs, concurrency vs. parallelism, CPU scheduling (FCFS, SJF, Priority, Round Robin) and waiting time, deadlock, virtual memory and paging, files and file systems, I/O and drivers |
 | **1.3 Application Software** | How does an app actually run? | User space vs. kernel space, the 5-step execution lifecycle, system calls, types of apps, native vs. web vs. cross-platform apps |
 
 ### Words That Connect All Three Sections
 
-| Term | In 1.2 System Software | In 1.1 Operating Systems | In 1.3 Application Software |
+| Term | In 1.1 System Software | In 1.2 Operating Systems | In 1.3 Application Software |
 | :--- | :--- | :--- | :--- |
 | **Kernel** | Loaded into RAM during boot | Manages processes and memory | Answers system calls from apps |
 | **Process** | Started by the kernel at boot (e.g., `systemd`) | Scheduled and moved between states | Created by the loader when you open an app |
@@ -44,7 +43,7 @@ Sections 1.1 to 1.3 describe three layers of software that work together every t
 ---
 
 ## 3. Self-Check Quiz
-Try all 13 questions first, then check your answers in Section 4. Part A checks that you remember the key ideas. Parts B and C ask you to **use** them.
+Try all 15 questions first, then check your answers in Section 4. Part A checks that you remember the key ideas. Parts B to D ask you to **use** them.
 
 ### Part A: Multiple Choice
 
@@ -118,6 +117,16 @@ Try all 13 questions first, then check your answers in Section 4. Part A checks 
 
 **Q13.** Because each running app gets its own private memory space, one app cannot normally read another app's memory.
 
+### Part D: Scheduling in Numbers
+
+**Q14. Jobs A = 4, B = 1 and C = 2 arrive at time 0 in that order. What is the average waiting time under Shortest Job First?**  
+* A) 1.0
+* B) 1.33
+* C) 3.0
+* D) 4.0
+
+**Q15.** A laptop with 8 cores showing 400 processes in Task Manager must be running some of those processes concurrently.
+
 ---
 
 ## 4. Answer Key
@@ -127,19 +136,21 @@ Try all 13 questions first, then check your answers in Section 4. Part A checks 
 
 | Question | Answer | Explanation |
 | :--- | :--- | :--- |
-| **Q1** | **C** | The firmware runs first. It checks the hardware with POST and then starts the bootloader. *(1.2)* |
-| **Q2** | **D** | The bootloader finds the OS kernel, loads it into RAM, and hands it control of the CPU. POST happens before it, and services and the login screen come after. *(1.2)* |
-| **Q3** | **A** | The real condition is **no** preemption: resources cannot be taken away by force. If they *could* be taken away, the deadlock could be broken. *(1.1)* |
+| **Q1** | **C** | The firmware runs first. It checks the hardware with POST and then starts the bootloader. *(1.1)* |
+| **Q2** | **D** | The bootloader finds the OS kernel, loads it into RAM, and hands it control of the CPU. POST happens before it, and services and the login screen come after. *(1.1)* |
+| **Q3** | **A** | The real condition is **no** preemption: resources cannot be taken away by force. If they *could* be taken away, the deadlock could be broken. *(1.2)* |
 | **Q4** | **C** | User space keeps apps isolated, so a crash or bug in one app cannot damage the hardware or other apps. Apps still run on the CPU; they just cannot control the hardware directly. *(1.3)* |
-| **Q5** | **B** | The linker combines object files and libraries into one executable. The loader then copies it into RAM to run it. *(1.2)* |
-| **Q6** | **D** | When its time slice ends, the process goes back to the Ready queue to wait for its next turn. It only goes to Waiting if it asks for I/O. *(1.1)* |
-| **Q7** | **A** | P1 runs 0–2, P2 runs 2–3 and finishes, P3 runs 3–5 and finishes, then P1 runs 5–6 and finishes last. *(1.1)* |
-| **Q8** | **B** | Beep codes come from POST, which runs before the bootloader and before the screen is set up. *(1.2)* |
-| **Q9** | **D** | RAM is far too full, so the OS spends most of its time moving pages between RAM and disk. That is thrashing. *(1.1)* |
+| **Q5** | **B** | The linker combines object files and libraries into one executable. The loader then copies it into RAM to run it. *(1.1)* |
+| **Q6** | **D** | When its time slice ends, the process goes back to the Ready queue to wait for its next turn. It only goes to Waiting if it asks for I/O. *(1.2)* |
+| **Q7** | **A** | P1 runs 0–2, P2 runs 2–3 and finishes, P3 runs 3–5 and finishes, then P1 runs 5–6 and finishes last. *(1.2)* |
+| **Q8** | **B** | Beep codes come from POST, which runs before the bootloader and before the screen is set up. *(1.1)* |
+| **Q9** | **D** | RAM is far too full, so the OS spends most of its time moving pages between RAM and disk. That is thrashing. *(1.2)* |
 | **Q10** | **C** | Electron lets one codebase become an installable app on all three desktop systems. Three native apps would take much longer, a Windows-only native app misses macOS and Linux, and a web app is not installed. *(1.3)* |
-| **Q11** | **False** | Firmware is stored on a chip *inside the device* itself. Drivers are the part that lives inside the OS. *(1.2)* |
-| **Q12** | **False** | That describes **starvation**. In a deadlock, the stuck processes cannot move at all, because each is waiting for something another one holds. *(1.1)* |
-| **Q13** | **True** | With virtual memory, each process has its own address space, and the MMU keeps processes from reaching each other's memory. *(1.1, 1.3)* |
+| **Q11** | **False** | Firmware is stored on a chip *inside the device* itself. Drivers are the part that lives inside the OS. *(1.1)* |
+| **Q12** | **False** | That describes **starvation**. In a deadlock, the stuck processes cannot move at all, because each is waiting for something another one holds. *(1.2)* |
+| **Q13** | **True** | With virtual memory, each process has its own address space, and the MMU keeps processes from reaching each other's memory. *(1.2, 1.3)* |
+| **Q14** | **B** | SJF runs B (0–1), C (1–3), then A (3–7). The waiting times are B 0, C 1 and A 3, so the average is 4 ÷ 3 ≈ 1.33. *(1.2)* |
+| **Q15** | **True** | Only 8 cores (16 logical processors) can run at the same moment, so the other processes must take turns: that is concurrency. The cores themselves run in parallel. *(1.2)* |
 
 
 </details>
@@ -150,4 +161,4 @@ Try all 13 questions first, then check your answers in Section 4. Part A checks 
 1. Arpaci-Dusseau, R. H., & Arpaci-Dusseau, A. C. (2018). *Operating Systems: Three Easy Pieces*. Arpaci-Dusseau Books.
 2. Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). *Operating System Concepts* (10th ed.). Wiley.
 3. Tanenbaum, A. S., & Bos, H. (2022). *Modern Operating Systems* (5th ed.). Pearson.
-4. BIT2026 Course Lecture Slides (Stages 1.1–1.4).
+4. BIT2026 Foundations of CS & AI, course lecture slides (2026).
