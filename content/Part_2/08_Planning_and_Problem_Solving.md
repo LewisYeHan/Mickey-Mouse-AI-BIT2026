@@ -1,6 +1,5 @@
 # 2.5 Planning and Problem Solving
 
-**Status:** ✅  
 **Team Member:** Yeo Shih Jie (`@ysjie03`)
 
 **In this section:** [What Is Planning?](#2-what-is-planning) · [Describing a Problem as a Search](#3-describing-a-problem-as-a-search) · [Uninformed Search](#4-uninformed-search) · [Informed Search](#5-informed-search) · [Adversarial Search](#6-adversarial-search) · [Local Search](#7-local-search) · [Comparing the Methods](#8-comparing-the-methods) · [Common Misunderstandings](#9-common-misunderstandings) · [Key Takeaways](#10-key-takeaways) · [Lab: The River Crossing](#lab-the-river-crossing) · [Practice Questions](#11-practice-questions-and-answers)
@@ -48,6 +47,8 @@ Each action has **preconditions** (what must be true *before* it can be used) an
 | `Move(x, y)` | `At(Robot, x)` and there is a path from x to y | `At(Robot, y)` becomes true; `At(Robot, x)` becomes false |
 | `PickUp(p, x)` | `At(Robot, x)`, `At(p, x)`, `HandEmpty(Robot)` | `Holding(p)` becomes true; `At(p, x)` and `HandEmpty(Robot)` become false |
 | `Drop(p, x)` | `At(Robot, x)`, `Holding(p)` | `At(p, x)` and `HandEmpty(Robot)` become true; `Holding(p)` becomes false |
+
+This way of writing actions has a name: **STRIPS** (Fikes & Nilsson, 1971). In STRIPS, an action's effects are split into an **add list** (facts that become true) and a **delete list** (facts that become false). It was built for Shakey, one of the first mobile robots to plan its own actions.
 
 A planner picks an action whose preconditions are true now, applies its effects, and repeats until the goal is true. For our robot:
 
@@ -110,7 +111,7 @@ DFS goes **as deep as possible** down one path before backing up. Its frontier i
 
 Trace: from **S** the first unexplored neighbour is **A**; from A it is **C**; from C it is **B**; from B the only one is **G**. Goal reached.
 
-DFS returns **S → A → C → B → G**: **4 + 3 + 8 + 10 = 25 minutes**. It uses little memory, because it remembers only the current path, but it can wander down a long route and return a poor answer, as here. On a map with loops and no record of visited places, it could go round in circles forever.
+DFS returns **S → A → C → B → G**: **4 + 3 + 8 + 10 = 25 minutes**. It uses little memory, because it mainly needs the current path (our traces also keep a list of explored places, which DFS needs on maps with loops), but it can wander down a long route and return a poor answer, as here. On a map with loops and no record of visited places, it could go round in circles forever.
 
 ### 4.3 Uniform-Cost Search (UCS)
 
@@ -181,7 +182,7 @@ In games such as chess, an **opponent** chooses moves that are bad for you; sear
 
 ![Minimax game tree: MAX (value 3) chooses move L or move R; after L, MIN has value 3 from leaves 3 and 5; after R, MIN has value 2 from leaf 2, and leaf 9 is pruned](../images/minimax_tree.png)
 
-*Figure 2.16: A small game tree. You (MAX) choose move L or R, then the opponent (MIN) replies. The numbers at the bottom are the scores of the final positions.*
+*Figure 2.16: A small game tree. You (MAX) choose move L or R, then the opponent (MIN) replies. The numbers at the bottom are the scores of the final positions. The value 2 under R is the plain minimax value; with alpha-beta pruning (Section 6.2), the 9 is skipped and R is only known to be worth 2 or less.*
 
 Work from the bottom up:
 
@@ -355,9 +356,10 @@ Try each question yourself before reading the answers.
 
 ## 12. References
 
-1. Hart, P. E., Nilsson, N. J., & Raphael, B. (1968). A formal basis for the heuristic determination of minimum cost paths. *IEEE Transactions on Systems Science and Cybernetics*, 4(2), 100–107.
-2. Kirkpatrick, S., Gelatt, C. D., & Vecchi, M. P. (1983). Optimization by simulated annealing. *Science*, 220(4598), 671–680.
-3. Knuth, D. E., & Moore, R. W. (1975). An analysis of alpha-beta pruning. *Artificial Intelligence*, 6(4), 293–326.
-4. Poole, D., & Mackworth, A. (2017). *Artificial Intelligence: Foundations of Computational Agents* (2nd ed.). Cambridge University Press. [Online textbook](https://artint.info/2e/html/ArtInt2e.html)
-5. Russell, S. J., & Norvig, P. (2021). *Artificial Intelligence: A Modern Approach* (4th ed.). Pearson.
-6. BIT2026 Course Lecture Slides, Chapter 4: Symbolic AI (Planning and Problem Solving).
+1. Fikes, R. E., & Nilsson, N. J. (1971). STRIPS: A new approach to the application of theorem proving to problem solving. *Artificial Intelligence*, 2(3–4), 189–208.
+2. Hart, P. E., Nilsson, N. J., & Raphael, B. (1968). A formal basis for the heuristic determination of minimum cost paths. *IEEE Transactions on Systems Science and Cybernetics*, 4(2), 100–107.
+3. Kirkpatrick, S., Gelatt, C. D., & Vecchi, M. P. (1983). Optimization by simulated annealing. *Science*, 220(4598), 671–680.
+4. Knuth, D. E., & Moore, R. W. (1975). An analysis of alpha-beta pruning. *Artificial Intelligence*, 6(4), 293–326.
+5. Poole, D., & Mackworth, A. (2017). *Artificial Intelligence: Foundations of Computational Agents* (2nd ed.). Cambridge University Press. [Online textbook](https://artint.info/2e/html/ArtInt2e.html)
+6. Russell, S. J., & Norvig, P. (2021). *Artificial Intelligence: A Modern Approach* (4th ed.). Pearson.
+7. BIT2026 Foundations of CS & AI, course lecture slides, Chapter 4: Symbolic AI (Planning and Problem Solving) (2026).
