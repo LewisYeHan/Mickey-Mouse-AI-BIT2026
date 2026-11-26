@@ -38,6 +38,10 @@ Figure 1.9 shows the five steps from top to bottom. The dashed arrow on the righ
 ### Step 1: The program file sits on the SSD
 Before you click, Chrome is just a file on your drive (`chrome.exe` on Windows). It contains machine code and data, but it is not doing anything. It is like a recipe in a closed cookbook.
 
+<p align="center"><img src="../images/photo_ssd.jpg" alt="A long, narrow M.2 NVMe SSD, a Samsung 980 PRO with 1 TB of storage, with its label on top and gold contacts at one end" width="420"></p>
+
+*Photo: an M.2 NVMe SSD (Samsung 980 PRO, 1 TB), the kind of drive where program files such as `chrome.exe` are stored. It keeps its data when the power is off. Photo by D-Kuru, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons.*
+
 ### Step 2: The OS loader turns it into a process in RAM
 When you click the icon, a part of the OS called the **loader** copies the program from the SSD into RAM, because RAM is far faster for the CPU to read. (In practice, the OS loads the program's pages only as they are needed: this is demand paging, from 1.2 Section 9.) The OS then creates a **process** (the running copy of the program) and a **Process Control Block (PCB)** to keep track of it.
 
@@ -138,7 +142,7 @@ A **cross-platform app** is written once and then runs on several operating syst
 ## Lab: Follow an App from File to Process
 
 * **Goal:** See Steps 1 and 2 of Figure 1.9 on your own computer: one program file on the drive, and the processes the OS creates from it.
-* **Preparation:** A Windows 10 or 11 computer with Microsoft Edge (it comes with Windows) and about 15 minutes; re-read §2. You only look, so nothing on your computer changes. On a Mac, follow the note at the end of the task. No computer? Use the screenshot from a team member's laptop below and the typical results in the feedback box.
+* **Preparation:** A Windows 10 or 11 computer with Microsoft Edge (it comes with Windows) and about 15 minutes; re-read §2. You only look, so nothing on your computer changes. On a Mac, follow the note at the end of the task. No computer? Use the screenshots from a team member's laptop below and the typical results in the feedback box.
 * **Task:**
 
   **Step 1, predict:** you open Edge with one tab. How many processes will it use: 1, between 2 and 5, or more than 5?  
@@ -150,6 +154,10 @@ A **cross-platform app** is written once and then runs on several operating syst
   *On a Mac:* open **Activity Monitor** (press **Command + Space** and type *Activity Monitor*), open your browser with a few websites, and look for your browser's processes in the list. The browser's program file is in the **Applications** folder.
 
   ![Task Manager, Details page sorted by Name: a long list of msedge.exe rows, each with its own PID and its own Memory value; the PID and Memory columns are outlined in red](../images/task_manager_details.png)
+
+  ![File Explorer open at This PC > OS (C:) > Program Files (x86) > Microsoft > Edge > Application, listing folders named 157.0.4341.46 and 158.0.4370.33 and the application file msedge](../images/edge_program_folder.png)
+
+  *Lab screenshot: Step 3 on a team member's laptop. The application `msedge` is the program file `msedge.exe` (Windows hides the `.exe` ending by default); the folders named with numbers hold files for each Edge version.*
 
   *Lab screenshot: Step 4 on a team member's laptop. Every msedge.exe row is a separate Edge process with its own PID and memory, and the list continues below. The User name column was blanked.*
 
@@ -164,7 +172,7 @@ A **cross-platform app** is written once and then runs on several operating syst
 <summary><b>Feedback: check your findings</b></summary>
 
 * **Step 2:** Edge usually shows **more than 5** processes, even with one tab. It splits its work into a main browser process and helper processes, for example one for the graphics card, one for the network and one for each website you have open. The exact number depends on your Edge version and extensions.
-* **Step 3:** The folder is usually `C:\Program Files (x86)\Microsoft\Edge\Application`. This is the program file of Step 1: machine code stored on the drive, doing nothing until it runs.
+* **Step 3:** The folder is usually `C:\Program Files (x86)\Microsoft\Edge\Application`, as in the screenshot. This is the program file of Step 1: machine code stored on the drive, doing nothing until it runs.
 * **Step 4:** There is one `msedge.exe` row for each process, and every row has a different PID. The laptop in the screenshot had more than 40 `msedge.exe` rows.
 * **Step 5:** The number usually goes up when you open new websites and down when you close them. It may not change by exactly one per tab, because Edge can let tabs from the same website share a process.
 * **Reflection answers:**
