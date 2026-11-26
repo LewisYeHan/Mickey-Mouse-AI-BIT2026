@@ -1,6 +1,5 @@
 # 2.6 Glossary
 
-**Status:** ✅  
 **Team Member:** Goh Ye Han (`@LewisYeHan`)
 
 **In this section:** [Foundations](#1-foundations-of-symbolic-ai-taught-in-21) · [Knowledge Representation](#2-knowledge-representation-taught-in-23) · [Logical Reasoning](#3-logical-reasoning-taught-in-22-the-inference-engine-also-in-24) · [Uncertainty](#4-uncertainty-and-reasoning-methods-taught-in-22-section-9) · [Expert Systems](#5-expert-systems-taught-in-24) · [AI Approaches](#6-ai-approaches-and-evaluation-taught-in-21-section-5-22-section-11-and-24-sections-68) · [Planning and Search](#7-planning-and-search-taught-in-25)
@@ -20,6 +19,7 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 | Inference | Deriving new conclusions from existing facts and rules. |
 | Knowledge | Organized information that can be used to understand situations and make decisions. |
 | Logic | A formal system for writing statements and checking whether conclusions follow from them. |
+| Physical Symbol System Hypothesis | Newell and Simon's claim that storing symbols and changing them by rules is both necessary and sufficient for general intelligent action; the idea behind GOFAI. |
 | Symbol | A name or sign that stands for an object, concept or relationship. |
 | Symbolic AI | AI that represents knowledge with symbols, facts and rules, and reasons with logic. |
 
@@ -65,13 +65,15 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 | Backward Chaining | Reasoning from a goal back to the facts and rules that would prove it. |
 | Conclusion | A new statement derived from facts and rules. |
 | Conflict Resolution | Choosing which rule to fire when several rules match at once. |
-| Forward Chaining | Reasoning from known facts, applying rules repeatedly until no new facts appear. |
+| Conflict Set | All the rules whose conditions match the current facts, before one is chosen to fire. |
+| Forward Chaining | Reasoning from known facts, applying rules repeatedly until no rule adds a new fact. |
 | Inference Engine | The part of an expert system that applies rules to facts to derive conclusions. |
 | Modus Ponens | If P → Q and P is true, then Q is true. |
 | Modus Tollens | If P → Q and Q is false, then P is false. |
 | Resolution | A proof method that combines clauses to derive conclusions or expose a contradiction. |
 | Rule | An IF–THEN statement: when the conditions hold, the conclusion follows. Also called a production rule. |
 | Rule-Based System | A system that reaches decisions by applying IF–THEN rules; an expert system is one kind. |
+| Specificity | A conflict resolution strategy: prefer the rule whose conditions include all of another rule's conditions plus more. |
 | Substitution | Replacing variables with specific values, such as x = Alex. |
 | Unification | Finding the substitution that makes two logical expressions identical. |
 
@@ -142,5 +144,6 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 | Simulated Annealing | Local search that sometimes accepts a worse solution, less often over time, to escape local maxima. |
 | State | A description of the world at one moment. |
 | State Space | All possible states and the actions that connect them. |
+| STRIPS | A way of describing actions by preconditions, an add list and a delete list; built for the Shakey robot (1971). |
 | Uniform-Cost Search (UCS) | Uninformed search that always explores the state with the lowest total cost so far. |
 | Uninformed Search | Search with no extra knowledge of where the goal is (blind search). |
