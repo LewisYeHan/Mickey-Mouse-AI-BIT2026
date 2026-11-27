@@ -37,6 +37,7 @@ The full history is in the Git log. This file lists the main changes between ver
 * Module Outline rewritten with intended learners, prerequisites, learning outcomes, a reading order and correct section descriptions.
 * README rewritten for the final version; student ID numbers removed.
 * Project plan moved from `content/` to `docs/project/` and corrected; unused and duplicate images removed; draft status markers removed.
+* Team cross-check of the glossaries (27 Nov): 13 missing terms added to 1.4 (for example user mode, process states and the three kernel designs) and 12 to 2.6 (for example match and fire, truth table and goal test).
 
 ## V2.0 (Stage 2, 7 Nov 2026), tag `v2.0-stage2`, commit `0070044`
 
