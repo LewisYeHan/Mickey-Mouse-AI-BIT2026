@@ -92,4 +92,4 @@
 | **Utility** | A small system program that maintains the computer, such as antivirus or disk cleanup. | 1.1 |
 | **Virtual memory** | Giving each program its own memory space, so the OS can keep rarely used parts on disk. | 1.2 |
 | **Waiting time** | How long a process spends ready but not running. | 1.2 |
-| **Web app** | An app that runs inside a web browser and is not installed. | 1.3 |
+| **Web app** | An app that runs inside a web browser and usually needs no installation. | 1.3 |
