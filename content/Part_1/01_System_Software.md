@@ -42,6 +42,8 @@ A computer is built in layers, like a building. Each layer relies on the one bel
 | **Firmware (BIOS / UEFI)** | Motherboard ROM chip | **System software** |
 | **Hardware** | CPU, RAM, SSD | Physical hardware |
 
+The table gives drivers their own row to show what they do; in the computer they run inside the operating system, as Figure 1.1 shows.
+
 ![Layers of a computer: user, application software, then a bracket marked system software containing utilities and translators, the operating system with device drivers inside it, and firmware, with hardware at the bottom](../images/system_layers.png)
 *Figure 1.1: Layers of a computer. Everything inside the red bracket is system software; the operating system is its largest part.*
 
@@ -58,7 +60,7 @@ The **hardware** at the bottom of Figure 1.1 is the physical machine. Its most i
 ---
 
 ## 3. Firmware
-**Firmware** is low-level software stored permanently on a chip (flash memory or ROM) inside a device. It is the very first set of instructions a device follows, telling it how to wake up and get ready.
+**Firmware** is low-level software normally stored on a **non-volatile** chip (flash memory or ROM) inside a device, so it stays there when the power is off. It is the very first set of instructions a device follows, telling it how to wake up and get ready.
 
 * **It stays when the power is off.** Firmware is **non-volatile**, so it is still there every time you switch the device on.
 * **It is everywhere.** Motherboards, SSDs, Wi-Fi routers, printers, smartphones, and cars all have firmware.
@@ -73,7 +75,7 @@ When you press the power button on a PC, the CPU does not yet know where Windows
 ### What It Does at Startup
 1. **POST (Power-On Self-Test):** It checks that the CPU, RAM, keyboard, and graphics card are working. If something is wrong, it reports it with **beep codes** or an on-screen message. This is like a pilot's pre-flight checklist.
 2. **Prepares the hardware:** It sets up the motherboard and devices so they are ready to use.
-3. **Reads saved settings:** It loads settings such as the boot order and the clock from **CMOS** memory, which is kept alive by a small coin-cell battery. That is why a PC still knows the time after being unplugged.
+3. **Reads saved settings:** It loads settings such as the boot order and the clock from **CMOS** memory, which is kept alive by a small coin-cell battery (modern UEFI PCs often keep these settings in flash memory called NVRAM instead, but the battery still runs the clock). That is why a PC still knows the time after being unplugged.
 4. **Finds a drive to start from:** It checks the SSD, hard drive, or USB stick, in the boot order you set.
 5. **Hands over to the bootloader:** It starts the small program on that drive that knows how to load the OS.
 
@@ -245,7 +247,7 @@ Turning a C program into something you can run takes five steps:
 * **Example (the laptop in the screenshots):** BIOS Version/Date *American Megatrends International, LLC. GA605KM.307, 12/1/2026*; BIOS Mode *UEFI*; Secure Boot State *On*; Driver Provider *NVIDIA*; Driver Date *7/11/2026*; Driver Version *32.0.16.2124*. The firmware and the driver come from different companies and have different dates.
 * **Observation:** BIOS Version/Date, BIOS Mode and Secure Boot State describe the **firmware**, stored on a chip on the motherboard. Driver Provider, Driver Date and Driver Version describe a **driver**, stored inside the OS on your drive.
 * **Reflection answers:**
-  1. UEFI starts Windows from a **GPT** disk, and Legacy BIOS starts it from an **MBR** disk (the table in §4).
+  1. In the standard setup, UEFI starts Windows from a **GPT** disk, and Legacy BIOS starts it from an **MBR** disk (the table in §4).
   2. Malware that tries to load **before** the OS, where antivirus software cannot see it. Secure Boot lets only digitally signed, trusted bootloaders and operating systems start (§4).
   3. The firmware lives on a chip on the motherboard and comes from the PC maker, often built on code from a firmware company such as American Megatrends. It is updated rarely, because a failed update can leave the PC unable to start (§3). The driver lives inside the OS and comes from the device maker or Microsoft. It is updated often, to fix bugs and to keep working with new versions of Windows (§7).
   4. It usually means Windows has no working driver for that device, so the OS cannot use the device until a driver is installed. Plug and Play normally finds one automatically (§7).
