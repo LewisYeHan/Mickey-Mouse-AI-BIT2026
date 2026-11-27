@@ -143,7 +143,7 @@ Figure 1.3 shows how a process moves between the states. Follow the arrows:
 If RAM is full, the OS can also move a process out to disk for a while (**suspended**) and bring it back to **Ready** later.
 
 ### Threads
-A **thread** is a smaller worker inside a process. All the threads of one process share the same memory, so they are quicker to create and switch between than whole processes. A browser tab, for example, can load a web page on one thread while playing a video on another.
+A **thread** is a smaller worker inside a process. All the threads of one process share the same memory, so they are quicker to create and switch between than whole processes. Inside one browser tab's process, for example, one thread can load the web page while another plays a video.
 
 ---
 
@@ -218,6 +218,8 @@ Four common scheduling methods, using the example of a supermarket checkout:
 4. **Round Robin:** Everyone gets a short, equal turn (a **time slice**), then goes to the back of the line. This is fair, and it is why desktop systems feel smooth even with many apps open.
 
 ### Worked Example: Three Ways to Schedule A, B and C
+The worked example uses three of the four methods. Priority scheduling works like SJF, except that the OS picks by importance instead of by length.
+
 Three processes arrive at time 0 in the order A, B, C, on one CPU core. A needs 3 units of CPU time, B needs 2, and C needs 1.
 
 ![Three timelines for jobs A (3 units), B (2 units) and C (1 unit). First Come First Served runs A, B, C, and C finishes at 6. Round Robin with a 1-unit slice runs A, B, C, A, B, A, and C finishes at 3. Shortest Job First runs C, B, A, and C finishes at 1.](../images/scheduling_comparison.png)
@@ -230,7 +232,7 @@ Three processes arrive at time 0 in the order A, B, C, on one CPU core. A needs 
 | **SJF** | C B B A A A | 6, 3, 1 | 3, 1, 0 | 4 ÷ 3 ≈ **1.33** |
 
 Three things to notice in Figure 1.5:
-* **Round Robin does not make the total work faster.** All three methods finish everything at time 6, and here FCFS and Round Robin even have the same average waiting time. What Round Robin changes is that the short job C no longer waits behind the long job A: C finishes at 3 instead of 6, and every process gets its first turn within 2 units.
+* **Round Robin does not make the total work faster.** All three methods finish everything at time 6, and here FCFS and Round Robin even have the same average waiting time. What Round Robin changes is that the short job C no longer waits behind the long job A: C finishes at 3 instead of 6, and every process starts its first turn by time 2.
 * **SJF has the lowest average waiting time**, because the short jobs get out of the way first. But if new short jobs kept arriving, A could wait forever. That is starvation.
 * **Switching is not free.** Each switch is a context switch: the CPU saves the current process's program counter and registers into its PCB and loads the next one. The timelines above pretend switching takes no time. In a real computer, Round Robin's five switches each cost a little time.
 
@@ -303,7 +305,7 @@ Figure 1.7 shows the trade-off. The fastest memory (CPU registers and cache) is 
 
 ### Key Ideas
 * **Paging:** The OS splits memory into small, equal-sized blocks. A program's blocks are called **pages**, and the matching blocks in RAM are called **frames**. Because all blocks are the same size, the OS can fit a program into any free frames, even if they are not next to each other, like parking cars in any free spaces in a car park.
-* **Segmentation:** Instead of equal blocks, memory is split into meaningful parts of a program, such as its code, its data, and its stack.
+* **Segmentation:** Instead of equal blocks, memory is split into meaningful parts of a program, such as its code, its data, its heap and its stack.
 * **Virtual memory:** Each program gets its own private memory space and behaves as if it has the whole memory to itself. A hardware part called the **MMU (Memory Management Unit)** translates these private (virtual) addresses into real RAM addresses. Because of this, the OS can keep pages that are rarely used on the disk and act as if there is more RAM than there really is (Tanenbaum & Bos, 2022).
 * **Demand paging:** A page is only loaded into RAM when the program actually needs it.
 * **Page fault:** This happens when a program needs a page that is not in RAM yet, so the OS has to fetch it from the disk.
