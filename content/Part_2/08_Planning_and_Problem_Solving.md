@@ -107,7 +107,7 @@ G was discovered from A, and A from S, so BFS returns **S → A → G**: only **
 
 ### 4.2 Depth-First Search (DFS)
 
-DFS goes **as deep as possible** down one path before backing up. Its frontier is a **stack** (last in, first out), like a pile of plates: the most recently discovered place is explored next. Neighbours are tried in alphabetical order. At a place with no unexplored neighbour, DFS backs up to the previous place on the stack.
+DFS goes **as deep as possible** down one path before backing up. Its frontier is a **stack** (last in, first out), like a pile of plates: the most recently discovered place is explored next. Neighbours are pushed in reverse alphabetical order, so the alphabetically first one comes off the stack first. At a place with no unexplored neighbour, DFS backs up to the previous place on the stack.
 
 Trace: from **S** the first unexplored neighbour is **A**; from A it is **C**; from C it is **B**; from B the only one is **G**. Goal reached.
 
@@ -125,7 +125,7 @@ UCS always explores the place with the **lowest total cost so far**, written *g*
 | 4 | C (g = 7) | G = 7 + 3 = **10** (cheaper than 12, so replace it) | G 10 |
 | 5 | G (g = 10) | Goal reached | — |
 
-UCS returns **S → A → C → G** at **10 minutes**. It is guaranteed to find the cheapest route as long as no path has a negative cost, but it may explore many places in every direction first.
+UCS returns **S → A → C → G** at **10 minutes**. It is guaranteed to find the cheapest route as long as no step has a negative cost, but it may explore many places in every direction first.
 
 ---
 
@@ -260,7 +260,7 @@ From position 1 (score 2) it moves to 2 (4), then 3 (6). Both neighbours of 3 sc
 
 * **Planning** = an action sequence from initial state to goal; actions have **preconditions** and **effects**.
 * A search problem = **initial state**, **actions**, **transition model**, **goal test**, **path cost**.
-* The §8 table summarises the methods. Key results: BFS gives fewest steps; UCS and A\* (admissible *h*) give the cheapest route; minimax gives the best guaranteed result; hill climbing can stop at a local maximum. DFS and greedy search are fast but give no guarantee of the cheapest route.
+* The §8 table summarises the methods. Key results: BFS gives fewest steps; UCS and A\* (admissible *h*) give the cheapest route; minimax gives the best guaranteed result; hill climbing can stop at a local maximum. Greedy search can be quick and DFS uses little memory, but neither guarantees the cheapest route.
 
 ---
 
@@ -324,7 +324,7 @@ Try each question yourself first, then open the answers to check.
 
 ### Questions
 
-**1.** What is planning in Symbolic AI? Name the three things a planner needs to know before it starts.
+**1.** What is planning in Symbolic AI? Name the three things a planner needs to know before it starts (a shorter list than the five parts of a search problem in §3).
 
 **2.** Write the preconditions and effects of `PickUp(Book, Library)` for a robot, in the style of Section 2.
 
