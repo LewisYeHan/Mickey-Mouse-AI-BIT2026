@@ -13,6 +13,7 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 | Term | Definition |
 |---|---|
 | Artificial Intelligence (AI) | Building machines that do tasks which normally need human intelligence. |
+| ELIZA | A rule-based chatbot by Joseph Weizenbaum at MIT, described in 1966. It looks for keywords in a sentence and answers with a reply pattern for that keyword; it does not understand meaning. |
 | Explicit Knowledge | Knowledge written out clearly, in a form a computer can store and process. |
 | Fact | A statement the system treats as true, such as "Alex is a student". |
 | GOFAI | "Good Old-Fashioned AI": the traditional, early form of Symbolic AI. |
@@ -55,6 +56,7 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 | Semantic Network | A graph whose nodes are concepts and whose labelled edges are relationships. |
 | Slot | One attribute of a frame, such as Name or Major. |
 | Triple | One knowledge-graph fact: subject → relationship → object, such as Alex → studies → Computer Science. |
+| Truth Table | A table listing the value of an expression for every combination of true and false inputs; it can prove that two statements are logically equivalent. |
 | Universal Quantifier | ∀: the statement is true for every object in the domain. |
 | Variable | In predicate logic, a symbol standing for any object, such as `x`. |
 
@@ -63,11 +65,14 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 | Term | Definition |
 |---|---|
 | Backward Chaining | Reasoning from a goal back to the facts and rules that would prove it. |
+| Clause | A statement made of one or more terms joined by OR, such as `P ∨ Q` or `¬P`; resolution works on clauses. |
 | Conclusion | A new statement derived from facts and rules. |
 | Conflict Resolution | Choosing which rule to fire when several rules match at once. |
 | Conflict Set | All the rules whose conditions match the current facts, before one is chosen to fire. |
+| Fire | When a matching rule actually runs and adds its conclusion to the facts. If several rules match at once, conflict resolution chooses which one fires. |
 | Forward Chaining | Reasoning from known facts, applying rules repeatedly until no rule adds a new fact. |
 | Inference Engine | The part of an expert system that applies rules to facts to derive conclusions. |
+| Match | A rule matches when all its conditions are true for the current facts. Matching rules are triggered and form the conflict set. |
 | Modus Ponens | If P → Q and P is true, then Q is true. |
 | Modus Tollens | If P → Q and Q is false, then P is false. |
 | Resolution | A proof method that combines clauses to derive conclusions or expose a contradiction. |
@@ -76,6 +81,7 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 | Specificity | A conflict resolution strategy: prefer the rule whose conditions include all of another rule's conditions plus more. |
 | Substitution | Replacing variables with specific values, such as x = Alex. |
 | Unification | Finding the substitution that makes two logical expressions identical. |
+| Unifier | The substitution that unification finds, such as x = Alex, which makes `Student(x)` and `Student(Alex)` identical. |
 
 ## 4. Uncertainty and Reasoning Methods (taught in 2.2, Section 9)
 
@@ -108,7 +114,9 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 | Term | Definition |
 |---|---|
 | Ambiguity | Information with more than one possible meaning, which is hard to represent as symbols. |
+| Brittleness | Failing on situations the rules do not cover; a limitation of Symbolic AI. |
 | Explainability | Being able to give understandable reasons for a decision. |
+| Knowledge Bottleneck | Experts must write every rule by hand, which is slow and expensive; a limitation of Symbolic AI. |
 | Knowledge Maintenance | Updating stored rules and facts; out-of-date rules give wrong answers, however good the engine. |
 | Machine Learning (ML) | AI that learns patterns from data instead of following hand-written rules. |
 | Neuro-Symbolic AI | Combining machine learning (patterns from data) with symbolic reasoning (rules and logic). |
@@ -125,10 +133,12 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 | Alpha-Beta Pruning | Skipping branches that cannot change minimax's decision; same result, less work. |
 | Breadth-First Search (BFS) | Uninformed search that explores all states 1 step away, then 2 steps, and so on. |
 | Constraint | A rule every allowed state must obey, such as "the goat is never left alone with the cabbage". |
+| Deep Blue | IBM's chess computer that beat world champion Garry Kasparov in 1997, using minimax with alpha-beta pruning and a score for each position. |
 | Depth-First Search (DFS) | Uninformed search that follows one path as deep as possible before backing up. |
 | Effect | What becomes true or false after an action. |
 | Frontier | The states discovered but not yet explored. |
 | Goal State | The state, or set of conditions, the search is trying to reach. |
+| Goal Test | The check for whether the current state is a goal, such as "Are we at the Teaching Building?" |
 | Greedy Best-First Search | Informed search that always explores the state the heuristic says is closest to the goal. |
 | Heuristic | An estimate of how far a state is from the goal. |
 | Hill Climbing | Local search that keeps moving to a better neighbour until none is better. |
@@ -145,5 +155,6 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 | State | A description of the world at one moment. |
 | State Space | All possible states and the actions that connect them. |
 | STRIPS | A way of describing actions by preconditions, an add list and a delete list; built for the Shakey robot (1971). |
+| Transition Model | What each action leads to: the state you reach when you take an action in a given state. |
 | Uniform-Cost Search (UCS) | Uninformed search that always explores the state with the lowest total cost so far. |
 | Uninformed Search | Search with no extra knowledge of where the goal is (blind search). |
