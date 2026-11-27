@@ -16,7 +16,7 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 | ELIZA | A rule-based chatbot by Joseph Weizenbaum at MIT, described in 1966. It looks for keywords in a sentence and answers with a reply pattern for that keyword; it does not understand meaning. |
 | Explicit Knowledge | Knowledge written out clearly, in a form a computer can store and process. |
 | Fact | A statement the system treats as true, such as "Alex is a student". |
-| GOFAI | "Good Old-Fashioned AI": the traditional, early form of Symbolic AI. |
+| GOFAI | "Good Old-Fashioned AI": another name for classical Symbolic AI, built on symbols, explicit rules and logic. |
 | Inference | Deriving new conclusions from existing facts and rules. |
 | Knowledge | Organized information that can be used to understand situations and make decisions. |
 | Logic | A formal system for writing statements and checking whether conclusions follow from them. |
