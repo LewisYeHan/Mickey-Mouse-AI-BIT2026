@@ -46,11 +46,13 @@ The system reasons in four steps:
 3. Attendance: 95% is at least 90% ✓
 4. Both conditions pass, so the rule fires: `ScholarshipEligible(Sammy)`.
 
-![A robot detective reads the facts, reads the rule, reasons, and announces the student is eligible](../images/symbolic_ai_process.png)
+![Four-step flowchart. 1 Facts: Student(Sammy), GPA(Sammy, 3.8), Attendance(Sammy, 95%). 2 Rule: IF GPA >= 3.5 AND Attendance >= 90% THEN ScholarshipEligible. 3 Check: 3.8 >= 3.5 and 95% >= 90%, both ticked. 4 Conclusion: both conditions pass, so the rule fires: ScholarshipEligible(Sammy). The robot Byte stands beside the conclusion](../images/symbolic_ai_process.png)
 
 *Figure 2.1: How Symbolic AI uses facts and rules to derive a conclusion.*
 
 Deriving a new conclusion from known facts is called **logical inference**. The computer does not guess. It follows the rule.
+
+This looks like an ordinary `if` statement, and for one rule it nearly is. The difference grows with many rules: in Symbolic AI the rules are stored as **data**, separate from the part that applies them, so rules can be added or changed without rewriting the program, and the system can show which rules gave each answer ([2.4](07_Expert_Systems.md) §5).
 
 ---
 
@@ -68,7 +70,9 @@ Allen Newell and Herbert Simon stated this belief as the **Physical Symbol Syste
 
 *Figure 2.3: An IBM 7090 mainframe set up to play chess. Early researchers used games like chess to test symbols, rules and search.*
 
-**Symbolic AI vs. GOFAI:** Symbolic AI is the approach. GOFAI is the name for its traditional, early form.
+An **AI winter** is a period when interest and funding for AI research fell sharply after promises were not met. Symbolic AI did not end in 1993: its ideas live on in rule engines, knowledge graphs and planners, and today they are often combined with machine learning (§5).
+
+**Symbolic AI vs. GOFAI:** GOFAI is another name for classical Symbolic AI, the symbol-and-rule approach built from the 1950s to the 1980s.
 
 ---
 
@@ -99,10 +103,10 @@ Conclusion: AcademicallyEligible(Sammy)
 | Strengths | Limitations |
 | :--- | :--- |
 | **Explainable:** every conclusion can be traced back to the facts and rules that produced it. | **Brittle:** it fails on situations its rules do not cover. |
-| **Precise:** the same facts always give the same answer. | **Knowledge bottleneck:** experts must write every rule by hand, which is slow and expensive. |
+| **Consistent:** the same facts always give the same answer. | **Knowledge bottleneck:** experts must write every rule by hand, which is slow and expensive. |
 | **Needs little data:** it uses knowledge people write down, not millions of examples. | **Struggles with vague or messy input,** such as images, speech or common sense. |
-| **Easy to correct:** to fix a mistake, you change one rule. | **Search can explode:** problems with many possible steps quickly become too big to check (see 2.5). |
-| | **Does not learn** from new data on its own. |
+| **Easy to trace:** you can find the rule that caused a mistake and correct it. | **Search can explode:** problems with many possible steps quickly become too big to check (see 2.5). |
+| | **Does not learn:** classic symbolic systems do not learn from new data on their own. |
 
 These limitations are why modern AI often combines symbolic reasoning with machine learning. Section 2.2 (Section 11) and Section 2.4 (Sections 7 and 8) return to them: see [Limitations of Symbolic Reasoning](05_Logic_and_Reasoning.md#11-limitations-of-symbolic-reasoning) and [Limitations of Expert Systems](07_Expert_Systems.md#7-limitations-of-expert-systems).
 
@@ -117,7 +121,7 @@ These limitations are why modern AI often combines symbolic reasoning with machi
 | **Fact** | A statement the system treats as true |
 | **Rule** | Says what conclusion follows from certain conditions |
 | **Logical inference** | Deriving new conclusions from facts and rules |
-| **GOFAI** | The traditional, early form of symbolic AI |
+| **GOFAI** | Another name for classical Symbolic AI |
 | **Explainability** | Being able to see how a conclusion was reached |
 
 ---
@@ -136,7 +140,7 @@ These limitations are why modern AI often combines symbolic reasoning with machi
 
   ![ELIZA terminal: ELIZA asks what has been bothering the user; I am tired gets How long have you been tired?; My mother cooks well gets Your mother?; The weather is nice today gets Earlier you said your mother cooks well; I am a purple elephant made of cheese gets Is it because you are a purple elephant made of cheese that you came to me?](../images/eliza_chat.png)
 
-  *Lab screenshot: a real chat with the online ELIZA, using the sentences from Steps 2 to 5.*
+  *Lab screenshot: a real chat with the online ELIZA, using sentences from Steps 2 to 5.*
 
 * **Observation:** For each step, write down your sentence and ELIZA's reply, and underline any words ELIZA copied from you.
 * **Reflection:**
@@ -159,7 +163,7 @@ These limitations are why modern AI often combines symbolic reasoning with machi
   2. **my** together with **mother** or **brother**.
   3. It used a fallback rule: a general reply, or a sentence it had saved earlier.
   4. No. ELIZA only matches words; it has no common sense and does not understand meaning. This is the limitation *struggles with vague or messy input, such as … common sense*, and it is also **brittle**: input its rules do not expect gets a silly reply.
-  5. **Explainable:** once you know its rules, you can predict and explain every reply ELIZA gives.
+  5. **Explainable:** once you know its rules, you can explain why ELIZA gave each reply. ELIZA shows rules and brittleness; it stores no facts and draws no conclusions, so it is a simple, early relative of the reasoning systems in 2.2 and 2.4.
 
 </details>
 
@@ -192,7 +196,7 @@ Try each question yourself first, then open the answers to check.
 3. `fever = TRUE`, because 39°C is greater than 38°C.
 4. Good Old-Fashioned AI. It relied on symbols, explicit knowledge and logical reasoning.
 5. It is a **rule**, not a fact, because it has an IF–THEN structure. A fact would be `GPA(Sammy, 3.8)`.
-6. GPA 3.6 passes (at least 3.5), but attendance 88% fails (below 90%). The rule needs both conditions, so it does not fire. The system cannot conclude `ScholarshipEligible(Lee)`.
+6. GPA 3.6 passes (at least 3.5), but attendance 88% fails (below 90%). The rule needs both conditions, so it does not fire. The system cannot conclude `ScholarshipEligible(Lee)`. This does not prove Lee is ineligible; it only means this rule does not derive it.
 
 </details>
 
