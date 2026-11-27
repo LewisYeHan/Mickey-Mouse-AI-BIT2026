@@ -28,7 +28,7 @@ Every app runs in a protected area of memory called **user space**. From there i
 ---
 
 ## 2. What Happens When You Open an App
-Double-clicking an icon feels instant, but behind the scenes the app goes through five steps (Arpaci-Dusseau & Arpaci-Dusseau, 2018). Let's follow what happens when you open Google Chrome.
+Double-clicking an icon feels instant, but behind the scenes the app goes through five steps (our summary, adapted from Arpaci-Dusseau & Arpaci-Dusseau, 2018). Let's follow what happens when you open Google Chrome.
 
 ![Application execution lifecycle: 1 program file on the SSD, 2 OS loader makes a process in RAM, 3 CPU runs the instructions, 4 app asks for hardware with a system call, 5 kernel does it safely and sends the result back to step 3](../images/execution_lifecycle.png)
 *Figure 1.9: The 5 steps of running an app, from a file on the SSD to the kernel sending back a result.*
@@ -57,7 +57,7 @@ The OS scheduler gives the process a turn on the CPU. The CPU then repeats the s
 2. **Decode** it to work out what it means.
 3. **Execute** it.
 
-Inside the process, **threads** do the actual work. Chrome, for example, can use one thread to draw the page and another to download an image at the same time.
+Inside the process, **threads** do the actual work. Chrome, for example, can use one thread to draw the page and another to download an image at the same time. Threads share their process's memory. Browsers use both: a separate process for each website, for safety, and several threads inside each process (Microsoft Edge, used in the lab below, is built on Chrome's engine, Chromium, and works the same way).
 
 ### Step 4: The app asks for hardware with a system call
 Sooner or later the app needs the hardware. It might need to save a file, show a picture, or load a web page. Because it runs in user space, it cannot do this itself. Instead, it makes a **system call**, such as `open()` to open a file, `write()` to save one, or `socket()` to use the network. At this moment the CPU switches from **user mode** into **kernel mode**.
@@ -98,13 +98,13 @@ A few things to notice:
 The same kind of app can be built in very different ways, and the choice affects how fast it runs, how much memory it uses, and which devices it works on.
 
 ### Native Apps
-A **native app** is written for one specific operating system, usually in that platform's main language: **Swift** for iPhone and Mac, **C++ or C#** for Windows, and **Kotlin** for Android. It is built to fit that one OS, and in most cases it is turned into code the CPU can run directly.
+A **native app** is written for one specific operating system, usually in that platform's main language: **Swift** for iPhone and Mac, **C++ or C#** for Windows, and **Kotlin** for Android. It is built to fit that one OS. C++ and Swift are turned into code the CPU runs directly; C# and Kotlin usually run on a fast runtime that comes with the platform.
 * **Pros:** It is usually the fastest option, uses the least memory, and has full access to the device's features (camera, GPU, sensors) through the OS.
 * **Cons:** It only works on one OS. To support Windows, macOS, Android, and iPhone, the company must build and maintain four separate versions.
 * **Examples:** Microsoft Word on Windows, Final Cut Pro on Mac.
 
 ### Web Apps
-A **web app** runs inside a web browser and is built with **HTML, CSS, and JavaScript**. There is nothing to install: you just open a link.
+A **web app** runs inside a web browser and is built with **HTML, CSS, and JavaScript**. Usually there is nothing to install: you just open a link. (Some web apps can also be installed as a *progressive web app*, but they still run on the browser's engine.)
 * **Pros:** It works on any device that has a browser, and everyone always has the latest version, because the app lives on the server.
 * **Cons:** It usually needs an internet connection, has limited access to the hardware, and often runs slower than a native app because the browser sits in between.
 * **Examples:** Google Docs, Canva, Figma in the browser.
@@ -119,7 +119,7 @@ A **cross-platform app** is written once and then runs on several operating syst
 * **Examples:** VS Code, Discord, Slack, Obsidian.
 
 **Flutter and React Native (mainly mobile)**
-* Let one codebase build apps for both Android and iPhone, without carrying a whole browser engine.
+* Let one codebase build apps for both Android and iPhone, without carrying a whole browser engine. **Flutter** draws the whole interface itself with its own engine (and can also target desktop and web); **React Native** runs JavaScript that controls the phone's own buttons and lists.
 * **Pros:** One codebase for two platforms, and usually much closer to native speed than Electron.
 * **Cons:** Brand-new phone features can take extra work to use, because the framework has to support them first.
 * **Examples:** Google Pay (Flutter); parts of the Instagram and Facebook apps (React Native).
@@ -128,14 +128,14 @@ A **cross-platform app** is written once and then runs on several operating syst
 
 | Feature | Native | Web | Electron | Flutter / React Native |
 | :--- | :--- | :--- | :--- | :--- |
-| **Works on** | One OS | Any device with a browser | Windows, macOS, Linux | Android and iPhone |
+| **Works on** | One OS | Any device with a browser | Windows, macOS, Linux | Mainly Android and iPhone |
 | **Layers to the OS** | App → OS | App → browser → OS | App → its own Chromium → OS | App → framework → OS |
-| **Speed** | Usually fastest | Usually slowest | In between | Close to native |
+| **Speed** | Usually fastest | Slower | Similar to a web app | Close to native |
 | **Memory use** | Lowest | Shares the browser you already have open | Highest (each app has its own engine) | Low to medium |
 | **Hardware access** | Full (via OS APIs) | Limited | Good | Good |
-| **Install needed?** | Yes | No | Yes | Yes |
+| **Install needed?** | Yes | Usually no | Yes | Yes |
 
-**The main trade-off:** the more devices an app can run on from one codebase, the more layers sit between it and the hardware (see the "Layers to the OS" row), so it usually gets slower and heavier. The more native it is, the faster it runs, but the more work it takes to support every platform. Companies choose based on what matters most to them. A video editor needs speed, so it is usually native. A chat app needs to be everywhere quickly, so it often uses Electron.
+**The main trade-off:** the more layers sit between an app and the hardware (see the "Layers to the OS" row), the slower it usually runs; carrying its own engine, as Electron does, also makes it heavier on memory. The more native an app is, the faster it runs, but the more work it takes to support every platform. Companies choose based on what matters most to them. A video editor needs speed, so it is usually native. A chat app needs to be everywhere quickly, so it often uses Electron.
 
 ---
 
@@ -153,11 +153,11 @@ A **cross-platform app** is written once and then runs on several operating syst
 
   *On a Mac:* open **Activity Monitor** (press **Command + Space** and type *Activity Monitor*), open your browser with a few websites, and look for your browser's processes in the list. The browser's program file is in the **Applications** folder.
 
-  ![Task Manager, Details page sorted by Name: a long list of msedge.exe rows, each with its own PID and its own Memory value; the PID and Memory columns are outlined in red](../images/task_manager_details.png)
-
   ![File Explorer open at This PC > OS (C:) > Program Files (x86) > Microsoft > Edge > Application, listing folders named 157.0.4341.46 and 158.0.4370.33 and the application file msedge](../images/edge_program_folder.png)
 
   *Lab screenshot: Step 3 on a team member's laptop. The application `msedge` is the program file `msedge.exe` (Windows hides the `.exe` ending by default); the folders named with numbers hold files for each Edge version.*
+
+  ![Task Manager, Details page sorted by Name: a long list of msedge.exe rows, each with its own PID and its own Memory value; the PID and Memory columns are outlined in red](../images/task_manager_details.png)
 
   *Lab screenshot: Step 4 on a team member's laptop. Every msedge.exe row is a separate Edge process with its own PID and memory, and the list continues below. The User name column was blanked.*
 
