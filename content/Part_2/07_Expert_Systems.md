@@ -2,12 +2,12 @@
 
 **Team Member:** Lu My Ky (`@jojolu11`)
 
-**In this section:** [Components](#2-how-expert-systems-work) · [Making Decisions](#3-how-an-expert-system-makes-decisions) · [MYCIN, DENDRAL, XCON](#4-real-world-examples-of-expert-systems) · [vs. Traditional Programs](#5-expert-systems-vs-traditional-programs) · [Advantages](#6-advantages-of-expert-systems) · [Limitations](#7-limitations-of-expert-systems) · [Modern AI](#8-expert-systems-and-modern-ai) · [Key Takeaways](#9-key-takeaways) · [Lab: PC Clinic](#lab-dr-pixels-pc-clinic) · [Practice Questions](#10-practice-questions-and-answers)
+**In this section:** [Components](#2-how-expert-systems-work) · [Making Decisions](#3-how-an-expert-system-makes-decisions) · [MYCIN, DENDRAL, XCON](#4-real-world-examples-of-expert-systems) · [vs. Traditional Programs](#5-expert-systems-vs-traditional-programs) · [Advantages](#6-advantages-of-expert-systems) · [Limitations](#7-limitations-of-expert-systems) · [Modern AI](#8-expert-systems-and-modern-ai) · [Key Takeaways](#9-key-takeaways) · [Lab: PC Clinic](#lab-professor-pixels-pc-clinic) · [Practice Questions](#10-practice-questions-and-answers)
 
 **Learning goals.** By the end of this section, you can:
 * name the parts of an expert system and what each does;
 * act as the inference engine: forward chain through a small rule base to a diagnosis and explain *why*;
-* use MYCIN, DENDRAL and XCON to show what expert systems do well and where they fail.
+* use MYCIN, DENDRAL and XCON to show what expert systems do well and where they fall short.
 
 **Before you start:** this builds on rules as knowledge ([2.3](06_Knowledge_Representation.md) §4.5) and forward and backward chaining ([2.2](05_Logic_and_Reasoning.md) §4–5). For the Mission, recall from [1.1](../Part_1/01_System_Software.md) that a PC's start-up check (POST) reports hardware faults with beeps.
 
@@ -73,7 +73,7 @@ Using **forward chaining**:
 
 ### 4.3 XCON
 
-**XCON** (also called R1) was built by John McDermott at Carnegie Mellon University for Digital Equipment Corporation (DEC), starting in 1978, and was in everyday use at DEC from 1980. It configured VAX computers from customers' orders by **forward chaining**: from the order's facts, it applied rules choosing compatible components until the configuration was complete.
+**XCON** (also called R1) was built by John McDermott at Carnegie Mellon University for Digital Equipment Corporation (DEC), starting in 1978, and was in everyday use at DEC from 1980. It configured VAX computers from customers' orders by **forward chaining**: from the order's facts, it applied rules choosing compatible components until the configuration was complete. As DEC's products kept changing, XCON grew to thousands of rules and became hard to maintain, the **maintenance** problem in §7. DENDRAL, too, worked only on its one narrow task.
 
 ---
 
@@ -144,7 +144,7 @@ Inaccurate rules lead to incorrect conclusions, so expert systems should support
 
 ---
 
-## Lab: Dr. Pixel's PC Clinic
+## Lab: Professor Pixel's PC Clinic
 
 * **Goal:** Be the inference engine: forward chain from facts to a diagnosis, explain it, and see what happens when no rule covers a case.
 * **Preparation:** Paper and pen, about 20 minutes; re-read §2–3. The optional extension uses SWISH, a free online Prolog tool.
@@ -167,9 +167,9 @@ Inaccurate rules lead to incorrect conclusions, so expert systems should support
   ```
 
   **Step 1, predict:** which PC(s) will Byte fail to diagnose?  
-  **Step 2, be the inference engine:** for each PC, check R1 to R5 in order. The first rule whose IF facts are **all** in working memory and whose THEN fact is **not** yet there fires: add its THEN fact and restart at R1. Stop when no rule adds a new fact (the stop rule from 2.2 §4).  
+  **Step 2, be the inference engine:** for each PC, check the rules in order (R1 to R5, and R6 once you add it). The first rule whose IF facts are **all** in working memory and whose THEN fact is **not** yet there fires: add its THEN fact and restart at R1. Stop when no rule adds a new fact (the stop rule from 2.2 §4).  
   **Step 3, be the explanation facility:** for PC A, answer the customer in one or two sentences: *"Why should I reseat the RAM?"*  
-  **Step 4, update the knowledge base:** write a rule R6 that diagnoses PC C, and run PC C again.
+  **Step 4, update the knowledge base:** write a rule R6 that diagnoses PC C, and run PC C again, restarting at R1 and checking R1 to R6.
 * **Observation:** For each PC, record the rules fired, in order, the final working memory, and why other rules did **not** fire.
 * **Reflection:**
   1. Why did no rule fire for PC C? Does "no conclusion" mean "nothing is wrong"?
@@ -196,7 +196,7 @@ Inaccurate rules lead to incorrect conclusions, so expert systems should support
 * **PC C:** **no rule fires.** R1 needs `BeepsAtStart`; the others need facts PC C lacks. Byte stops with **no conclusion**.
 * **Step 3, for example:** "Your PC beeped and the screen stayed black, so the start-up check failed (R1). Three beeps point to the RAM (R2), and the first fix is to reseat it (R4)." Name facts and rules in the order used, as the explanation facility does.
 * **Step 4, for example:** `R6: IF NoLights AND NoFanNoise THEN Advice: check the power cable and power supply`; now R6 fires. You changed only the **knowledge base**, not your checking method (the engine): the knowledge–reasoning separation of §5, and why maintenance means updating rules (§7).
-* **Reflection answers:** (1) The fault is outside the five rules. "No conclusion" means "I have no rule for this", not "the PC is fine": the **limited domain** weakness (§7). (2) Only the knowledge base. (3) Advice: the rules capture a technician's experience, but a human should check it, especially when stakes are high.
+* **Reflection answers:** (1) The fault is outside the five rules. "No conclusion" means "I have no rule for this", not "the PC is fine": the **limited domain** weakness (§7). (2) Only the knowledge base. (3) Neither a proven fact nor the advice itself: `SuspectRAM` is a rule-based suspicion from R2. R4 turns it into the advice *reseat the RAM*, and a technician should check it, especially when stakes are high.
 * **Optional extension:** `advice(pc_a, What).` gives `What = reseat_ram`; `advice(pc_c, What).` gives `false`, since there are no facts about PC C. SWISH works back from the question to the facts (**backward chaining**, 2.2 §5); you worked forward. Both reach the same answer for PC A.
 
 </details>
