@@ -76,7 +76,7 @@ How AI derives conclusions from facts and rules: Modus Ponens and Modus Tollens,
 How AI stores knowledge: data, information and knowledge; propositional and predicate logic (with truth tables and De Morgan's laws); semantic networks, frames, scripts and rules; ontologies and knowledge graphs. Includes the *Build a Knowledge Web* lab.
 
 ### [2.4 Expert Systems](Part_2/07_Expert_Systems.md)
-How expert systems work: the knowledge base, inference engine, working memory and explanation facility; MYCIN, DENDRAL and XCON; advantages, limitations and modern hybrid AI. Includes the *Dr. Pixel's PC Clinic* lab.
+How expert systems work: the knowledge base, inference engine, working memory and explanation facility; MYCIN, DENDRAL and XCON; advantages, limitations and modern hybrid AI. Includes the *Professor Pixel's PC Clinic* lab.
 
 ### [2.5 Planning and Problem Solving](Part_2/08_Planning_and_Problem_Solving.md)
 How AI finds a sequence of actions that reaches a goal: states, actions with preconditions and effects (STRIPS), uninformed search (BFS, DFS, uniform-cost search), informed search (greedy best-first, A\*), adversarial search (minimax, alpha-beta pruning) and local search (hill climbing, simulated annealing), using a campus map example. Includes the *River Crossing* lab.
