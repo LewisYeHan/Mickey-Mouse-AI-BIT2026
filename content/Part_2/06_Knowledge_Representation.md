@@ -153,7 +153,7 @@ The edge labels are chosen by whoever designs the model. Common ones:
 | Relationship | Meaning | Example |
 |---|---|---|
 | IS-A | Category ("is a kind of") | Student IS-A Person |
-| PART-OF | Membership or composition | Computer Science PART-OF Engineering Faculty |
+| PART-OF | Membership or composition | Computer Science PART-OF Engineering Faculty (drawn as "belongs to" in Figure 2.6) |
 | HAS-A | Possession or attribute | Student HAS-A Student ID |
 | STUDIES | Academic relationship | Alex STUDIES Computer Science |
 
@@ -293,7 +293,7 @@ A computer retrieves information by following relationships. **Question:** Which
 
 *Figure 2.12: Following two relationships answers the question.*
 
-**Answer:** the Engineering Faculty. No single triple stores this answer; the chain of links does. To store it as a **new fact** ("Alex is in the Engineering Faculty"), the system needs a rule such as "IF x studies y AND y belongs to z THEN x is in z", applied with the reasoning methods in [2.2 Logic and Reasoning](05_Logic_and_Reasoning.md).
+**Answer:** the Engineering Faculty. No single triple stores this answer; the chain of links does. To store it as a **new fact** ("Alex is in the Engineering Faculty"), the system needs a rule such as "IF x studies y as their major AND y belongs to z THEN x is in z", applied with the reasoning methods in [2.2 Logic and Reasoning](05_Logic_and_Reasoning.md).
 
 #### Ontology vs Knowledge Graph
 
@@ -391,7 +391,7 @@ Sections 4–5 described one university (Beijing Institute of Technology, BIT) i
   b. On which floor is the book Mei borrowed?  
   c. Which university is Mei's major part of?  
   d. Does Mei have a Name slot? Which links tell you so?  
-  **Step 4, build a frame:** fill in a frame for Mei as in §4.4, with an `IS-A` slot and one slot per fact about Mei. What does it give for her Age?
+  **Step 4, build a frame:** fill in a frame for Mei as in §4.4, with an `INSTANCE-OF` slot (Mei is one student, like Alex in Figure 2.8) and one slot per fact about Mei. What does it give for her Age?
 * **Observation:** For each Step 3 question, record the number of links and the relationship names used. Compare with reading the nine sentences from the top.
 * **Reflection:**
   1. Why is following links faster than reading 500 loose sentences?
@@ -415,7 +415,8 @@ Sections 4–5 described one university (Beijing Institute of Technology, BIT) i
 
   ```text
   FRAME: Mei
-  IS-A: Student
+  INSTANCE-OF: Student
+  Age: (inherited from Person, empty)
   Major: Artificial Intelligence
   Lives in: Dorm 5
   Borrowed: Logic for Beginners
@@ -431,7 +432,7 @@ Sections 4–5 described one university (Beijing Institute of Technology, BIT) i
 
 ## 10. Practice Questions and Answers
 
-**Mission check.** Linked facts are fastest: in 500 loose sentences nothing tells Byte which one matters. In the knowledge graph (§5.2), Byte follows two links from Alex to the **Engineering Faculty**. A table or frame holds one student's details, but this question also needs the major-to-faculty link, which a graph stores (as you saw with Mei in the lab).
+**Mission check.** Linked facts are the easiest to follow: in 500 loose sentences nothing tells Byte which one matters. (A well-designed database with a join could answer this one question just as quickly; a graph's real advantage is that new kinds of link can be added and followed across many steps without redesigning tables.) In the knowledge graph (§5.2), Byte follows two links from Alex to the **Engineering Faculty**. A table or frame holds one student's details, but this question also needs the major-to-faculty link, which a graph stores (as you saw with Mei in the lab).
 
 Try each question yourself first, then open the answers to check.
 
