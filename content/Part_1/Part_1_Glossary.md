@@ -35,29 +35,41 @@
 | **GPT** | GUID Partition Table. The modern disk layout used with UEFI. | 1.1 |
 | **GUI** | Graphical User Interface. You control the computer with icons, windows and a mouse or touchscreen. | 1.2 |
 | **Heap** | The part of a process's memory used for memory the program asks for while it is running. | 1.3 |
+| **Hybrid kernel** | A kernel design that mixes the monolithic and microkernel designs: mostly fast like a monolithic kernel, but more modular (for example, Windows and macOS). | 1.2 |
 | **Interpreter** | A tool that runs a program step by step while it is running (Python first turns the code into bytecode). | 1.1 |
 | **Interrupt** | A signal from a device telling the CPU it needs attention. | 1.2 |
 | **Journaling** | A file system keeping a short log of changes so the disk is not left broken if the power cuts out. | 1.2 |
 | **Kernel** | The core of the OS, with full control of the hardware. | 1.1, 1.2 |
 | **Kernel mode** | The CPU mode in which the kernel runs, with full access to the hardware. | 1.1, 1.2, 1.3 |
+| **Kernel space** | The protected area of memory where the kernel runs, with full access to the hardware. | 1.3 |
 | **Linker** | A tool that joins compiled object files and libraries into one executable file. | 1.1 |
 | **Loader** | The part of the OS that copies a program from storage into RAM so it can run. | 1.1, 1.3 |
 | **Logical processor** | What the OS counts as one CPU. With hyper-threading, each core shows up as two logical processors. | 1.2 |
+| **Machine code** | The instructions a CPU actually understands: long strings of 0s and 1s. | 1.1, 1.2, 1.3 |
 | **MBR** | Master Boot Record. The first 512 bytes of a disk, used to start booting on older BIOS systems. | 1.1 |
 | **Metadata** | Information about a file, such as its size, dates and owner, kept alongside its data. | 1.2 |
+| **Microkernel** | A kernel design kept tiny: drivers and file systems run outside the kernel as separate programs, so if one crashes, it can be restarted. Very stable, but slightly slower (for example, MINIX and QNX). | 1.2 |
 | **MMU** | Memory Management Unit. Hardware that turns virtual addresses into real RAM addresses. | 1.2 |
+| **Monolithic kernel** | A kernel design in which almost everything, including drivers and file systems, runs inside one big kernel. Very fast, but one bug can crash the whole system (for example, Linux). | 1.2 |
 | **Multiprogramming** | Keeping several programs in RAM at once, so the CPU can switch to another one while one waits. | 1.2 |
 | **Native app** | An app built for one specific platform, such as Windows or iOS. It is usually the fastest option. | 1.3 |
+| **Non-preemptive scheduling** | Scheduling in which a process keeps the CPU until it finishes or waits for I/O. | 1.2 |
 | **Open source** | Software whose code anyone can read, change and share. | 1.2 |
+| **Operating system (OS)** | The main software that runs the computer and sits between your apps and the hardware. It decides which program gets the CPU, how much memory each one may use, and who can touch which file. | 1.1, 1.2 |
 | **Page fault** | When a page a program needs is not in RAM and must be loaded from disk. | 1.2 |
 | **Paging** | Splitting memory into equal-sized blocks (pages and frames). | 1.2 |
 | **Parallelism** | Several CPU cores really running different work at the same moment. | 1.2 |
 | **PCB** | Process Control Block. The OS's record of one process. | 1.2 |
+| **PID** | Process ID. The number the OS gives each process; Task Manager shows it on the Details page. | 1.2, 1.3 |
 | **Polling** | The CPU checking a device over and over to see if it is ready. | 1.2 |
 | **POST** | Power-On Self-Test. The firmware's check that the hardware works at startup. | 1.1 |
 | **Preemptive scheduling** | Scheduling in which the OS can stop a running process and give the CPU to another one. | 1.2 |
+| **Priority scheduling** | Scheduling in which the most important process goes first; aging stops low-priority processes from starving. | 1.2 |
 | **Process** | A program that is currently running. | 1.2, 1.3 |
+| **Process states** | The five states a process moves between: New, Ready, Running, Waiting (Blocked) and Terminated. | 1.2 |
+| **Program counter** | Where a process is in its instructions. It is saved in the PCB during a context switch. | 1.2 |
 | **RAM** | Fast main memory that loses its data when the power is off. | 1.2 |
+| **Ready queue** | The line of processes that are in memory and waiting for their turn on the CPU. | 1.2 |
 | **Relative path** | The address of a file starting from the folder you are already in, such as `Documents/essay.txt`. | 1.2 |
 | **Round Robin** | Scheduling that gives each process a short, equal turn on the CPU. | 1.2 |
 | **Scheduler** | The part of the OS that decides which process runs next. | 1.2 |
@@ -75,6 +87,7 @@
 | **Thread** | A small worker inside a process that shares the process's memory. | 1.2, 1.3 |
 | **Time slice** | The short turn each process gets on the CPU in Round Robin. | 1.2 |
 | **UEFI** | Unified Extensible Firmware Interface. The modern replacement for BIOS. | 1.1 |
+| **User mode** | The CPU mode in which normal apps run, with limited rights. If an app crashes, only that app closes. | 1.1, 1.2, 1.3 |
 | **User space** | The protected area where apps run. Apps here cannot touch the hardware directly. | 1.3 |
 | **Utility** | A small system program that maintains the computer, such as antivirus or disk cleanup. | 1.1 |
 | **Virtual memory** | Giving each program its own memory space, so the OS can keep rarely used parts on disk. | 1.2 |
