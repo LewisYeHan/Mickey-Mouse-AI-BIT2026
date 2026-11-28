@@ -23,7 +23,7 @@ Every image used in the learning content, who made it, and where it came from. "
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 2.1 How Symbolic AI reaches a conclusion | `content/images/symbolic_ai_process.png` | 2.1 Section 2 | Wong Hiu Chung Samuel | Team diagram | Team's own work |
 | 2.2 Symbolic AI timeline | `content/images/symbolic_ai_timeline.png` | 2.1 Section 3 | Wong Hiu Chung Samuel | Team diagram | Team's own work |
-| 2.3 IBM 7090 set up to play chess | `content/images/gofai_history.png` | 2.1 Section 3 | Historical photograph | Not made by the team | Original archive and license not yet confirmed (see Known limitations in the README) |
+| 2.3 IBM 7090 set up to play chess | `content/images/gofai_history.png` | 2.1 Section 3 | Unknown photographer, about 1967 (courtesy of Stanford University) | Not made by the team; shown in black and white as published | [Computer History Museum, *Mastering the Game*](https://www.computerhistory.org/chess/stl-431e1a07ca980/), accession L062302006, courtesy of Stanford University. © Computer History Museum; not openly licensed, used with credit for non-commercial teaching (see Known limitations in the README) |
 | 2.4 Forward chaining | `content/images/forward_chaining_flow.png` | 2.2 Section 4 | Wong Hiu Chung Samuel | Team diagram | Team's own work |
 | 2.5 Backward chaining | `content/images/backward_chaining_tree.png` | 2.2 Section 5 | Wong Hiu Chung Samuel | Team diagram | Team's own work |
 | 2.6 Semantic network about Alex | `content/images/semantic_network_alex.png` | 2.3 Section 4 | Wong Hiu Chung Samuel | Team diagram | Team's own work |
