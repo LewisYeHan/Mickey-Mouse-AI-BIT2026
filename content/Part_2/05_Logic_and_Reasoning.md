@@ -32,17 +32,17 @@ In [2.1](04_What_is_Symbolic_AI.md), we saw that Symbolic AI stores knowledge as
 - Rule: All humans are mortal.
 - Conclusion: Socrates is mortal.
 
-The system derives a new conclusion by applying a logical rule to existing knowledge.
+The system did not store "Socrates is mortal" anywhere. It worked it out by applying the rule to the fact.
 
 ---
 
 ## 2. Facts, Rules, and Inference
 
-Three fundamental elements form the basis of symbolic reasoning.
+Symbolic reasoning uses three things: facts, rules and inference.
 
 ### Facts
 
-Facts are statements that a system accepts as true within its knowledge base.
+A **fact** is a statement that the system accepts as true. It is stored in the knowledge base.
 
 Examples:
 
@@ -54,7 +54,7 @@ Studies(Alex, Mathematics)
 
 ### Rules
 
-Rules describe relationships between conditions and conclusions. They are commonly expressed using IF–THEN statements.
+A **rule** says what follows when certain conditions are true. Rules are usually written as IF–THEN statements.
 
 Example:
 
@@ -73,7 +73,7 @@ Here, `x` stands for any individual, `∀x` means "for every x", and `→` means
 
 ### Inference
 
-Inference is the process of deriving new conclusions from existing facts and rules.
+**Inference** means working out a new conclusion from the facts and rules the system already has.
 
 Given:
 
@@ -86,15 +86,13 @@ The system derives:
 Mortal(Socrates)
 ```
 
-This allows a symbolic system to generate knowledge rather than simply store information.
+So the system can produce new knowledge, not just look up what it was given.
 
 ---
 
 ## 3. Logical Inference
 
-Logical inference provides formal methods for deriving valid conclusions.
-
-Two fundamental inference rules are Modus Ponens and Modus Tollens.
+Two common patterns of inference always give a valid conclusion: Modus Ponens and Modus Tollens.
 
 ### Modus Ponens
 
@@ -134,11 +132,27 @@ If P implies Q, but Q is false, then P must also be false.
 
 **Note:** This conclusion assumes the rule is always true. If the indicator can malfunction, the conclusion may be incorrect.
 
+### A Common Mistake: Affirming the Consequent
+
+It is tempting to run a rule backwards:
+
+```text
+P → Q
+Q
+∴ P      (NOT valid)
+```
+
+- Rule: If it rains, the ground becomes wet.
+- Fact: The ground is wet.
+- Wrong conclusion: It rained.
+
+The ground could be wet for another reason, for example someone watered the garden. Knowing Q is true says nothing certain about P. This mistake is called **affirming the consequent** (Q is the *consequent*, the "then" part of the rule). The two safe patterns above work the other way: Modus Ponens needs **P to be true**, and Modus Tollens needs **Q to be false**.
+
 ---
 
 ## 4. Forward Chaining
 
-**Forward Chaining** is a data-driven reasoning method. It starts with known facts and applies relevant rules to generate new conclusions.
+**Forward chaining** is **data-driven**: it starts from the facts it knows and applies rules to add new facts.
 
 ### Process
 
@@ -202,9 +216,7 @@ Read Figure 2.4 from the top. The dashed arrow on the left is the loop: every ne
 
 ## 5. Backward Chaining
 
-**Backward Chaining** is a goal-driven reasoning method. Instead of starting with facts, it starts with a conclusion that the system wants to prove.
-
-The system searches for rules and facts that support that conclusion.
+**Backward chaining** is **goal-driven**: instead of starting from the facts, it starts from a conclusion it wants to prove, and looks for rules and facts that support it.
 
 ### Process
 
@@ -288,17 +300,17 @@ Read Figure 2.5 from the top down: each question splits into the smaller questio
 - Forward Chaining starts with what the system knows.
 - Backward Chaining starts with what the system wants to prove.
 
-Neither method is universally better. The choice depends on the problem.
+Neither method is always better. Forward chaining suits problems where all the data arrives first and you want every conclusion; backward chaining suits one specific question.
 
 ---
 
 ## 7. Resolution and Unification
 
-Symbolic systems also use techniques to match logical statements and derive conclusions.
+Two more techniques help a system combine statements and apply general rules to specific cases.
 
 ### Resolution
 
-Resolution is an inference technique used in automated theorem proving. It combines logical statements by eliminating complementary expressions.
+**Resolution** is a technique used by automatic proof programs. It combines two statements by canceling out a term and its opposite (such as `P` and `¬P`).
 
 For example:
 
@@ -310,11 +322,11 @@ P ∨ Q
 
 Since P is false, Q must be true. This is the simplest case. Resolution works on statements made of terms joined by "or" (called **clauses**). More generally, resolution takes two statements with opposite terms, such as `P ∨ Q` and `¬P ∨ R`, and derives `Q ∨ R`.
 
-Resolution is particularly important in automated proof systems, which use it to prove something by contradiction. To prove Q from `P ∨ Q` and `¬P`, the system adds the opposite, `¬Q`. Resolving `P ∨ Q` with `¬P` gives `Q`, and `Q` with `¬Q` leaves nothing at all (an empty clause). That means the facts contradict `¬Q`, so Q must be true.
+Proof programs use resolution to prove something **by contradiction**. To prove Q from `P ∨ Q` and `¬P`, the system adds the opposite, `¬Q`. Resolving `P ∨ Q` with `¬P` gives `Q`, and `Q` with `¬Q` leaves nothing at all (an empty clause). That means the facts contradict `¬Q`, so Q must be true.
 
 ### Unification
 
-Unification finds substitutions that make two logical expressions identical.
+**Unification** finds a value for each variable that makes two expressions the same.
 
 Consider:
 
@@ -331,7 +343,7 @@ x = Alex
 
 This substitution is called a **unifier**.
 
-Unification allows general rules to be applied to specific individuals.
+This is how a general rule about any `x` gets applied to one particular person.
 
 Example:
 
@@ -350,7 +362,7 @@ After unification, the system derives:
 LibraryAccess(Alex).
 ```
 
-Unification is fundamental to logic programming languages such as Prolog.
+Logic programming languages such as Prolog use unification all the time (see the Prolog extension in the [2.4](07_Expert_Systems.md) lab).
 
 ---
 
@@ -382,19 +394,17 @@ Common strategies include:
 
 Here, Rule 2 wins by **specificity**: it has all of Rule 1's conditions plus one more (`Suspended(x)`), so it describes a narrower, more specific case. It could also win because it is given a higher priority. Only Rule 2 fires, and the suspended student does not get library access.
 
-Conflict resolution helps maintain consistent decision-making.
+Without conflict resolution, the same facts could lead to different answers depending on which rule happened to run first.
 
 ---
 
 ## 9. Reasoning Under Uncertainty
 
-Classical logic treats every statement as either true or false. However, real-world information is often incomplete or uncertain.
-
-Symbolic systems can incorporate additional methods to handle uncertainty.
+In classical logic every statement is either true or false. Real information is often incomplete or uncertain, so symbolic systems add one of the three methods below.
 
 ### Certainty Factors
 
-Certainty factors represent the degree of confidence associated with a conclusion.
+A **certainty factor** says how confident the system is in a conclusion.
 
 Example:
 
@@ -402,13 +412,13 @@ Example:
 Possible infection: 0.75
 ```
 
-This represents a confidence value of 0.75 within the system.
+A certainty factor (CF) is a number from **−1** to **+1**. A CF of +1 means the system is certain the conclusion is true, −1 means certain it is false, and 0 means the evidence says nothing either way. So a CF of 0.75 means the evidence fairly strongly supports "possible infection", but not with certainty.
 
-Certainty factors were used in expert systems such as MYCIN.
+Certainty factors are **not probabilities**: they measure how strongly the evidence supports a conclusion, not how often something happens. They were used in expert systems such as MYCIN ([2.4](07_Expert_Systems.md) §4.1).
 
 ### Fuzzy Logic
 
-Fuzzy Logic represents degrees of membership rather than restricting statements to completely true or false.
+**Fuzzy logic** lets a statement be partly true, from 0 (not at all) to 1 (completely).
 
 For example:
 
@@ -427,9 +437,7 @@ It is useful for representing vague concepts such as:
 
 ### Probabilistic Reasoning
 
-Probabilistic reasoning uses probability theory to reason about uncertain information.
-
-One common method is Bayes' theorem:
+**Probabilistic reasoning** uses probability to reason about uncertain events. A common tool is **Bayes' theorem**:
 
 ```text
 P(H|E) = P(E|H) × P(H) / P(E)
@@ -449,7 +457,7 @@ For example, suppose 1 student in 100 has the flu (P(H) = 0.01). A flu test is p
 
 ## 10. Practical Implementation in Python
 
-The following example demonstrates a simple rule-based system that determines scholarship eligibility.
+This short program applies the two Excellence Scholarship rules from Section 4.
 
 ```python
 # Initial facts
@@ -481,15 +489,13 @@ else:
 Student qualifies for the scholarship.
 ```
 
-The developer explicitly defines the rules, and the program applies them to available facts.
-
-Unlike machine learning, this system does not automatically learn its rules from training data.
+A person wrote both rules; the program only applies them to the facts. Unlike machine learning, it does not learn its rules from data. (The lab below turns this into a real forward-chaining engine.)
 
 ---
 
 ## 11. Limitations of Symbolic Reasoning
 
-Despite its strengths, symbolic reasoning has several limitations.
+Symbolic reasoning is clear and explainable, but it has limits:
 
 | Limitation | Explanation |
 |---|---|
@@ -498,9 +504,7 @@ Despite its strengths, symbolic reasoning has several limitations.
 | Knowledge Acquisition | Collecting and encoding expert knowledge can be time-consuming. |
 | Limited Adaptability | Traditional systems do not automatically learn new rules from experience. |
 
-These limitations explain why symbolic systems may struggle in complex environments where information constantly changes.
-
-Combining symbolic reasoning with machine learning can help address some of these challenges.
+Because of these limits, symbolic systems struggle where information changes all the time. Combining them with machine learning helps ([2.4](07_Expert_Systems.md) §8).
 
 ---
 
@@ -521,7 +525,7 @@ Combining symbolic reasoning with machine learning can help address some of thes
 | Fuzzy Logic | Represents degrees of membership. |
 | Probabilistic Reasoning | Uses probability to handle uncertainty. |
 
-**Central idea:** Symbolic AI reasons by applying logical rules to explicitly represented knowledge, allowing systems to derive conclusions and make decisions.
+**Central idea:** Symbolic AI applies logical rules to knowledge that people have written down, and so works out new conclusions it can explain step by step.
 
 ---
 
@@ -715,11 +719,11 @@ Facts:  A, B, E
 
 **10.** **Yes.** The reasoning can be logically valid but still reach a wrong conclusion if a fact is wrong or a rule is incomplete or outdated. For example, Modus Tollens concludes a device is unplugged when its indicator is off, but if the indicator bulb is broken, that conclusion is wrong. Correct reasoning only guarantees correct conclusions when the facts and rules are correct.
 
-**11.** Machine learning is good at learning patterns from messy data, such as recognising images or speech, while symbolic reasoning is good at applying explicit rules and explaining its decisions. Combining them can give a system that both copes with real-world data and gives transparent, rule-checked answers. This is the idea behind neuro-symbolic AI (see [2.4](07_Expert_Systems.md)).
+**11.** Machine learning is good at learning patterns from messy data, such as recognizing images or speech, while symbolic reasoning is good at applying explicit rules and explaining its decisions. Combining them can give a system that both copes with real-world data and gives transparent, rule-checked answers. This is the idea behind neuro-symbolic AI (see [2.4](07_Expert_Systems.md)).
 
 **12.** Step 1: A and B are true, so Rule 1 fires and adds C. Step 2: C is now true, so Rule 2 fires and adds D. Step 3: D and E are true, so Rule 3 fires and adds F. No rule can add a new fact, so the system stops. Final facts: A, B, E, C, D, F.
 
-**13.** The system reversed the rule. "If it rains, the ground is wet" does not mean "if the ground is wet, it rained", because someone could have watered the garden. This mistake is called affirming the consequent. Modus Ponens needs P to be true, and Modus Tollens needs Q to be false.
+**13.** The system reversed the rule. "If it rains, the ground is wet" does not mean "if the ground is wet, it rained", because someone could have watered the garden. This mistake is called **affirming the consequent** (§3). Modus Ponens needs P to be true, and Modus Tollens needs Q to be false.
 
 </details>
 
