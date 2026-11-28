@@ -2,7 +2,7 @@
 
 **Team Member:** Lu My Ky (`@jojolu11`)
 
-**In this section:** [Introduction](#1-introduction) · [Components](#2-how-expert-systems-work) · [Making Decisions](#3-how-an-expert-system-makes-decisions) · [MYCIN, DENDRAL, XCON](#4-real-world-examples-of-expert-systems) · [vs. Traditional Programs](#5-expert-systems-vs-traditional-programs) · [Advantages](#6-advantages-of-expert-systems) · [Limitations](#7-limitations-of-expert-systems) · [Modern AI](#8-expert-systems-and-modern-ai) · [Key Takeaways](#9-key-takeaways) · [Lab: PC Clinic](#lab-professor-pixels-pc-clinic) · [Practice Questions](#10-practice-questions-and-answers) · [References](#11-references)
+**In this section:** [Introduction](#1-introduction) · [Components](#2-how-expert-systems-work) · [Making Decisions](#3-how-an-expert-system-makes-decisions) · [MYCIN, DENDRAL, XCON](#4-real-world-examples-of-expert-systems) · [vs. Traditional Programs](#5-expert-systems-vs-traditional-programs) · [Advantages](#6-advantages-of-expert-systems) · [Limitations](#7-limitations-of-expert-systems) · [Modern AI](#8-expert-systems-and-modern-ai) · [Key Takeaways](#9-key-takeaways) · [Lab 2.4: PC Clinic](#lab-24-professor-pixels-pc-clinic) · [Practice Questions](#10-practice-questions-and-answers) · [References](#11-references)
 
 **Learning goals.** By the end of this section, you can:
 * name the parts of an expert system and what each does;
@@ -13,7 +13,7 @@
 
 > **Pixel's Mission**  
 > Byte opens a PC Clinic. The first PC beeps three times. Professor Pixel says: *"Let's put a technician's knowledge inside you."*  
-> **Predict first:** If Byte knows five expert rules, which PCs will Byte still fail on? Write down your guess, then check it in the PC Clinic lab and at the start of §10.
+> **Predict first:** If Byte knows five expert rules, which PCs will Byte still fail on? Write down your guess, then check it in Lab 2.4 (the PC Clinic) and at the start of §10.
 
 ---
 
@@ -144,7 +144,7 @@ Inaccurate rules lead to incorrect conclusions, so expert systems should support
 
 ---
 
-## Lab: Professor Pixel's PC Clinic
+## Lab 2.4: Professor Pixel's PC Clinic
 
 * **Goal:** Be the inference engine: forward chain from facts to a diagnosis, explain it, and see what happens when no rule covers a case.
 * **Preparation:** Paper and pen, about 20 minutes; re-read §2–3. The optional extension uses SWISH, a free online Prolog tool.
@@ -186,7 +186,7 @@ Inaccurate rules lead to incorrect conclusions, so expert systems should support
   advice(PC, reseat_ram) :- suspect_ram(PC).
   ```
 
-  Lines 1–2 are **facts** about PC A; the rest are **rules**, where `:-` means "if" and a comma means "and". Capitalised words (`PC`, `N`) are variables; every line ends with a full stop. Predict, then run `advice(pc_a, What).` and `advice(pc_c, What).` in the query box (bottom right). No SWISH? Use the answers below.
+  Lines 1–2 are **facts** about PC A; the rest are **rules**, where `:-` means "if" and a comma means "and". Capitalized words (`PC`, `N`) are variables; every line ends with a period. Predict, then run `advice(pc_a, What).` and `advice(pc_c, What).` in the query box (bottom right). No SWISH? Use the answers below.
 
 <details>
 <summary><b>Feedback: check your diagnosis</b></summary>
@@ -211,7 +211,7 @@ Try each question yourself first, then open the answers to check.
 
 ### Questions
 
-*Understanding: 1–5 · Application: 6–8 · Critical thinking: 9–11*
+*Understanding: 1–5 · Application: 6–8 · Critical thinking: 9–11 · Tracing: 12–13*
 
 **1.** What is an expert system?
 
@@ -234,6 +234,10 @@ Try each question yourself first, then open the answers to check.
 **10.** Why are traditional expert systems limited when information changes constantly?
 
 **11.** How could combining expert systems with machine learning improve AI applications?
+
+**12.** Using the two rules in §3, a student has a GPA of 3.85, but working memory has no `CommunityService` fact. Trace forward chaining: which rules fire, and what does the system conclude?
+
+**13.** Using the lab rules R1 to R5, a PC has the facts `BeepsAtStart`, `FiveBeeps` and `BlackScreen`. Which rules fire, in order? What is in working memory at the end, and why does Byte give no advice?
 
 <details>
 <summary><b>Show answers</b> (try the questions first!)</summary>
@@ -259,6 +263,10 @@ Try each question yourself first, then open the answers to check.
 **10.** People write the rules. When information changes often, the rules go out of date and must be fixed by hand, which is slow and expensive, because the system cannot learn new rules itself.
 
 **11.** Machine learning finds patterns in messy data, such as signs of disease in images; the expert system applies explicit rules to them and explains its decisions. The result handles real-world data yet stays checkable.
+
+**12.** Rule 1 fires (3.85 ≥ 3.8) and adds `ExcellentAcademicPerformance`. Rule 2 also needs `CommunityService`, which is not in working memory, so it does not fire, and the engine stops. The system cannot conclude `ScholarshipEligible`. This does not prove the student is ineligible; the community service may simply not have been entered.
+
+**13.** R1 fires and adds `POSTFailed`. Restart: R1 adds nothing new; R2 needs `ThreeBeeps`, so it does not match; R3 matches (`POSTFailed` and `FiveBeeps`) and adds `SuspectGraphicsCard`. Restart: no rule adds anything new, so Byte stops. Working memory: `BeepsAtStart`, `FiveBeeps`, `BlackScreen`, `POSTFailed`, `SuspectGraphicsCard`. Byte gives no advice because no rule turns `SuspectGraphicsCard` into advice (R4 only covers `SuspectRAM`). The fix is a new rule in the knowledge base, such as `IF SuspectGraphicsCard THEN Advice: reseat the graphics card`.
 
 </details>
 
