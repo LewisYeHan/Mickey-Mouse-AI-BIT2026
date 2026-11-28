@@ -97,8 +97,8 @@ These were submitted under their own assignments and are not stored in this repo
 | Cao Minh Tuan (高明俊) | Content lead | 1.2 Operating Systems, 2.3 Knowledge Representation | [@mnhtnc](https://github.com/mnhtnc) |
 | Frederick Samuel Lesmana (梁天赐) | Content lead | 1.2 Operating Systems, 2.2 Logic and Reasoning | [@Ti4nCi](https://github.com/Ti4nCi) |
 | Lu My Ky (吕美琪) | Video and content lead | 1.3 Application Software, 2.4 Expert Systems | [@jojolu11](https://github.com/jojolu11) |
-| Wong Hiu Chung Samuel (王晓聪) | Visual lead | 2.1 What Is Symbolic AI?, 1.5 summary, Part 2 diagrams | [@Samuel940398](https://github.com/Samuel940398) |
-| Goh Ye Han (吴宇航) | Quality lead, repository owner | 1.5 quiz, 2.6 glossary, 2.7 summary and quiz, reviews | [@LewisYeHan](https://github.com/LewisYeHan) |
+| Wong Hiu Chung Samuel (王晓聪) | Visual lead | 2.1 What Is Symbolic AI?, 1.4 glossary, 1.5 summary, Part 2 diagrams | [@Samuel940398](https://github.com/Samuel940398) |
+| Goh Ye Han (吴宇航) | Quality lead, repository owner | 1.4 glossary, 1.5 quiz, 2.6 glossary, 2.7 summary and quiz, reviews | [@LewisYeHan](https://github.com/LewisYeHan) |
 
 Each section file names its writers at the top. The Git history shows who committed each change.
 
@@ -125,7 +125,7 @@ Each section file names its writers at the top. The Git history shows who commit
 
 * The Study Guide, Test Bank, PPT and videos (V1.0) still use the old Part 1 numbering, and the Study Guide still contains the two old Part 1 figures. Video 1 teaches Operating Systems before System Software (System Software starts at 11:40).
 * A few wording differences remain in those resources, for example Test Bank MC16 and PPT slide 101 say "both rules fire" where 2.2 now says the rules *match* and one *fires*. All known differences are listed in `docs/Resource_Mapping.md`.
-* The original source and licence of the historical photo in Figure 2.3 (an IBM 7090 set up to play chess) have not been confirmed.
+* The original source and license of the historical photo in Figure 2.3 (an IBM 7090 set up to play chess) have not been confirmed.
 * Some Study Guide labs (for example Prolog Family Detective and Little Man Computer) are in the Study Guide only, not in this Markdown.
 * The online copy of *Be the Scheduler*, the online ELIZA, online Python editors and the SWISH website need internet. Each has an offline alternative: the local game file, IDLE, or the expected results in the feedback boxes.
 * The labs in 1.1 and 1.3 give full steps for Windows only. Mac users get a short note and can use the expected results in the feedback.
