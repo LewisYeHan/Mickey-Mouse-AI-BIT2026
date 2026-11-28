@@ -4,7 +4,7 @@ The game from our mini lecture SW3, used in [1.2 Operating Systems, Section 8](.
 
 ## How to open it
 
-* **Offline:** double-click `index.html`. It opens in any web browser (Chrome, Edge, Firefox, Safari) and needs no installation or account. Without internet it uses your computer's default font; everything else works.
+* **Offline:** double-click `index.html`. It opens in any web browser (Chrome, Edge, Firefox, Safari) and needs no installation, account or internet connection. It uses only the fonts already on your computer.
 * **Online (optional):** <https://schedulercpu.netlify.app>
 
 ## What to do
