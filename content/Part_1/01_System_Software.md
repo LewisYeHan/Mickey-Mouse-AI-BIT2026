@@ -79,9 +79,9 @@ When you press the power button on a PC, the CPU does not yet know where Windows
 4. **Finds a drive to start from:** It checks the SSD, hard drive, or USB stick, in the boot order you set.
 5. **Hands over to the bootloader:** It starts the small program on that drive that knows how to load the OS.
 
-<p align="center"><img src="../images/photo_bios_chip.jpg" alt="Part of a motherboard: a square chip labelled PMC Flash, which stores the BIOS, next to a round silver coin-cell battery that keeps the CMOS settings and clock alive" width="400"></p>
+<p align="center"><img src="../images/photo_bios_chip.jpg" alt="Part of a motherboard: a square chip labeled PMC Flash, which stores the BIOS, next to a round silver coin-cell battery that keeps the CMOS settings and clock alive" width="400"></p>
 
-*Photo: the BIOS chip (the square chip labelled PMC Flash) and the round coin-cell CMOS battery on an ASUS P4P800-E motherboard. Photo by Samuel Peixoto, public domain, via Wikimedia Commons.*
+*Photo: the BIOS chip (the square chip labeled PMC Flash) and the round coin-cell CMOS battery on an ASUS P4P800-E motherboard. Photo by Samuel Peixoto, public domain, via Wikimedia Commons.*
 
 ### Legacy BIOS vs. Modern UEFI
 **UEFI (Unified Extensible Firmware Interface)** replaced the old BIOS and has been standard on PCs since about 2012. Many people still call it "the BIOS" out of habit.
@@ -185,7 +185,7 @@ Turning a C program into something you can run takes five steps:
 | :--- | :--- |
 | **System vs. application software** | Runs the computer vs. does tasks for the user |
 | **Firmware vs. driver** | Stored on the device's chip vs. stored inside the OS |
-| **BIOS vs. UEFI** | Older 16-bit with MBR vs. modern 64-bit with GPT and Secure Boot |
+| **BIOS vs. UEFI** | Older 16-bit with MBR vs. modern 32-bit / 64-bit with GPT and Secure Boot |
 | **OS vs. kernel** | The kernel is the core part of the whole OS |
 | **Kernel mode vs. user mode** | Full hardware access vs. limited access |
 | **Compiler vs. interpreter** | Translates the whole program first vs. step by step while running |
@@ -244,7 +244,7 @@ Turning a C program into something you can run takes five steps:
 
 * **Step 2:** **BIOS Mode** shows **UEFI** on almost every PC made since about 2012; **Legacy** means the older BIOS way of starting. **BIOS Version/Date** names the firmware's maker, its version and its release date. Many PC makers build on firmware from a specialist company, such as American Megatrends in the screenshot. **Secure Boot State** shows **On**, **Off** or **Unsupported**.
 * **Step 3:** **Driver Provider** is usually the maker of the graphics chip, such as Intel, AMD or NVIDIA, or Microsoft. **Driver Date** and **Driver Version** show which release of the driver is installed. Drivers are updated through Windows Update or the maker's own app.
-* **Example (the laptop in the screenshots):** BIOS Version/Date *American Megatrends International, LLC. GA605KM.307, 12/1/2026*; BIOS Mode *UEFI*; Secure Boot State *On*; Driver Provider *NVIDIA*; Driver Date *7/11/2026*; Driver Version *32.0.16.2124*. The firmware and the driver come from different companies and have different dates.
+* **Example (the laptop in the screenshots, which shows dates as day/month/year):** BIOS Version/Date *American Megatrends International, LLC. GA605KM.307, 12/1/2026* (12 January 2026); BIOS Mode *UEFI*; Secure Boot State *On*; Driver Provider *NVIDIA*; Driver Date *7/11/2026* (7 November 2026); Driver Version *32.0.16.2124*. The firmware and the driver come from different companies and have different dates.
 * **Observation:** BIOS Version/Date, BIOS Mode and Secure Boot State describe the **firmware**, stored on a chip on the motherboard. Driver Provider, Driver Date and Driver Version describe a **driver**, stored inside the OS on your drive.
 * **Reflection answers:**
   1. In the standard setup, UEFI starts Windows from a **GPT** disk, and Legacy BIOS starts it from an **MBR** disk (the table in §4).
