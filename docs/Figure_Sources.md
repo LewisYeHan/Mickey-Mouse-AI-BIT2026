@@ -4,10 +4,10 @@ Every image used in the learning content, who made it, and where it came from. "
 
 ## Part 1: Software
 
-| Figure | File | Used in | Made by | How it was made | Source and licence |
+| Figure | File | Used in | Made by | How it was made | Source and license |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1.1 Layers of a computer | `content/images/system_layers.png` | 1.1 Section 2 | Yeo Shih Jie (Stage 3 redraw) | AI-assisted diagram, checked against the text | Team's own work |
-| 1.2 The six boot steps | `content/images/boot_process.png` | 1.1 Section 5 | Mickey Mouse team | Team diagram | Team's own work |
+| 1.2 The six boot steps | `content/images/boot_process.png` | 1.1 Section 5 | Yeo Shih Jie (Stage 2 redraw, 5 Nov) | AI-assisted diagram, checked against the six boot steps in the text | Team's own work |
 | 1.3 Process states | `content/images/process_states.png` | 1.2 Section 6 | Yeo Shih Jie (Stage 3) | AI-assisted diagram, checked against the text | Team's own work |
 | 1.4 Task Manager, Processes tab | `content/images/task_manager_processes.png` | 1.2 Section 8 | Yeo Shih Jie | Screenshot of his own laptop (also used in mini lecture SW3) | Team's own screenshot |
 | 1.5 FCFS, Round Robin and SJF compared | `content/images/scheduling_comparison.png` | 1.2 Section 8 | Yeo Shih Jie (Stage 3) | AI-assisted diagram; numbers checked by hand | Team's own work |
@@ -19,11 +19,11 @@ Every image used in the learning content, who made it, and where it came from. "
 
 ## Part 2: Symbolic AI
 
-| Figure | File | Used in | Made by | How it was made | Source and licence |
+| Figure | File | Used in | Made by | How it was made | Source and license |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 2.1 How Symbolic AI reaches a conclusion | `content/images/symbolic_ai_process.png` | 2.1 Section 2 | Wong Hiu Chung Samuel | Team diagram | Team's own work |
 | 2.2 Symbolic AI timeline | `content/images/symbolic_ai_timeline.png` | 2.1 Section 3 | Wong Hiu Chung Samuel | Team diagram | Team's own work |
-| 2.3 IBM 7090 set up to play chess | `content/images/gofai_history.png` | 2.1 Section 3 | Historical photograph | Not made by the team | Original archive and licence not yet confirmed (see Known limitations in the README) |
+| 2.3 IBM 7090 set up to play chess | `content/images/gofai_history.png` | 2.1 Section 3 | Historical photograph | Not made by the team | Original archive and license not yet confirmed (see Known limitations in the README) |
 | 2.4 Forward chaining | `content/images/forward_chaining_flow.png` | 2.2 Section 4 | Wong Hiu Chung Samuel | Team diagram | Team's own work |
 | 2.5 Backward chaining | `content/images/backward_chaining_tree.png` | 2.2 Section 5 | Wong Hiu Chung Samuel | Team diagram | Team's own work |
 | 2.6 Semantic network about Alex | `content/images/semantic_network_alex.png` | 2.3 Section 4 | Wong Hiu Chung Samuel | Team diagram | Team's own work |
@@ -44,7 +44,7 @@ Every image used in the learning content, who made it, and where it came from. "
 
 Real photos of the hardware and systems the text describes. They are not numbered as figures. All come from Wikimedia Commons and were downloaded at 960 pixels wide (the BIOS photo at its original 640 pixels); they were not edited.
 
-| Photo | File | Used in | Photographer | Source | Licence |
+| Photo | File | Used in | Photographer | Source | License |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | AMD Ryzen 9 9950X processor (CPU) | `content/images/photo_cpu.jpg` | 1.1 Section 2 | 4300streetcar | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:AMD_Ryzen_9_9950X.jpg) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | BIOS chip and CMOS battery on an ASUS P4P800-E motherboard | `content/images/photo_bios_chip.jpg` | 1.1 Section 4 | Samuel Peixoto | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:FlashROM_BIOS_Batery_ASUS.jpg) | Public domain |
@@ -56,7 +56,7 @@ Real photos of the hardware and systems the text describes. They are not numbere
 
 These screenshots show learners what the screen should look like during a lab. They are not numbered as figures.
 
-| Screenshot | File | Used in | Made by | How it was made | Source and licence |
+| Screenshot | File | Used in | Made by | How it was made | Source and license |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | A chat with ELIZA | `content/images/eliza_chat.png` | 2.1 Lab | Yeo Shih Jie (Stage 3) | Screenshot taken in his browser with AI assistance, then cropped; the replies were checked against the lab feedback | Screenshot of N. Landsteiner's online ELIZA (mass:werk), shown to teach about the program |
 | System Information, BIOS rows | `content/images/msinfo_bios.png` | 1.1 Lab | Yeo Shih Jie (Stage 3) | Screenshot of his own laptop; cropped, System Name and User Name rows removed and key rows outlined with AI assistance | Team's own screenshot |
