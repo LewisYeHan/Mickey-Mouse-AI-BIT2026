@@ -86,7 +86,7 @@ These were submitted under their own assignments and are not stored in this repo
 * **Offline:** open this folder in Visual Studio Code and press `Ctrl + Shift + V` (`Cmd + Shift + V` on a Mac) on any `.md` file to see it formatted. Typora or any other Markdown viewer also works. All links and images are relative, so they work from any folder.
 * **PDF:** the submitted package includes the whole module as one PDF, in reading order, with every answer shown.
 * **Answers:** practice answers, quiz answer keys and lab feedback are inside fold-out boxes. Click the title of a box (for example *Show answers*) to open it. The PDF prints them all open.
-* **Activities:** to play *Be the Scheduler*, double-click `activities/be_the_scheduler/index.html`. The labs in 1.1 and 1.3 use tools built into Windows (System Information, Device Manager and Task Manager), with a note for Mac users. The 2.1 lab uses an online copy of ELIZA, <https://www.masswerk.at/elizabot/eliza.html>. The 2.2 lab runs a short Python program in IDLE or any online Python editor. The 2.4 Prolog extension uses the free website <https://swish.swi-prolog.org>. Every lab and activity has a no-computer fallback: its feedback box shows the expected results.
+* **Activities:** to play *Be the Scheduler*, double-click `activities/be_the_scheduler/index.html`. The labs in 1.1 and 1.3 use tools built into Windows (System Information, Device Manager and Task Manager), with notes for Mac and Linux users. The 2.1 lab uses an online copy of ELIZA, <https://www.masswerk.at/elizabot/eliza.html>. The 2.2 lab runs a short Python program in IDLE or any online Python editor. The 2.4 Prolog extension uses the free website <https://swish.swi-prolog.org>. Every lab and activity has a no-computer fallback: its feedback box shows the expected results.
 
 ## Team
 
@@ -125,10 +125,10 @@ Each section file names its writers at the top. The Git history shows who commit
 
 * The Study Guide, Test Bank, PPT and videos (V1.0) still use the old Part 1 numbering, and the Study Guide still contains the two old Part 1 figures. Video 1 teaches Operating Systems before System Software (System Software starts at 11:40).
 * A few wording differences remain in those resources, for example Test Bank MC16 and PPT slide 101 say "both rules fire" where 2.2 now says the rules *match* and one *fires*. All known differences are listed in `docs/Resource_Mapping.md`.
-* The original source and license of the historical photo in Figure 2.3 (an IBM 7090 set up to play chess) have not been confirmed.
+* The historical photo in Figure 2.3 (an IBM 7090 set up to play chess, about 1967) is not openly licensed. It comes from the Computer History Museum, courtesy of Stanford University, and is used with credit for non-commercial teaching (`docs/Figure_Sources.md`).
 * Some Study Guide labs (for example Prolog Family Detective and Little Man Computer) are in the Study Guide only, not in this Markdown.
 * The online copy of *Be the Scheduler*, the online ELIZA, online Python editors and the SWISH website need internet. Each has an offline alternative: the local game file, IDLE, or the expected results in the feedback boxes.
-* The labs in 1.1 and 1.3 give full steps for Windows only. Mac users get a short note and can use the expected results in the feedback.
+* The labs in 1.1 and 1.3 give full steps for Windows; Mac and Linux users get shorter notes and can use the expected results in the feedback.
 
 ## How We Work
 
