@@ -4,9 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Be the Scheduler</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 /* Layout idea: a CPU dispatch console. Ready queue left, the CPU chip centre stage, scoreboard right, dispatch log (Gantt) along the bottom. One theme, by choice. */
 :root{
@@ -415,8 +412,7 @@ function start(d) {
   lastLen = app.s.log.length;
   bind(); render();
 }
-window.claude?.hot?.snapshot?.(() => ({ base: app.base, mode: app.mode, cost: app.cost, results: app.results, s: app.s }));
-window.claude?.hot?.ready ? window.claude.hot.ready(start) : start(window.claude?.hot?.data ?? {});
+start({});
 </script>
 </body>
 </html>
