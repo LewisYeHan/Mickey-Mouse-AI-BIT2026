@@ -2,7 +2,7 @@
 
 **Team Member:** Wong Hiu Chung Samuel (`@Samuel940398`)
 
-**In this section:** [What Is Symbolic AI?](#1-what-is-symbolic-ai) · [How It Works](#2-how-it-works) · [GOFAI](#3-good-old-fashioned-ai-gofai) · [Where It Is Used](#4-where-is-it-used) · [Strengths and Limitations](#5-strengths-and-limitations) · [Summary](#6-summary) · [Lab: Chat with ELIZA](#lab-chat-with-eliza-a-chatbot-from-1966) · [Practice Questions](#7-practice-questions-and-answers) · [References](#8-references)
+**In this section:** [What Is Symbolic AI?](#1-what-is-symbolic-ai) · [How It Works](#2-how-it-works) · [GOFAI](#3-good-old-fashioned-ai-gofai) · [Where It Is Used](#4-where-is-it-used) · [Strengths and Limitations](#5-strengths-and-limitations) · [Summary](#6-summary) · [Lab 2.1: Chat with ELIZA](#lab-21-chat-with-eliza-a-chatbot-from-1966) · [Practice Questions](#7-practice-questions-and-answers) · [References](#8-references)
 
 **Learning goals.** By the end of this section you can:
 * explain what Symbolic AI is and name its three parts: symbols, facts and rules;
@@ -68,7 +68,7 @@ Allen Newell and Herbert Simon stated this belief as the **Physical Symbol Syste
 
 ![A man playing chess at the console of an IBM 7090 mainframe computer](../images/gofai_history.png)
 
-*Figure 2.3: An IBM 7090 mainframe set up to play chess. Early researchers used games like chess to test symbols, rules and search.*
+*Figure 2.3: An IBM 7090 mainframe set up to play chess at Stanford University, about 1967. Early researchers used games like chess to test symbols, rules and search. Photo courtesy of Stanford University, via the Computer History Museum.*
 
 An **AI winter** is a period when interest and funding for AI research fell sharply after promises were not met. Symbolic AI did not end in 1993: its ideas live on in rule engines, knowledge graphs and planners, and today they are often combined with machine learning (§5).
 
@@ -126,7 +126,7 @@ These limitations are why modern AI often combines symbolic reasoning with machi
 
 ---
 
-## Lab: Chat with ELIZA, a Chatbot from 1966
+## Lab 2.1: Chat with ELIZA, a Chatbot from 1966
 
 * **Goal:** Find the hidden rules inside one of the first chatbots, and test the strengths and limitations in §5.
 * **Preparation:** A browser with internet and about 15 minutes; re-read §4 and §5. **ELIZA** was written by Joseph Weizenbaum at MIT and described in 1966 (Weizenbaum, 1966). It is a **rule-based chatbot** (§4): it looks for keywords in your sentence and answers with a reply pattern that belongs to that keyword. Open the free online copy at <https://www.masswerk.at/elizabot/eliza.html>, click **open ELIZA terminal**, type after `YOU:` and press **Enter** after each sentence. No internet? Use the chat in the screenshot below for Steps 2 to 5.
@@ -188,6 +188,9 @@ Try each question yourself first, then open the answers to check.
    Attendance(Lee, 88%)
    ```
 
+7. A bank's rule-based system refuses a customer's loan, and the customer asks why. Which strength of Symbolic AI from §5 helps the bank answer, and how?
+8. A team wants a system that reads handwritten digits from photos. Why is classic Symbolic AI a poor fit? Name the limitations from §5 that apply.
+
 <details>
 <summary><b>Show answers</b> (try the questions first!)</summary>
 
@@ -197,6 +200,8 @@ Try each question yourself first, then open the answers to check.
 4. Good Old-Fashioned AI. It relied on symbols, explicit knowledge and logical reasoning.
 5. It is a **rule**, not a fact, because it has an IF–THEN structure. A fact would be `GPA(Sammy, 3.8)`.
 6. GPA 3.6 passes (at least 3.5), but attendance 88% fails (below 90%). The rule needs both conditions, so it does not fire. The system cannot conclude `ScholarshipEligible(Lee)`. This does not prove Lee is ineligible; it only means this rule does not derive it.
+7. **Explainable** (and easy to trace): the system can list the facts and rules that led to the refusal, such as the income rule that was not met. If one of those rules is wrong, the bank can find and correct it.
+8. Handwriting is **vague, messy input**, which Symbolic AI struggles with. Writing a rule for every way people write each digit runs into the **knowledge bottleneck**, and any style the rules miss would fail (**brittle**). Machine learning, which learns from many examples, suits this task better.
 
 </details>
 
