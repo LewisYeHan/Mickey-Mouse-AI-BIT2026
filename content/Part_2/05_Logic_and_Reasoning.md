@@ -2,7 +2,7 @@
 
 **Team Member:** Frederick Samuel Lesmana (`@Ti4nCi`)
 
-**In this section:** [Introduction](#1-introduction) · [Facts, Rules and Inference](#2-facts-rules-and-inference) · [Modus Ponens and Modus Tollens](#3-logical-inference) · [Forward Chaining](#4-forward-chaining) · [Backward Chaining](#5-backward-chaining) · [Forward vs. Backward](#6-forward-chaining-vs-backward-chaining) · [Resolution and Unification](#7-resolution-and-unification) · [Conflict Resolution](#8-conflict-resolution) · [Reasoning Under Uncertainty](#9-reasoning-under-uncertainty) · [Python Example](#10-practical-implementation-in-python) · [Limitations](#11-limitations-of-symbolic-reasoning) · [Key Takeaways](#12-key-takeaways) · [Lab: Run a Forward-Chaining Engine](#lab-run-a-forward-chaining-engine-in-python) · [Practice Questions](#13-practice-questions-and-answers) · [References](#14-references)
+**In this section:** [Introduction](#1-introduction) · [Facts, Rules and Inference](#2-facts-rules-and-inference) · [Modus Ponens and Modus Tollens](#3-logical-inference) · [Forward Chaining](#4-forward-chaining) · [Backward Chaining](#5-backward-chaining) · [Forward vs. Backward](#6-forward-chaining-vs-backward-chaining) · [Resolution and Unification](#7-resolution-and-unification) · [Conflict Resolution](#8-conflict-resolution) · [Reasoning Under Uncertainty](#9-reasoning-under-uncertainty) · [Python Example](#10-practical-implementation-in-python) · [Limitations](#11-limitations-of-symbolic-reasoning) · [Key Takeaways](#12-key-takeaways) · [Lab 2.2: Run a Forward-Chaining Engine](#lab-22-run-a-forward-chaining-engine-in-python) · [Practice Questions](#13-practice-questions-and-answers) · [References](#14-references)
 
 **Learning goals.** By the end of this section you can:
 * use Modus Ponens and Modus Tollens to reach a conclusion, and spot the "affirming the consequent" mistake;
@@ -529,7 +529,7 @@ Because of these limits, symbolic systems struggle where information changes all
 
 ---
 
-## Lab: Run a Forward-Chaining Engine in Python
+## Lab 2.2: Run a Forward-Chaining Engine in Python
 
 * **Goal:** Run a small forward-chaining engine (§4), and watch it add facts until no rule adds anything new.
 * **Preparation:** About 20 minutes; re-read §4 and §10. No programming experience is needed: you copy the program and change one line at a time. You need Python 3 in any form: **IDLE**, which is installed together with Python from <https://www.python.org/downloads/>; VS Code; or a free online editor such as [Programiz](https://www.programiz.com/python-programming/online-compiler/), which needs no installation. Copy the program below into the editor. No computer? Trace the program on paper; the feedback box shows what it prints.
