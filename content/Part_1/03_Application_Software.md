@@ -2,7 +2,7 @@
 
 **Team Member:** Lu My Ky (`@jojolu11`)
 
-**In this section:** [What is Application Software?](#1-what-is-application-software) · [The Execution Lifecycle](#2-what-happens-when-you-open-an-app) · [Types of Applications](#3-types-of-application-software) · [How Apps Are Built](#4-how-apps-are-built-native-vs-web-vs-cross-platform) · [Lab: Follow an App from File to Process](#lab-follow-an-app-from-file-to-process) · [Practice Questions](#5-practice-questions-and-answers) · [References](#6-references)
+**In this section:** [What is Application Software?](#1-what-is-application-software) · [The Execution Lifecycle](#2-what-happens-when-you-open-an-app) · [Types of Applications](#3-types-of-application-software) · [How Apps Are Built](#4-how-apps-are-built-native-vs-web-vs-cross-platform) · [Lab 1.3: Follow an App from File to Process](#lab-13-follow-an-app-from-file-to-process) · [Practice Questions](#5-practice-questions-and-answers) · [References](#6-references)
 
 **Learning goals.** By the end of this section you can:
 * explain the difference between application software and system software;
@@ -139,10 +139,10 @@ A **cross-platform app** is written once and then runs on several operating syst
 
 ---
 
-## Lab: Follow an App from File to Process
+## Lab 1.3: Follow an App from File to Process
 
 * **Goal:** See Steps 1 and 2 of Figure 1.9 on your own computer: one program file on the drive, and the processes the OS creates from it.
-* **Preparation:** A Windows 10 or 11 computer with Microsoft Edge (it comes with Windows) and about 15 minutes; re-read §2. You only look, so nothing on your computer changes. On a Mac, follow the note at the end of the task. No computer? Use the screenshots from a team member's laptop below and the typical results in the feedback box.
+* **Preparation:** A Windows 10 or 11 computer with Microsoft Edge (it comes with Windows) and about 15 minutes; re-read §2. You only look, so nothing on your computer changes. On a Mac or on Linux, follow the notes at the end of the task. No computer? Use the screenshots from a team member's laptop below and the typical results in the feedback box.
 * **Task:**
 
   **Step 1, predict:** you open Edge with one tab. How many processes will it use: 1, between 2 and 5, or more than 5?  
@@ -152,6 +152,8 @@ A **cross-platform app** is written once and then runs on several operating syst
   **Step 5, change something:** in Edge, open three new tabs with three different websites. Go back to the **Processes** page and read the number in brackets again. Then close those three tabs and read it once more.
 
   *On a Mac:* open **Activity Monitor** (press **Command + Space** and type *Activity Monitor*), open your browser with a few websites, and look for your browser's processes in the list. The browser's program file is in the **Applications** folder.
+
+  *On Linux (for example Ubuntu with Firefox):* open Firefox with one tab, then open a **Terminal** (**Ctrl + Alt + T**). For Steps 2 and 5, `pgrep -c -f firefox` prints how many processes Firefox is using. For Step 3, `command -v firefox` shows the command that starts it; the real program file is the path at the start of the first line printed by `pgrep -a -f firefox`. For Step 4, `pgrep -a -f firefox` lists every Firefox process with its own PID. The **System Monitor** app shows the same processes with their memory, although the helpers have names such as *Isolated Web Co* instead of *firefox*.
 
   ![File Explorer open at This PC > OS (C:) > Program Files (x86) > Microsoft > Edge > Application, listing folders named 157.0.4341.46 and 158.0.4370.33 and the application file msedge](../images/edge_program_folder.png)
 
@@ -175,6 +177,7 @@ A **cross-platform app** is written once and then runs on several operating syst
 * **Step 3:** The folder is usually `C:\Program Files (x86)\Microsoft\Edge\Application`, as in the screenshot. This is the program file of Step 1: machine code stored on the drive, doing nothing until it runs.
 * **Step 4:** There is one `msedge.exe` row for each process, and every row has a different PID. The laptop in the screenshot had more than 40 `msedge.exe` rows.
 * **Step 5:** The number usually goes up when you open new websites and down when you close them. It may not change by exactly one per tab, because Edge can let tabs from the same website share a process.
+* **On Linux:** Firefox also splits its work into several processes, a main process plus helper and website processes, so `pgrep -a -f firefox` lists several lines, each with a different PID, even with one tab open.
 * **Reflection answers:**
   1. **Step 2** of the lifecycle. Edge's main process asks the OS to create each new process, and the OS gives every one its own memory and its own **Process Control Block (PCB)**. The **PID** is the number the OS uses to tell the processes apart.
   2. Processes do not share memory. If one website crashes or contains harmful code, it cannot read or crash the other tabs: the **safety** benefit in §2. Threads inside one process share its memory (Practice Question 5), so one bad tab could break all of them.
@@ -197,6 +200,8 @@ Try each question yourself first, then open the answers to check.
 6. Which type of application is each of these: Duolingo, Excel, Blender, Microsoft Flight Simulator?
 7. A small team wants its new app on Windows, macOS, and Linux as fast as possible, and does not mind if it uses more memory. Which way of building it fits best, and why?
 8. Why do Discord and VS Code use more RAM than a similar native app?
+9. Put these in the order they happen when you open an app: the CPU runs the instructions; the app makes a system call; the program file sits on the SSD; the kernel does the work and returns the result; the OS loader creates a process in RAM.
+10. Which way of building an app fits best, and why? (a) A hospital app that runs only on iPads, must use the camera and must be as fast as possible. (b) A student timetable that should open on any device without installing anything.
 
 <details>
 <summary><b>Show answers</b> (try the questions first!)</summary>
@@ -209,6 +214,8 @@ Try each question yourself first, then open the answers to check.
 6. Duolingo: educational. Excel: spreadsheet. Blender: graphics. Microsoft Flight Simulator: simulation.
 7. A **cross-platform app with Electron**. One codebase runs on all three systems, which saves time, and the team has accepted the extra memory use.
 8. They are built with **Electron**, so each one carries its own copy of the Chromium browser engine, which takes up a lot of RAM.
+9. The program file sits on the SSD → the OS loader creates a process in RAM → the CPU runs the instructions (fetch, decode, execute) → the app makes a system call → the kernel does the work and returns the result. These are Steps 1 to 5 in §2.
+10. (a) **Native:** it only needs one OS, it is usually the fastest, and it has full access to hardware such as the camera through the OS. (b) **Web app:** it works on any device with a browser and usually needs no installation (the table in §4).
 
 </details>
 
