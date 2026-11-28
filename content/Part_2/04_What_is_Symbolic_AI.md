@@ -58,7 +58,7 @@ This looks like an ordinary `if` statement, and for one rule it nearly is. The d
 
 ## 3. Good Old-Fashioned AI (GOFAI)
 
-**GOFAI** is the informal name for the traditional approach to AI built on symbols, explicit knowledge and logical reasoning. The philosopher John Haugeland popularised the term in 1985 (Haugeland, 1985). Early researchers believed machines could think by manipulating symbols with formal rules.
+**GOFAI** is the informal name for the traditional approach to AI built on symbols, explicit knowledge and logical reasoning. The philosopher John Haugeland popularized the term in 1985 (Haugeland, 1985). Early researchers believed machines could think by manipulating symbols with formal rules.
 
 Allen Newell and Herbert Simon stated this belief as the **Physical Symbol System Hypothesis** (Newell & Simon, 1976): a system that stores symbols and changes them according to rules has the necessary and sufficient means for general intelligent action. In other words, symbol manipulation is both needed for intelligence and enough for it. GOFAI was built on that idea, and the rest of Part 2 shows how far it goes: logic (2.2), knowledge representation (2.3), expert systems (2.4) and planning (2.5).
 
