@@ -2,7 +2,7 @@
 
 **Team Member:** Cao Minh Tuan (`@mnhtnc`)
 
-**In this section:** [What is Knowledge Representation?](#2-what-is-knowledge-representation) · [Data, Information and Knowledge](#3-data-information-and-knowledge) · [Propositional Logic and Logical Equivalences](#41-propositional-logic) · [Predicate Logic](#42-predicate-logic) · [Semantic Networks](#43-semantic-networks) · [Frames and Scripts](#44-frames) · [Rule-Based Representation](#45-rule-based-representation) · [Ontologies and Knowledge Graphs](#5-ontologies-and-knowledge-graphs) · [Comparing Methods](#6-comparing-knowledge-representation-methods) · [Where KR Is Used](#where-is-knowledge-representation-used) · [Key Takeaways](#9-key-takeaways) · [Lab: Build a Knowledge Web](#lab-build-a-knowledge-web) · [Practice Questions](#10-practice-questions-and-answers)
+**In this section:** [Where We Are](#1-where-we-are-in-the-module) · [What is Knowledge Representation?](#2-what-is-knowledge-representation) · [Data, Information and Knowledge](#3-data-information-and-knowledge) · [Ways to Represent Knowledge](#4-different-ways-to-represent-knowledge) · [Propositional Logic and Logical Equivalences](#41-propositional-logic) · [Predicate Logic](#42-predicate-logic) · [Semantic Networks](#43-semantic-networks) · [Frames and Scripts](#44-frames) · [Rule-Based Representation](#45-rule-based-representation) · [Ontologies and Knowledge Graphs](#5-ontologies-and-knowledge-graphs) · [Comparing Methods](#6-comparing-knowledge-representation-methods) · [Where KR Is Used](#where-is-knowledge-representation-used) · [Putting It Together](#7-putting-everything-together-a-university-knowledge-system) · [Common Misunderstandings](#8-common-misunderstandings) · [Key Takeaways](#9-key-takeaways) · [Lab: Build a Knowledge Web](#lab-build-a-knowledge-web) · [Practice Questions](#10-practice-questions-and-answers) · [References](#11-references)
 
 **Learning goals.** By the end of this section, you can:
 * explain the difference between data, information and knowledge;
@@ -26,13 +26,13 @@
 
 ## 2. What is Knowledge Representation?
 
-**Knowledge Representation (KR)** is organising and storing information about the world in a form a computer can use to answer questions, solve problems or make decisions. A record such as `Name: Alex, Age: 19, Major: Computer Science` is already a representation. Stating relationships (*Alex is a student; Alex studies Computer Science; Alex attends Beijing Institute of Technology*) makes it more useful: the computer now knows an object and how it relates to other things.
+**Knowledge Representation (KR)** is organizing and storing information about the world in a form a computer can use to answer questions, solve problems or make decisions. A record such as `Name: Alex, Age: 19, Major: Computer Science` is already a representation. Stating relationships (*Alex is a student; Alex studies Computer Science; Alex attends Beijing Institute of Technology*) makes it more useful: the computer now knows an object and how it relates to other things.
 
 ### Why Do We Need Knowledge Representation?
 
 A human sees at once that "Alex is a student" and "Alex studies Computer Science" describe the same person; a computer knows it only if the structure marks Alex as the subject of both. With that structure it can store, retrieve, relate and reason.
 
-> **Important:** KR does not mean the computer *understands* like a human. It means the information is organised so that a program can process it.
+> **Important:** KR does not mean the computer *understands* like a human. It means the information is organized so that a program can process it.
 
 ---
 
@@ -42,7 +42,7 @@ A human sees at once that "Alex is a student" and "Alex studies Computer Science
 |---|---|---|---|
 | Data | Raw values without context | `19`, `Computer Science`, `Alex` | Loose pieces |
 | Information | Data in a meaningful context | Alex is 19 and studies Computer Science. | Pieces arranged into a picture |
-| Knowledge | Information organised to support relationships and decisions | Computer Science students belong to the Computer Science department. | Understanding what the picture shows |
+| Knowledge | Information organized to support relationships and decisions | Computer Science students belong to the Computer Science department. | Understanding what the picture shows |
 
 **Example.** The record `Student: Alex, Age: 19, Major: Computer Science` is information. Add the rule
 
@@ -138,13 +138,13 @@ For 10,000 students, propositional logic needs one statement per student ("Alex 
 
 ### 4.3 Semantic Networks
 
-A **Semantic Network** stores knowledge as **nodes** (objects or concepts) joined by **edges** (labelled relationships), like a social network whose every connection is labelled with its meaning.
+A **Semantic Network** stores knowledge as **nodes** (objects or concepts) joined by **edges** (labeled relationships), like a social network whose every connection is labeled with its meaning.
 
 The facts "Alex is a student", "Alex studies Computer Science", "Computer Science belongs to the Engineering Faculty" and "Alex attends Beijing Institute of Technology" become this network:
 
 ![Semantic network: Alex is a Student, Alex studies Computer Science, Computer Science belongs to Engineering Faculty, Alex attends Beijing Institute of Technology](../images/semantic_network_alex.png)
 
-*Figure 2.6: A semantic network about Alex. Boxes are concepts; labelled arrows are relationships.*
+*Figure 2.6: A semantic network about Alex. Boxes are concepts; labeled arrows are relationships.*
 
 #### Understanding Relationships
 
@@ -169,7 +169,7 @@ IS-A arrows point from specific to general (a Student IS-A Person). Properties p
 
 Inherited properties are **defaults**: a more specific node's own value wins, which is how a network handles **exceptions**. If Student had the default "lives in: Campus Dorm" but Alex's node said "lives in: Family Home", the system would use Family Home for Alex and Campus Dorm for every other student.
 
-- **Advantages:** easy to visualise; makes relationships clear; organises lots of connected knowledge; supports inheritance (in suitable designs).
+- **Advantages:** easy to visualize; makes relationships clear; organizes lots of connected knowledge; supports inheritance (in suitable designs).
 - **Limitations:** large networks become hard to manage; each relationship's meaning must be clearly defined; complex logical conditions are harder to express than in formal logic.
 
 ### 4.4 Frames
@@ -211,7 +211,7 @@ Student inherits Name and Age from Person, so they are not defined again. A stud
 
 Frames suit objects with several attributes: student profiles, employee records, patient records, product information.
 
-- **Advantages:** easy to organise; a natural way to describe objects; supports default values and reusable structures.
+- **Advantages:** easy to organize; a natural way to describe objects; supports default values and reusable structures.
 - **Limitations:** not ideal for every relationship; complex reasoning needs extra mechanisms; inheritance can get complicated.
 
 #### Scripts
@@ -301,7 +301,7 @@ A computer retrieves information by following relationships. **Question:** Which
 |---|---|
 | Defines concepts and their relationships | Stores connected entities and facts |
 | Sets the rules and constraints of a domain | Represents actual information about entities |
-| Describes how knowledge should be organised | Contains knowledge organised as a graph |
+| Describes how knowledge should be organized | Contains knowledge organized as a graph |
 | Example: A Student is a type of Person. | Example: Alex is a Student. |
 
 An ontology is the blueprint; a knowledge graph holds the information built from it. A graph does not always need a formal ontology, but one gives it consistent structure and meaning.
@@ -316,7 +316,7 @@ No method is best overall; the choice depends on the problem, and real systems o
 |---|---|---|
 | Propositional Logic | TRUE/FALSE statements | Simple conditions (is this student eligible?) |
 | Predicate Logic | Objects, properties, relationships | Expressive statements (which students take which courses) |
-| Semantic Networks | Nodes joined by labelled edges | Visualising connected concepts |
+| Semantic Networks | Nodes joined by labeled edges | Visualizing connected concepts |
 | Frames and Scripts | Objects with slots; typical event sequences | Profiles and records; everyday situations |
 | Rule-Based Representation | IF-THEN production rules | Conditions that lead to conclusions or actions |
 | Ontologies | Formal concepts and definitions | A shared vocabulary for a domain |
@@ -333,7 +333,7 @@ No method is best overall; the choice depends on the problem, and real systems o
 
 ## 7. Putting Everything Together: A University Knowledge System
 
-Sections 4–5 described one university (Beijing Institute of Technology, BIT) in seven ways. Each organises the same knowledge for a different job; this is the main idea of Knowledge Representation.
+Sections 4–5 described one university (Beijing Institute of Technology, BIT) in seven ways. Each organizes the same knowledge for a different job; this is the main idea of Knowledge Representation.
 
 | Method | BIT example |
 |---|---|
@@ -351,7 +351,7 @@ Sections 4–5 described one university (Beijing Institute of Technology, BIT) i
 
 | Misunderstanding | What is actually true |
 |---|---|
-| "KR is just storing data." | It organises information into structures a program can process. |
+| "KR is just storing data." | It organizes information into structures a program can process. |
 | "Propositional and predicate logic are the same." | Predicate logic also describes objects, properties, relationships and quantifiers. |
 | "A semantic network is exactly a knowledge graph." | Both link concepts, but knowledge graphs define entities and relationships more formally. |
 | "An ontology is a database." | An ontology defines concepts and meanings; a database stores and manages data. |
@@ -364,7 +364,7 @@ Sections 4–5 described one university (Beijing Institute of Technology, BIT) i
 
 * **Data → information → knowledge:** raw values gain context, then support relationships and decisions.
 * **Propositional logic** combines whole TRUE/FALSE statements; **predicate logic** adds objects, properties, relationships and quantifiers (∀ with →, ∃ with ∧).
-* **Semantic networks** (labelled links, IS-A inheritance), **frames** (slots, defaults), **scripts** (typical event sequences) and **IF-THEN rules** each structure knowledge for a different job.
+* **Semantic networks** (labeled links, IS-A inheritance), **frames** (slots, defaults), **scripts** (typical event sequences) and **IF-THEN rules** each structure knowledge for a different job.
 * An **ontology** defines a domain's concepts; a **knowledge graph** stores facts as triples and answers questions by following links. Real systems combine methods (§6).
 
 ---
@@ -416,13 +416,14 @@ Sections 4–5 described one university (Beijing Institute of Technology, BIT) i
   ```text
   FRAME: Mei
   INSTANCE-OF: Student
+  Name: Mei
   Age: (inherited from Person, empty)
   Major: Artificial Intelligence
   Lives in: Dorm 5
   Borrowed: Logic for Beginners
   ```
 
-  Mei has an **Age** slot, inherited from Person through Student, but it is **empty**: no fact gives her age. The system should report "unknown", not guess.
+  Mei has **Name** and **Age** slots, both inherited from Person through Student. Name is filled in (*Mei*), but Age is **empty**: no fact gives her age. The system should report "unknown", not guess.
 * **What it shows:** reading from the top, Byte needs 6 sentences to answer question a, because the faculty link is fact 6; with 500 sentences it could need hundreds. With linked facts, Byte starts at Mei and follows only the arrows that matter. The frame is best for "tell me everything about Mei" (one lookup gives all her slots); the graph is best for questions that cross from one thing to another (Mei → major → faculty → university).
 * **Reflection answers:** (1–2) See *What it shows* above. (3) **No.** The graph stores only the links you gave it, and none mention a due date or today's date. You would need new facts (`Logic for Beginners → due on → 1 December`, today's date) plus a rule: "IF the due date is before today THEN the book is overdue". Applying that rule is reasoning ([2.2](05_Logic_and_Reasoning.md)), not just following links.
 
@@ -462,27 +463,27 @@ a. A program must decide whether two simple conditions are TRUE.
 b. A system must store a person's name, age and occupation.  
 c. A university wants a diagram of how the concepts Student, Professor and Course are related.  
 d. A system must define what concepts such as Student, Professor and Course mean.  
-e. A search engine must connect facts about millions of real people, organisations and locations.
+e. A search engine must connect facts about millions of real people, organizations and locations.
 
 **9.** *Critical Thinking.* Why might combining several representation methods be better than relying on one?
 
-**10.** *Connecting to 2.1.* Symbolic AI uses facts and rules (2.1). How does Knowledge Representation help a system store them in an organised way?
+**10.** *Connecting to 2.1.* Symbolic AI uses facts and rules (2.1). How does Knowledge Representation help a system store them in an organized way?
 
 <details>
 <summary><b>Show answers</b> (try the questions first!)</summary>
 
-**1.** KR is organising and storing knowledge in a form a computer can use. Symbolic AI needs this structure to retrieve information, apply rules and solve problems.
+**1.** KR is organizing and storing knowledge in a form a computer can use. Symbolic AI needs this structure to retrieve information, apply rules and solve problems.
 
 **2.** Your example will differ. A model answer from a weather app:
 - *Data:* `32`, `Beijing`, `July 10`: raw values with no context.
-- *Information:* the temperature in Beijing on July 10 was 32 °C: the values are organised and have meaning.
+- *Information:* the temperature in Beijing on July 10 was 32 °C: the values are organized and have meaning.
 - *Knowledge:* above 30 °C, outdoor sports classes move indoors. This links the information to a decision, so a system could conclude "move today's class indoors".
 
 **3.** a. **FALSE**: AND needs both parts TRUE, and Q is FALSE. b. **TRUE**: OR needs only one, and P is TRUE. c. **FALSE**: NOT reverses P. d. **FALSE**: P TRUE with Q FALSE is the only FALSE row of IMPLIES.
 
 **4.** a. `Student(Alex)`: a property of one object. b. `Studies(Alex, Mathematics)`: a relationship between two objects. c. `∀x (Student(x) → HasStudentID(x))`: "every" uses ∀ with →. d. `∃x (Student(x) ∧ Studies(x, ArtificialIntelligence))`: "at least one" uses ∃ with ∧.
 
-**5.** Nodes are objects or concepts; edges are the labelled relationships between them. In `Alex → studies → Computer Science`, Alex and Computer Science are nodes and "studies" is the edge.
+**5.** Nodes are objects or concepts; edges are the labeled relationships between them. In `Alex → studies → Computer Science`, Alex and Computer Science are nodes and "studies" is the edge.
 
 **6.** Example:
 
@@ -498,7 +499,7 @@ A slot is an attribute, such as Name or Age; a slot value is what fills it, such
 
 **7.** An ontology defines a domain's concepts, meanings and valid relationships; a knowledge graph stores connected entities and facts. A graph uses an ontology to keep its definitions and structure consistent.
 
-**8.** a. **Propositional logic**: simple TRUE/FALSE conditions, no objects needed. b. **Frames**: one object with several slots. c. **Semantic network**: concepts as nodes, relationships as labelled edges. d. **Ontology**: it defines what concepts mean and how they may relate. e. **Knowledge graph**: millions of entities linked by triples that can be followed to answer questions.
+**8.** a. **Propositional logic**: simple TRUE/FALSE conditions, no objects needed. b. **Frames**: one object with several slots. c. **Semantic network**: concepts as nodes, relationships as labeled edges. d. **Ontology**: it defines what concepts mean and how they may relate. e. **Knowledge graph**: millions of entities linked by triples that can be followed to answer questions.
 
 **9.** Methods have different strengths: frames store Alex's profile neatly, IF-THEN rules state the scholarship conditions, and an ontology makes two systems agree on what "Student" means. No single method does all three well, so real systems combine them.
 
