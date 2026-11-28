@@ -2,7 +2,7 @@
 
 **Team Member:** Yeo Shih Jie (`@ysjie03`)
 
-**In this section:** [What Is Planning?](#2-what-is-planning) · [Describing a Problem as a Search](#3-describing-a-problem-as-a-search) · [Uninformed Search](#4-uninformed-search) · [Informed Search](#5-informed-search) · [Adversarial Search](#6-adversarial-search) · [Local Search](#7-local-search) · [Comparing the Methods](#8-comparing-the-methods) · [Common Misunderstandings](#9-common-misunderstandings) · [Key Takeaways](#10-key-takeaways) · [Lab: The River Crossing](#lab-the-river-crossing) · [Practice Questions](#11-practice-questions-and-answers)
+**In this section:** [Where We Are](#1-where-we-are-in-the-module) · [What Is Planning?](#2-what-is-planning) · [Describing a Problem as a Search](#3-describing-a-problem-as-a-search) · [Uninformed Search](#4-uninformed-search) · [Informed Search](#5-informed-search) · [Adversarial Search](#6-adversarial-search) · [Local Search](#7-local-search) · [Comparing the Methods](#8-comparing-the-methods) · [Common Misunderstandings](#9-common-misunderstandings) · [Key Takeaways](#10-key-takeaways) · [Lab: The River Crossing](#lab-the-river-crossing) · [Practice Questions](#11-practice-questions-and-answers) · [References](#12-references)
 
 **Learning goals.** By the end of this section, you can:
 * describe a problem as a search: initial state, actions, goal test and path cost;
@@ -95,7 +95,7 @@ In every trace below, the computer keeps a **frontier**: the places discovered b
 
 BFS explores **level by level**: every place one step away, then two steps away, and so on. Its frontier is a **queue** (first in, first out), like a line at the canteen.
 
-| Step | Explore | Not goal, so add new neighbours | Frontier after this step |
+| Step | Explore | Not goal, so add new neighbors | Frontier after this step |
 |---|---|---|---|
 | 1 | S | A, B | A, B |
 | 2 | A | C, G | B, C, G |
@@ -107,9 +107,9 @@ G was discovered from A, and A from S, so BFS returns **S → A → G**: only **
 
 ### 4.2 Depth-First Search (DFS)
 
-DFS goes **as deep as possible** down one path before backing up. Its frontier is a **stack** (last in, first out), like a pile of plates: the most recently discovered place is explored next. Neighbours are pushed in reverse alphabetical order, so the alphabetically first one comes off the stack first. At a place with no unexplored neighbour, DFS backs up to the previous place on the stack.
+DFS goes **as deep as possible** down one path before backing up. Its frontier is a **stack** (last in, first out), like a pile of plates: the most recently discovered place is explored next. Neighbors are pushed in reverse alphabetical order, so the alphabetically first one comes off the stack first. At a place with no unexplored neighbor, DFS backs up to the previous place on the stack.
 
-Trace: from **S** the first unexplored neighbour is **A**; from A it is **C**; from C it is **B**; from B the only one is **G**. Goal reached.
+Trace: from **S** the first unexplored neighbor is **A**; from A it is **C**; from C it is **B**; from B the only one is **G**. Goal reached.
 
 DFS returns **S → A → C → B → G**: **4 + 3 + 8 + 10 = 25 minutes**. It uses little memory, because it mainly needs the current path (our traces also keep a list of explored places, which DFS needs on maps with loops), but it can wander down a long route and return a poor answer, as here. On a map with loops and no record of visited places, it could go round in circles forever.
 
@@ -210,13 +210,13 @@ When only a **good final state** matters, not the route (a clash-free timetable,
 
 ### 7.1 Hill Climbing
 
-**Hill climbing** moves to the best neighbouring solution, as long as it is better than the current one, like climbing a hill in thick fog by always stepping uphill. Suppose seven solutions are lined up with these scores:
+**Hill climbing** moves to the best neighboring solution, as long as it is better than the current one, like climbing a hill in thick fog by always stepping uphill. Suppose seven solutions are lined up with these scores:
 
 | Position | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 |---|---|---|---|---|---|---|---|
 | Score | 2 | 4 | **6** | 5 | 3 | 7 | **9** |
 
-From position 1 (score 2) it moves to 2 (4), then 3 (6). Both neighbours of 3 score lower (4 and 5), so it **stops at 6**, although position 7 scores 9. Position 3 is a **local maximum**: higher than its neighbours but not the highest overall. Getting stuck there is hill climbing's main weakness.
+From position 1 (score 2) it moves to 2 (4), then 3 (6). Both neighbors of 3 score lower (4 and 5), so it **stops at 6**, although position 7 scores 9. Position 3 is a **local maximum**: higher than its neighbors but not the highest overall. Getting stuck there is hill climbing's main weakness.
 
 ![Line chart of the seven positions and their scores (2, 4, 6, 5, 3, 7, 9). Blue arrows show hill climbing moving from position 1 to 2 to 3, where it stops at the local maximum of 6. Red dashed arrows show simulated annealing accepting the downhill moves from position 3 to 4 to 5, then climbing to position 6 and to the global maximum of 9 at position 7](../images/hill_climbing_landscape.png)
 
@@ -238,7 +238,7 @@ From position 1 (score 2) it moves to 2 (4), then 3 (6). Both neighbours of 3 sc
 | Greedy best-first | Informed | Smallest estimate to goal (*h*) | No | Fooled by misleading estimates |
 | A\* | Informed | Smallest *g* + *h* | Yes, if *h* never overestimates | Needs a good heuristic and memory |
 | Minimax and alpha-beta | Adversarial | Best move against a best opponent | Best guaranteed result | Game trees grow very fast |
-| Hill climbing | Local | Best neighbouring solution | No | Stops at local maxima |
+| Hill climbing | Local | Best neighboring solution | No | Stops at local maxima |
 | Simulated annealing | Local | Sometimes accepts worse moves | Often near the best | Slower; needs tuning |
 
 ---
@@ -260,14 +260,14 @@ From position 1 (score 2) it moves to 2 (4), then 3 (6). Both neighbours of 3 sc
 
 * **Planning** = an action sequence from initial state to goal; actions have **preconditions** and **effects**.
 * A search problem = **initial state**, **actions**, **transition model**, **goal test**, **path cost**.
-* The §8 table summarises the methods. Key results: BFS gives fewest steps; UCS and A\* (admissible *h*) give the cheapest route; minimax gives the best guaranteed result; hill climbing can stop at a local maximum. Greedy search can be quick and DFS uses little memory, but neither guarantees the cheapest route.
+* The §8 table summarizes the methods. Key results: BFS gives fewest steps; UCS and A\* (admissible *h*) give the cheapest route; minimax gives the best guaranteed result; hill climbing can stop at a local maximum. Greedy search can be quick and DFS uses little memory, but neither guarantees the cheapest route.
 
 ---
 
 ## Lab: The River Crossing
 
 * **Goal:** Solve Byte's river puzzle by searching its states as a computer would, and link your search to breadth-first search (§4.1).
-* **Preparation:** Paper and pen, optionally four cards labelled F, W, G and C; about 20 minutes, no computer. Re-read §2 (states, actions, preconditions) and §3 (the five parts of a search problem).
+* **Preparation:** Paper and pen, optionally four cards labeled F, W, G and C; about 20 minutes, no computer. Re-read §2 (states, actions, preconditions) and §3 (the five parts of a search problem).
 * **Task:** F is Byte (the farmer in the classic puzzle, who rows), W the wolf, G the goat, C the cabbage. Write each **state** as left bank `~~` right bank. Start: `F W G C ~~ (empty)`; goal: `(empty) ~~ F W G C`. Rules:
   * Only Byte rows, and the boat carries Byte plus **at most one** passenger.
   * Neither the wolf and goat nor the goat and cabbage may be on a bank without Byte.
