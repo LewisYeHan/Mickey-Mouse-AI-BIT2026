@@ -15,7 +15,7 @@ First-year university students with no computer science background. You will lea
 * No programming experience. Every piece of code is given to you and explained.
 * Basic computer skills: opening apps, using a browser, copying and pasting.
 * Paper and a pen for the activities. A few activities work best with a partner.
-* A computer for the labs. The labs in 1.1 and 1.3 use tools built into Windows (with a note for Mac users), the 2.1 lab needs internet, and the 2.2 lab needs Python or a free online Python editor. Every lab also has a no-computer fallback, so you can finish the module offline.
+* A computer for the labs. The labs in 1.1 and 1.3 use tools built into Windows (with notes for Mac and Linux users), the 2.1 lab needs internet, and the 2.2 lab needs Python or a free online Python editor. Every lab also has a no-computer fallback, so you can finish the module offline.
 
 ## What You Will Learn
 
