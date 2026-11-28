@@ -1,8 +1,8 @@
-# 2.7 Module Summary & Self-Check Quiz
+# 2.7 Part 2 Summary and Quiz
 
 **Team Member:** Goh Ye Han (`@LewisYeHan`)
 
-**In this section:** [How It All Connects](#1-how-it-all-connects) · [Key Ideas from Each Section](#2-key-ideas-from-each-section) · [Quiz (21 questions)](#3-self-check-quiz) · [Answer Key](#4-answer-key) · [References](#5-references)
+**In this section:** [How It All Connects](#1-how-it-all-connects) · [Key Ideas from Each Section](#2-key-ideas-from-each-section) · [Quiz (21 questions)](#3-self-check-quiz) · [Answer Key](#4-answer-key) · [A Note from Team Mickey Mouse](#a-note-from-team-mickey-mouse) · [References](#5-references)
 
 **Learning goals.** By the end of this section, you can:
 * explain how Sections 2.1 to 2.5 connect, using one scholarship example;
@@ -217,7 +217,7 @@ The section in brackets says where to revise.
 | **Q16** | **True** | GOFAI is Haugeland's name for classical Symbolic AI, built on symbols, explicit knowledge and logic. *(2.1)* |
 | **Q17** | **False** | It has an IF–THEN form, so it is a **rule**; a fact simply states something true, such as `GPA(Alex, 3.9)`. *(2.1)* |
 | **Q18** | **B** | Following links only retrieves stored facts. Byte needs new facts (due date, today's date) and a rule ("IF the due date is before today THEN overdue"); D is wrong because Mei → borrowed → Logic for Beginners is there. *(2.3, Lab: Build a Knowledge Web)* |
-| **Q19** | **B** | R1 matches and adds POSTFailed, but R2 needs ThreeBeeps (this PC has FiveBeeps), so R2 and then R4 cannot fire. Byte knows the start-up check failed but not why; the full clinic needs R3, the five-beep rule. *(2.4, Lab: Dr. Pixel's PC Clinic)* |
+| **Q19** | **B** | R1 matches and adds POSTFailed, but R2 needs ThreeBeeps (this PC has FiveBeeps), so R2 and then R4 cannot fire. Byte knows the start-up check failed but not why; the full clinic needs R3, the five-beep rule. *(2.4, Lab: Professor Pixel's PC Clinic)* |
 | **Q20** | **B** | Going alone leaves all three together, taking the wolf leaves goat with cabbage, and taking the cabbage leaves wolf with goat. The goat is in both dangerous pairs, so it must go first. *(2.5, Lab: The River Crossing)* |
 | **Q21** | **A** | BFS finds the fewest steps, which is the cheapest plan only when every step costs the same. On the map, S → A → G has 2 steps but 19 minutes, while S → A → C → G has 3 steps and 10 minutes; D is wrong because the puzzle has two 7-crossing plans. *(2.5 §4.1 and §8; Lab: The River Crossing)* |
 
