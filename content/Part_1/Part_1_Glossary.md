@@ -1,5 +1,7 @@
 # 1.4 Glossary
 
+**Team Members:** Wong Hiu Chung Samuel (`@Samuel940398`) & Goh Ye Han (`@LewisYeHan`)
+
 **In this section:** every key term from Part 1, in A–Z order. The last column shows which section explains it in more detail.
 
 | Term | Meaning | Section |
@@ -14,7 +16,9 @@
 | **Booting** | Starting the computer, from pressing the power button to reaching the login screen. A cold boot starts from power off; a warm boot is a restart. | 1.1 |
 | **Bootloader** | The program that finds the OS kernel and loads it into RAM (for example, GRUB or Windows Boot Manager). | 1.1 |
 | **Buffer** | A temporary holding area for data in memory. | 1.2 |
+| **Bytecode** | A simpler form that Python turns a program into before running it one instruction at a time. | 1.1 |
 | **Cache** | Fast memory that keeps copies of often-used data. | 1.2 |
+| **Circular wait** | One of the four deadlock conditions: the processes wait for each other in a loop (A waits for B, B waits for A). | 1.2 |
 | **CLI** | Command Line Interface. You control the computer by typing text commands. | 1.2 |
 | **CMOS** | A small memory chip that stores BIOS settings, kept alive by a coin-cell battery. | 1.1 |
 | **Compiler** | A tool that translates a whole program into machine code before it runs. | 1.1 |
@@ -35,7 +39,9 @@
 | **GPT** | GUID Partition Table. The modern disk layout used with UEFI. | 1.1 |
 | **GUI** | Graphical User Interface. You control the computer with icons, windows and a mouse or touchscreen. | 1.2 |
 | **Heap** | The part of a process's memory used for memory the program asks for while it is running. | 1.3 |
+| **Hold and wait** | One of the four deadlock conditions: a process keeps what it has while waiting for more. | 1.2 |
 | **Hybrid kernel** | A kernel design that mixes the monolithic and microkernel designs: mostly fast like a monolithic kernel, but more modular (for example, Windows and macOS). | 1.2 |
+| **Hyper-threading** | A CPU feature that lets one core hold two threads at once, so the OS counts each core as two logical processors. | 1.2 |
 | **Interpreter** | A tool that runs a program step by step while it is running (Python first turns the code into bytecode). | 1.1 |
 | **Interrupt** | A signal from a device telling the CPU it needs attention. | 1.2 |
 | **Journaling** | A file system keeping a short log of changes so the disk is not left broken if the power cuts out. | 1.2 |
@@ -52,7 +58,10 @@
 | **MMU** | Memory Management Unit. Hardware that turns virtual addresses into real RAM addresses. | 1.2 |
 | **Monolithic kernel** | A kernel design in which almost everything, including drivers and file systems, runs inside one big kernel. Very fast, but one bug can crash the whole system (for example, Linux). | 1.2 |
 | **Multiprogramming** | Keeping several programs in RAM at once, so the CPU can switch to another one while one waits. | 1.2 |
+| **Multitasking** | Running many programs at the same time, with the OS sharing the CPU between them. | 1.2 |
+| **Mutual exclusion** | One of the four deadlock conditions: only one process can use a resource at a time. | 1.2 |
 | **Native app** | An app built for one specific platform, such as Windows or iOS. It is usually the fastest option. | 1.3 |
+| **No preemption** | One of the four deadlock conditions: a resource cannot be taken away from a process by force. | 1.2 |
 | **Non-preemptive scheduling** | Scheduling in which a process keeps the CPU until it finishes or waits for I/O. | 1.2 |
 | **Open source** | Software whose code anyone can read, change and share. | 1.2 |
 | **Operating system (OS)** | The main software that runs the computer and sits between your apps and the hardware. It decides which program gets the CPU, how much memory each one may use, and who can touch which file. | 1.1, 1.2 |
@@ -61,9 +70,11 @@
 | **Parallelism** | Several CPU cores really running different work at the same moment. | 1.2 |
 | **PCB** | Process Control Block. The OS's record of one process. | 1.2 |
 | **PID** | Process ID. The number the OS gives each process; Task Manager shows it on the Details page. | 1.2, 1.3 |
+| **Plug and Play** | The OS noticing new hardware, such as a USB mouse, and loading the right driver automatically. | 1.1, 1.2 |
 | **Polling** | The CPU checking a device over and over to see if it is ready. | 1.2 |
 | **POST** | Power-On Self-Test. The firmware's check that the hardware works at startup. | 1.1 |
 | **Preemptive scheduling** | Scheduling in which the OS can stop a running process and give the CPU to another one. | 1.2 |
+| **Preprocessor** | The first step of building a C program: it handles lines such as `#include` and `#define`. | 1.1 |
 | **Priority scheduling** | Scheduling in which the most important process goes first; aging stops low-priority processes from starving. | 1.2 |
 | **Process** | A program that is currently running. | 1.2, 1.3 |
 | **Process states** | The five states a process moves between: New, Ready, Running, Waiting (Blocked) and Terminated. | 1.2 |
@@ -72,6 +83,7 @@
 | **Ready queue** | The line of processes that are in memory and waiting for their turn on the CPU. | 1.2 |
 | **Relative path** | The address of a file starting from the folder you are already in, such as `Documents/essay.txt`. | 1.2 |
 | **Round Robin** | Scheduling that gives each process a short, equal turn on the CPU. | 1.2 |
+| **Sandboxing** | Keeping each app in its own closed box so it cannot reach other apps or the rest of the system. | 1.2 |
 | **Scheduler** | The part of the OS that decides which process runs next. | 1.2 |
 | **Secure Boot** | A UEFI feature that only lets trusted, signed software start. | 1.1 |
 | **Segmentation** | Splitting memory into meaningful parts such as code, data and stack. | 1.2 |
