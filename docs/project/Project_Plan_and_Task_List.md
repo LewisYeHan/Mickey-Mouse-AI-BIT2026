@@ -113,6 +113,6 @@ The Stage 3 content changes were drafted with AI assistance and checked and comm
 | Module Outline and README rewrite; move this plan to `docs/` | Yeo Shih Jie | 28 Nov | Brief sections A and D | Outline with learners, prerequisites and outcomes; README with final version | ✅ |
 | Linked contents, practice answers in fold-out boxes, four hands-on labs (1.1, 1.3, 2.1, 2.2) | Yeo Shih Jie | 27 Nov | General Stage 2 feedback | Every section has clickable contents; answers kept apart from the questions; labs with real tools, screenshots and feedback | ✅ |
 | Cross-check: each member checks one other member's section | All | 28 Nov | Brief section F | Results recorded in the submission report | ✅ |
-| Tag `v3.0-final`, build the PDF and ZIP from the tag, verify | Goh Ye Han | 28 Nov | Brief sections F and G | `MickeyMouse_Stage3_FinalMarkdown_Repository.zip` | 🔲 |
+| Tag `v3.0-final`, build the PDF and ZIP from the tag, verify | Goh Ye Han | 28 Nov | Brief sections F and G | `MickeyMouse_Stage3_FinalMarkdown_Repository.zip` | ✅ |
 | Final submission report | Yeo Shih Jie | 28 Nov | Brief section G | Revision summary, mapping, repo evidence, contributions, verification | ✅ |
 
