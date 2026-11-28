@@ -2,7 +2,7 @@
 
 **Team Member:** Lu My Ky (`@jojolu11`)
 
-**In this section:** [Components](#2-how-expert-systems-work) · [Making Decisions](#3-how-an-expert-system-makes-decisions) · [MYCIN, DENDRAL, XCON](#4-real-world-examples-of-expert-systems) · [vs. Traditional Programs](#5-expert-systems-vs-traditional-programs) · [Advantages](#6-advantages-of-expert-systems) · [Limitations](#7-limitations-of-expert-systems) · [Modern AI](#8-expert-systems-and-modern-ai) · [Key Takeaways](#9-key-takeaways) · [Lab: PC Clinic](#lab-professor-pixels-pc-clinic) · [Practice Questions](#10-practice-questions-and-answers)
+**In this section:** [Introduction](#1-introduction) · [Components](#2-how-expert-systems-work) · [Making Decisions](#3-how-an-expert-system-makes-decisions) · [MYCIN, DENDRAL, XCON](#4-real-world-examples-of-expert-systems) · [vs. Traditional Programs](#5-expert-systems-vs-traditional-programs) · [Advantages](#6-advantages-of-expert-systems) · [Limitations](#7-limitations-of-expert-systems) · [Modern AI](#8-expert-systems-and-modern-ai) · [Key Takeaways](#9-key-takeaways) · [Lab: PC Clinic](#lab-professor-pixels-pc-clinic) · [Practice Questions](#10-practice-questions-and-answers) · [References](#11-references)
 
 **Learning goals.** By the end of this section, you can:
 * name the parts of an expert system and what each does;
@@ -27,7 +27,7 @@ An **expert system** is a Symbolic AI program that solves problems in one narrow
 
 An expert system has six parts (Figure 2.14); §3 shows them working on one case.
 
-![Expert system architecture: the User talks to the User Interface, which talks to the Inference Engine in the centre. The engine exchanges data with Working Memory (left), uses facts and rules from the Knowledge Base (below) and sends its reasoning to the Explanation Facility (right), which explains back through the User Interface. A Human Expert feeds Knowledge Acquisition, which updates the Knowledge Base. A dashed border marks the system; the User and the Human Expert are outside it](../images/expert_system_architecture.png)
+![Expert system architecture: the User talks to the User Interface, which talks to the Inference Engine in the center. The engine exchanges data with Working Memory (left), uses facts and rules from the Knowledge Base (below) and sends its reasoning to the Explanation Facility (right), which explains back through the User Interface. A Human Expert feeds Knowledge Acquisition, which updates the Knowledge Base. A dashed border marks the system; the User and the Human Expert are outside it](../images/expert_system_architecture.png)
 
 *Figure 2.14: The parts of an expert system. The inference engine (pink) is the reasoning core.*
 
@@ -69,11 +69,11 @@ Using **forward chaining**:
 
 ### 4.2 DENDRAL
 
-**DENDRAL** (Stanford, from 1965; Edward Feigenbaum, Joshua Lederberg and Bruce Buchanan) is often called the first expert system. It used chemists' rules to work out which molecular structures could explain mass-spectrometer data.
+**DENDRAL** (Stanford, from 1965; Edward Feigenbaum, Joshua Lederberg and Bruce Buchanan) is often called the first expert system. It used chemists' rules to work out which molecular structures could explain mass-spectrometer data. Like every expert system, it worked only on its one narrow task.
 
 ### 4.3 XCON
 
-**XCON** (also called R1) was built by John McDermott at Carnegie Mellon University for Digital Equipment Corporation (DEC), starting in 1978, and was in everyday use at DEC from 1980. It configured VAX computers from customers' orders by **forward chaining**: from the order's facts, it applied rules choosing compatible components until the configuration was complete. As DEC's products kept changing, XCON grew to thousands of rules and became hard to maintain, the **maintenance** problem in §7. DENDRAL, too, worked only on its one narrow task.
+**XCON** (also called R1) was built by John McDermott at Carnegie Mellon University for Digital Equipment Corporation (DEC), starting in 1978, and was in everyday use at DEC from 1980. It configured VAX computers from customers' orders by **forward chaining**: from the order's facts, it applied rules choosing compatible components until the configuration was complete. As DEC's products kept changing, XCON grew to thousands of rules and became hard to maintain, the **maintenance** problem in §7.
 
 ---
 
@@ -84,7 +84,7 @@ Using **forward chaining**:
 | Knowledge | Mixed into the program's instructions. | Stored separately in a knowledge base, as explicit rules. |
 | Decision-making | Fixed, step-by-step procedures. | The engine applies whichever rules match the facts. |
 | Explanation | Individual decisions are hard to explain. | The explanation facility shows the rules used. |
-| Updating | Changing behaviour means changing the code. | Rules can be added or changed without touching the engine. |
+| Updating | Changing behavior means changing the code. | Rules can be added or changed without touching the engine. |
 
 This separation of knowledge and reasoning is the defining feature of expert systems.
 
@@ -167,7 +167,7 @@ Inaccurate rules lead to incorrect conclusions, so expert systems should support
   ```
 
   **Step 1, predict:** which PC(s) will Byte fail to diagnose?  
-  **Step 2, be the inference engine:** for each PC, check the rules in order (R1 to R5, and R6 once you add it). The first rule whose IF facts are **all** in working memory and whose THEN fact is **not** yet there fires: add its THEN fact and restart at R1. Stop when no rule adds a new fact (the stop rule from 2.2 §4).  
+  **Step 2, be the inference engine:** for each PC, check the rules in order (R1 to R5, and R6 once you add it). The first rule whose IF facts are **all** in working memory and whose THEN fact is **not** yet there fires: add its THEN fact and restart at R1. Stop when no rule adds a new fact (the stop rule from 2.2 §4). (The engine in the 2.2 lab checked every rule in a full pass before starting again. Restarting at R1 after each rule fires is another common strategy; both reach the same final facts here.)  
   **Step 3, be the explanation facility:** for PC A, answer the customer in one or two sentences: *"Why should I reseat the RAM?"*  
   **Step 4, update the knowledge base:** write a rule R6 that diagnoses PC C, and run PC C again, restarting at R1 and checking R1 to R6.
 * **Observation:** For each PC, record the rules fired, in order, the final working memory, and why other rules did **not** fire.
