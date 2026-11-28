@@ -44,7 +44,7 @@ Follow one AI through the module: it decides whether Alex qualifies for a schola
 
 **Symbolic AI vs. machine learning:** Symbolic AI reasons with hand-written facts and rules, so it is easy to explain but must be maintained by people; machine learning learns patterns from data, so it handles messy data but is harder to explain. **Neuro-Symbolic AI** combines the two (2.4 §8.1).
 
-**Labs to revisit before the quiz:** *Build a Knowledge Web* (2.3), *Professor Pixel's PC Clinic* (2.4) and *The River Crossing* (2.5). Part D checks them; each question gives all the information you need.
+**Labs to revisit before the quiz:** Lab 2.3 *Build a Knowledge Web*, Lab 2.4 *Professor Pixel's PC Clinic* and Lab 2.5 *The River Crossing*. Part D checks them; each question gives all the information you need.
 
 ---
 
@@ -216,10 +216,10 @@ The section in brackets says where to revise.
 | **Q15** | **True** | For example, a learned model spots signs of disease in an image and rules then apply clinical knowledge to it. *(2.4)* |
 | **Q16** | **True** | GOFAI is Haugeland's name for classical Symbolic AI, built on symbols, explicit knowledge and logic. *(2.1)* |
 | **Q17** | **False** | It has an IF–THEN form, so it is a **rule**; a fact simply states something true, such as `GPA(Alex, 3.9)`. *(2.1)* |
-| **Q18** | **B** | Following links only retrieves stored facts. Byte needs new facts (due date, today's date) and a rule ("IF the due date is before today THEN overdue"); D is wrong because Mei → borrowed → Logic for Beginners is there. *(2.3, Lab: Build a Knowledge Web)* |
-| **Q19** | **B** | R1 matches and adds POSTFailed, but R2 needs ThreeBeeps (this PC has FiveBeeps), so R2 and then R4 cannot fire. Byte knows the start-up check failed but not why; the full clinic needs R3, the five-beep rule. *(2.4, Lab: Professor Pixel's PC Clinic)* |
-| **Q20** | **B** | Going alone leaves all three together, taking the wolf leaves goat with cabbage, and taking the cabbage leaves wolf with goat. The goat is in both dangerous pairs, so it must go first. *(2.5, Lab: The River Crossing)* |
-| **Q21** | **A** | BFS finds the fewest steps, which is the cheapest plan only when every step costs the same. On the map, S → A → G has 2 steps but 19 minutes, while S → A → C → G has 3 steps and 10 minutes; D is wrong because the puzzle has two 7-crossing plans. *(2.5 §4.1 and §8; Lab: The River Crossing)* |
+| **Q18** | **B** | Following links only retrieves stored facts. Byte needs new facts (due date, today's date) and a rule ("IF the due date is before today THEN overdue"); D is wrong because Mei → borrowed → Logic for Beginners is there. *(Lab 2.3: Build a Knowledge Web)* |
+| **Q19** | **B** | R1 matches and adds POSTFailed, but R2 needs ThreeBeeps (this PC has FiveBeeps), so R2 and then R4 cannot fire. Byte knows the start-up check failed but not why; the full clinic needs R3, the five-beep rule. *(Lab 2.4: Professor Pixel's PC Clinic)* |
+| **Q20** | **B** | Going alone leaves all three together, taking the wolf leaves goat with cabbage, and taking the cabbage leaves wolf with goat. The goat is in both dangerous pairs, so it must go first. *(Lab 2.5: The River Crossing)* |
+| **Q21** | **A** | BFS finds the fewest steps, which is the cheapest plan only when every step costs the same. On the map, S → A → G has 2 steps but 19 minutes, while S → A → C → G has 3 steps and 10 minutes; D is wrong because the puzzle has two 7-crossing plans. *(2.5 §4.1 and §8; Lab 2.5: The River Crossing)* |
 
 </details>
 
