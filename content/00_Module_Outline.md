@@ -95,4 +95,4 @@ Each teaching section (1.1 to 1.3 and 2.1 to 2.5) starts with its learning goals
 
 ## Your Guides
 
-From 2.3 onward, two characters appear. **Professor Pixel** runs the computing lab: he sets each section's *Pixel's Mission*, a short problem to think about before you read. **Byte** is the lab's new robot intern. Byte follows instructions exactly and takes everything literally, which makes Byte a good picture of a computer. The characters are only there to make the examples memorable; the definitions are always in the main text and the glossaries.
+Two characters appear in Part 2. **Byte** first appears beside the conclusion in Figure 2.1, and from 2.3 onward both characters are used. **Professor Pixel** runs the computing lab: he sets each section's *Pixel's Mission*, a short problem to think about before you read. Byte is the lab's new robot intern. Byte follows instructions exactly and takes everything literally, which makes Byte a good picture of a computer. The characters are only there to make the examples memorable; the definitions are always in the main text and the glossaries.
