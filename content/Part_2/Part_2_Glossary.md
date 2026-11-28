@@ -12,6 +12,7 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 
 | Term | Definition |
 |---|---|
+| AI Winter | A period when interest and funding for AI research fell sharply after promises were not met (1974–1980 and 1987–1993). |
 | Artificial Intelligence (AI) | Building machines that do tasks which normally need human intelligence. |
 | ELIZA | A rule-based chatbot by Joseph Weizenbaum at MIT, described in 1966. It looks for keywords in a sentence and answers with a reply pattern for that keyword; it does not understand meaning. |
 | Explicit Knowledge | Knowledge written out clearly, in a form a computer can store and process. |
@@ -53,7 +54,7 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 | Relationship | A link between entities, such as "studies" or "is a". |
 | Rule-Based Representation | Storing knowledge as a set of IF–THEN rules. |
 | Script | A sequence of frames describing a typical series of events, such as borrowing a library book. |
-| Semantic Network | A graph whose nodes are concepts and whose labelled edges are relationships. |
+| Semantic Network | A graph whose nodes are concepts and whose labeled edges are relationships. |
 | Slot | One attribute of a frame, such as Name or Major. |
 | Triple | One knowledge-graph fact: subject → relationship → object, such as Alex → studies → Computer Science. |
 | Truth Table | A table listing the value of an expression for every combination of true and false inputs; it can prove that two statements are logically equivalent. |
@@ -64,13 +65,16 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 
 | Term | Definition |
 |---|---|
+| Affirming the Consequent | The invalid step "P → Q and Q is true, so P is true", such as "the ground is wet, so it rained". |
 | Backward Chaining | Reasoning from a goal back to the facts and rules that would prove it. |
 | Clause | A statement made of one or more terms joined by OR, such as `P ∨ Q` or `¬P`; resolution works on clauses. |
 | Conclusion | A new statement derived from facts and rules. |
 | Conflict Resolution | Choosing which rule to fire when several rules match at once. |
 | Conflict Set | All the rules whose conditions match the current facts, before one is chosen to fire. |
+| Data-Driven Reasoning | Reasoning that starts from the known facts; forward chaining is data-driven. |
 | Fire | When a matching rule actually runs and adds its conclusion to the facts. If several rules match at once, conflict resolution chooses which one fires. |
 | Forward Chaining | Reasoning from known facts, applying rules repeatedly until no rule adds a new fact. |
+| Goal-Driven Reasoning | Reasoning that starts from a goal to prove; backward chaining is goal-driven. |
 | Inference Engine | The part of an expert system that applies rules to facts to derive conclusions. |
 | Match | A rule matches when all its conditions are true for the current facts. Matching rules are triggered and form the conflict set. |
 | Modus Ponens | If P → Q and P is true, then Q is true. |
@@ -87,6 +91,7 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 
 | Term | Definition |
 |---|---|
+| Bayes' Theorem | P(H\|E) = P(E\|H) × P(H) / P(E): updates the probability of a hypothesis H after seeing evidence E. |
 | Certainty Factor | A number from −1 (definitely false) to +1 (definitely true) for confidence in a conclusion, as in MYCIN; not a probability. |
 | Fuzzy Logic | Logic in which truth can lie anywhere between false (0) and true (1). |
 | Membership Degree | In fuzzy logic, how much something belongs to a vague category, from 0 to 1 (30°C is "hot" to degree 0.8). |
@@ -141,17 +146,19 @@ Key terms from Sections 2.1 to 2.5, A–Z within each category. Each heading nam
 | Goal Test | The check for whether the current state is a goal, such as "Are we at the Teaching Building?" |
 | Greedy Best-First Search | Informed search that always explores the state the heuristic says is closest to the goal. |
 | Heuristic | An estimate of how far a state is from the goal. |
-| Hill Climbing | Local search that keeps moving to a better neighbour until none is better. |
+| Hill Climbing | Local search that keeps moving to a better neighbor until none is better. |
 | Informed Search | Search that uses a heuristic to try promising states first. |
 | Initial State | The state where the problem starts. |
-| Local Maximum | A solution better than all its neighbours but not the best overall. |
+| Local Maximum | A solution better than all its neighbors but not the best overall. |
 | Local Search | Improving one solution step by step instead of building a path from the start. |
-| Minimax | Game search in which one player maximises and the other minimises the score, both playing their best. |
+| Minimax | Game search in which one player maximizes and the other minimizes the score, both playing their best. |
 | Path Cost | The total cost of a sequence of actions, such as total time. |
 | Plan | A sequence of actions that turns the initial state into a goal state. |
 | Planning | Finding a plan that reaches a goal. |
 | Precondition | What must be true before an action can be done. |
+| Queue | A first-in, first-out list; breadth-first search keeps its frontier in a queue. |
 | Simulated Annealing | Local search that sometimes accepts a worse solution, less often over time, to escape local maxima. |
+| Stack | A last-in, first-out list; depth-first search keeps its frontier in a stack. |
 | State | A description of the world at one moment. |
 | State Space | All possible states and the actions that connect them. |
 | STRIPS | A way of describing actions by preconditions, an add list and a delete list; built for the Shakey robot (1971). |
