@@ -2,7 +2,7 @@
 
 **Team Member:** Cao Minh Tuan (`@mnhtnc`)
 
-**In this section:** [Where We Are](#1-where-we-are-in-the-module) · [What is Knowledge Representation?](#2-what-is-knowledge-representation) · [Data, Information and Knowledge](#3-data-information-and-knowledge) · [Ways to Represent Knowledge](#4-different-ways-to-represent-knowledge) · [Propositional Logic and Logical Equivalences](#41-propositional-logic) · [Predicate Logic](#42-predicate-logic) · [Semantic Networks](#43-semantic-networks) · [Frames and Scripts](#44-frames) · [Rule-Based Representation](#45-rule-based-representation) · [Ontologies and Knowledge Graphs](#5-ontologies-and-knowledge-graphs) · [Comparing Methods](#6-comparing-knowledge-representation-methods) · [Where KR Is Used](#where-is-knowledge-representation-used) · [Putting It Together](#7-putting-everything-together-a-university-knowledge-system) · [Common Misunderstandings](#8-common-misunderstandings) · [Key Takeaways](#9-key-takeaways) · [Lab: Build a Knowledge Web](#lab-build-a-knowledge-web) · [Practice Questions](#10-practice-questions-and-answers) · [References](#11-references)
+**In this section:** [Where We Are](#1-where-we-are-in-the-module) · [What is Knowledge Representation?](#2-what-is-knowledge-representation) · [Data, Information and Knowledge](#3-data-information-and-knowledge) · [Ways to Represent Knowledge](#4-different-ways-to-represent-knowledge) · [Propositional Logic and Logical Equivalences](#41-propositional-logic) · [Predicate Logic](#42-predicate-logic) · [Semantic Networks](#43-semantic-networks) · [Frames and Scripts](#44-frames) · [Rule-Based Representation](#45-rule-based-representation) · [Ontologies and Knowledge Graphs](#5-ontologies-and-knowledge-graphs) · [Comparing Methods](#6-comparing-knowledge-representation-methods) · [Where KR Is Used](#where-is-knowledge-representation-used) · [Putting It Together](#7-putting-everything-together-a-university-knowledge-system) · [Common Misunderstandings](#8-common-misunderstandings) · [Key Takeaways](#9-key-takeaways) · [Lab 2.3: Build a Knowledge Web](#lab-23-build-a-knowledge-web) · [Practice Questions](#10-practice-questions-and-answers) · [References](#11-references)
 
 **Learning goals.** By the end of this section, you can:
 * explain the difference between data, information and knowledge;
@@ -369,7 +369,7 @@ Sections 4–5 described one university (Beijing Institute of Technology, BIT) i
 
 ---
 
-## Lab: Build a Knowledge Web
+## Lab 2.3: Build a Knowledge Web
 
 * **Goal:** Store the same facts as a knowledge graph and as a frame, then answer questions by following links instead of reading every sentence.
 * **Preparation:** Paper and pen, about 15 minutes, no computer. Re-read §4.3 (inheritance), §4.4 (frames) and §5.2 (triples).
