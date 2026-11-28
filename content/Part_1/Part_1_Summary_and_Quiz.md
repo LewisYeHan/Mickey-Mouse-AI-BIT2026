@@ -1,4 +1,4 @@
-# 1.5 Module Summary & Self-Check Quiz
+# 1.5 Part 1 Summary and Quiz
 
 **Team Members:** Wong Hiu Chung Samuel (`@Samuel940398`) & Goh Ye Han (`@LewisYeHan`)
 
@@ -15,7 +15,7 @@ Sections 1.1 to 1.3 describe three layers of software that work together every t
 
 **Starting up (1.1 System Software).** When you press the power button, the first thing that runs is the **firmware** (BIOS or UEFI) stored on the motherboard. It checks the hardware with **POST**, finds the boot drive, and starts the **bootloader**. The bootloader loads the **kernel** into RAM, and the kernel starts the device drivers and the first process (such as `systemd`), which starts the system services until the login screen appears.
 
-**Managing everything (1.2 Operating Systems).** Once the OS is running, it shares the computer between everything that wants to use it, like a head chef running a busy kitchen. It turns programs into **processes**, takes turns between them so quickly that hundreds seem to run at once (**concurrency**), decides which one gets the CPU next (**scheduling**), gives each one its own private memory (**virtual memory** and **paging**), keeps files organised in a **file system**, and controls devices through **drivers**. It also has to prevent problems like **deadlock** and **thrashing**.
+**Managing everything (1.2 Operating Systems).** Once the OS is running, it shares the computer between everything that wants to use it, like a head chef running a busy kitchen. It turns programs into **processes**, takes turns between them so quickly that hundreds seem to run at once (**concurrency**), decides which one gets the CPU next (**scheduling**), gives each one its own private memory (**virtual memory** and **paging**), keeps files organized in a **file system**, and controls devices through **drivers**. It also has to prevent problems like **deadlock** and **thrashing**.
 
 **Doing the user's work (1.3 Application Software).** When you open an app, the OS **loader** copies it from the SSD into RAM as a new process, and the CPU starts running its instructions. The app lives in **user space**, so it cannot touch the hardware directly. Whenever it needs to save a file or use the network, it makes a **system call**, and the kernel does the job safely and sends the result back.
 
