@@ -2,7 +2,7 @@
 
 **Team Member:** Yeo Shih Jie (`@ysjie03`)
 
-**In this section:** [Where We Are](#1-where-we-are-in-the-module) · [What Is Planning?](#2-what-is-planning) · [Describing a Problem as a Search](#3-describing-a-problem-as-a-search) · [Uninformed Search](#4-uninformed-search) · [Informed Search](#5-informed-search) · [Adversarial Search](#6-adversarial-search) · [Local Search](#7-local-search) · [Comparing the Methods](#8-comparing-the-methods) · [Common Misunderstandings](#9-common-misunderstandings) · [Key Takeaways](#10-key-takeaways) · [Lab: The River Crossing](#lab-the-river-crossing) · [Practice Questions](#11-practice-questions-and-answers) · [References](#12-references)
+**In this section:** [Where We Are](#1-where-we-are-in-the-module) · [What Is Planning?](#2-what-is-planning) · [Describing a Problem as a Search](#3-describing-a-problem-as-a-search) · [Uninformed Search](#4-uninformed-search) · [Informed Search](#5-informed-search) · [Adversarial Search](#6-adversarial-search) · [Local Search](#7-local-search) · [Comparing the Methods](#8-comparing-the-methods) · [Common Misunderstandings](#9-common-misunderstandings) · [Key Takeaways](#10-key-takeaways) · [Lab 2.5: The River Crossing](#lab-25-the-river-crossing) · [Practice Questions](#11-practice-questions-and-answers) · [References](#12-references)
 
 **Learning goals.** By the end of this section, you can:
 * describe a problem as a search: initial state, actions, goal test and path cost;
@@ -14,7 +14,7 @@
 
 > **Pixel's Mission**  
 > Byte must row a wolf, a goat and a cabbage across a river. The boat fits Byte and one passenger. Left alone, the wolf eats the goat and the goat eats the cabbage. Byte takes the wolf first. Chaos!  
-> **Predict first:** What is the fewest number of crossings? Is there just one way? Write down your guess, then solve it in the River Crossing lab and check it in §11.
+> **Predict first:** What is the fewest number of crossings? Is there just one way? Write down your guess, then solve it in Lab 2.5 (the River Crossing) and check it in §11.
 
 ---
 
@@ -264,7 +264,7 @@ From position 1 (score 2) it moves to 2 (4), then 3 (6). Both neighbors of 3 sco
 
 ---
 
-## Lab: The River Crossing
+## Lab 2.5: The River Crossing
 
 * **Goal:** Solve Byte's river puzzle by searching its states as a computer would, and link your search to breadth-first search (§4.1).
 * **Preparation:** Paper and pen, optionally four cards labeled F, W, G and C; about 20 minutes, no computer. Re-read §2 (states, actions, preconditions) and §3 (the five parts of a search problem).
