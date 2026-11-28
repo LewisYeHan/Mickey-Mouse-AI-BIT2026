@@ -2,7 +2,7 @@
 
 **Team Member:** Cassinis Soulisack (`@DiegoSmiley`)
 
-**In this section:** [What is System Software?](#1-what-is-system-software) · [Layers](#2-layers-of-a-computer-system) · [Firmware](#3-firmware) · [BIOS & UEFI](#4-bios-and-uefi) · [Boot Process](#5-the-boot-process) · [Kernel](#6-the-kernel) · [Drivers](#7-device-drivers) · [Utilities & Translators](#8-utilities-and-language-translators) · [Summary](#9-summary) · [Lab: Find Your Computer's System Software](#lab-find-your-computers-system-software) · [Practice Questions](#10-practice-questions-and-answers) · [References](#11-references)
+**In this section:** [What is System Software?](#1-what-is-system-software) · [Layers](#2-layers-of-a-computer-system) · [Firmware](#3-firmware) · [BIOS & UEFI](#4-bios-and-uefi) · [Boot Process](#5-the-boot-process) · [Kernel](#6-the-kernel) · [Drivers](#7-device-drivers) · [Utilities & Translators](#8-utilities-and-language-translators) · [Summary](#9-summary) · [Lab 1.1: Find Your Computer's System Software](#lab-11-find-your-computers-system-software) · [Practice Questions](#10-practice-questions-and-answers) · [References](#11-references)
 
 **Learning goals.** By the end of this section you can:
 * explain what system software is and name its five kinds;
@@ -201,10 +201,10 @@ Turning a C program into something you can run takes five steps:
 
 ---
 
-## Lab: Find Your Computer's System Software
+## Lab 1.1: Find Your Computer's System Software
 
 * **Goal:** Find the firmware and one device driver on your own computer, and link what you see to Sections 3, 4 and 7.
-* **Preparation:** A Windows 10 or 11 computer and about 15 minutes; re-read §3, §4 and §7. You only look at information, so nothing on your computer changes. On a Mac, follow the note at the end of the task. No computer? Use the screenshots from a team member's laptop below and the example in the feedback box.
+* **Preparation:** A Windows 10 or 11 computer and about 15 minutes; re-read §3, §4 and §7. You only look at information, so nothing on your computer changes. On a Mac or on Linux, follow the notes at the end of the task. No computer? Use the screenshots from a team member's laptop below and the example in the feedback box.
 * **Task:**
 
   **Step 1, predict:** does your computer start with Legacy BIOS or with UEFI? Write down your guess. (§4 says when UEFI became standard.)  
@@ -213,6 +213,8 @@ Turning a C program into something you can run takes five steps:
   **Step 4, look for problems:** still in Device Manager, expand a few other groups, such as **Network adapters** and **Audio inputs and outputs**. Look for any device marked with a small yellow warning triangle.
 
   *On a Mac:* hold **Option**, click the **Apple menu** and choose **System Information**. The **Hardware Overview** page shows the **System Firmware Version**. Macs use Apple's own firmware, and their drivers come built into macOS, so do Steps 1 and 2 with the firmware version and skip Steps 3 and 4.
+
+  *On Linux (for example Ubuntu):* open a **Terminal** (**Ctrl + Alt + T**) and type each command, then press **Enter**. For Step 2, `cat /sys/class/dmi/id/bios_vendor /sys/class/dmi/id/bios_version /sys/class/dmi/id/bios_date` prints the firmware's maker, version and date (the date is month/day/year); `[ -d /sys/firmware/efi ] && echo UEFI || echo Legacy` prints the BIOS Mode; and `mokutil --sb-state` says whether Secure Boot is enabled (on Legacy BIOS it says *EFI variables are not supported*, which means no Secure Boot). For Step 3, `lspci -k | grep -A 3 -Ei 'vga|3d'` lists the graphics chip (some laptops call it a *3D controller*), and the line **Kernel driver in use** names its driver, for example `i915`, `amdgpu` or `nvidia`. `uname -r` prints the version of the kernel that the driver belongs to. For Step 4, run `lspci -k` and look at the network, audio and graphics devices: one with no **Kernel driver in use** line has no driver loaded. (Some built-in parts, such as bridges, normally have none.)
 
   ![System Information, System Summary page on a Windows 11 laptop: BIOS Version/Date reads American Megatrends International, LLC. GA605KM.307, 12/1/2026; BIOS Mode reads UEFI; Secure Boot State reads On; these three rows are outlined in red](../images/msinfo_bios.png)
 
@@ -244,6 +246,7 @@ Turning a C program into something you can run takes five steps:
 
 * **Step 2:** **BIOS Mode** shows **UEFI** on almost every PC made since about 2012; **Legacy** means the older BIOS way of starting. **BIOS Version/Date** names the firmware's maker, its version and its release date. Many PC makers build on firmware from a specialist company, such as American Megatrends in the screenshot. **Secure Boot State** shows **On**, **Off** or **Unsupported**.
 * **Step 3:** **Driver Provider** is usually the maker of the graphics chip, such as Intel, AMD or NVIDIA, or Microsoft. **Driver Date** and **Driver Version** show which release of the driver is installed. Drivers are updated through Windows Update or the maker's own app.
+* **On Linux:** the three `/sys/class/dmi/id` files describe the **firmware**, and the folder `/sys/firmware/efi` exists only when the computer started with UEFI. Most Linux drivers, such as `i915` or `amdgpu`, are part of the kernel and are updated with it, so in the table write the driver's name and the kernel version from `uname -r` instead of a driver date. The `nvidia` driver is the exception: it comes from NVIDIA, separately from the kernel.
 * **Example (the laptop in the screenshots, which shows dates as day/month/year):** BIOS Version/Date *American Megatrends International, LLC. GA605KM.307, 12/1/2026* (12 January 2026); BIOS Mode *UEFI*; Secure Boot State *On*; Driver Provider *NVIDIA*; Driver Date *7/11/2026* (7 November 2026); Driver Version *32.0.16.2124*. The firmware and the driver come from different companies and have different dates.
 * **Observation:** BIOS Version/Date, BIOS Mode and Secure Boot State describe the **firmware**, stored on a chip on the motherboard. Driver Provider, Driver Date and Driver Version describe a **driver**, stored inside the OS on your drive.
 * **Reflection answers:**
@@ -266,6 +269,8 @@ Try each question yourself first, then open the answers to check.
 4. Why does a buggy driver crash the whole PC, while a buggy app only closes itself?
 5. What is the difference between firmware and a driver?
 6. Your friend says Python is compiled like C. Are they right?
+7. A friend wants to start Windows from a 4 TB drive and use Secure Boot. Should their PC start in Legacy BIOS mode or UEFI mode? Give two reasons from the table in §4.
+8. Using the layers in §2, which layer does each belong to: (a) an antivirus program, (b) the Wi-Fi driver, (c) the code on the motherboard chip that runs POST, (d) the `gcc` compiler?
 
 <details>
 <summary><b>Show answers</b> (try the questions first!)</summary>
@@ -276,6 +281,8 @@ Try each question yourself first, then open the answers to check.
 4. Most drivers run in **kernel mode**, which has full access to the whole system, so a crash there affects everything. Apps run in **user mode**, which is kept separate, so only that app is affected.
 5. Firmware is stored on a chip inside the device itself. A driver is stored inside the OS on your computer and tells the OS how to use that device.
 6. Not quite. C is compiled into an executable before it runs. Python is interpreted: it is turned into bytecode and run step by step while the program is running.
+7. **UEFI mode.** Legacy BIOS boots from MBR disks of about 2 TB at most, while UEFI uses GPT, which has practically no limit. Legacy BIOS also has no Secure Boot; UEFI does.
+8. (a) Utilities and translators. (b) Device drivers. (c) Firmware (BIOS/UEFI). (d) Utilities and translators: `gcc` is a language translator. All four are system software.
 
 </details>
 
